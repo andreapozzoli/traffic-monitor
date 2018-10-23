@@ -1,16 +1,16 @@
 # traffic-monitor
 
-.
-├── design
-├── java
-├── README.md [questo file]
-└── requisiti
-    ├── Analisi_dei_requisiti.pdf [Analisi dei requisiti completa, con versione aggiornata del data dictionary]
-    ├── data dictionary [versioni precedenti del data dictionary]
-    │   ├── data dictionary andrea.docx
-    │   ├── data dictionary comune.xlsx [data dictionary completo]
-    │   ├── data dictionary nicolò.docx
-    │   └── data dictionary samuele.docx
-    ├── diagrammaistarimg.png [diagramma i* del sistema]
+. <br />
+├── design <br />
+├── java <br />
+├── README.md [questo file]<br />
+└── requisiti<br />
+    ├── Analisi_dei_requisiti.pdf [Analisi dei requisiti completa, con versione aggiornata del data dictionary]<br />
+    ├── data dictionary [versioni precedenti del data dictionary]<br />
+    │   ├── data dictionary andrea.docx<br />
+    │   ├── data dictionary comune.xlsx [data dictionary completo]<br />
+    │   ├── data dictionary nicolò.docx<br />
+    │   └── data dictionary samuele.docx<br />
+    ├── diagrammaistarimg.png [diagramma i* del sistema]<br />
     └── diagrammaistar.zip [diagramma i* modificabile]
 
