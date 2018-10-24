@@ -19,7 +19,7 @@
 
 ## Tema del progetto
 
-*Disponibile anche nel file con l'[analisi dei requisiti](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf). *
+_Nota: disponibile anche nel file con l'[analisi dei requisiti](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf)._
 
 Realizzare un sistema per il monitoraggio e il controllo integrato del traffico cittadino, composto dai seguenti sotto-sistemi che operano in modo distribuito:
  
@@ -45,7 +45,7 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 * Consegna 1) Requisiti: Fattibilità + DataDictionary + Goal Diagram
 	* Fattibilità (1 pagina) [*Contenuto nel documento di progetto*]
 	* Progetto i* con OpenOme [*Descritto e riportato anche nel documento di progetto*, [file .ood](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistar.zip), [immagine](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistarimg.png)]
-	* Documento di progetto, con: testo del progetto (da questo documento), fattibilità, sintesi goal e data dictionary (non c’è un formato fisso, è a vostra discrezione) [link](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf)
+	* Documento di progetto, con: testo del progetto (da questo documento), fattibilità, sintesi goal e data dictionary (non c’è un formato fisso, è a vostra discrezione) [[link](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf)]
 
 * Consegna 2) Design: UML
 	* Almeno 2 activity, 2 sequence e 2 state diagrams
