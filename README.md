@@ -13,8 +13,8 @@
     &emsp;│   ├── [data dictionary comune.xlsx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20comune.xlsx) [*data dictionary completo*]<br />
     &emsp;│   ├── [data dictionary nicolò.docx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20nicolò.docx)<br />
     &emsp;│   └── [data dictionary samuele.docx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20samuele.docx)<br />
-    &emsp;├── [diagrammaistarimg.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistarimg.png) [*diagramma i* del sistema*]<br />
-    &emsp;└── [diagrammaistar.zip](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistar.zip) [*diagramma i* modificabile*]
+    &emsp;├── [diagrammaistarimg.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistarimg.png) [*diagramma i-star del sistema*]<br />
+    &emsp;└── [diagrammaistar.zip](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistar.zip) [*diagramma i-star modificabile*]
 
 
 ## Tema del progetto
