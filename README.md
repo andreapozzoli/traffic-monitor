@@ -7,14 +7,10 @@
 ├── java <br />
 ├── README.md [questo file]<br />
 └── requisiti<br />
-    &emsp;├── [Analisi_dei_requisiti.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf) [*Analisi dei requisiti completa, con versione aggiornata del data dictionary*]<br />
-    &emsp;├── [data dictionary](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary) [*versioni precedenti del data dictionary*]<br />
-    &emsp;│   ├── [data dictionary andrea.docx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20andrea.docx)<br />
-    &emsp;│   ├── [data dictionary comune.xlsx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20comune.xlsx) [*data dictionary completo*]<br />
-    &emsp;│   ├── [data dictionary nicolò.docx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20nicolò.docx)<br />
-    &emsp;│   └── [data dictionary samuele.docx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary/data%20%20dictionary%20samuele.docx)<br />
-    &emsp;├── [diagrammaistarimg.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistarimg.png) [*diagramma i-star del sistema*]<br />
-    &emsp;└── [diagrammaistar.zip](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistar.zip) [*diagramma i-star modificabile*]
+    &emsp;├── [Analisi_dei_requisiti.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf) [*Analisi dei requisiti completa*]<br />
+    &emsp;├── [data dictionary.xlsx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary.xslx) [*data dictionary completo*]<br />
+    &emsp;├── [diagramma_istar.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.png) [*diagramma i-star del sistema*]<br />
+    &emsp;└── [diagramma_istar.zip](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.zip) [*file di progetto del diagramma i-star*]
 
 
 ## Tema del progetto
@@ -44,7 +40,7 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 
 * Consegna 1) Requisiti: Fattibilità + DataDictionary + Goal Diagram
 	* Fattibilità (1 pagina) [*Contenuto nel documento di progetto*]
-	* Progetto i* con OpenOme [*Descritto e riportato anche nel documento di progetto*, [file di progetto](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistar.zip), [immagine](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagrammaistarimg.png)]
+	* Progetto i* con OpenOme [*Descritto e riportato anche nel documento di progetto*, [file di progetto](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.zip), [immagine](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.png)]
 	* Documento di progetto, con: testo del progetto (da questo documento), fattibilità, sintesi goal e data dictionary (non c’è un formato fisso, è a vostra discrezione) [[link](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf)]
 
 * Consegna 2) Design: UML
