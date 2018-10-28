@@ -8,7 +8,7 @@
 ├── README.md [questo file]<br />
 └── requisiti<br />
     &emsp;├── [Analisi_dei_requisiti.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf) [*Analisi dei requisiti completa*]<br />
-    &emsp;├── [data dictionary.xlsx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary.xslx) [*data dictionary completo*]<br />
+    &emsp;├── [data dictionary.xlsx](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/data%20dictionary.xlsx) [*data dictionary completo*]<br />
     &emsp;├── [diagramma_istar.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.png) [*diagramma i-star del sistema*]<br />
     &emsp;└── [diagramma_istar.zip](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.zip) [*file di progetto del diagramma i-star*]
 
