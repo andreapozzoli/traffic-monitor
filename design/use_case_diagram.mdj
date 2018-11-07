@@ -80,7 +80,7 @@
 											"top": 191,
 											"width": 1735,
 											"height": 13,
-											"text": "sistema"
+											"text": "sistema centrale"
 										},
 										{
 											"_type": "LabelView",
@@ -13525,7 +13525,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFm7lDlcIalsjU="
 					},
-					"name": "sistema"
+					"name": "sistema centrale"
 				},
 				{
 					"_type": "UMLActor",
