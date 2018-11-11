@@ -1011,7 +1011,7 @@
 											"top": 1062,
 											"width": 163.99169921875,
 											"height": 13,
-											"text": "-periodo: int",
+											"text": "-periodicità: int",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1361,7 +1361,7 @@
 											"top": 672,
 											"width": 136.20166015625,
 											"height": 13,
-											"text": "+getpassword(): stringù",
+											"text": "+getpassword(): string",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4283,7 +4283,7 @@
 											"font": "Arial;13;1",
 											"left": 2645,
 											"top": 1215,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
 											"text": "conteggio"
 										},
@@ -4318,7 +4318,7 @@
 									"font": "Arial;13;0",
 									"left": 2640,
 									"top": 1208,
-									"width": 124.5244140625,
+									"width": 154.8662109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFmv6YeEYgJyUg="
@@ -4355,9 +4355,9 @@
 											"font": "Arial;13;0",
 											"left": 2645,
 											"top": 1238,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
-											"text": "-numeroveicoli",
+											"text": "-numeroveicoli: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4372,9 +4372,9 @@
 											"font": "Arial;13;0",
 											"left": 2645,
 											"top": 1253,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
-											"text": "-reset",
+											"text": "-reset: bool",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4389,16 +4389,16 @@
 											"font": "Arial;13;0",
 											"left": 2645,
 											"top": 1268,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
-											"text": "-overflow",
+											"text": "-overflow: bool",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2640,
 									"top": 1233,
-									"width": 124.5244140625,
+									"width": 154.8662109375,
 									"height": 53
 								},
 								{
@@ -4423,9 +4423,9 @@
 											"font": "Arial;13;0",
 											"left": 2645,
 											"top": 1291,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
-											"text": "+getnumeroveicoli()",
+											"text": "+getnumeroveicoli(): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4440,16 +4440,16 @@
 											"font": "Arial;13;0",
 											"left": 2645,
 											"top": 1306,
-											"width": 114.5244140625,
+											"width": 144.8662109375,
 											"height": 13,
-											"text": "+setnumeroveicoli()",
+											"text": "+setnumeroveicoli(): void",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2640,
 									"top": 1286,
-									"width": 124.5244140625,
+									"width": 154.8662109375,
 									"height": 38
 								},
 								{
@@ -4489,7 +4489,7 @@
 							"containerChangeable": true,
 							"left": 2640,
 							"top": 1208,
-							"width": 124.5244140625,
+							"width": 154.8662109375,
 							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFmv6YeEIgIA7A="
@@ -4528,8 +4528,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2578,
-									"top": 1170,
+									"left": 2577,
+									"top": 1165,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4549,8 +4549,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 2586,
-									"top": 1157,
+									"left": 2585,
+									"top": 1152,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4570,8 +4570,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2561,
-									"top": 1195,
+									"left": 2562,
+									"top": 1190,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4592,7 +4592,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 2531,
-									"top": 1141,
+									"top": 1137,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -4612,8 +4612,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2541,
-									"top": 1131,
+									"left": 2540,
+									"top": 1127,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -4632,8 +4632,8 @@
 										"$ref": "AAAAAAFmv6gbX4+CBKQ="
 									},
 									"font": "Arial;13;0",
-									"left": 2510,
-									"top": 1156,
+									"left": 2511,
+									"top": 1153,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.4024902714284606,
@@ -4655,8 +4655,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2625,
-									"top": 1200,
+									"left": 2624,
+									"top": 1193,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -4675,8 +4675,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2630,
-									"top": 1187,
+									"left": 2629,
+									"top": 1181,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -4695,7 +4695,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 2611,
-									"top": 1225,
+									"top": 1219,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4746,7 +4746,7 @@
 								"$ref": "AAAAAAFmv2EL5Pk+utg="
 							},
 							"lineStyle": 1,
-							"points": "2502:1146;2639:1233",
+							"points": "2502:1143;2639:1226",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFmv6gbYI+GrsM="
@@ -5120,7 +5120,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm7ouwenkkOGE="
 											},
-											"font": "Arial;13;1",
+											"font": "Arial;13;3",
 											"left": 2213,
 											"top": 871,
 											"width": 101.51806640625,
@@ -11918,6 +11918,64 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFm/b+jX9xfIA8="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnA4vZ1dTDUwA=",
+							"_parent": {
+								"$ref": "AAAAAAFmv0iFLPii4XY="
+							},
+							"font": "Arial;13;0",
+							"left": 2152,
+							"top": 1200,
+							"width": 169.58251953125,
+							"height": 121,
+							"text": "La periodicità in centralina_automobilistica è un valore che non varia, tuttavia può essere cambiato dal sistema centrale a seconda della configurazione che vuole applicare."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnA4z3LNpp5o4=",
+							"_parent": {
+								"$ref": "AAAAAAFmv0iFLPii4XY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnA4vZ1dTDUwA="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmv2YYd/mKj6g="
+							},
+							"lineStyle": 1,
+							"points": "2142:1163;2177:1199"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnA40JXNrkIXY=",
+							"_parent": {
+								"$ref": "AAAAAAFmv0iFLPii4XY="
+							},
+							"font": "Arial;13;0",
+							"left": 2496,
+							"top": 1232,
+							"width": 118.998046875,
+							"height": 77,
+							"text": "Intervalloditempo varia in proporzione alla quantità di traffico."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnA42PcN1Bse8=",
+							"_parent": {
+								"$ref": "AAAAAAFmv0iFLPii4XY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnA40JXNrkIXY="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmv2EL5Pk+utg="
+							},
+							"lineStyle": 1,
+							"points": "2475:1163;2525:1231"
 						}
 					]
 				},
@@ -13199,7 +13257,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmv2YYd/mIQBg="
 							},
-							"name": "periodo",
+							"name": "periodicità",
 							"visibility": "private",
 							"type": "int"
 						}
@@ -13427,7 +13485,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm+OuYGP3eHt0="
 									},
-									"type": "stringù",
+									"type": "string",
 									"direction": "return"
 								}
 							]
@@ -13974,7 +14032,7 @@
 							},
 							"name": "numeroveicoli",
 							"visibility": "private",
-							"type": ""
+							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13984,7 +14042,7 @@
 							},
 							"name": "reset",
 							"visibility": "private",
-							"type": ""
+							"type": "bool"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13994,7 +14052,7 @@
 							},
 							"name": "overflow",
 							"visibility": "private",
-							"type": ""
+							"type": "bool"
 						}
 					],
 					"operations": [
@@ -14004,7 +14062,18 @@
 							"_parent": {
 								"$ref": "AAAAAAFmv6YeEIgF7EM="
 							},
-							"name": "getnumeroveicoli"
+							"name": "getnumeroveicoli",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnA44dWuJw+f4=",
+									"_parent": {
+										"$ref": "AAAAAAFmv6dOPYya/Tc="
+									},
+									"type": "int",
+									"direction": "return"
+								}
+							]
 						},
 						{
 							"_type": "UMLOperation",
@@ -14012,7 +14081,18 @@
 							"_parent": {
 								"$ref": "AAAAAAFmv6YeEIgF7EM="
 							},
-							"name": "setnumeroveicoli"
+							"name": "setnumeroveicoli",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnA44vcuPbAX0=",
+									"_parent": {
+										"$ref": "AAAAAAFmv6d3e43ND2w="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
 						}
 					]
 				},
@@ -14423,7 +14503,8 @@
 								}
 							]
 						}
-					]
+					],
+					"isAbstract": true
 				},
 				{
 					"_type": "UMLClass",
