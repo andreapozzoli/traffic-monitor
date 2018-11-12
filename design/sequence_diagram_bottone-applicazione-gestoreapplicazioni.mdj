@@ -817,7 +817,7 @@
 												"$ref": "AAAAAAFm7wGDNPGOHQQ="
 											},
 											"edgePosition": 1,
-											"text": "4 : Posizione"
+											"text": "4 : posizione"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1385,7 +1385,7 @@
 												"$ref": "AAAAAAFm7wfgQPHjV0s="
 											},
 											"edgePosition": 1,
-											"text": "7 : Notifica"
+											"text": "7 : notifica"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1497,7 +1497,7 @@
 												"$ref": "AAAAAAFm+QVKZzt/Q5Y="
 											},
 											"edgePosition": 1,
-											"text": "8 : Notifica"
+											"text": "8 : notifica"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1942,7 +1942,7 @@
 												"$ref": "AAAAAAFm7xPpPPJ4XgI="
 											},
 											"edgePosition": 1,
-											"text": "12 : True"
+											"text": "12 : true"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2304,7 +2304,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "Posizione",
+							"name": "posizione",
 							"source": {
 								"$ref": "AAAAAAFm7wAbnfFWiTA="
 							},
@@ -2350,7 +2350,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "Notifica",
+							"name": "notifica",
 							"source": {
 								"$ref": "AAAAAAFm7wM4H/GnVIc="
 							},
@@ -2365,7 +2365,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "Notifica",
+							"name": "notifica",
 							"source": {
 								"$ref": "AAAAAAFm7vtaUPDmKyI="
 							},
@@ -2423,7 +2423,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "True",
+							"name": "true",
 							"source": {
 								"$ref": "AAAAAAFm7xHeZ/IphnQ="
 							},
