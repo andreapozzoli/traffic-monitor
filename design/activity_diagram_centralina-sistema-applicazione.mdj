@@ -234,7 +234,7 @@
 											"top": 135,
 											"width": 197.1455078125,
 											"height": 13,
-											"text": "AggiungiAutomobile"
+											"text": "RilevaAutomobile"
 										},
 										{
 											"_type": "LabelView",
@@ -3456,7 +3456,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -96,
-											"width": 86.6708984375,
+											"width": 88,
 											"height": 13,
 											"text": "(from Activity1)"
 										},
@@ -3743,7 +3743,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -16,
-											"width": 86.6708984375,
+											"width": 88,
 											"height": 13,
 											"text": "(from Activity1)"
 										},
@@ -4310,7 +4310,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"width": 86.6708984375,
+											"width": 88,
 											"height": 13,
 											"text": "(from Activity1)"
 										},
@@ -4886,7 +4886,7 @@
 									"font": "Arial;13;0",
 									"left": 1631,
 									"top": 1567,
-									"width": 52.736328125,
+									"width": 53,
 									"height": 13,
 									"alpha": -2.677945294211918,
 									"distance": 87.20665112249179,
@@ -5012,7 +5012,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -96,
-											"width": 86.6708984375,
+											"width": 88,
 											"height": 13,
 											"text": "(from Activity1)"
 										},
@@ -5395,7 +5395,7 @@
 									"font": "Arial;13;0",
 									"left": 1695,
 									"top": 1495,
-									"width": 52.736328125,
+									"width": 53,
 									"height": 13,
 									"alpha": -6.214486246186204,
 									"distance": 218.51544567833184,
@@ -5490,7 +5490,7 @@
 									"font": "Arial;13;0",
 									"left": 1695,
 									"top": 1255,
-									"width": 52.736328125,
+									"width": 53,
 									"height": 13,
 									"alpha": -2.9905773595288627,
 									"distance": 418.7660444687463,
@@ -5562,6 +5562,77 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAFm/eyHrCpe9W4="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnB/Py4MOr/aE=",
+							"_parent": {
+								"$ref": "AAAAAAFmxfZiLy+LoyU="
+							},
+							"font": "Arial;13;0",
+							"left": 1416,
+							"top": 1776,
+							"width": 92.2744140625,
+							"height": 73,
+							"text": "Passa alla successiva applicazione nella lista."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnB/RDf8OxYpg=",
+							"_parent": {
+								"$ref": "AAAAAAFmxfZiLy+LoyU="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnB/Py4MOr/aE="
+							},
+							"tail": {
+								"$ref": "AAAAAAFm/ehU+inKhck="
+							},
+							"lineStyle": 1,
+							"points": "1543:1821;1508:1817"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnB/Tfg8O0N9k=",
+							"_parent": {
+								"$ref": "AAAAAAFmxfZiLy+LoyU="
+							},
+							"font": "Arial;13;0",
+							"left": 40,
+							"top": 752,
+							"width": 162.62255859375,
+							"height": 116,
+							"text": "Vengono memorizzati i valori appena rilevati per essere inviati al gestore_notifiche, mentre le variabili necessarie al rilevamento dei nuovi dati vengono resettate."
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnB/Zu2MO7lO4=",
+							"_parent": {
+								"$ref": "AAAAAAFmxfZiLy+LoyU="
+							},
+							"font": "Arial;13;0",
+							"left": 1488,
+							"top": 1024,
+							"width": 153,
+							"height": 65,
+							"text": "Esamina le notifiche in base alla loro posizione e alla loro tipologia."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnB/fZc8PCRis=",
+							"_parent": {
+								"$ref": "AAAAAAFmxfZiLy+LoyU="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmxg/CNDR5sgY="
+							},
+							"tail": {
+								"$ref": "AAAAAAFnB/Zu2MO7lO4="
+							},
+							"lineStyle": 1,
+							"points": "1564:1089;1563:1159"
 						}
 					]
 				}
@@ -6835,7 +6906,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmxfc1GS+PeDM="
 							},
-							"name": "AggiungiAutomobile"
+							"name": "RilevaAutomobile"
 						},
 						{
 							"_type": "UMLAction",
