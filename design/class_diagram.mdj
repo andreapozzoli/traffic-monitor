@@ -8746,7 +8746,7 @@
 							"top": 920,
 							"width": 121,
 							"height": 65,
-							"text": "Design pattern FActory Method usato per stato_veicolo"
+							"text": "Design pattern Factory Method usato per stato_veicolo"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -11363,7 +11363,7 @@
 							"top": 128,
 							"width": 121,
 							"height": 65,
-							"text": "Design pattern FActory Method usato per mappa e per diagramma"
+							"text": "Design pattern Factory Method usato per mappa e per diagramma"
 						},
 						{
 							"_type": "UMLNoteLinkView",
