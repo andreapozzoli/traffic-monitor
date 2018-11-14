@@ -328,7 +328,7 @@
 											"top": 165,
 											"width": 111.109375,
 											"height": 13,
-											"text": "+password = \"ilmn\"",
+											"text": "-password = \"ilmn\"",
 											"horizontalAlignment": 0
 										}
 									],
@@ -676,7 +676,7 @@
 											"top": 435,
 											"width": 167.58447265625,
 											"height": 13,
-											"text": "-listanotifiche=<>",
+											"text": "-listaNotifiche=<>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -867,7 +867,7 @@
 											"top": 443,
 											"width": 167.58447265625,
 											"height": 13,
-											"text": "+listanotifiche=<notifica1>",
+											"text": "-listaNotifiche=<notifica1>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1058,7 +1058,7 @@
 											"top": 435,
 											"width": 167.58447265625,
 											"height": 13,
-											"text": "-listanotifiche=<>",
+											"text": "-listaNotifiche=<>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -2282,7 +2282,7 @@
 											"top": 374,
 											"width": 216.09326171875,
 											"height": 13,
-											"text": "-listaapplicazioni=<app1,app2,app3>",
+											"text": "-listaApplicazioni=<app1,app2,app3>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2316,7 +2316,7 @@
 											"top": 404,
 											"width": 216.09326171875,
 											"height": 13,
-											"text": "-listautenti=<samuele,andrea,nicolò>",
+											"text": "-listaUtenti=<samuele,andrea,nicolò>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5813,7 +5813,7 @@
 											"width": 316.31640625,
 											"height": 13,
 											"underline": true,
-											"text": "gestorenot: GestoreNotifiche"
+											"text": "gestoreNot: GestoreNotifiche"
 										},
 										{
 											"_type": "LabelView",
@@ -5883,7 +5883,7 @@
 											"top": 622,
 											"width": 316.31640625,
 											"height": 13,
-											"text": "-listanotifiche=<notifica1,datotraffico1,datoveicolo1>",
+											"text": "-listaNotifiche=<notifica1,datoTraffico1,datoVeicolo1>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6416,10 +6416,10 @@
 											"font": "Arial;13;1",
 											"left": 2277,
 											"top": 375,
-											"width": 282.56591796875,
+											"width": 284.3623046875,
 											"height": 13,
 											"underline": true,
-											"text": "gestorecent: GestoreCentraline"
+											"text": "gestoreCent: GestoreCentraline"
 										},
 										{
 											"_type": "LabelView",
@@ -6448,7 +6448,7 @@
 									"font": "Arial;13;0",
 									"left": 2272,
 									"top": 368,
-									"width": 292.56591796875,
+									"width": 294.3623046875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFnA7owmVh3yc4="
@@ -6485,9 +6485,9 @@
 											"font": "Arial;13;0",
 											"left": 2277,
 											"top": 398,
-											"width": 282.56591796875,
+											"width": 284.3623046875,
 											"height": 13,
-											"text": "-listacentralineauto=<centralina1,centralina2>",
+											"text": "-listaCentralineAuto=<centralina1,centralina2>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6502,16 +6502,16 @@
 											"font": "Arial;13;0",
 											"left": 2277,
 											"top": 413,
-											"width": 282.56591796875,
+											"width": 284.3623046875,
 											"height": 13,
-											"text": "-listacentralinestradali=<centralina3,centralina4>",
+											"text": "-listaCentralineStradali=<centralina3,centralina4>",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2272,
 									"top": 393,
-									"width": 292.56591796875,
+									"width": 294.3623046875,
 									"height": 38
 								}
 							],
@@ -6519,7 +6519,7 @@
 							"containerChangeable": true,
 							"left": 2272,
 							"top": 368,
-							"width": 292.56591796875,
+							"width": 294.3623046875,
 							"height": 63,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnA7owmVh2MuE="
@@ -7232,7 +7232,7 @@
 											"top": 429,
 											"width": 197.2470703125,
 											"height": 13,
-											"text": "-intervalloditempo = 100",
+											"text": "-intervalloDiTempo = 100",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7249,7 +7249,7 @@
 											"top": 444,
 											"width": 197.2470703125,
 											"height": 13,
-											"text": "+posizione = posizione6",
+											"text": "-posizione = posizione6",
 											"horizontalAlignment": 0
 										}
 									],
@@ -7400,7 +7400,7 @@
 											"top": 429,
 											"width": 197.2470703125,
 											"height": 13,
-											"text": "-intervalloditempo = 400",
+											"text": "-intervalloDiTempo = 400",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7995,7 +7995,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2401,
+									"left": 2402,
 									"top": 335,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -8016,8 +8016,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2388,
-									"top": 332,
+									"left": 2389,
+									"top": 333,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -8037,7 +8037,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2429,
+									"left": 2430,
 									"top": 339,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -8116,7 +8116,7 @@
 								"$ref": "AAAAAAFnA7owmVh120Y="
 							},
 							"lineStyle": 1,
-							"points": "2417:367;2416:264;3768:264;3767:383",
+							"points": "2418:367;2416:264;3768:264;3767:383",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnA8WIbMrPIrk="
@@ -8230,7 +8230,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2401,
+									"left": 2402,
 									"top": 335,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -8251,8 +8251,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2388,
-									"top": 332,
+									"left": 2389,
+									"top": 333,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -8272,7 +8272,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2429,
+									"left": 2430,
 									"top": 339,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -8351,7 +8351,7 @@
 								"$ref": "AAAAAAFnA7owmVh120Y="
 							},
 							"lineStyle": 1,
-							"points": "2417:367;2416:224;4160:224;4159:383",
+							"points": "2418:367;2416:224;4160:224;4159:383",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnA8YD9f99ac8="
@@ -9042,7 +9042,7 @@
 											"width": 171.9326171875,
 											"height": 13,
 											"underline": true,
-											"text": "datoveicolo1: StatoVeicolo"
+											"text": "statoVeicolo1: StatoVeicolo"
 										},
 										{
 											"_type": "LabelView",
@@ -9110,7 +9110,7 @@
 											"top": 870,
 											"width": 171.9326171875,
 											"height": 13,
-											"text": "-idveicolo = 2001",
+											"text": "-idVeicolo = 2001",
 											"horizontalAlignment": 0
 										},
 										{
@@ -10420,7 +10420,7 @@
 											"width": 166.84814453125,
 											"height": 13,
 											"underline": true,
-											"text": "datotraffico1: DatoTraffico"
+											"text": "datoTraffico1: DatoTraffico"
 										},
 										{
 											"_type": "LabelView",
@@ -12192,7 +12192,7 @@
 											"width": 231.91162109375,
 											"height": 13,
 											"underline": true,
-											"text": "gestoreamm: GestoreAmministratori"
+											"text": "gestoreAmm: GestoreAmministratori"
 										},
 										{
 											"_type": "LabelView",
@@ -12262,7 +12262,7 @@
 											"top": 254,
 											"width": 231.91162109375,
 											"height": 13,
-											"text": "-listaamministratori=<amm1>",
+											"text": "-listaAmministratori=<amm1>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -13554,6 +13554,7 @@
 								"$ref": "AAAAAAFnA6Ln0rIOBYk="
 							},
 							"name": "password",
+							"visibility": "private",
 							"type": "",
 							"value": "\"ilmn\""
 						}
@@ -13752,7 +13753,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA6VGCrM8B+0="
 							},
-							"name": "listanotifiche=<>",
+							"name": "listaNotifiche=<>",
 							"visibility": "private",
 							"type": ""
 						}
@@ -13916,7 +13917,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA6dQ9bNwhWg="
 							},
-							"name": "listanotifiche=<notifica1>",
+							"name": "listaNotifiche=<notifica1>",
+							"visibility": "private",
 							"type": ""
 						}
 					]
@@ -14077,7 +14079,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA6gRXrOk6VU="
 							},
-							"name": "listanotifiche=<>",
+							"name": "listaNotifiche=<>",
 							"visibility": "private",
 							"type": ""
 						}
@@ -14439,7 +14441,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA7HEl7UWrUo="
 							},
-							"name": "listaapplicazioni=<app1,app2,app3>",
+							"name": "listaApplicazioni=<app1,app2,app3>",
 							"visibility": "private",
 							"type": ""
 						},
@@ -14460,7 +14462,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA7HEl7UWrUo="
 							},
-							"name": "listautenti=<samuele,andrea,nicolò>",
+							"name": "listaUtenti=<samuele,andrea,nicolò>",
 							"visibility": "private",
 							"type": ""
 						}
@@ -14550,7 +14552,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
-					"name": "gestorenot",
+					"name": "gestoreNot",
 					"ownedElements": [
 						{
 							"_type": "UMLLink",
@@ -14588,7 +14590,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA7ftjhkyNd8="
 							},
-							"name": "listanotifiche=<notifica1,datotraffico1,datoveicolo1>",
+							"name": "listaNotifiche=<notifica1,datoTraffico1,datoVeicolo1>",
 							"visibility": "private",
 							"type": ""
 						}
@@ -14600,7 +14602,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
-					"name": "gestorecent",
+					"name": "gestoreCent",
 					"ownedElements": [
 						{
 							"_type": "UMLLink",
@@ -14719,7 +14721,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA7owmVhzNtU="
 							},
-							"name": "listacentralineauto=<centralina1,centralina2>",
+							"name": "listaCentralineAuto=<centralina1,centralina2>",
 							"visibility": "private",
 							"type": ""
 						},
@@ -14729,7 +14731,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA7owmVhzNtU="
 							},
-							"name": "listacentralinestradali=<centralina3,centralina4>",
+							"name": "listaCentralineStradali=<centralina3,centralina4>",
 							"visibility": "private",
 							"type": ""
 						}
@@ -14990,7 +14992,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA76iKoEZ+Xc="
 							},
-							"name": "intervalloditempo",
+							"name": "intervalloDiTempo",
 							"visibility": "private",
 							"type": "",
 							"value": "100"
@@ -15002,6 +15004,7 @@
 								"$ref": "AAAAAAFnA76iKoEZ+Xc="
 							},
 							"name": "posizione",
+							"visibility": "private",
 							"type": "",
 							"value": "posizione6"
 						}
@@ -15062,7 +15065,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8Oz7ZjdDh8="
 							},
-							"name": "intervalloditempo",
+							"name": "intervalloDiTempo",
 							"visibility": "private",
 							"type": "",
 							"value": "400"
@@ -15247,7 +15250,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
-					"name": "datoveicolo1",
+					"name": "statoVeicolo1",
 					"ownedElements": [
 						{
 							"_type": "UMLLink",
@@ -15285,7 +15288,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8ka9lQRUFw="
 							},
-							"name": "idveicolo",
+							"name": "idVeicolo",
 							"visibility": "private",
 							"type": "",
 							"value": "2001"
@@ -15340,7 +15343,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
-					"name": "datotraffico1",
+					"name": "datoTraffico1",
 					"ownedElements": [
 						{
 							"_type": "UMLLink",
@@ -15495,7 +15498,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
-					"name": "gestoreamm",
+					"name": "gestoreAmm",
 					"ownedElements": [
 						{
 							"_type": "UMLLink",
@@ -15533,7 +15536,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9CY2byTJX4="
 							},
-							"name": "listaamministratori=<amm1>",
+							"name": "listaAmministratori=<amm1>",
 							"visibility": "private",
 							"type": ""
 						}
