@@ -159,7 +159,7 @@
 											"top": 263,
 											"width": 759,
 											"height": 13,
-											"text": "Centralina automobilistica"
+											"text": "CentralinaAutomobilistica"
 										},
 										{
 											"_type": "LabelView",
@@ -338,7 +338,7 @@
 										"$ref": "AAAAAAFm/lf5VNUyHwE="
 									},
 									"edgePosition": 1,
-									"text": "AlimentazioneAttiva"
+									"text": "alimentazioneAttiva"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -541,7 +541,7 @@
 										"$ref": "AAAAAAFm/ltVYNWTveE="
 									},
 									"edgePosition": 1,
-									"text": "RichiestaStatoVeicolo"
+									"text": "richiestaStatoVeicolo"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -636,7 +636,7 @@
 										"$ref": "AAAAAAFm/lvfKdXOwT8="
 									},
 									"edgePosition": 1,
-									"text": "PosizioneRilevata"
+									"text": "posizioneRilevata"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -761,7 +761,7 @@
 										"$ref": "AAAAAAFm/l90o9ZRaWg="
 									},
 									"edgePosition": 1,
-									"text": "PosizioneNonRilevabile"
+									"text": "posizioneNonRilevabile"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -856,7 +856,7 @@
 										"$ref": "AAAAAAFm/l/MmtZl+w0="
 									},
 									"edgePosition": 1,
-									"text": "VelocitaNonRilevabile"
+									"text": "velocitaNonRilevabile"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -951,7 +951,7 @@
 										"$ref": "AAAAAAFm/mCCwda54v4="
 									},
 									"edgePosition": 1,
-									"text": "VelocitaRilevata"
+									"text": "velocitaRilevata"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1036,9 +1036,9 @@
 										"$ref": "AAAAAAFm/mCykNbMrU0="
 									},
 									"font": "Arial;13;0",
-									"left": 925,
+									"left": 924,
 									"top": 528,
-									"width": 50.578125,
+									"width": 52,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1046,7 +1046,7 @@
 										"$ref": "AAAAAAFm/mCykdbNpBE="
 									},
 									"edgePosition": 1,
-									"text": "InvioDati"
+									"text": "invioDati"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1131,17 +1131,17 @@
 										"$ref": "AAAAAAFm/mEGKtbgmRQ="
 									},
 									"font": "Arial;13;0",
-									"left": 728,
+									"left": 720,
 									"top": 496,
 									"width": 153.92431640625,
 									"height": 13,
-									"alpha": 4.170507335101986,
-									"distance": 50.47771785649585,
+									"alpha": 4.314090699498592,
+									"distance": 46.51881339845203,
 									"hostEdge": {
 										"$ref": "AAAAAAFm/mEGKtbhfTc="
 									},
 									"edgePosition": 1,
-									"text": "ErroreInvioDati"
+									"text": "erroreInvioDati"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1236,7 +1236,7 @@
 										"$ref": "AAAAAAFm/mFp6tb1GCs="
 									},
 									"edgePosition": 1,
-									"text": "RichiestaStatoVeicolo"
+									"text": "richiestaStatoVeicolo"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1344,7 +1344,7 @@
 											"top": 439,
 											"width": 150.25537109375,
 											"height": 13,
-											"text": "RilevamentoPosInCorso"
+											"text": "rilevamentoPosInCorso"
 										},
 										{
 											"_type": "LabelView",
@@ -1504,7 +1504,7 @@
 											"top": 527,
 											"width": 84.51904296875,
 											"height": 13,
-											"text": "StatoDiErrore"
+											"text": "statoDiErrore"
 										},
 										{
 											"_type": "LabelView",
@@ -1664,7 +1664,7 @@
 											"top": 327,
 											"width": 145.208984375,
 											"height": 13,
-											"text": "RilevamentoVelInCorso"
+											"text": "rilevamentoVelInCorso"
 										},
 										{
 											"_type": "LabelView",
@@ -1824,7 +1824,7 @@
 											"top": 431,
 											"width": 161.103515625,
 											"height": 13,
-											"text": "DatiRaccoltiConSuccesso"
+											"text": "datiRaccoltiConSuccesso"
 										},
 										{
 											"_type": "LabelView",
@@ -1984,7 +1984,7 @@
 											"top": 583,
 											"width": 148.09716796875,
 											"height": 13,
-											"text": "DatiInviatiConSuccesso"
+											"text": "datiInviatiConSuccesso"
 										},
 										{
 											"_type": "LabelView",
@@ -2300,6 +2300,117 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAFm/ms1qddkcMk="
 							}
+						},
+						{
+							"_type": "UMLFinalStateView",
+							"_id": "AAAAAAFnEtUTQsFw/wY=",
+							"_parent": {
+								"$ref": "AAAAAAFm/ldQOtTulxw="
+							},
+							"model": {
+								"$ref": "AAAAAAFnEtUTQsFv3j8="
+							},
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 1200,
+							"top": 464,
+							"width": 26,
+							"height": 26
+						},
+						{
+							"_type": "UMLTransitionView",
+							"_id": "AAAAAAFnEtUzVMF2O0g=",
+							"_parent": {
+								"$ref": "AAAAAAFm/ldQOtTulxw="
+							},
+							"model": {
+								"$ref": "AAAAAAFnEtUzVMF1WfA="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFnEtUzVMF302g=",
+									"_parent": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"model": {
+										"$ref": "AAAAAAFnEtUzVMF1WfA="
+									},
+									"font": "Arial;13;0",
+									"left": 1050,
+									"top": 451,
+									"width": 140.9052734375,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"edgePosition": 1,
+									"text": "alimentazioneDisattiva"
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFnEtUzVMF4p18=",
+									"_parent": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"model": {
+										"$ref": "AAAAAAFnEtUzVMF1WfA="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 1121,
+									"top": 436,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFnEtUzVMF56L0=",
+									"_parent": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"model": {
+										"$ref": "AAAAAAFnEtUzVMF1WfA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 1119,
+									"top": 480,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFnEtUzVMF2O0g="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnEtUTQsFw/wY="
+							},
+							"tail": {
+								"$ref": "AAAAAAFm/leD39UGojY="
+							},
+							"lineStyle": 1,
+							"points": "1041:469;1199:475",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFnEtUzVMF302g="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFnEtUzVMF4p18="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFnEtUzVMF56L0="
+							}
 						}
 					]
 				}
@@ -2326,7 +2437,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm/ldQOtTtDZ0="
 							},
-							"name": "Centralina automobilistica",
+							"name": "CentralinaAutomobilistica",
 							"regions": [
 								{
 									"_type": "UMLRegion",
@@ -2341,7 +2452,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm/leD39UF9TM="
 											},
-											"name": "RilevamentoPosInCorso"
+											"name": "rilevamentoPosInCorso"
 										},
 										{
 											"_type": "UMLState",
@@ -2349,7 +2460,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm/leD39UF9TM="
 											},
-											"name": "StatoDiErrore"
+											"name": "statoDiErrore"
 										},
 										{
 											"_type": "UMLState",
@@ -2357,7 +2468,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm/leD39UF9TM="
 											},
-											"name": "RilevamentoVelInCorso"
+											"name": "rilevamentoVelInCorso"
 										},
 										{
 											"_type": "UMLState",
@@ -2365,7 +2476,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm/leD39UF9TM="
 											},
-											"name": "DatiRaccoltiConSuccesso"
+											"name": "datiRaccoltiConSuccesso"
 										},
 										{
 											"_type": "UMLState",
@@ -2373,7 +2484,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFm/leD39UF9TM="
 											},
-											"name": "DatiInviatiConSuccesso"
+											"name": "datiInviatiConSuccesso"
 										}
 									]
 								}
@@ -2390,6 +2501,13 @@
 						{
 							"_type": "UMLFinalState",
 							"_id": "AAAAAAFm/mskyddbqT0=",
+							"_parent": {
+								"$ref": "AAAAAAFm/ldQOtTtDZ0="
+							}
+						},
+						{
+							"_type": "UMLFinalState",
+							"_id": "AAAAAAFnEtUTQsFv3j8=",
 							"_parent": {
 								"$ref": "AAAAAAFm/ldQOtTtDZ0="
 							}
@@ -2415,7 +2533,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/lf5U9UxcVg="
 									},
-									"name": "AlimentazioneAttiva"
+									"name": "alimentazioneAttiva"
 								}
 							]
 						},
@@ -2438,7 +2556,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/ltVYNWSRuY="
 									},
-									"name": "RichiestaStatoVeicolo"
+									"name": "richiestaStatoVeicolo"
 								}
 							]
 						},
@@ -2461,7 +2579,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/lvfKNXNBoc="
 									},
-									"name": "PosizioneRilevata"
+									"name": "posizioneRilevata"
 								}
 							]
 						},
@@ -2507,7 +2625,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/l90o9ZQPH4="
 									},
-									"name": "PosizioneNonRilevabile"
+									"name": "posizioneNonRilevabile"
 								}
 							]
 						},
@@ -2530,7 +2648,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/l/MmdZkjbQ="
 									},
-									"name": "VelocitaNonRilevabile"
+									"name": "velocitaNonRilevabile"
 								}
 							]
 						},
@@ -2553,7 +2671,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/mCCwda4Wj4="
 									},
-									"name": "VelocitaRilevata"
+									"name": "velocitaRilevata"
 								}
 							]
 						},
@@ -2576,7 +2694,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/mCykNbMrU0="
 									},
-									"name": "InvioDati"
+									"name": "invioDati"
 								}
 							]
 						},
@@ -2599,7 +2717,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/mEGKtbgmRQ="
 									},
-									"name": "ErroreInvioDati"
+									"name": "erroreInvioDati"
 								}
 							]
 						},
@@ -2622,7 +2740,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/mFp6Nb0a9A="
 									},
-									"name": "RichiestaStatoVeicolo"
+									"name": "richiestaStatoVeicolo"
 								}
 							]
 						},
@@ -2638,6 +2756,29 @@
 							"target": {
 								"$ref": "AAAAAAFm/mskyddbqT0="
 							}
+						},
+						{
+							"_type": "UMLTransition",
+							"_id": "AAAAAAFnEtUzVMF1WfA=",
+							"_parent": {
+								"$ref": "AAAAAAFm/ldQOtTtDZ0="
+							},
+							"source": {
+								"$ref": "AAAAAAFm/leD39UEYmc="
+							},
+							"target": {
+								"$ref": "AAAAAAFnEtUTQsFv3j8="
+							},
+							"triggers": [
+								{
+									"_type": "UMLEvent",
+									"_id": "AAAAAAFnEtVUD8GHT2Y=",
+									"_parent": {
+										"$ref": "AAAAAAFnEtUzVMF1WfA="
+									},
+									"name": "alimentazioneDisattiva"
+								}
+							]
 						}
 					]
 				}
