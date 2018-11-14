@@ -553,7 +553,7 @@
 											"width": 167.58447265625,
 											"height": 13,
 											"underline": true,
-											"text": "app1: Applicazione_mobile"
+											"text": "app1: ApplicazioneMobile"
 										},
 										{
 											"_type": "LabelView",
@@ -744,7 +744,7 @@
 											"width": 167.58447265625,
 											"height": 13,
 											"underline": true,
-											"text": "app2: Applicazione_mobile"
+											"text": "app2: ApplicazioneMobile"
 										},
 										{
 											"_type": "LabelView",
@@ -935,7 +935,7 @@
 											"width": 167.58447265625,
 											"height": 13,
 											"underline": true,
-											"text": "app3: Applicazione_mobile"
+											"text": "app3: ApplicazioneMobile"
 										},
 										{
 											"_type": "LabelView",
@@ -2007,7 +2007,7 @@
 											"width": 194.314453125,
 											"height": 13,
 											"underline": true,
-											"text": "notifica1: Notifica_applicazione"
+											"text": "notifica1: NotificaApplicazione"
 										},
 										{
 											"_type": "LabelView",
@@ -2212,7 +2212,7 @@
 											"width": 216.09326171875,
 											"height": 13,
 											"underline": true,
-											"text": "gestoreapp: Gestore_applicazioni"
+											"text": "gestoreapp: GestoreApplicazioni"
 										},
 										{
 											"_type": "LabelView",
@@ -5439,7 +5439,7 @@
 											"width": 163.3125,
 											"height": 13,
 											"underline": true,
-											"text": "sistema: Sistema_centrale"
+											"text": "sistema: SistemaCentrale"
 										},
 										{
 											"_type": "LabelView",
@@ -5813,7 +5813,7 @@
 											"width": 316.31640625,
 											"height": 13,
 											"underline": true,
-											"text": "gestorenot: Gestore_notifiche"
+											"text": "gestorenot: GestoreNotifiche"
 										},
 										{
 											"_type": "LabelView",
@@ -6419,7 +6419,7 @@
 											"width": 282.56591796875,
 											"height": 13,
 											"underline": true,
-											"text": "gestorecent: Gestore_centraline"
+											"text": "gestorecent: GestoreCentraline"
 										},
 										{
 											"_type": "LabelView",
@@ -6805,7 +6805,7 @@
 											"width": 242.734375,
 											"height": 13,
 											"underline": true,
-											"text": "centralina1: Centralina_automobilistica"
+											"text": "centralina1: CentralinaAutomobilistica"
 										},
 										{
 											"_type": "LabelView",
@@ -6975,7 +6975,7 @@
 											"width": 242.734375,
 											"height": 13,
 											"underline": true,
-											"text": "centralina2: Centralina_automobilistica"
+											"text": "centralina2: CentralinaAutomobilistica"
 										},
 										{
 											"_type": "LabelView",
@@ -7147,7 +7147,7 @@
 											"width": 197.2470703125,
 											"height": 13,
 											"underline": true,
-											"text": "centralina3: Centralina_stradale"
+											"text": "centralina3: CentralinaStradale"
 										},
 										{
 											"_type": "LabelView",
@@ -7315,7 +7315,7 @@
 											"width": 197.2470703125,
 											"height": 13,
 											"underline": true,
-											"text": "centralina4: Centralina_stradale"
+											"text": "centralina4: CentralinaStradale"
 										},
 										{
 											"_type": "LabelView",
@@ -9042,7 +9042,7 @@
 											"width": 171.9326171875,
 											"height": 13,
 											"underline": true,
-											"text": "datoveicolo1: Stato_veicolo"
+											"text": "datoveicolo1: StatoVeicolo"
 										},
 										{
 											"_type": "LabelView",
@@ -10420,7 +10420,7 @@
 											"width": 166.84814453125,
 											"height": 13,
 											"underline": true,
-											"text": "datotraffico1: Dato_traffico"
+											"text": "datotraffico1: DatoTraffico"
 										},
 										{
 											"_type": "LabelView",
@@ -12192,7 +12192,7 @@
 											"width": 231.91162109375,
 											"height": 13,
 											"underline": true,
-											"text": "gestoreamm: Gestore_amministratori"
+											"text": "gestoreamm: GestoreAmministratori"
 										},
 										{
 											"_type": "LabelView",
@@ -12800,7 +12800,7 @@
 											"width": 194.314453125,
 											"height": 13,
 											"underline": true,
-											"text": "notifica4: Notifica_applicazione"
+											"text": "notifica4: NotificaApplicazione"
 										},
 										{
 											"_type": "LabelView",
@@ -13711,7 +13711,7 @@
 							}
 						}
 					],
-					"classifier": "Applicazione_mobile",
+					"classifier": "ApplicazioneMobile",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -13753,7 +13753,8 @@
 								"$ref": "AAAAAAFnA6VGCrM8B+0="
 							},
 							"name": "listanotifiche=<>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					]
 				},
@@ -13874,7 +13875,7 @@
 							}
 						}
 					],
-					"classifier": "Applicazione_mobile",
+					"classifier": "ApplicazioneMobile",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14037,7 +14038,7 @@
 							}
 						}
 					],
-					"classifier": "Applicazione_mobile",
+					"classifier": "ApplicazioneMobile",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14077,7 +14078,8 @@
 								"$ref": "AAAAAAFnA6gRXrOk6VU="
 							},
 							"name": "listanotifiche=<>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					]
 				},
@@ -14309,7 +14311,7 @@
 							}
 						}
 					],
-					"classifier": "Notifica_applicazione",
+					"classifier": "NotificaApplicazione",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14429,7 +14431,7 @@
 							}
 						}
 					],
-					"classifier": "Gestore_applicazioni",
+					"classifier": "GestoreApplicazioni",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14527,7 +14529,7 @@
 							}
 						}
 					],
-					"classifier": "Sistema_centrale",
+					"classifier": "SistemaCentrale",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14578,7 +14580,7 @@
 							}
 						}
 					],
-					"classifier": "Gestore_notifiche",
+					"classifier": "GestoreNotifiche",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14709,7 +14711,7 @@
 							}
 						}
 					],
-					"classifier": "Gestore_centraline",
+					"classifier": "GestoreCentraline",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14796,7 +14798,7 @@
 							}
 						}
 					],
-					"classifier": "Centralina_automobilistica",
+					"classifier": "CentralinaAutomobilistica",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14869,7 +14871,7 @@
 							}
 						}
 					],
-					"classifier": "Centralina_automobilistica",
+					"classifier": "CentralinaAutomobilistica",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -14969,7 +14971,7 @@
 							}
 						}
 					],
-					"classifier": "Centralina_stradale",
+					"classifier": "CentralinaStradale",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -15041,7 +15043,7 @@
 							}
 						}
 					],
-					"classifier": "Centralina_stradale",
+					"classifier": "CentralinaStradale",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -15275,7 +15277,7 @@
 							}
 						}
 					],
-					"classifier": "Stato_veicolo",
+					"classifier": "StatoVeicolo",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -15368,7 +15370,7 @@
 							}
 						}
 					],
-					"classifier": "Dato_traffico",
+					"classifier": "DatoTraffico",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -15523,7 +15525,7 @@
 							}
 						}
 					],
-					"classifier": "Gestore_amministratori",
+					"classifier": "GestoreAmministratori",
 					"slots": [
 						{
 							"_type": "UMLSlot",
@@ -15544,7 +15546,7 @@
 						"$ref": "AAAAAAFnA59IX7HdvVo="
 					},
 					"name": "notifica4",
-					"classifier": "Notifica_applicazione",
+					"classifier": "NotificaApplicazione",
 					"slots": [
 						{
 							"_type": "UMLSlot",
