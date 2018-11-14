@@ -239,7 +239,7 @@
 													"top": 447,
 													"width": 223,
 													"height": 13,
-													"text": "applicazione: Applicazione_mobile"
+													"text": "applicazione: ApplicazioneMobile"
 												},
 												{
 													"_type": "LabelView",
@@ -340,7 +340,7 @@
 													"top": 103,
 													"width": 227.5908203125,
 													"height": 13,
-													"text": "gestorenotifiche: Gestore_notifiche"
+													"text": "gestoreNotifiche: GestoreNotifiche"
 												},
 												{
 													"_type": "LabelView",
@@ -441,7 +441,7 @@
 													"top": 279,
 													"width": 213.17333984375,
 													"height": 13,
-													"text": "sistemacentrale: Sistema_centrale"
+													"text": "sistemaCentrale: SistemaCentrale"
 												},
 												{
 													"_type": "LabelView",
@@ -542,7 +542,7 @@
 													"top": 279,
 													"width": 255.74072265625,
 													"height": 13,
-													"text": "gestoreapplicazioni: Gestore_apllicazioni"
+													"text": "gestoreApplicazioni: GestoreApllicazioni"
 												},
 												{
 													"_type": "LabelView",
@@ -699,168 +699,6 @@
 									"height": 30,
 									"nameCompartment": {
 										"$ref": "AAAAAAFnCFlk/sDmNm8="
-									}
-								},
-								{
-									"_type": "UMLConnectorView",
-									"_id": "AAAAAAFnCF1n8cENp98=",
-									"_parent": {
-										"$ref": "AAAAAAFnCFWB+MBH264="
-									},
-									"model": {
-										"$ref": "AAAAAAFnCF1n8MEKMW4="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEOR8I=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8MEKMW4="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 277,
-											"top": 337,
-											"height": 13,
-											"alpha": 1.5707963267948966,
-											"distance": 15,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"edgePosition": 1
-										},
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEP9OI=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8MEKMW4="
-											},
-											"visible": null,
-											"font": "Arial;13;0",
-											"left": 262,
-											"top": 337,
-											"height": 13,
-											"alpha": 1.5707963267948966,
-											"distance": 30,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"edgePosition": 1
-										},
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEQqJs=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8MEKMW4="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 306,
-											"top": 338,
-											"height": 13,
-											"alpha": -1.5707963267948966,
-											"distance": 15,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"edgePosition": 1
-										},
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEUFdA=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8cEMEws="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 287,
-											"top": 294,
-											"height": 13,
-											"alpha": -0.5235987755982988,
-											"distance": 30,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											}
-										},
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEV7Fw=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8cEMEws="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 290,
-											"top": 308,
-											"height": 13,
-											"alpha": -0.7853981633974483,
-											"distance": 40,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											}
-										},
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAFnCF1n8sEWXb8=",
-											"_parent": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											},
-											"model": {
-												"$ref": "AAAAAAFnCF1n8cEMEws="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 283,
-											"top": 267,
-											"height": 13,
-											"alpha": 0.5235987755982988,
-											"distance": 25,
-											"hostEdge": {
-												"$ref": "AAAAAAFnCF1n8cENp98="
-											}
-										}
-									],
-									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAFnCFhuBMCsVhk="
-									},
-									"tail": {
-										"$ref": "AAAAAAFnCFhuBMCsVhk="
-									},
-									"points": "151:301;151:344;292:344;292:286;262:286",
-									"showVisibility": true,
-									"nameLabel": {
-										"$ref": "AAAAAAFnCF1n8sEOR8I="
-									},
-									"stereotypeLabel": {
-										"$ref": "AAAAAAFnCF1n8sEP9OI="
-									},
-									"propertyLabel": {
-										"$ref": "AAAAAAFnCF1n8sEQqJs="
-									},
-									"headRoleNameLabel": {
-										"$ref": "AAAAAAFnCF1n8sEUFdA="
-									},
-									"headPropertyLabel": {
-										"$ref": "AAAAAAFnCF1n8sEV7Fw="
-									},
-									"headMultiplicityLabel": {
-										"$ref": "AAAAAAFnCF1n8sEWXb8="
 									}
 								},
 								{
@@ -1124,7 +962,7 @@
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
-											"text": "2 : GetListaApplicazioni"
+											"text": "2 : getListaApplicazioni"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -1441,7 +1279,7 @@
 											"height": 13,
 											"alpha": -0.49761506989625187,
 											"distance": 92.17917335276988,
-											"text": "1 : CalcolaApplicazioniDaNotificare"
+											"text": "1 : calcolaApplicazioniDaNotificare"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -1759,7 +1597,7 @@
 											"height": 13,
 											"alpha": 0.03388532416523766,
 											"distance": 59.033888572581766,
-											"text": "3 : GetPosizione"
+											"text": "3 : getPosizione"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -2077,7 +1915,7 @@
 											"height": 13,
 											"alpha": 0.030293755331619834,
 											"distance": 66.03029607687671,
-											"text": "4 : RilevaPosizione"
+											"text": "4 : rilevaPosizione"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -2411,7 +2249,7 @@
 													"top": 103,
 													"width": 265.103515625,
 													"height": 13,
-													"text": "notificaapplicazione: Notifica_applicazione"
+													"text": "notificaApplicazione: NotificaApplicazione"
 												},
 												{
 													"_type": "LabelView",
@@ -2727,7 +2565,7 @@
 											"height": 13,
 											"alpha": -3.0883097949391587,
 											"distance": 75.1065909225016,
-											"text": "9 : NotificaUtente"
+											"text": "9 : notificaUtente"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3045,7 +2883,7 @@
 											"height": 13,
 											"alpha": -1.373400125919457,
 											"distance": 15.297058540778355,
-											"text": "11 : RimuoviNotifica"
+											"text": "11 : rimuoviNotifica"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3363,7 +3201,7 @@
 											"height": 13,
 											"alpha": -1.2120251085792315,
 											"distance": 17.08800749063506,
-											"text": "5 : GetRaggio"
+											"text": "5 : getRaggio"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3681,7 +3519,7 @@
 											"height": 13,
 											"alpha": -0.03634761771760136,
 											"distance": 110.07270324653611,
-											"text": "6 : CreaNotificaApplicazione"
+											"text": "6 : creaNotificaApplicazione"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4000,7 +3838,7 @@
 											"height": 13,
 											"alpha": 1.57079566012823,
 											"distance": 15,
-											"text": "7 : Notificaapplicazione(data, ora, posizione, presenza, tipo)"
+											"text": "7 : notificaApplicazione(data, ora, posizione, presenza, tipo)"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4553,7 +4391,7 @@
 											"height": 13,
 											"alpha": -3.301505802102986,
 											"distance": 62.80127387243033,
-											"text": "8 : AggiungiNotifica"
+											"text": "8 : aggiungiNotifica"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4872,7 +4710,7 @@
 											"height": 13,
 											"alpha": -0.009803606518219665,
 											"distance": 102.00490184299969,
-											"text": "10 : AggiungiNotificaInCoda"
+											"text": "10 : aggiungiNotificaInCoda"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4940,7 +4778,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "CalcolaApplicazioniDaNotificare",
+							"name": "calcolaApplicazioniDaNotificare",
 							"source": {
 								"$ref": "AAAAAAFnCFhuBMCr0M8="
 							},
@@ -4957,7 +4795,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "GetListaApplicazioni",
+							"name": "getListaApplicazioni",
 							"source": {
 								"$ref": "AAAAAAFnCFhuBMCr0M8="
 							},
@@ -4974,7 +4812,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "GetPosizione",
+							"name": "getPosizione",
 							"source": {
 								"$ref": "AAAAAAFnCFjJL8DHPx0="
 							},
@@ -4991,7 +4829,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "RilevaPosizione",
+							"name": "rilevaPosizione",
 							"source": {
 								"$ref": "AAAAAAFnCFfEccBz+vc="
 							},
@@ -5008,7 +4846,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "GetRaggio",
+							"name": "getRaggio",
 							"source": {
 								"$ref": "AAAAAAFnCFhuBMCr0M8="
 							},
@@ -5025,7 +4863,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "CreaNotificaApplicazione",
+							"name": "creaNotificaApplicazione",
 							"source": {
 								"$ref": "AAAAAAFnCFhuBMCr0M8="
 							},
@@ -5042,7 +4880,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "Notificaapplicazione",
+							"name": "notificaApplicazione",
 							"source": {
 								"$ref": "AAAAAAFnCFf/vsCPaOk="
 							},
@@ -5060,7 +4898,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "AggiungiNotifica",
+							"name": "aggiungiNotifica",
 							"source": {
 								"$ref": "AAAAAAFnCFhuBMCr0M8="
 							},
@@ -5077,7 +4915,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "NotificaUtente",
+							"name": "notificaUtente",
 							"source": {
 								"$ref": "AAAAAAFnCFfEccBz+vc="
 							},
@@ -5094,7 +4932,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "AggiungiNotificaInCoda",
+							"name": "aggiungiNotificaInCoda",
 							"source": {
 								"$ref": "AAAAAAFnCFf/vsCPaOk="
 							},
@@ -5111,7 +4949,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "RimuoviNotifica",
+							"name": "rimuoviNotifica",
 							"source": {
 								"$ref": "AAAAAAFnCFeVQ8BXSCs="
 							},
@@ -5154,7 +4992,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "gestorenotifiche",
+							"name": "gestoreNotifiche",
 							"represent": {
 								"$ref": "AAAAAAFnCFf/s8CO2zg="
 							},
@@ -5166,7 +5004,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "sistemacentrale",
+							"name": "sistemaCentrale",
 							"represent": {
 								"$ref": "AAAAAAFnCFht/MCqzYY="
 							},
@@ -5178,7 +5016,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "gestoreapplicazioni",
+							"name": "gestoreApplicazioni",
 							"represent": {
 								"$ref": "AAAAAAFnCFjJL8DGXN0="
 							},
@@ -5202,7 +5040,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "notificaapplicazione",
+							"name": "notificaApplicazione",
 							"represent": {
 								"$ref": "AAAAAAFnCHOTQ9Z1GzE="
 							},
@@ -5340,7 +5178,7 @@
 							}
 						}
 					],
-					"type": "Applicazione_mobile"
+					"type": "ApplicazioneMobile"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5486,7 +5324,7 @@
 							}
 						}
 					],
-					"type": "Gestore_notifiche"
+					"type": "GestoreNotifiche"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5496,23 +5334,6 @@
 					},
 					"name": "Role4",
 					"ownedElements": [
-						{
-							"_type": "UMLConnector",
-							"_id": "AAAAAAFnCF1n8MEKMW4=",
-							"_parent": {
-								"$ref": "AAAAAAFnCFht/MCqzYY="
-							},
-							"end2": {
-								"_type": "UMLConnectorEnd",
-								"_id": "AAAAAAFnCF1n8cEMEws=",
-								"_parent": {
-									"$ref": "AAAAAAFnCF1n8MEKMW4="
-								},
-								"reference": {
-									"$ref": "AAAAAAFnCFht/MCqzYY="
-								}
-							}
-						},
 						{
 							"_type": "UMLConnector",
 							"_id": "AAAAAAFnCGgPZckYDD8=",
@@ -5649,7 +5470,7 @@
 							}
 						}
 					],
-					"type": "Sistema_centrale"
+					"type": "SistemaCentrale"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5714,7 +5535,7 @@
 							}
 						}
 					],
-					"type": "Gestore_apllicazioni"
+					"type": "GestoreApllicazioni"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5732,7 +5553,7 @@
 						"$ref": "AAAAAAFnCFWB+MBFEr4="
 					},
 					"name": "Role7",
-					"type": "Notifica_applicazione"
+					"type": "NotificaApplicazione"
 				}
 			]
 		}
