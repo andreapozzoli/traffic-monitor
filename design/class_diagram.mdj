@@ -8704,7 +8704,7 @@
 							"top": 1016,
 							"width": 140.6943359375,
 							"height": 81,
-							"text": "Design pattern Factory Method usato per mappa, Diagramma e NotificaApplicazione"
+							"text": "Design pattern Factory Method usato per NotificaApplicazione"
 						},
 						{
 							"_type": "UMLNoteView",
