@@ -2565,7 +2565,7 @@
 											"height": 13,
 											"alpha": -3.0883097949391587,
 											"distance": 75.1065909225016,
-											"text": "9 : notificaUtente"
+											"text": "10 : notificaUtente"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4710,7 +4710,7 @@
 											"height": 13,
 											"alpha": -0.009803606518219665,
 											"distance": 102.00490184299969,
-											"text": "10 : aggiungiNotificaInCoda"
+											"text": "9 : aggiungiNotificaInCoda"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4911,23 +4911,6 @@
 						},
 						{
 							"_type": "UMLMessage",
-							"_id": "AAAAAAFnCIN/rzWOqYI=",
-							"_parent": {
-								"$ref": "AAAAAAFnCFWB+MBGiHY="
-							},
-							"name": "notificaUtente",
-							"source": {
-								"$ref": "AAAAAAFnCFfEccBz+vc="
-							},
-							"target": {
-								"$ref": "AAAAAAFnCFfEccBz+vc="
-							},
-							"connector": {
-								"$ref": "AAAAAAFnCIN/rzWAAiI="
-							}
-						},
-						{
-							"_type": "UMLMessage",
 							"_id": "AAAAAAFnCLv/k0diN2I=",
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
@@ -4941,6 +4924,23 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAFnCLv/kkdULCs="
+							}
+						},
+						{
+							"_type": "UMLMessage",
+							"_id": "AAAAAAFnCIN/rzWOqYI=",
+							"_parent": {
+								"$ref": "AAAAAAFnCFWB+MBGiHY="
+							},
+							"name": "notificaUtente",
+							"source": {
+								"$ref": "AAAAAAFnCFfEccBz+vc="
+							},
+							"target": {
+								"$ref": "AAAAAAFnCFfEccBz+vc="
+							},
+							"connector": {
+								"$ref": "AAAAAAFnCIN/rzWAAiI="
 							}
 						},
 						{
