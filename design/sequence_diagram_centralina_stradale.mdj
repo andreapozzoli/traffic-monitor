@@ -137,7 +137,7 @@
 													"top": 47,
 													"width": 249.8779296875,
 													"height": 13,
-													"text": "centralinastradale: Centralina_stradale"
+													"text": "centralinaStradale: CentralinaStradale"
 												},
 												{
 													"_type": "LabelView",
@@ -372,7 +372,7 @@
 												"$ref": "AAAAAAFnA+fAhQAxiNI="
 											},
 											"edgePosition": 1,
-											"text": "1 : IntervalloScaduto"
+											"text": "1 : intervalloScaduto"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -483,7 +483,7 @@
 												"$ref": "AAAAAAFnA+n7BABYvNk="
 											},
 											"edgePosition": 1,
-											"text": "2 : GetNumeroVeicoli"
+											"text": "2 : getNumeroVeicoli"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -586,7 +586,7 @@
 											"font": "Arial;13;0",
 											"left": 309,
 											"top": 188,
-											"width": 98.26806640625,
+											"width": 99.7216796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -594,7 +594,7 @@
 												"$ref": "AAAAAAFnA+qduABu//U="
 											},
 											"edgePosition": 1,
-											"text": "3 : numeroveicoli"
+											"text": "3 : numeroVeicoli"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -706,7 +706,7 @@
 												"$ref": "AAAAAAFnA/w4NgI2iM4="
 											},
 											"edgePosition": 1,
-											"text": "4 : Reset"
+											"text": "4 : reset"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -829,7 +829,7 @@
 													"top": 443,
 													"width": 199.95361328125,
 													"height": 13,
-													"text": "datoditraffico: Dato_di_traffico"
+													"text": "datoTraffico: DatoTraffico"
 												},
 												{
 													"_type": "LabelView",
@@ -933,7 +933,7 @@
 												"$ref": "AAAAAAFnA+36PgDJkfs="
 											},
 											"edgePosition": 1,
-											"text": "5 : CalcolaIntervallo"
+											"text": "5 : calcolaIntervallo"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1034,9 +1034,9 @@
 												"$ref": "AAAAAAFnA++D5gEnnA0="
 											},
 											"font": "Arial;13;0",
-											"left": 286,
+											"left": 284,
 											"top": 339,
-											"width": 116.33984375,
+											"width": 121.38623046875,
 											"height": 13,
 											"alpha": 1.5841278683115807,
 											"distance": 75.0066663703967,
@@ -1044,7 +1044,7 @@
 												"$ref": "AAAAAAFnA++D5gEoFmY="
 											},
 											"edgePosition": 1,
-											"text": "6 : intervalloditempo"
+											"text": "6 : intervalloDiTempo"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1168,7 +1168,7 @@
 													"top": 47,
 													"width": 229.5908203125,
 													"height": 13,
-													"text": "gestorenotifiche: Gestore_notifiche"
+													"text": "gestoreNotifiche: GestoreNotifiche"
 												},
 												{
 													"_type": "LabelView",
@@ -1272,7 +1272,7 @@
 												"$ref": "AAAAAAFnCKbQTHrq8UM="
 											},
 											"edgePosition": 1,
-											"text": "7 : CreaDatoDiTraffico"
+											"text": "7 : creaDatoTraffico"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1383,7 +1383,7 @@
 												"$ref": "AAAAAAFnA/KwJwFov+Y="
 											},
 											"edgePosition": 1,
-											"text": "8 : Dato_di_traffico(data,ora,posizione,tipo, velocità)"
+											"text": "8 : datoTraffico(data,ora,posizione,tipo,velocità)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1496,7 +1496,7 @@
 												"$ref": "AAAAAAFnBAZ/7AMuxuk="
 											},
 											"edgePosition": 1,
-											"text": "9 : datoditraffico"
+											"text": "9 : datoTraffico"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1620,7 +1620,7 @@
 													"top": 47,
 													"width": 223.17333984375,
 													"height": 13,
-													"text": "sistemacentrale: Sistema_centrale"
+													"text": "sistemaCentrale: SistemaCentrale"
 												},
 												{
 													"_type": "LabelView",
@@ -1724,7 +1724,7 @@
 												"$ref": "AAAAAAFnCKeoPHsGXiQ="
 											},
 											"edgePosition": 1,
-											"text": "10 : datoditraffico"
+											"text": "10 : datoTraffico"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1836,7 +1836,7 @@
 												"$ref": "AAAAAAFnBAbyQgNFfRM="
 											},
 											"edgePosition": 1,
-											"text": "11 : AggiungiNotifica"
+											"text": "11 : aggiungiNotifica"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1947,7 +1947,7 @@
 												"$ref": "AAAAAAFnBAssuwNoID0="
 											},
 											"edgePosition": 1,
-											"text": "12 : ElaboraNuoveNotifiche"
+											"text": "12 : elaboraNuoveNotifiche"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2058,7 +2058,7 @@
 												"$ref": "AAAAAAFnBDGkHQO9BD0="
 											},
 											"edgePosition": 1,
-											"text": "13 : AggiornaStatoTraffico"
+											"text": "13 : aggiornaStatoTraffico"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2373,7 +2373,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "IntervalloScaduto",
+							"name": "intervalloScaduto",
 							"source": {
 								"$ref": "AAAAAAFnA+fAhQAudAM="
 							},
@@ -2387,7 +2387,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "GetNumeroVeicoli",
+							"name": "getNumeroVeicoli",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2401,7 +2401,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "numeroveicoli",
+							"name": "numeroVeicoli",
 							"source": {
 								"$ref": "AAAAAAFnA+TwkQANsio="
 							},
@@ -2416,7 +2416,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "Reset",
+							"name": "reset",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2430,7 +2430,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "CalcolaIntervallo",
+							"name": "calcolaIntervallo",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2444,7 +2444,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "intervalloditempo",
+							"name": "intervalloDiTempo",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2459,7 +2459,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "CreaDatoDiTraffico",
+							"name": "creaDatoTraffico",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2473,7 +2473,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "Dato_di_traffico",
+							"name": "datoTraffico",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2481,7 +2481,7 @@
 								"$ref": "AAAAAAFnA/JtdAFG6y4="
 							},
 							"messageSort": "createMessage",
-							"arguments": "data,ora,posizione,tipo, velocità"
+							"arguments": "data,ora,posizione,tipo,velocità"
 						},
 						{
 							"_type": "UMLMessage",
@@ -2489,7 +2489,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "datoditraffico",
+							"name": "datoTraffico",
 							"source": {
 								"$ref": "AAAAAAFnA/JtdAFG6y4="
 							},
@@ -2504,7 +2504,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "datoditraffico",
+							"name": "datoTraffico",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2519,7 +2519,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "AggiungiNotifica",
+							"name": "aggiungiNotifica",
 							"source": {
 								"$ref": "AAAAAAFnA+TAtf/tK4Y="
 							},
@@ -2534,7 +2534,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "ElaboraNuoveNotifiche",
+							"name": "elaboraNuoveNotifiche",
 							"source": {
 								"$ref": "AAAAAAFnA/ztVgJmY+w="
 							},
@@ -2548,7 +2548,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "AggiornaStatoTraffico",
+							"name": "aggiornaStatoTraffico",
 							"source": {
 								"$ref": "AAAAAAFnA/ztVgJmY+w="
 							},
@@ -2593,7 +2593,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "centralinastradale",
+							"name": "centralinaStradale",
 							"represent": {
 								"$ref": "AAAAAAFnA+TAtf/sKLU="
 							},
@@ -2625,7 +2625,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "datoditraffico",
+							"name": "datoTraffico",
 							"represent": {
 								"$ref": "AAAAAAFnA/JtdAFFQkc="
 							},
@@ -2637,7 +2637,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "gestorenotifiche",
+							"name": "gestoreNotifiche",
 							"represent": {
 								"$ref": "AAAAAAFnA/ztVgJl4v0="
 							},
@@ -2649,7 +2649,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA9gHLP/cSq8="
 							},
-							"name": "sistemacentrale",
+							"name": "sistemaCentrale",
 							"represent": {
 								"$ref": "AAAAAAFnBDAY0gN/Pwk="
 							},
@@ -2666,7 +2666,7 @@
 						"$ref": "AAAAAAFnA9gHLP/bcT0="
 					},
 					"name": "Role1",
-					"type": "Centralina_stradale"
+					"type": "CentralinaStradale"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2684,7 +2684,7 @@
 						"$ref": "AAAAAAFnA9gHLP/bcT0="
 					},
 					"name": "Role3",
-					"type": "Dato_di_traffico"
+					"type": "DatoTraffico"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2693,7 +2693,7 @@
 						"$ref": "AAAAAAFnA9gHLP/bcT0="
 					},
 					"name": "Role4",
-					"type": "Gestore_notifiche"
+					"type": "GestoreNotifiche"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2702,7 +2702,7 @@
 						"$ref": "AAAAAAFnA9gHLP/bcT0="
 					},
 					"name": "Role5",
-					"type": "Sistema_centrale"
+					"type": "SistemaCentrale"
 				}
 			]
 		}

@@ -1057,7 +1057,7 @@
 													"top": 47,
 													"width": 229.5908203125,
 													"height": 13,
-													"text": "gestorenotifiche: GestoreNotifiche"
+													"text": "gestoreNotifiche: GestoreNotifiche"
 												},
 												{
 													"_type": "LabelView",
@@ -2511,7 +2511,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "gestorenotifiche",
+							"name": "gestoreNotifiche",
 							"represent": {
 								"$ref": "AAAAAAFm7xHeZ/Iomgk="
 							},
