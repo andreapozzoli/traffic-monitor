@@ -1761,17 +1761,17 @@
 										"$ref": "AAAAAAFm/dydAj4HEhM="
 									},
 									"font": "Arial;13;0",
-									"left": 239,
-									"top": 247,
-									"width": 112.7216796875,
+									"left": 192,
+									"top": 264,
+									"width": 233.39697265625,
 									"height": 13,
-									"alpha": -1.3837004701523279,
-									"distance": 27.784887978899608,
+									"alpha": -4.053394558963658,
+									"distance": 61.61168720299745,
 									"hostEdge": {
 										"$ref": "AAAAAAFm/dydDT4IDWU="
 									},
 									"edgePosition": 1,
-									"text": " / impostaPosizione"
+									"text": "richiesta di posizione / impostaPosizione"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1784,8 +1784,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 270,
-									"top": 195,
+									"left": 340,
+									"top": 237,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1805,8 +1805,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 286,
-									"top": 238,
+									"left": 381,
+									"top": 256,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1824,7 +1824,7 @@
 								"$ref": "AAAAAAFm/dvT2T3ZGxU="
 							},
 							"lineStyle": 1,
-							"points": "220:253;343:208",
+							"points": "220:257;368:256;390:208",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFm/dydDT4JAFo="
@@ -2542,9 +2542,9 @@
 										"$ref": "AAAAAAFm/egfkj8bbZo="
 									},
 									"font": "Arial;13;0",
-									"left": 768,
+									"left": 707,
 									"top": 224,
-									"width": 111.28076171875,
+									"width": 233.39697265625,
 									"height": 13,
 									"alpha": 3.3925952785425277,
 									"distance": 40.26164427839479,
@@ -2552,7 +2552,7 @@
 										"$ref": "AAAAAAFm/egfmj8cVwM="
 									},
 									"edgePosition": 1,
-									"text": "ricevimento notifica"
+									"text": "richiesta di posizione / impostaPosizione"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -4131,17 +4131,17 @@
 										"$ref": "AAAAAAFnE2KV+ZZGFu0="
 									},
 									"font": "Arial;13;0",
-									"left": 286,
+									"left": 226,
 									"top": 112,
-									"width": 112.7216796875,
+									"width": 233.39697265625,
 									"height": 13,
-									"alpha": 1.3521272940524673,
-									"distance": 64.53681120105021,
+									"alpha": 1.730709255106625,
+									"distance": 62.80127387243033,
 									"hostEdge": {
 										"$ref": "AAAAAAFnE2KV+ZZHoVQ="
 									},
 									"edgePosition": 1,
-									"text": " / impostaPosizione"
+									"text": "richiesta di posizione / impostaPosizione"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -4155,7 +4155,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 309,
-									"top": 97,
+									"top": 121,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4176,7 +4176,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 265,
-									"top": 98,
+									"top": 122,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4193,7 +4193,7 @@
 							"tail": {
 								"$ref": "AAAAAAFm/duwfT2zZEU="
 							},
-							"points": "400:168;400:104;280:104;280:187;328:187",
+							"points": "400:168;400:128;280:128;280:187;328:187",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnE2KV+ZZIMWQ="
@@ -4481,7 +4481,8 @@
 									"_id": "AAAAAAFnEtFbCaMZu7w=",
 									"_parent": {
 										"$ref": "AAAAAAFm/dydAj4HEhM="
-									}
+									},
+									"name": "richiesta di posizione"
 								}
 							],
 							"effects": [
@@ -4605,7 +4606,17 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/egfkj8bbZo="
 									},
-									"name": "ricevimento notifica"
+									"name": "richiesta di posizione"
+								}
+							],
+							"effects": [
+								{
+									"_type": "UMLOpaqueBehavior",
+									"_id": "AAAAAAFnFpPDU5BrFWM=",
+									"_parent": {
+										"$ref": "AAAAAAFm/egfkj8bbZo="
+									},
+									"name": "impostaPosizione"
 								}
 							]
 						},
@@ -4855,6 +4866,16 @@
 							"target": {
 								"$ref": "AAAAAAFm/duwfT2y8Hw="
 							},
+							"triggers": [
+								{
+									"_type": "UMLEvent",
+									"_id": "AAAAAAFnFpDNP5Bhimc=",
+									"_parent": {
+										"$ref": "AAAAAAFnE2KV+ZZGFu0="
+									},
+									"name": "richiesta di posizione"
+								}
+							],
 							"effects": [
 								{
 									"_type": "UMLOpaqueBehavior",
