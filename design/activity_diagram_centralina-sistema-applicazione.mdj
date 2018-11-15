@@ -3847,7 +3847,7 @@
 								"$ref": "AAAAAAFm/eOPTSkzq7M="
 							},
 							"lineStyle": 1,
-							"points": "719:1629;1119:1710",
+							"points": "719:1628;1119:1703",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFm/eW6Cyl92jw="
@@ -3900,9 +3900,9 @@
 											"font": "Arial;13;1",
 											"left": 1125,
 											"top": 1703,
-											"width": 50,
+											"width": 126.40087890625,
 											"height": 13,
-											"text": "notifica"
+											"text": "notificaApplicazione"
 										},
 										{
 											"_type": "LabelView",
@@ -3935,7 +3935,7 @@
 									"font": "Arial;13;0",
 									"left": 1120,
 									"top": 1696,
-									"width": 60,
+									"width": 136.40087890625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFm/eUFLSljgiA="
@@ -3958,7 +3958,7 @@
 							"containerChangeable": true,
 							"left": 1120,
 							"top": 1696,
-							"width": 60,
+							"width": 136.40087890625,
 							"height": 41,
 							"nameCompartment": {
 								"$ref": "AAAAAAFm/eUFLSliHbo="
@@ -4106,8 +4106,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1386,
-									"top": 1718,
+									"left": 1424,
+									"top": 1721,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4127,8 +4127,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1388,
-									"top": 1703,
+									"left": 1426,
+									"top": 1706,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4148,8 +4148,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1383,
-									"top": 1747,
+									"left": 1421,
+									"top": 1750,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4167,7 +4167,7 @@
 								"$ref": "AAAAAAFm/eUFLSlh3xA="
 							},
 							"lineStyle": 1,
-							"points": "1180:1719;1591:1760",
+							"points": "1256:1724;1591:1760",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFm/ed4nymgJfc="
@@ -7159,7 +7159,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmxfeLyC+h3Gg="
 							},
-							"name": "notifica"
+							"name": "notificaApplicazione"
 						},
 						{
 							"_type": "UMLAction",
