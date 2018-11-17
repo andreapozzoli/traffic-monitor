@@ -1,0 +1,6 @@
+
+public class CentralinaStradale extends Centralina {
+	private int intervalloDiTempo;
+	private Conteggio
+
+}
