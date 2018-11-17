@@ -7191,13 +7191,64 @@
 											"height": 13,
 											"text": "-datoTraffico = datoTraffico1",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInn6bzgGGpM=",
+											"_parent": {
+												"$ref": "AAAAAAFnA76iK4EhakM="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInn6WDfTh5s="
+											},
+											"font": "Arial;13;0",
+											"left": 3669,
+											"top": 488,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-rapporto=1.73",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInrVCj5KMn8=",
+											"_parent": {
+												"$ref": "AAAAAAFnA76iK4EhakM="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInrU9j4XkiU="
+											},
+											"font": "Arial;13;0",
+											"left": 3669,
+											"top": 503,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-intervalloMinimo=30",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInt2jEbI3iU=",
+											"_parent": {
+												"$ref": "AAAAAAFnA76iK4EhakM="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInt2PkaVxqo="
+											},
+											"font": "Arial;13;0",
+											"left": 3669,
+											"top": 518,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-tipoStrada = \"urbana\"",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3664,
 									"top": 393,
 									"width": 207.2470703125,
-									"height": 98
+									"height": 143
 								}
 							],
 							"font": "Arial;13;0",
@@ -7205,7 +7256,7 @@
 							"left": 3664,
 							"top": 368,
 							"width": 207.2470703125,
-							"height": 123,
+							"height": 168,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnA76iK4Eczpk="
 							},
@@ -7410,13 +7461,64 @@
 											"height": 13,
 											"text": "-datoTraffico = null",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInvWVEtDzqc=",
+											"_parent": {
+												"$ref": "AAAAAAFnA8Oz7pjl7E8="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInvWCUsQkIc="
+											},
+											"font": "Arial;13;0",
+											"left": 4061,
+											"top": 504,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-rapporto=0.67",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInw5HVGHDuI=",
+											"_parent": {
+												"$ref": "AAAAAAFnA8Oz7pjl7E8="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInw42FFUibo="
+											},
+											"font": "Arial;13;0",
+											"left": 4061,
+											"top": 519,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-intervalloMinimo = 30",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnInxkfVSshEE=",
+											"_parent": {
+												"$ref": "AAAAAAFnA8Oz7pjl7E8="
+											},
+											"model": {
+												"$ref": "AAAAAAFnInxkLVR56cc="
+											},
+											"font": "Arial;13;0",
+											"left": 4061,
+											"top": 534,
+											"width": 197.2470703125,
+											"height": 13,
+											"text": "-tipoStrada = \"autostrada\"",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 4056,
 									"top": 409,
 									"width": 207.2470703125,
-									"height": 98
+									"height": 143
 								}
 							],
 							"font": "Arial;13;0",
@@ -7424,7 +7526,7 @@
 							"left": 4056,
 							"top": 384,
 							"width": 207.2470703125,
-							"height": 123,
+							"height": 168,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnA8Oz7pjgPOw="
 							},
@@ -9152,7 +9254,7 @@
 											"top": 915,
 											"width": 171.9326171875,
 											"height": 13,
-											"text": "-data=9\\11\\2018",
+											"text": "-data=\"9\\11\\2018\"",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9169,7 +9271,7 @@
 											"top": 930,
 											"width": 171.9326171875,
 											"height": 13,
-											"text": "-ora=16:00",
+											"text": "-ora=\"16:00\"",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10297,7 +10399,7 @@
 											"top": 915,
 											"width": 166.84814453125,
 											"height": 13,
-											"text": "-data=11\\11\\2018",
+											"text": "-data=\"11\\11\\2018\"",
 											"horizontalAlignment": 0
 										},
 										{
@@ -10314,7 +10416,7 @@
 											"top": 930,
 											"width": 166.84814453125,
 											"height": 13,
-											"text": "-ora=15:07",
+											"text": "-ora=\"15:07\"",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10359,8 +10461,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3730,
-									"top": 548,
+									"left": 3724,
+									"top": 571,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -10380,8 +10482,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 3744,
-									"top": 554,
+									"left": 3738,
+									"top": 577,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -10401,8 +10503,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3703,
-									"top": 537,
+									"left": 3697,
+									"top": 558,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -10422,8 +10524,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3744,
-									"top": 514,
+									"left": 3730,
+									"top": 559,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -10443,8 +10545,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3756,
-									"top": 521,
+									"left": 3741,
+									"top": 567,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -10464,8 +10566,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3721,
-									"top": 500,
+									"left": 3707,
+									"top": 544,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -10485,8 +10587,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3716,
-									"top": 582,
+									"left": 3719,
+									"top": 583,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -10505,8 +10607,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3729,
-									"top": 585,
+									"left": 3732,
+									"top": 587,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -10525,7 +10627,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3689,
+									"left": 3692,
 									"top": 576,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -10543,7 +10645,7 @@
 								"$ref": "AAAAAAFnA76iK4EbJgM="
 							},
 							"lineStyle": 1,
-							"points": "3741:491;3693:607",
+							"points": "3728:536;3695:607",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnA84UyCjG4u8="
@@ -10829,8 +10931,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3846,
-									"top": 655,
+									"left": 3849,
+									"top": 676,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -10850,8 +10952,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 3860,
-									"top": 651,
+									"left": 3863,
+									"top": 672,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -10871,8 +10973,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3817,
-									"top": 662,
+									"left": 3820,
+									"top": 685,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -10892,8 +10994,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3805,
-									"top": 506,
+									"left": 3813,
+									"top": 550,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -10913,8 +11015,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3818,
-									"top": 504,
+									"left": 3826,
+									"top": 549,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -10934,8 +11036,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3777,
-									"top": 509,
+									"left": 3785,
+									"top": 554,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -10955,7 +11057,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3887,
+									"left": 3886,
 									"top": 803,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -10975,7 +11077,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3899,
+									"left": 3898,
 									"top": 798,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -10995,7 +11097,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3862,
+									"left": 3861,
 									"top": 815,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -11013,7 +11115,7 @@
 								"$ref": "AAAAAAFnA76iK4EbJgM="
 							},
 							"lineStyle": 1,
-							"points": "3784:491;3880:839",
+							"points": "3792:536;3879:839",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnA84rQixXyec="
@@ -11299,8 +11401,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4160,
-									"top": 556,
+									"left": 4158,
+									"top": 578,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -11320,8 +11422,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 4175,
-									"top": 558,
+									"left": 4173,
+									"top": 580,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -11341,8 +11443,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4131,
-									"top": 553,
+									"left": 4129,
+									"top": 575,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -11362,8 +11464,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4164,
-									"top": 528,
+									"left": 4159,
+									"top": 573,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -11383,8 +11485,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4176,
-									"top": 532,
+									"left": 4172,
+									"top": 577,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -11404,8 +11506,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4137,
-									"top": 521,
+									"left": 4132,
+									"top": 565,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -11425,8 +11527,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4157,
-									"top": 584,
+									"left": 4158,
+									"top": 585,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -11465,8 +11567,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4129,
-									"top": 586,
+									"left": 4130,
+									"top": 585,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -11483,7 +11585,7 @@
 								"$ref": "AAAAAAFnA8Oz7pjfNkM="
 							},
 							"lineStyle": 1,
-							"points": "4152:507;4140:615",
+							"points": "4148:552;4140:615",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnA847KjAkbzU="
@@ -14994,6 +15096,7 @@
 							},
 							"name": "utente",
 							"visibility": "private",
+							"type": "",
 							"value": "samuele"
 						}
 					]
@@ -15168,6 +15271,7 @@
 							},
 							"name": "utente",
 							"visibility": "private",
+							"type": "",
 							"value": "andrea"
 						}
 					]
@@ -15340,6 +15444,7 @@
 							},
 							"name": "utente",
 							"visibility": "private",
+							"type": "",
 							"value": "nicolò"
 						}
 					]
@@ -15733,6 +15838,7 @@
 							},
 							"name": "instance",
 							"visibility": "private",
+							"type": "",
 							"value": "gestoreApp"
 						}
 					]
@@ -15810,6 +15916,7 @@
 							},
 							"name": "instance",
 							"visibility": "private",
+							"type": "",
 							"value": "gestoreDB"
 						},
 						{
@@ -15819,7 +15926,8 @@
 								"$ref": "AAAAAAFnA7bOOwieh58="
 							},
 							"name": "tabellaTraffico = <datoGenerico1, datoGenerico2, datoGenerico3>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -15828,7 +15936,8 @@
 								"$ref": "AAAAAAFnA7bOOwieh58="
 							},
 							"name": "listaNotificheApplicazioni=<notifica1>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -15837,7 +15946,8 @@
 								"$ref": "AAAAAAFnA7bOOwieh58="
 							},
 							"name": "listaDatoTraffico = <datoTraffico1>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -15846,7 +15956,8 @@
 								"$ref": "AAAAAAFnA7bOOwieh58="
 							},
 							"name": "listaStatoVeicolo = <statoVeicolo1>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					]
 				},
@@ -16047,6 +16158,7 @@
 							},
 							"name": "instance",
 							"visibility": "private",
+							"type": "",
 							"value": "gestoreCent"
 						}
 					]
@@ -16135,6 +16247,7 @@
 							},
 							"name": "periodo",
 							"visibility": "private",
+							"type": "",
 							"value": "600"
 						},
 						{
@@ -16156,6 +16269,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "25"
 						},
 						{
@@ -16166,6 +16280,7 @@
 							},
 							"name": "statoVeicolo",
 							"visibility": "private",
+							"type": "",
 							"value": "statoVeicolo1"
 						},
 						{
@@ -16176,6 +16291,7 @@
 							},
 							"name": "idVeicolo",
 							"visibility": "private",
+							"type": "",
 							"value": "2001"
 						}
 					]
@@ -16259,6 +16375,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "50"
 						},
 						{
@@ -16269,6 +16386,7 @@
 							},
 							"name": "statoVeicolo",
 							"visibility": "private",
+							"type": "",
 							"value": "null"
 						},
 						{
@@ -16279,6 +16397,7 @@
 							},
 							"name": "idVeicolo",
 							"visibility": "private",
+							"type": "",
 							"value": "2002"
 						}
 					]
@@ -16389,6 +16508,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "5"
 						},
 						{
@@ -16399,6 +16519,7 @@
 							},
 							"name": "numeroveicoli",
 							"visibility": "private",
+							"type": "",
 							"value": "20"
 						},
 						{
@@ -16409,7 +16530,36 @@
 							},
 							"name": "datoTraffico",
 							"visibility": "private",
+							"type": "",
 							"value": "datoTraffico1"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInn6WDfTh5s=",
+							"_parent": {
+								"$ref": "AAAAAAFnA76iKoEZ+Xc="
+							},
+							"name": "rapporto=1.73",
+							"visibility": "private"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInrU9j4XkiU=",
+							"_parent": {
+								"$ref": "AAAAAAFnA76iKoEZ+Xc="
+							},
+							"name": "intervalloMinimo=30",
+							"visibility": "private"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInt2PkaVxqo=",
+							"_parent": {
+								"$ref": "AAAAAAFnA76iKoEZ+Xc="
+							},
+							"name": "tipoStrada",
+							"visibility": "private",
+							"value": "\"urbana\""
 						}
 					]
 				},
@@ -16492,6 +16642,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "50"
 						},
 						{
@@ -16502,6 +16653,7 @@
 							},
 							"name": "numeroveicoli",
 							"visibility": "private",
+							"type": "",
 							"value": "10"
 						},
 						{
@@ -16512,7 +16664,37 @@
 							},
 							"name": "datoTraffico",
 							"visibility": "private",
+							"type": "",
 							"value": "null"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInvWCUsQkIc=",
+							"_parent": {
+								"$ref": "AAAAAAFnA8Oz7ZjdDh8="
+							},
+							"name": "rapporto=0.67",
+							"visibility": "private"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInw42FFUibo=",
+							"_parent": {
+								"$ref": "AAAAAAFnA8Oz7ZjdDh8="
+							},
+							"name": "intervalloMinimo",
+							"visibility": "private",
+							"value": "30"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnInxkLVR56cc=",
+							"_parent": {
+								"$ref": "AAAAAAFnA8Oz7ZjdDh8="
+							},
+							"name": "tipoStrada",
+							"visibility": "private",
+							"value": "\"autostrada\""
 						}
 					]
 				},
@@ -16781,7 +16963,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8ka9lQRUFw="
 							},
-							"name": "data=9\\11\\2018",
+							"name": "data=\"9\\11\\2018\"",
 							"visibility": "private",
 							"type": ""
 						},
@@ -16791,7 +16973,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8ka9lQRUFw="
 							},
-							"name": "ora=16:00",
+							"name": "ora=\"16:00\"",
 							"visibility": "private",
 							"type": ""
 						}
@@ -16901,7 +17083,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8u8TvLsVfE="
 							},
-							"name": "data=11\\11\\2018",
+							"name": "data=\"11\\11\\2018\"",
 							"visibility": "private",
 							"type": ""
 						},
@@ -16911,7 +17093,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnA8u8TvLsVfE="
 							},
-							"name": "ora=15:07",
+							"name": "ora=\"15:07\"",
 							"visibility": "private",
 							"type": ""
 						}
@@ -17035,6 +17217,7 @@
 							},
 							"name": "instance",
 							"visibility": "private",
+							"type": "",
 							"value": "gestoreAmm"
 						}
 					]
@@ -17148,7 +17331,8 @@
 								"$ref": "AAAAAAFnIVRJ8IWbWSo="
 							},
 							"name": "posizione = posizione2",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -17158,6 +17342,7 @@
 							},
 							"name": "stato",
 							"visibility": "private",
+							"type": "",
 							"value": "true"
 						},
 						{
@@ -17168,6 +17353,7 @@
 							},
 							"name": "tipo",
 							"visibility": "private",
+							"type": "",
 							"value": "\"coda\""
 						}
 					]
@@ -17217,7 +17403,8 @@
 								"$ref": "AAAAAAFnIVXm4MD8aC4="
 							},
 							"name": "posizone = posizione6 ",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -17227,6 +17414,7 @@
 							},
 							"name": "stato",
 							"visibility": "private",
+							"type": "",
 							"value": "true"
 						},
 						{
@@ -17237,6 +17425,7 @@
 							},
 							"name": "tipo",
 							"visibility": "private",
+							"type": "",
 							"value": "\"velocità lenta\""
 						}
 					]
@@ -17286,7 +17475,8 @@
 								"$ref": "AAAAAAFnIVcprCdJ8Gs="
 							},
 							"name": "posizione = posizione4",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -17296,6 +17486,7 @@
 							},
 							"name": "stato",
 							"visibility": "private",
+							"type": "",
 							"value": "true"
 						},
 						{
@@ -17306,6 +17497,7 @@
 							},
 							"name": "tipo",
 							"visibility": "private",
+							"type": "",
 							"value": "\"velocità lenta\""
 						}
 					]
