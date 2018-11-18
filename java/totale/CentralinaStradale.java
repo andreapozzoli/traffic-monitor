@@ -6,13 +6,15 @@ public class CentralinaStradale extends Centralina {
 	private float rapporto;
 	private int intervalloMinimo;
 	private String tipoStrada;
-	public CentralinaStradale(int intervalloDiTempo, Posizione posizione, int intervalloMinimo) {
+	private int idCentralinaStradale;
+	public CentralinaStradale(int intervalloDiTempo, Posizione posizione, int intervalloMinimo, int id) {
 		this.intervalloDiTempo=intervalloDiTempo;
 		this.numeroVeicoli=new Conteggio();
 		this.posizione=posizione;
 		this.velocita=0;
 		this.stato="accesa";
 		this.intervalloMinimo=intervalloMinimo;
+		this.idCentralinaStradale=id;
 	}
 	public void calcolaIntervallo() {
 		float temp=this.numeroVeicoli.getNumeroVeicoli()/this.intervalloDiTempo;
@@ -80,12 +82,18 @@ public class CentralinaStradale extends Centralina {
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
 	public void inviaDatoTraffico() {
-		//GestoreCentraline.getInstance.seganalaDatabaseS(this.datoTraffico);
+		GestoreCentraline.getIstance().segnalaDatabaseS(this.datoTraffico);
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia(int velocita) {
 		int temp=this.numeroVeicoli.getNumeroVeicoli();
 		this.velocita=(this.velocita*(temp-1)+velocita)/temp;
+	}
+	public void setIdCentralinaStradale(int id) {
+		this.idCentralinaStradale=id;
+	}
+	public int getIdCentralinaStradale() {
+		return this.idCentralinaStradale;
 	}
 
 
