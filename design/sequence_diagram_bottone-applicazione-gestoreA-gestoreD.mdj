@@ -1151,9 +1151,9 @@
 												"$ref": "AAAAAAFm7wOsT/HGc6k="
 											},
 											"font": "Arial;13;0",
-											"left": 496,
+											"left": 495,
 											"top": 288,
-											"width": 314.91357421875,
+											"width": 317.07177734375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -1161,7 +1161,7 @@
 												"$ref": "AAAAAAFm7wOsT/HHGLs="
 											},
 											"edgePosition": 1,
-											"text": "6 : notificaApplicazione(data,ora,true,posizione,\"coda\")"
+											"text": "6 : NotificaApplicazione(data,ora,true,posizione,\"coda\")"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2004,7 +2004,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFm7vh4GfCSyfc="
 							},
-							"name": "notificaApplicazione",
+							"name": "NotificaApplicazione",
 							"source": {
 								"$ref": "AAAAAAFm7vtaUPDmKyI="
 							},

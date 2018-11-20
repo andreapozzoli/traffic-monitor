@@ -17886,13 +17886,30 @@
 											"height": 13,
 											"text": "-velocità = 5",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnMU714nW7+sM=",
+											"_parent": {
+												"$ref": "AAAAAAFnLP8B++hNa58="
+											},
+											"model": {
+												"$ref": "AAAAAAFnMU71snUryOs="
+											},
+											"font": "Arial;13;0",
+											"left": 3669,
+											"top": 821,
+											"width": 243.5087890625,
+											"height": 13,
+											"text": "-sommaVelocità = 100",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3664,
 									"top": 801,
 									"width": 253.5087890625,
-									"height": 23
+									"height": 38
 								}
 							],
 							"font": "Arial;13;0",
@@ -17900,7 +17917,7 @@
 							"left": 3664,
 							"top": 776,
 							"width": 253.5087890625,
-							"height": 48,
+							"height": 63,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLP8B++hIynE="
 							},
@@ -18630,13 +18647,30 @@
 											"height": 13,
 											"text": "-velocità = 50",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLSlotView",
+											"_id": "AAAAAAFnMU9Y4JTcDQg=",
+											"_parent": {
+												"$ref": "AAAAAAFnLQGsCJcSBjo="
+											},
+											"model": {
+												"$ref": "AAAAAAFnMU9YwJRGM88="
+											},
+											"font": "Arial;13;0",
+											"left": 4277,
+											"top": 669,
+											"width": 243.5087890625,
+											"height": 13,
+											"text": "+sommaVelocità = 500",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 4272,
 									"top": 649,
 									"width": 253.5087890625,
-									"height": 23
+									"height": 38
 								}
 							],
 							"font": "Arial;13;0",
@@ -18644,7 +18678,7 @@
 							"left": 4272,
 							"top": 624,
 							"width": 253.5087890625,
-							"height": 48,
+							"height": 63,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLQGsCJcNzBo="
 							},
@@ -19042,8 +19076,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4338,
-									"top": 574,
+									"left": 4334,
+									"top": 576,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -19063,8 +19097,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 4347,
-									"top": 562,
+									"left": 4344,
+									"top": 564,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -19084,8 +19118,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4319,
-									"top": 597,
+									"left": 4315,
+									"top": 599,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -19106,7 +19140,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 4319,
-									"top": 559,
+									"top": 564,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -19127,7 +19161,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 4329,
-									"top": 550,
+									"top": 555,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -19147,8 +19181,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4299,
-									"top": 578,
+									"left": 4298,
+									"top": 582,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -19168,8 +19202,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4356,
-									"top": 589,
+									"left": 4349,
+									"top": 588,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -19188,7 +19222,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4363,
+									"left": 4356,
 									"top": 577,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -19208,8 +19242,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 4343,
-									"top": 613,
+									"left": 4335,
+									"top": 612,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -19226,7 +19260,7 @@
 								"$ref": "AAAAAAFnA8Oz7pjfNkM="
 							},
 							"lineStyle": 1,
-							"points": "4290:561;4368:623",
+							"points": "4290:565;4360:623",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLQLX0rhPdY4="
@@ -19625,6 +19659,7 @@
 							},
 							"name": "sensore",
 							"visibility": "private",
+							"type": "",
 							"value": "sensore1"
 						}
 					]
@@ -20971,6 +21006,7 @@
 							},
 							"name": "rilevatoreVelocità",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatoreVelocità1"
 						},
 						{
@@ -20981,6 +21017,7 @@
 							},
 							"name": "sensoreGPS",
 							"visibility": "private",
+							"type": "",
 							"value": "sensore4"
 						}
 					]
@@ -21124,6 +21161,7 @@
 							},
 							"name": "rilevtoreVelocità",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatore2"
 						},
 						{
@@ -21134,6 +21172,7 @@
 							},
 							"name": "sensoreGPS",
 							"visibility": "private",
+							"type": "",
 							"value": "sensore5"
 						}
 					]
@@ -21255,6 +21294,7 @@
 							},
 							"name": "rilevatore",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatoreVeicoli1"
 						},
 						{
@@ -21307,6 +21347,7 @@
 							},
 							"name": "rilevatoreVelocità",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatoreVelocità3"
 						},
 						{
@@ -21317,6 +21358,7 @@
 							},
 							"name": "idCentralinaStradale",
 							"visibility": "private",
+							"type": "",
 							"value": "601"
 						}
 					]
@@ -21465,6 +21507,7 @@
 							},
 							"name": "rilevatore",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatoreVeicoli2"
 						},
 						{
@@ -21518,6 +21561,7 @@
 							},
 							"name": "rilevatoreVelocità",
 							"visibility": "private",
+							"type": "",
 							"value": "rilevatoreVelocità4"
 						},
 						{
@@ -21528,6 +21572,7 @@
 							},
 							"name": "idCentralinaStradale",
 							"visibility": "private",
+							"type": "",
 							"value": "602"
 						}
 					]
@@ -22424,6 +22469,7 @@
 							},
 							"name": "posizione",
 							"visibility": "private",
+							"type": "",
 							"value": "posizione3"
 						}
 					]
@@ -22444,7 +22490,8 @@
 								"$ref": "AAAAAAFnLPateFfbFBI="
 							},
 							"name": "listaUtenti=<samuele,andrea,nicolò>",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -22454,6 +22501,7 @@
 							},
 							"name": "instance",
 							"visibility": "private",
+							"type": "",
 							"value": "gestoreUtenti"
 						}
 					]
@@ -22531,6 +22579,7 @@
 							},
 							"name": "posizione",
 							"visibility": "private",
+							"type": "",
 							"value": "posizione4"
 						}
 					]
@@ -22552,6 +22601,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "25"
 						}
 					]
@@ -22629,6 +22679,7 @@
 							},
 							"name": "posizione",
 							"visibility": "private",
+							"type": "",
 							"value": "posizione5"
 						}
 					]
@@ -22650,6 +22701,7 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "50"
 						}
 					]
@@ -22700,7 +22752,18 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "5"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnMU71snUryOs=",
+							"_parent": {
+								"$ref": "AAAAAAFnLP8B+uhFdLE="
+							},
+							"name": "sommaVelocità",
+							"visibility": "private",
+							"value": "100"
 						}
 					]
 				},
@@ -22750,6 +22813,7 @@
 							},
 							"name": "numeroVeicoli",
 							"visibility": "private",
+							"type": "",
 							"value": "20"
 						}
 					]
@@ -22771,7 +22835,17 @@
 							},
 							"name": "velocità",
 							"visibility": "private",
+							"type": "",
 							"value": "50"
+						},
+						{
+							"_type": "UMLSlot",
+							"_id": "AAAAAAFnMU9YwJRGM88=",
+							"_parent": {
+								"$ref": "AAAAAAFnLQGsBpcKLIs="
+							},
+							"name": "sommaVelocità",
+							"value": "500"
 						}
 					]
 				},
@@ -22792,6 +22866,7 @@
 							},
 							"name": "numeroVeicoli",
 							"visibility": "private",
+							"type": "",
 							"value": "10"
 						}
 					]
