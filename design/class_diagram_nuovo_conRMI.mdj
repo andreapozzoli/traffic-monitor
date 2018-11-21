@@ -11061,7 +11061,7 @@
 											"top": 1068,
 											"width": 167.2734375,
 											"height": 13,
-											"text": "-Posizione()",
+											"text": "+SensoreGPS()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -12952,7 +12952,7 @@
 											"font": "Arial;13;1",
 											"left": 3077,
 											"top": 1615,
-											"width": 121.38623046875,
+											"width": 128.97802734375,
 											"height": 13,
 											"text": "RilevatoreVelocitàA"
 										},
@@ -12987,7 +12987,7 @@
 									"font": "Arial;13;0",
 									"left": 3072,
 									"top": 1608,
-									"width": 131.38623046875,
+									"width": 138.97802734375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFnLOA7X7XCEcc="
@@ -13014,7 +13014,7 @@
 									"font": "Arial;13;0",
 									"left": 3072,
 									"top": 1633,
-									"width": 131.38623046875,
+									"width": 138.97802734375,
 									"height": 10
 								},
 								{
@@ -13039,17 +13039,34 @@
 											"font": "Arial;13;0",
 											"left": 3077,
 											"top": 1648,
-											"width": 121.38623046875,
+											"width": 128.97802734375,
 											"height": 13,
 											"text": "+rilevaVelocità(): int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnNpllGRc66fU=",
+											"_parent": {
+												"$ref": "AAAAAAFnLOA7X7XHJVQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFnNplkrRcHZJE="
+											},
+											"font": "Arial;13;0",
+											"left": 3077,
+											"top": 1663,
+											"width": 128.97802734375,
+											"height": 13,
+											"text": "+RilevatoreVelocitàA()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3072,
 									"top": 1643,
-									"width": 131.38623046875,
-									"height": 23
+									"width": 138.97802734375,
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -13086,8 +13103,8 @@
 							"containerChangeable": true,
 							"left": 3072,
 							"top": 1608,
-							"width": 131.38623046875,
-							"height": 58,
+							"width": 138.97802734375,
+							"height": 73,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLOA7XrXBEnI="
 							},
@@ -13289,13 +13306,30 @@
 											"height": 13,
 											"text": "+getSommaVelocità(): int",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnNpmUSBo19TI=",
+											"_parent": {
+												"$ref": "AAAAAAFnLOC8XrsLOKY="
+											},
+											"model": {
+												"$ref": "AAAAAAFnNpmT8BoCHUA="
+											},
+											"font": "Arial;13;0",
+											"left": 3349,
+											"top": 1706,
+											"width": 166.54345703125,
+											"height": 13,
+											"text": "+RilevatoreVelocitàS()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3344,
 									"top": 1656,
 									"width": 176.54345703125,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -13333,7 +13367,7 @@
 							"left": 3344,
 							"top": 1608,
 							"width": 176.54345703125,
-							"height": 101,
+							"height": 116,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLOC8XbsFgwE="
 							},
@@ -13982,7 +14016,7 @@
 								"$ref": "AAAAAAFnLOA7XrXAMvk="
 							},
 							"lineStyle": 1,
-							"points": "3137:1607;3136:1576;3280:1576;3280:1508",
+							"points": "3138:1607;3136:1576;3280:1576;3280:1508",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLOZXZYFm0is="
@@ -24528,8 +24562,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnLGBbSFVcysM="
 							},
-							"name": "Posizione",
-							"visibility": "private"
+							"name": "SensoreGPS"
 						}
 					]
 				},
@@ -24703,6 +24736,14 @@
 									"direction": "return"
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnNplkrRcHZJE=",
+							"_parent": {
+								"$ref": "AAAAAAFnLOA7XLW+eC8="
+							},
+							"name": "RilevatoreVelocitàA"
 						}
 					]
 				},
@@ -24797,6 +24838,14 @@
 									"direction": "return"
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnNpmT8BoCHUA=",
+							"_parent": {
+								"$ref": "AAAAAAFnLOC8XbsCdvg="
+							},
+							"name": "RilevatoreVelocitàS"
 						}
 					]
 				},
