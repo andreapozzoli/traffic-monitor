@@ -2435,7 +2435,7 @@
 											"top": 1068,
 											"width": 180.59716796875,
 											"height": 13,
-											"text": "DataBase"
+											"text": "Database"
 										},
 										{
 											"_type": "LabelView",
@@ -4136,11 +4136,11 @@
 							},
 							"fillColor": "#ffff91",
 							"font": "Arial;13;0",
-							"left": 752,
-							"top": 224,
+							"left": 816,
+							"top": 200,
 							"width": 169,
 							"height": 90,
-							"text": "Il notificatore riceve posizione e velocità, ma le invia al GestoreCentraline soltanto a intervalli di tempo regolari."
+							"text": "Il notificatore riceve posizione e velocità, e le invia al GestoreCentraline  a intervalli di tempo regolari."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -4156,7 +4156,7 @@
 								"$ref": "AAAAAAFmxH9X2eyVYBE="
 							},
 							"lineStyle": 1,
-							"points": "680:298;751:284"
+							"points": "680:296;815:264"
 						},
 						{
 							"_type": "UMLPortView",
@@ -5053,7 +5053,7 @@
 											"top": 982,
 											"width": 126.42626953125,
 											"height": 13,
-											"text": "IDataBase"
+											"text": "IDatabase"
 										},
 										{
 											"_type": "LabelView",
@@ -9901,7 +9901,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmwIbnvMCszLY="
 					},
-					"name": "DataBase",
+					"name": "Database",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
@@ -11199,7 +11199,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmwIbnvMCszLY="
 					},
-					"name": "IDataBase"
+					"name": "IDatabase"
 				},
 				{
 					"_type": "UMLInterface",

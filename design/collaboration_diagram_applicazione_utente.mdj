@@ -64,7 +64,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 70.97900390625,
-											"top": 5,
+											"top": 109,
 											"width": 147.6689453125,
 											"height": 13,
 											"text": "CommunicationDiagram1"
@@ -77,14 +77,15 @@
 											},
 											"font": "Arial;13;1",
 											"left": 5,
-											"top": 5,
+											"top": 109,
 											"width": 60.97900390625,
 											"height": 13,
 											"text": "interaction"
 										}
 									],
 									"font": "Arial;13;0",
-									"width": 1321,
+									"top": 104,
+									"width": 1385,
 									"height": 905,
 									"nameLabel": {
 										"$ref": "AAAAAAFnCFWB+MBJpc0="
@@ -651,13 +652,13 @@
 												"$ref": "AAAAAAFnCGswr826La4="
 											},
 											"font": "Arial;13;0",
-											"left": 743.806884765625,
+											"left": 740.918701171875,
 											"top": 444,
-											"width": 95.38623046875,
+											"width": 101.16259765625,
 											"height": 13,
 											"alpha": 0.03388532416523766,
 											"distance": 59.033888572581766,
-											"text": "3 : getPosizione"
+											"text": "3 : getPosizione()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -1528,7 +1529,7 @@
 											"height": 13,
 											"alpha": -3.0883097949391587,
 											"distance": 75.1065909225016,
-											"text": "10 : notificaUtente"
+											"text": "10 : notificaUtente()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -2175,13 +2176,13 @@
 												"$ref": "AAAAAAFnIWdCG0HSQ4U="
 											},
 											"font": "Arial;13;0",
-											"left": 176.25830078125,
+											"left": 132.90380859375,
 											"top": 454,
-											"width": 152.4833984375,
+											"width": 239.1923828125,
 											"height": 13,
 											"alpha": -0.4170491951093046,
 											"distance": 86.4060183089118,
-											"text": "1 : aggiornaTabellaTraffico"
+											"text": "1 : aggiornaTabellaTraffico()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -2493,13 +2494,13 @@
 												"$ref": "AAAAAAFnIWhyP1p/cRo="
 											},
 											"font": "Arial;13;0",
-											"left": 345.78466796875,
+											"left": 313.992431640625,
 											"top": 347,
-											"width": 199.4306640625,
+											"width": 263.01513671875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
-											"text": "2 : calcolaApplicazioniDaNotificare"
+											"text": "2 : calcolaApplicazioniDaNotificare(posizione)"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -2912,13 +2913,13 @@
 												"$ref": "AAAAAAFnIW1qtHdk4po="
 											},
 											"font": "Arial;13;0",
-											"left": 743.291015625,
+											"left": 743.406982421875,
 											"top": 463,
-											"width": 160.41796875,
+											"width": 252.18603515625,
 											"height": 13,
-											"alpha": -0.19528137717683056,
-											"distance": 92.76313923105448,
-											"text": "7 : creaNotificaApplicazione"
+											"alpha": -0.13063856489649694,
+											"distance": 138.1774221788784,
+											"text": "7 : creaNotificaApplicazione(posizione, tipo)"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3230,13 +3231,13 @@
 												"$ref": "AAAAAAFnIaPZ9bIBCR8="
 											},
 											"font": "Arial;13;0",
-											"left": 550.64013671875,
+											"left": 439.473388671875,
 											"top": 439,
-											"width": 159.7197265625,
+											"width": 276.05322265625,
 											"height": 13,
-											"alpha": -3.2003484820526427,
-											"distance": 102.17631819555841,
-											"text": "9 : aggiungiNotificaInCoda"
+											"alpha": -3.1802830161689486,
+											"distance": 155.11608556174951,
+											"text": "9 : aggiungiNotificaInCoda(notificaApplicazione)"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3548,13 +3549,13 @@
 												"$ref": "AAAAAAFnIa92QHCIgKY="
 											},
 											"font": "Arial;13;0",
-											"left": 1119.320556640625,
+											"left": 1119.051513671875,
 											"top": 374.5,
-											"width": 142.35888671875,
+											"width": 226.89697265625,
 											"height": 13,
-											"alpha": -0.024994790495872454,
-											"distance": 80.02499609497022,
-											"text": "8 : NotificaApplicazione"
+											"alpha": -0.016391972964641593,
+											"distance": 122.01639234135715,
+											"text": "8 : NotificaApplicazione(posizione, tipo)"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3865,13 +3866,13 @@
 												"$ref": "AAAAAAFnIkI4e2pBkWw="
 											},
 											"font": "Arial;13;0",
-											"left": 343.8525390625,
+											"left": 342.656005859375,
 											"top": 528,
-											"width": 131.294921875,
+											"width": 133.68798828125,
 											"height": 13,
 											"alpha": -2.8874678724335863,
 											"distance": 79.55501241279521,
-											"text": "4 : aggiornaPosizione"
+											"text": "4 : aggiornaPosizione()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3934,6 +3935,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFnCFWB+MBH264="
 									},
+									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 80,
 									"top": 160,
@@ -4382,6 +4384,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFnCFWB+MBH264="
 									},
+									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 976,
 									"top": 552,
@@ -4415,7 +4418,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "aggiornaTabellaTraffico",
+							"name": "aggiornaTabellaTraffico()",
 							"source": {
 								"$ref": "AAAAAAFnIWVfbTsfKzA="
 							},
@@ -4441,7 +4444,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAFnIWhyNFpxfZ8="
-							}
+							},
+							"arguments": "posizione"
 						},
 						{
 							"_type": "UMLMessage",
@@ -4449,7 +4453,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "getPosizione",
+							"name": "getPosizione()",
 							"source": {
 								"$ref": "AAAAAAFnCFjJL8DHPx0="
 							},
@@ -4466,7 +4470,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "aggiornaPosizione",
+							"name": "aggiornaPosizione()",
 							"source": {
 								"$ref": "AAAAAAFnCFfEccBz+vc="
 							},
@@ -4526,7 +4530,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAFnIW1qqHdWbbc="
-							}
+							},
+							"arguments": "posizione, tipo"
 						},
 						{
 							"_type": "UMLMessage",
@@ -4543,7 +4548,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAFnIa92PnB6/IQ="
-							}
+							},
+							"arguments": "posizione, tipo"
 						},
 						{
 							"_type": "UMLMessage",
@@ -4560,7 +4566,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAFnIaPZ9LHzyW0="
-							}
+							},
+							"arguments": "notificaApplicazione"
 						},
 						{
 							"_type": "UMLMessage",
@@ -4568,7 +4575,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnCFWB+MBGiHY="
 							},
-							"name": "notificaUtente",
+							"name": "notificaUtente()",
 							"source": {
 								"$ref": "AAAAAAFnCFfEccBz+vc="
 							},

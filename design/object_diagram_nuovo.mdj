@@ -1961,23 +1961,6 @@
 										},
 										{
 											"_type": "UMLSlotView",
-											"_id": "AAAAAAFnA7PrEbVH5Eo=",
-											"_parent": {
-												"$ref": "AAAAAAFnA7HEl7UeEbQ="
-											},
-											"model": {
-												"$ref": "AAAAAAFnA7PqwbVExoQ="
-											},
-											"font": "Arial;13;0",
-											"left": 1437,
-											"top": 404,
-											"width": 216.09326171875,
-											"height": 13,
-											"text": "-listaUtenti=<samuele,andrea,nicolò>",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLSlotView",
 											"_id": "AAAAAAFnIUrxUc7HHRE=",
 											"_parent": {
 												"$ref": "AAAAAAFnA7HEl7UeEbQ="
@@ -1987,7 +1970,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1437,
-											"top": 419,
+											"top": 404,
 											"width": 216.09326171875,
 											"height": 13,
 											"text": "-instance = gestoreApp",
@@ -1998,7 +1981,7 @@
 									"left": 1432,
 									"top": 369,
 									"width": 226.09326171875,
-									"height": 68
+									"height": 53
 								}
 							],
 							"font": "Arial;13;0",
@@ -13933,7 +13916,7 @@
 											"top": 598,
 											"width": 143.787109375,
 											"height": 13,
-											"text": "-posizione: posizione1",
+											"text": "-posizione = posizione1",
 											"horizontalAlignment": 0
 										}
 									],
@@ -14543,7 +14526,7 @@
 											"top": 630,
 											"width": 143.787109375,
 											"height": 13,
-											"text": "-posizione: posizione2",
+											"text": "-posizione = posizione2",
 											"horizontalAlignment": 0
 										}
 									],
@@ -18662,7 +18645,7 @@
 											"top": 669,
 											"width": 243.5087890625,
 											"height": 13,
-											"text": "+sommaVelocità = 500",
+											"text": "-sommaVelocità = 500",
 											"horizontalAlignment": 0
 										}
 									],
@@ -20496,16 +20479,6 @@
 							"visibility": "private",
 							"type": "",
 							"value": "1000"
-						},
-						{
-							"_type": "UMLSlot",
-							"_id": "AAAAAAFnA7PqwbVExoQ=",
-							"_parent": {
-								"$ref": "AAAAAAFnA7HEl7UWrUo="
-							},
-							"name": "listaUtenti=<samuele,andrea,nicolò>",
-							"visibility": "private",
-							"type": ""
 						},
 						{
 							"_type": "UMLSlot",
@@ -22398,7 +22371,7 @@
 							},
 							"name": "posizione",
 							"visibility": "private",
-							"type": "posizione1"
+							"value": "posizione1"
 						}
 					]
 				},
@@ -22419,7 +22392,7 @@
 							},
 							"name": "posizione",
 							"visibility": "private",
-							"type": "posizione2"
+							"value": "posizione2"
 						}
 					]
 				},
@@ -22763,6 +22736,7 @@
 							},
 							"name": "sommaVelocità",
 							"visibility": "private",
+							"type": "",
 							"value": "100"
 						}
 					]
@@ -22845,6 +22819,7 @@
 								"$ref": "AAAAAAFnLQGsBpcKLIs="
 							},
 							"name": "sommaVelocità",
+							"visibility": "private",
 							"value": "500"
 						}
 					]

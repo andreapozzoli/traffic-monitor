@@ -2732,17 +2732,18 @@
 									"model": {
 										"$ref": "AAAAAAFnMVPm1zmZpA8="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 544,
-									"top": 756,
+									"left": 516,
+									"top": 752,
+									"width": 52.01904296875,
 									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
+									"alpha": 1.3339485260901667,
+									"distance": 10.198039027185569,
 									"hostEdge": {
 										"$ref": "AAAAAAFnMVPm1zma8SI="
 									},
-									"edgePosition": 1
+									"edgePosition": 1,
+									"text": "resetDati"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -3471,7 +3472,17 @@
 							},
 							"target": {
 								"$ref": "AAAAAAFm/lrDwtVoctE="
-							}
+							},
+							"triggers": [
+								{
+									"_type": "UMLEvent",
+									"_id": "AAAAAAFnNmP6QyQZ2ac=",
+									"_parent": {
+										"$ref": "AAAAAAFnMVPm1zmZpA8="
+									},
+									"name": "resetDati"
+								}
+							]
 						},
 						{
 							"_type": "UMLTransition",

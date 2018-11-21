@@ -3957,7 +3957,7 @@
 										"$ref": "AAAAAAFnErJYtkoHTOc="
 									},
 									"edgePosition": 1,
-									"text": "ultriori ricezioni"
+									"text": "ulteriori ricezioni"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -6697,7 +6697,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFm/lSJcBNTMwE="
 					},
-					"name": "ultriori ricezioni",
+					"name": "ulteriori ricezioni",
 					"source": {
 						"$ref": "AAAAAAFnErBqrkoBWsQ="
 					},

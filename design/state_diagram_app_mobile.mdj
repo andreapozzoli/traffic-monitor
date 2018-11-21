@@ -3480,7 +3480,7 @@
 									"font": "Arial;13;0",
 									"left": 637,
 									"top": 307,
-									"width": 14.21875,
+									"width": 14.76513671875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -3751,7 +3751,7 @@
 									"font": "Arial;13;0",
 									"left": 1106,
 									"top": 472,
-									"width": 14.21875,
+									"width": 14.76513671875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4422,7 +4422,7 @@
 									"font": "Arial;13;0",
 									"left": 474,
 									"top": 233,
-									"width": 14.21875,
+									"width": 14.76513671875,
 									"height": 13,
 									"alpha": 1.3157476999836302,
 									"distance": 10.295630140987,
@@ -4517,7 +4517,7 @@
 									"font": "Arial;13;0",
 									"left": 326,
 									"top": 303,
-									"width": 14.21875,
+									"width": 14.76513671875,
 									"height": 13,
 									"alpha": -0.058640702611681084,
 									"distance": 133.13526955694348,
@@ -4612,7 +4612,7 @@
 									"font": "Arial;13;0",
 									"left": 543,
 									"top": 512,
-									"width": 14.21875,
+									"width": 14.76513671875,
 									"height": 13,
 									"alpha": 0.03307320926675112,
 									"distance": 350.14282800023193,
@@ -4684,6 +4684,36 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAFnIV7XNBk4Ofo="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnNmBS7C3ODko=",
+							"_parent": {
+								"$ref": "AAAAAAFm/atDOznVugc="
+							},
+							"fillColor": "#ffff91",
+							"font": "Arial;13;0",
+							"left": 248,
+							"top": 744,
+							"width": 241,
+							"height": 64,
+							"text": "Ogni volta che viene chiesto all'applicazione il suo stato (accesa o spenta), l'applicazione invia il suo stato"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnNmFoxC3Yt9s=",
+							"_parent": {
+								"$ref": "AAAAAAFm/atDOznVugc="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnNmBS7C3ODko="
+							},
+							"tail": {
+								"$ref": "AAAAAAFm/bAHpzp3dR4="
+							},
+							"lineStyle": 1,
+							"points": "173:673;307:743"
 						}
 					]
 				}
