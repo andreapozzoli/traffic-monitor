@@ -1161,7 +1161,7 @@
 												"$ref": "AAAAAAFm7wOsT/HHGLs="
 											},
 											"edgePosition": 1,
-											"text": "6 : NotificaApplicazione(data,ora,true,posizione,\"coda\")"
+											"text": "6 : NotificaApplicazione(posizione,\"coda\")"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2012,7 +2012,7 @@
 								"$ref": "AAAAAAFm7wM4H/GnVIc="
 							},
 							"messageSort": "createMessage",
-							"arguments": "data,ora,true,posizione,\"coda\""
+							"arguments": "posizione,\"coda\""
 						},
 						{
 							"_type": "UMLMessage",
