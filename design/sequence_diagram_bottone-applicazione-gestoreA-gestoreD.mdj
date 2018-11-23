@@ -1050,7 +1050,7 @@
 												"$ref": "AAAAAAFm+QPyIztkP1M="
 											},
 											"edgePosition": 1,
-											"text": "5 : creaNotificaApplicazione(true,posizione,\"coda\")"
+											"text": "5 : creaNotificaApplicazione(posizione,\"coda\")"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1996,7 +1996,7 @@
 							"target": {
 								"$ref": "AAAAAAFm7vtaUPDmKyI="
 							},
-							"arguments": "true,posizione,\"coda\""
+							"arguments": "posizione,\"coda\""
 						},
 						{
 							"_type": "UMLMessage",
