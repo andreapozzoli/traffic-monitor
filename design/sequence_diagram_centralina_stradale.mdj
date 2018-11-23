@@ -714,7 +714,7 @@
 													},
 													"font": "Arial;13;1",
 													"left": 1045,
-													"top": 595,
+													"top": 587,
 													"width": 199.95361328125,
 													"height": 13,
 													"text": "datoTraffico: DatoTraffico"
@@ -747,7 +747,7 @@
 											],
 											"font": "Arial;13;0",
 											"left": 1040,
-											"top": 588,
+											"top": 580,
 											"width": 209.95361328125,
 											"height": 40,
 											"stereotypeLabel": {
@@ -774,14 +774,14 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1145,
-											"top": 628,
+											"top": 620,
 											"width": 1,
 											"height": 423
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1040,
-									"top": 588,
+									"top": 580,
 									"width": 209.95361328125,
 									"height": 463,
 									"nameCompartment": {
@@ -1822,7 +1822,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 490,
-											"top": 592,
+											"top": 584,
 											"width": 299.65380859375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -1831,7 +1831,7 @@
 												"$ref": "AAAAAAFnA/KwJwFov+Y="
 											},
 											"edgePosition": 1,
-											"text": "11 : DatoTraffico(data,ora,posizione,tipo,velocità)"
+											"text": "11 : DatoTraffico(posizione,tipo,velocità)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1844,7 +1844,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 614,
-											"top": 577,
+											"top": 569,
 											"width": 50.5908203125,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -1867,7 +1867,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 639,
-											"top": 612,
+											"top": 604,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 10,
@@ -1888,7 +1888,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1145,
-											"top": 608,
+											"top": 600,
 											"width": 14,
 											"height": 25
 										}
@@ -1900,7 +1900,7 @@
 									"tail": {
 										"$ref": "AAAAAAFnA+TAuf/0l7g="
 									},
-									"points": "239:608;1040:608",
+									"points": "239:600;1040:600",
 									"nameLabel": {
 										"$ref": "AAAAAAFnA/KwJwFpn6w="
 									},
@@ -2631,7 +2631,7 @@
 								"$ref": "AAAAAAFnA/JtdAFG6y4="
 							},
 							"messageSort": "createMessage",
-							"arguments": "data,ora,posizione,tipo,velocità"
+							"arguments": "posizione,tipo,velocità"
 						},
 						{
 							"_type": "UMLMessage",
