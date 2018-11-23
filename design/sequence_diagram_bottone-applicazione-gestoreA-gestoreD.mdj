@@ -704,7 +704,7 @@
 												"$ref": "AAAAAAFnLGFBh3Umais="
 											},
 											"font": "Arial;13;0",
-											"left": 364,
+											"left": 378,
 											"top": 112,
 											"width": 114.15625,
 											"height": 13,
@@ -727,7 +727,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 421,
+											"left": 435,
 											"top": 97,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -748,7 +748,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 421,
+											"left": 435,
 											"top": 132,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -768,7 +768,7 @@
 												"$ref": "AAAAAAFnLGFBh3Umais="
 											},
 											"font": "Arial;13;0",
-											"left": 567,
+											"left": 594,
 											"top": 128,
 											"width": 14,
 											"height": 49
@@ -781,7 +781,7 @@
 									"tail": {
 										"$ref": "AAAAAAFm7vtaUPDtE/0="
 									},
-									"points": "276:128;567:128",
+									"points": "276:128;594:128",
 									"nameLabel": {
 										"$ref": "AAAAAAFnLGFBiHUoL3g="
 									},
@@ -815,7 +815,7 @@
 												"$ref": "AAAAAAFnIa5jzrLCWLQ="
 											},
 											"font": "Arial;13;0",
-											"left": 637,
+											"left": 650,
 											"top": 128,
 											"width": 83.0908203125,
 											"height": 13,
@@ -837,7 +837,7 @@
 												"$ref": "AAAAAAFnIa5jzrLCWLQ="
 											},
 											"font": "Arial;13;0",
-											"left": 653,
+											"left": 666,
 											"top": 113,
 											"width": 50.5908203125,
 											"height": 13,
@@ -860,7 +860,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 678,
+											"left": 691,
 											"top": 148,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -894,7 +894,7 @@
 									"tail": {
 										"$ref": "AAAAAAFnLFTwnXNsMrw="
 									},
-									"points": "580:144;776:144",
+									"points": "607:144;776:144",
 									"nameLabel": {
 										"$ref": "AAAAAAFnIa5jz7LEPs0="
 									},
@@ -928,7 +928,7 @@
 												"$ref": "AAAAAAFm7wGDNPGNjUs="
 											},
 											"font": "Arial;13;0",
-											"left": 382,
+											"left": 396,
 											"top": 151,
 											"width": 74.4326171875,
 											"height": 13,
@@ -951,7 +951,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 420,
+											"left": 434,
 											"top": 187,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -972,7 +972,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 421,
+											"left": 435,
 											"top": 152,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -1006,7 +1006,7 @@
 									"tail": {
 										"$ref": "AAAAAAFnLFTwnXNsMrw="
 									},
-									"points": "567:168;276:168",
+									"points": "594:168;276:168",
 									"nameLabel": {
 										"$ref": "AAAAAAFm7wGDNPGPKNM="
 									},
@@ -1623,9 +1623,9 @@
 													"font": "Arial;13;1",
 													"left": 501,
 													"top": 47,
-													"width": 146.55712890625,
+													"width": 199.7568359375,
 													"height": 13,
-													"text": "sensore: SensoreGPS"
+													"text": "sensore: SensoreGPSTelefono"
 												},
 												{
 													"_type": "LabelView",
@@ -1656,7 +1656,7 @@
 											"font": "Arial;13;0",
 											"left": 496,
 											"top": 40,
-											"width": 156.55712890625,
+											"width": 209.7568359375,
 											"height": 40,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFnLFTwnXNoE74="
@@ -1681,7 +1681,7 @@
 												"$ref": "AAAAAAFnLFTwnHNl+9M="
 											},
 											"font": "Arial;13;0",
-											"left": 574,
+											"left": 601,
 											"top": 80,
 											"width": 1,
 											"height": 665
@@ -1690,7 +1690,7 @@
 									"font": "Arial;13;0",
 									"left": 496,
 									"top": 40,
-									"width": 156.55712890625,
+									"width": 209.7568359375,
 									"height": 705,
 									"nameCompartment": {
 										"$ref": "AAAAAAFnLFTwnXNnruw="
@@ -2229,7 +2229,7 @@
 						"$ref": "AAAAAAFm7vh4GfCRre8="
 					},
 					"name": "Role8",
-					"type": "SensoreGPS"
+					"type": "SensoreGPSTelefono"
 				}
 			]
 		}
