@@ -324,7 +324,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 1008,
+													"left": 944,
 													"top": 304,
 													"height": 13
 												},
@@ -335,11 +335,11 @@
 														"$ref": "AAAAAAFnCFlk/sDmNm8="
 													},
 													"font": "Arial;13;1",
-													"left": 661,
+													"left": 629,
 													"top": 631,
-													"width": 136.55712890625,
+													"width": 199,
 													"height": 13,
-													"text": "sensore: SensoreGPS"
+													"text": "sensore: SensoreGPSTelefono"
 												},
 												{
 													"_type": "LabelView",
@@ -349,7 +349,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 1008,
+													"left": 944,
 													"top": 304,
 													"width": 106.20263671875,
 													"height": 13,
@@ -363,16 +363,16 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 1008,
+													"left": 944,
 													"top": 304,
 													"height": 13,
 													"horizontalAlignment": 1
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 656,
+											"left": 624,
 											"top": 624,
-											"width": 146.55712890625,
+											"width": 209,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFnCFlk/sDnhlk="
@@ -389,9 +389,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 656,
+									"left": 624,
 									"top": 624,
-									"width": 146.55712890625,
+									"width": 209,
 									"height": 30,
 									"nameCompartment": {
 										"$ref": "AAAAAAFnCFlk/sDmNm8="
@@ -5346,7 +5346,7 @@
 							}
 						}
 					],
-					"type": "SensoreGPS"
+					"type": "SensoreGPSTelefono"
 				},
 				{
 					"_type": "UMLAttribute",

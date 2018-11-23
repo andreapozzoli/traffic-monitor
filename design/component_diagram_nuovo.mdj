@@ -7276,9 +7276,9 @@
 											"font": "Arial;13;1",
 											"left": 1169,
 											"top": 695,
-											"width": 79.44091796875,
+											"width": 131.955078125,
 											"height": 13,
-											"text": "SensoreGPS"
+											"text": "SensoreGPSTelefono"
 										},
 										{
 											"_type": "LabelView",
@@ -7311,7 +7311,7 @@
 									"font": "Arial;13;0",
 									"left": 1164,
 									"top": 688,
-									"width": 89.44091796875,
+									"width": 141.955078125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFnLINAJsvsZ0I="
@@ -7395,7 +7395,7 @@
 							"containerChangeable": true,
 							"left": 1144,
 							"top": 688,
-							"width": 109.44091796875,
+							"width": 161.955078125,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLINAJsvrjAI="
@@ -7537,9 +7537,9 @@
 											"font": "Arial;13;1",
 											"left": 473,
 											"top": 143,
-											"width": 79.44091796875,
+											"width": 108.3544921875,
 											"height": 13,
-											"text": "SensoreGPS"
+											"text": "SensoreGPSAuto"
 										},
 										{
 											"_type": "LabelView",
@@ -7572,7 +7572,7 @@
 									"font": "Arial;13;0",
 									"left": 468,
 									"top": 136,
-									"width": 89.44091796875,
+									"width": 118.3544921875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFnLIncuetsNXU="
@@ -7656,7 +7656,7 @@
 							"containerChangeable": true,
 							"left": 448,
 							"top": 136,
-							"width": 109.44091796875,
+							"width": 138.3544921875,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLIncuetrFT0="
@@ -7877,8 +7877,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 511,
-									"top": 196,
+									"left": 518,
+									"top": 199,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -7898,8 +7898,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 526,
-									"top": 197,
+									"left": 533,
+									"top": 203,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -7919,8 +7919,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 482,
-									"top": 195,
+									"left": 489,
+									"top": 192,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -7938,7 +7938,7 @@
 								"$ref": "AAAAAAFnLIncuetqxh0="
 							},
 							"lineStyle": 1,
-							"points": "500:181;495.75:224",
+							"points": "510:181;498.5:224",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLIpr5uzhDT4="
@@ -8860,7 +8860,7 @@
 								"$ref": "AAAAAAFnLINAJcvqJhY="
 							},
 							"lineStyle": 1,
-							"points": "1198:733;1197:784",
+							"points": "1218:733;1203.4166666666667:784",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLJQouyJH90M="
@@ -11466,7 +11466,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmwIbnvMCszLY="
 					},
-					"name": "SensoreGPS",
+					"name": "SensoreGPSTelefono",
 					"ownedElements": [
 						{
 							"_type": "UMLInterfaceRealization",
@@ -11489,7 +11489,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmwIbnvMCszLY="
 					},
-					"name": "SensoreGPS",
+					"name": "SensoreGPSAuto",
 					"ownedElements": [
 						{
 							"_type": "UMLInterfaceRealization",
