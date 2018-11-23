@@ -18467,7 +18467,7 @@
 											"top": 1263,
 											"width": 167.2734375,
 											"height": 13,
-											"text": "SensoreGPSCentralina"
+											"text": "SensoreGPSAuto"
 										},
 										{
 											"_type": "LabelView",
@@ -18571,7 +18571,7 @@
 											"top": 1311,
 											"width": 167.2734375,
 											"height": 13,
-											"text": "+SensoreGPSCentralina()",
+											"text": "+SensoreGPSAuto()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -26444,7 +26444,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmv0iFHPihmV8="
 					},
-					"name": "SensoreGPSCentralina",
+					"name": "SensoreGPSAuto",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -26488,7 +26488,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnQRJ0ykLm0Ys="
 							},
-							"name": "SensoreGPSCentralina"
+							"name": "SensoreGPSAuto"
 						}
 					]
 				},
