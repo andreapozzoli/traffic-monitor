@@ -1828,7 +1828,7 @@
 											"top": 2107,
 											"width": 313.94873046875,
 											"height": 13,
-											"text": "+rilevaValocità(): int",
+											"text": "+rilevaVelocità(): int",
 											"horizontalAlignment": 0
 										}
 									],
@@ -7081,20 +7081,6 @@
 						},
 						{
 							"_type": "UMLNoteView",
-							"_id": "AAAAAAFm+PW7aCqAjQo=",
-							"_parent": {
-								"$ref": "AAAAAAFmv0iFLPii4XY="
-							},
-							"fillColor": "#ffff91",
-							"font": "Arial;13;0",
-							"left": 1712,
-							"top": 312,
-							"width": 140.6943359375,
-							"height": 81,
-							"text": "Design pattern Factory Method usato per NotificaApplicazione"
-						},
-						{
-							"_type": "UMLNoteView",
 							"_id": "AAAAAAFm+PaLPzOI42k=",
 							"_parent": {
 								"$ref": "AAAAAAFmv0iFLPii4XY="
@@ -7935,22 +7921,6 @@
 							}
 						},
 						{
-							"_type": "UMLNoteLinkView",
-							"_id": "AAAAAAFm/U4kC+Jdjgk=",
-							"_parent": {
-								"$ref": "AAAAAAFmv0iFLPii4XY="
-							},
-							"font": "Arial;13;0",
-							"head": {
-								"$ref": "AAAAAAFm+PW7aCqAjQo="
-							},
-							"tail": {
-								"$ref": "AAAAAAFm/Ty3VdkTo78="
-							},
-							"lineStyle": 1,
-							"points": "1678:511;1755:393"
-						},
-						{
 							"_type": "UMLClassView",
 							"_id": "AAAAAAFm/VIKT+FFV3A=",
 							"_parent": {
@@ -8326,7 +8296,7 @@
 							"fillColor": "#ffff91",
 							"font": "Arial;13;0",
 							"left": 2248,
-							"top": 1960,
+							"top": 1856,
 							"width": 169.58251953125,
 							"height": 121,
 							"text": "La periodicità in CentralinaAutomobilistica è un valore che non varia, tuttavia può essere cambiato dal sistema centrale a seconda della configurazione che vuole applicare."
@@ -8345,7 +8315,7 @@
 								"$ref": "AAAAAAFmv2YYd/mKj6g="
 							},
 							"lineStyle": 1,
-							"points": "2471:2017;2418:2018"
+							"points": "2471:1961;2418:1944"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -20717,7 +20687,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmv2YYd/mIQBg="
 							},
-							"name": "rilevaValocità",
+							"name": "rilevaVelocità",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
