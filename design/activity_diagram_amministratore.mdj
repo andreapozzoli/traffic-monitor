@@ -4834,10 +4834,10 @@
 							"fillColor": "#ffff91",
 							"font": "Arial;13;0",
 							"left": 808,
-							"top": 80,
+							"top": 72,
 							"width": 241,
 							"height": 105,
-							"text": "Questo activity diagram speiga come avviene la creazione o l'aggiornamento della mappa e del diagramma, che sono sviluppari come elemeti grafici e quindi non spiegati nel class diagram"
+							"text": "Questo activity diagram speiga come avviene la creazione o l'aggiornamento della mappa e del diagramma, che sono sviluppati come elemeti grafici e quindi non spiegati nel class diagram"
 						},
 						{
 							"_type": "UMLControlFlowView",
