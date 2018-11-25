@@ -36,7 +36,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFmv0iFHPihmV8="
 					},
-					"name": "ClassDiagram1",
+					"name": "ClassDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLClassView",
@@ -27510,7 +27510,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsaeq2nsk5E="
 					},
-					"name": "ActivityDiagram1",
+					"name": "ActivityDiagram_CentralinaS_Applicazione",
 					"ownedViews": [
 						{
 							"_type": "UMLSwimlaneView",
@@ -35508,7 +35508,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsc/725dUMw="
 					},
-					"name": "ActivityDiagram1",
+					"name": "ActivityDiagram_GestoreDb_GestoreAmministratori",
 					"ownedViews": [
 						{
 							"_type": "UMLSwimlaneView",
@@ -42728,7 +42728,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRsfmI3IeWp8="
 							},
-							"name": "CommunicationDiagram1",
+							"name": "CommunicationDiagram_GestoreApp",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -42749,9 +42749,9 @@
 											"font": "Arial;13;0",
 											"left": 70.97900390625,
 											"top": 109,
-											"width": 147.6689453125,
+											"width": 217.04248046875,
 											"height": 13,
-											"text": "CommunicationDiagram1"
+											"text": "CommunicationDiagram_GestoreApp"
 										},
 										{
 											"_type": "LabelView",
@@ -49016,7 +49016,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsiLXIEFyIU="
 					},
-					"name": "ComponentDiagram1",
+					"name": "ComponentDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLComponentView",
@@ -60583,7 +60583,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRskVk4c2R98="
 					},
-					"name": "DeploymentDiagram1",
+					"name": "DeploymentDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLNodeView",
@@ -67684,7 +67684,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsnmFJZaUD0="
 					},
-					"name": "ObjectDiagram1",
+					"name": "ObjectDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLObjectView",
@@ -91574,7 +91574,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRsq1pZxav1c="
 							},
-							"name": "SequenceDiagram1",
+							"name": "SequenceDiagram_Applicazione",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -91595,9 +91595,9 @@
 											"font": "Arial;13;0",
 											"left": 70.97900390625,
 											"top": 5,
-											"width": 115.9052734375,
+											"width": 189.62060546875,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "SequenceDiagram_Applicazione"
 										},
 										{
 											"_type": "LabelView",
@@ -94303,7 +94303,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRss7kJ9kyyk="
 							},
-							"name": "SequenceDiagram1",
+							"name": "SequenceDiagram_CentralinaA",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -94324,9 +94324,9 @@
 											"font": "Arial;13;0",
 											"left": 75.97900390625,
 											"top": 10,
-											"width": 115.9052734375,
+											"width": 183.83154296875,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "SequenceDiagram_CentralinaA"
 										},
 										{
 											"_type": "LabelView",
@@ -97391,7 +97391,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnRsvlWKKChzk="
 							},
-							"name": "SequenceDiagram1",
+							"name": "SequenceDiagram_CentralinaS",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -97412,9 +97412,9 @@
 											"font": "Arial;13;0",
 											"left": 70.97900390625,
 											"top": 21,
-											"width": 115.9052734375,
+											"width": 183.83154296875,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "SequenceDiagram_CentralinaS"
 										},
 										{
 											"_type": "LabelView",
@@ -100711,7 +100711,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsxssKcVYuU="
 					},
-					"name": "StatechartDiagram1",
+					"name": "StatechartDiagram_Applicazione",
 					"ownedViews": [
 						{
 							"_type": "UMLStateView",
@@ -106235,7 +106235,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRs1pbKn7ORY="
 					},
-					"name": "StatechartDiagram1",
+					"name": "StatechartDiagram_CentralinaA",
 					"ownedViews": [
 						{
 							"_type": "UMLPseudostateView",
@@ -109190,7 +109190,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRs5yx601s3w="
 					},
-					"name": "StatechartDiagram1",
+					"name": "StatechartDiagram_CentralinaS",
 					"ownedViews": [
 						{
 							"_type": "UMLPseudostateView",
@@ -112679,7 +112679,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRs8URrcsmtI="
 					},
-					"name": "UseCaseDiagram1",
+					"name": "UseCaseDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLUseCaseSubjectView",
