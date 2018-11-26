@@ -4186,13 +4186,30 @@
 											"height": 13,
 											"text": "+RilevatoreVeicoli()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnT8bVFtUMNqQ=",
+											"_parent": {
+												"$ref": "AAAAAAFmv6YeEYgOQuw="
+											},
+											"model": {
+												"$ref": "AAAAAAFnT8bUytUAiw0="
+											},
+											"font": "Arial;13;0",
+											"left": 3413,
+											"top": 2137,
+											"width": 247.47607421875,
+											"height": 13,
+											"text": "+rilevaVeicoli(): int",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3408,
 									"top": 2072,
 									"width": 257.47607421875,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -4232,7 +4249,7 @@
 							"left": 3408,
 							"top": 2024,
 							"width": 257.47607421875,
-							"height": 121,
+							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFmv6YeEIgIA7A="
 							},
@@ -11099,7 +11116,7 @@
 											"top": 1070,
 											"width": 167.2734375,
 											"height": 13,
-											"text": "-posizione: Posizione",
+											"text": "#posizione: Posizione",
 											"horizontalAlignment": 0
 										}
 									],
@@ -11135,30 +11152,13 @@
 											"height": 13,
 											"text": "+rilevaPosizione(): Posizione",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFnLGHUUmXxLvs=",
-											"_parent": {
-												"$ref": "AAAAAAFnLGBbTFVl1Lc="
-											},
-											"model": {
-												"$ref": "AAAAAAFnLGHT5mW+hKU="
-											},
-											"font": "Arial;13;0",
-											"left": 557,
-											"top": 1108,
-											"width": 167.2734375,
-											"height": 13,
-											"text": "+SensoreGPS()",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 552,
 									"top": 1088,
 									"width": 177.2734375,
-									"height": 38
+									"height": 23
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -12328,23 +12328,6 @@
 									"subViews": [
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAFnLKa2HZO+N6A=",
-											"_parent": {
-												"$ref": "AAAAAAFnLKVA0n/u0Vg="
-											},
-											"model": {
-												"$ref": "AAAAAAFnLKa1m5OFpiM="
-											},
-											"font": "Arial;13;0",
-											"left": 3221,
-											"top": 1445,
-											"width": 171.615234375,
-											"height": 13,
-											"text": "+RilevatoreVelocità()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAFnLKbv25XhjZ8=",
 											"_parent": {
 												"$ref": "AAAAAAFnLKVA0n/u0Vg="
@@ -12354,7 +12337,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 3221,
-											"top": 1460,
+											"top": 1445,
 											"width": 171.615234375,
 											"height": 13,
 											"text": "+getVelocità(): int",
@@ -12371,7 +12354,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 3221,
-											"top": 1475,
+											"top": 1460,
 											"width": 171.615234375,
 											"height": 13,
 											"text": "+setVelocità(int velocità): void",
@@ -12388,7 +12371,7 @@
 											},
 											"font": "Arial;13;2",
 											"left": 3221,
-											"top": 1490,
+											"top": 1475,
 											"width": 171.615234375,
 											"height": 13,
 											"text": "+rilevaVelocita(): int",
@@ -12399,7 +12382,7 @@
 									"left": 3216,
 									"top": 1440,
 									"width": 181.615234375,
-									"height": 68
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -12951,7 +12934,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 3355,
-									"top": 2062,
+									"top": 2065,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -12972,7 +12955,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 3355,
-									"top": 2047,
+									"top": 2050,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -12992,8 +12975,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3355,
-									"top": 2092,
+									"left": 3354,
+									"top": 2094,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -13013,8 +12996,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3329,
-									"top": 2062,
+									"left": 3330,
+									"top": 2064,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -13035,7 +13018,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 3332,
-									"top": 2048,
+									"top": 2051,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -13055,7 +13038,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 3322,
-									"top": 2089,
+									"top": 2091,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -13078,7 +13061,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 3381,
-									"top": 2062,
+									"top": 2065,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -13097,8 +13080,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 3378,
-									"top": 2048,
+									"left": 3379,
+									"top": 2052,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -13117,7 +13100,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 3382,
-									"top": 2089,
+									"top": 2093,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -13168,7 +13151,7 @@
 								"$ref": "AAAAAAFmv2EL5Pk+utg="
 							},
 							"lineStyle": 1,
-							"points": "3304:2083;3407:2083",
+							"points": "3304:2085;3407:2087",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLOUpjWVa2pA="
@@ -13972,7 +13955,7 @@
 								"$ref": "AAAAAAFmv6YeEIgH4Fs="
 							},
 							"lineStyle": 1,
-							"points": "3563:2023;3584:1977"
+							"points": "3564:2023;3584:1977"
 						},
 						{
 							"_type": "UMLClassView",
@@ -23073,6 +23056,25 @@
 								"$ref": "AAAAAAFmv6YeEIgF7EM="
 							},
 							"name": "RilevatoreVeicoli"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnT8bUytUAiw0=",
+							"_parent": {
+								"$ref": "AAAAAAFmv6YeEIgF7EM="
+							},
+							"name": "rilevaVeicoli",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnT8b2K9ZRnnk=",
+									"_parent": {
+										"$ref": "AAAAAAFnT8bUytUAiw0="
+									},
+									"type": "int",
+									"direction": "return"
+								}
+							]
 						}
 					]
 				},
@@ -25261,7 +25263,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnHDvFCYOFGwI="
 									},
-									"name": "Posizione posizione"
+									"name": "Posizione posizione",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -26410,7 +26413,7 @@
 								"$ref": "AAAAAAFnLGBbSFVcysM="
 							},
 							"name": "posizione",
-							"visibility": "private",
+							"visibility": "protected",
 							"type": {
 								"$ref": "AAAAAAFmv3Uzhvquqcs="
 							}
@@ -26438,14 +26441,6 @@
 								}
 							],
 							"isAbstract": true
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFnLGHT5mW+hKU=",
-							"_parent": {
-								"$ref": "AAAAAAFnLGBbSFVcysM="
-							},
-							"name": "SensoreGPS"
 						}
 					],
 					"isAbstract": true
@@ -26510,14 +26505,6 @@
 						}
 					],
 					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFnLKa1m5OFpiM=",
-							"_parent": {
-								"$ref": "AAAAAAFnLKVA0H/lkco="
-							},
-							"name": "RilevatoreVelocità"
-						},
 						{
 							"_type": "UMLOperation",
 							"_id": "AAAAAAFnLKbvPpWo5BA=",
