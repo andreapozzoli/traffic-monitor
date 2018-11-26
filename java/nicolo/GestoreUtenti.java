@@ -20,10 +20,10 @@ private GestoreUtenti() {
     
     public void rimuoviUtente(String username) {
     	
-	int i=0;
-	for(i=0, i<listaUtente.size();i++){
-		if (listaUtente[i].username==username) {
-			this.listaUtenti.remove(this.listaUtenti[i]);
+	for(Utente var : this.listaUtenti) {
+		if (var.getUsername().equals(username)) {
+			this.listaUtenti.remove(var);
+			break;
 		}
 	}
 
