@@ -1,10 +1,43 @@
+
 # Gestione del traffico
 
 ## Mappatura delle cartelle e dei file
 
 . <br />
-├── design <br />
-├── java <br />
+├── design
+├── [design_UML.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/design_UML.mdj) [*diagramma complessivo*]
+│   ├── [Design_UML.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/Design_UML.pdf) [*documentazione del design*]
+│   ├── [diagrammi uml separati](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati) [*cartella con i diagrammi separati in file diversi*]
+│   │   ├── [activity_diagram_CentralinaS-GestoreC-GestoreDB-GestoreApplicazioni-ApplicazioneM.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/activity_diagram_CentralinaS-GestoreC-GestoreDB-GestoreApplicazioni-ApplicazioneM.mdj)
+│   │   ├── [activity_diagram_GestoreDatabase-GestoreAmministratori.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/activity_diagram_GestoreDatabase-GestoreAmministratori.mdj)
+│   │   ├── [class_diagram.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/class_diagram.mdj)
+│   │   ├── [collaboration_diagram_GestoreApplicazioni.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/collaboration_diagram_GestoreApplicazioni.mdj)
+│   │   ├── [component_diagram.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/component_diagram.mdj)
+│   │   ├── [deployment_diagram.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/deployment_diagram.mdj)
+│   │   ├── [object_diagram.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/object_diagram.mdj)
+│   │   ├── [sequence_diagram_ApplicazioneMobile-GestoreApplicazioni-GestoreDB.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/sequence_diagram_ApplicazioneMobile-GestoreApplicazioni-GestoreDB.mdj)
+│   │   ├── [sequence_diagram_CentralinaAutomobilistica.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/sequence_diagram_CentralinaAutomobilistica.mdj)
+│   │   ├── [sequence_diagram_CentralinaStradale.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/sequence_diagram_CentralinaStradale.mdj)
+│   │   ├── [state_diagram_ApplicazioneMobile.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/state_diagram_ApplicazioneMobile.mdj)
+│   │   ├── [state_diagram_CentralinaAutomobilistica.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/state_diagram_CentralinaAutomobilistica.mdj)
+│   │   ├── [state_diagram_CentralinaStradale.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/state_diagram_CentralinaStradale.mdj)
+│   │   └── [use_case_diagram.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/use_case_diagram.mdj)
+│   └── [immagini diagrammi uml](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml)
+│       ├── [activity_diagram_CentralinaS_GestoreDb_Applicazione.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/activity_diagram_CentralinaS_GestoreDb_Applicazione.png)
+│       ├── [activity_diagram_GestoreDb_GestoreAmministratori.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/activity_diagram_GestoreDb_GestoreAmministratori.png)
+│       ├── [class_diagram.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/class_diagram.png)
+│       ├── [collaboration_diagram_GestoreApplicazioni.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/collaboration_diagram_GestoreApplicazioni.png)
+│       ├── [component_diagram.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/component_diagram.png)
+│       ├── [deployment_diagram.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/deployment_diagram.png)
+│       ├── [object_diagram.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/object_diagram.png)
+│       ├── [sequence_diagram_Applicazione.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/sequence_diagram_Applicazione.png)
+│       ├── [sequence_diagram_CentralinaA.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/sequence_diagram_CentralinaA.png)
+│       ├── [sequence_diagram_CentralinaS.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/sequence_diagram_CentralinaS.png)
+│       ├── [state_diagram_Applicazione.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/state_diagram_Applicazione.png)
+│       ├── [state_diagram_CentralinaA.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/state_diagram_CentralinaA.png)
+│       ├── [state_diagram_CentralinaS.png](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/state_diagram_CentralinaS.png)
+│       └── [use_case_diagram.jpg](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/immagini%20diagrammi%20uml/use_case_diagram.jpg)
+
 ├── README.md [questo file]<br />
 └── requisiti<br />
     &emsp;├── [Analisi_dei_requisiti.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf) [*Analisi dei requisiti completa*]<br />
@@ -56,4 +89,3 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 
 * Consegna 4) Completo
 	* Progetto e documento completo e funzionante
-
