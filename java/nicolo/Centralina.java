@@ -1,5 +1,9 @@
+import java.rmi.*;
+import java.rmi.server.*;
+import java.rmi.registry.*;
+import java.util.ArrayList;
 
-public abstract class Centralina {
+public abstract class Centralina extends UnicastRemoteObject implements IGestioneCentraline {
 	protected String stato;
 	protected Posizione posizione;
 	protected int velocita;

@@ -1,4 +1,3 @@
-
 public class Amministratore {
 	private String nomeUtente;
 	private String password;
