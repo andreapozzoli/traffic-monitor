@@ -1,12 +1,9 @@
-import java.rmi.*;
-import java.rmi.server.*;
-import java.rmi.registry.*;
-import java.util.ArrayList;
 
-public abstract class Centralina extends UnicastRemoteObject implements IGestioneCentraline {
+public abstract class Centralina {
 	protected String stato;
 	protected Posizione posizione;
 	protected int velocita;
+	protected RilevatoreVelocita rilevatoreVelocita;
 	public String getStato() {
 		return this.stato;
 	}
@@ -22,7 +19,7 @@ public abstract class Centralina extends UnicastRemoteObject implements IGestion
 	public int getVelocita() {
 		return this.velocita;
 	}
-	public void setVelocita(int Velocita) {
+	public void setVelocita(int velocita) {
 		this.velocita=velocita;
 	}
 

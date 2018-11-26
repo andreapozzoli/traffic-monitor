@@ -12,10 +12,6 @@ public class Posizione {
 		this.longitudine = lon;
 	} 
 	
-	public void rilevaPosizione() {
-		//rappresenta il sensore gps che fa la rilevazione
-	}
-	
 	public float getLatitudine() {
 		return this.latitudine;
 	}

@@ -1,19 +1,30 @@
+import java.rmi.*;
+import java.rmi.server.*;
+import java.rmi.registry.*;
+import java.util.ArrayList;
 
 
-public class ApplicazioneMobile {
+public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicazioneMobile {
 	private int identificativo;
-	private Bottone bottone;
+	private ArrayList<NotificaApplicazione> listaNotificheRicevute;
+	private SensoreGPS sensore;
 	private Posizione posizione;
-	private NotificaApplicazione[] listaNotificheRicevute;
 	private Utente utente;
 	
-	public ApplicazioneMobile(int id) {
+	public ApplicazioneMobile(int id) throws RemoteException {
+		super ();
 		this.identificativo=id;
-		this.bottone=new Bottone();
-		this.listaNotificheRicevute=new NotificaApplicazione[50];
-		for (int i=0;i<this.listaNotificheRicevute.length;i++) {
-			this.listaNotificheRicevute[i]= null;
-		}		
+		this.sensore = new SensoreGPSTelefono();
+		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
+		this.posizione=this.sensore.rilevaPosizione();
+	}
+	
+	public void segnalaCoda() {
+		this.posizione=this.sensore.rilevaPosizione();
+		NotificaApplicazione notifica=new NotificaApplicazione(this.posizione, "coda");
+		
+		//chiamata a segnalaDatabase() di gestore applicazioni
+		
 	}
 	
 	public int getIdentificativo() {
@@ -25,7 +36,7 @@ public class ApplicazioneMobile {
 	}
 	
 	public void aggiornaPosizione() {
-		this.posizione=new Posizione();
+		this.posizione=this.sensore.rilevaPosizione();
 	}
 	
 	public Posizione getPosizione() {
@@ -42,25 +53,11 @@ public class ApplicazioneMobile {
 	}
 	
 	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) {
-		int i=0;
-		while (this.listaNotificheRicevute[i]!=null) {
-			if(i==this.listaNotificheRicevute.length) {
-				for (int j=1; j<this.listaNotificheRicevute.length;j++) {
-					this.listaNotificheRicevute[j-1]=this.listaNotificheRicevute[j];
-				}
-				break;
-			}
-			i++;
-		}
-		this.listaNotificheRicevute[i]=notifica;
+		this.listaNotificheRicevute.add(notifica);
 	}
 	
 	public void svuotaLista() {
-		int i=0;
-		while(this.listaNotificheRicevute[i]!=null) {
-			this.listaNotificheRicevute[i]=null;
-			i++;
-		}
+		this.listaNotificheRicevute.clear();
 	}
 	
 	public boolean login() {
@@ -68,7 +65,7 @@ public class ApplicazioneMobile {
 		return true;
 	}
 	
-	public boolean registraUtente() {
+	public boolean registraUtente(String username, String password) {
 		//registrare nuovo utente
 		return true;
 	}	

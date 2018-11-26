@@ -3,6 +3,7 @@ public abstract class Centralina {
 	protected String stato;
 	protected Posizione posizione;
 	protected int velocita;
+	protected RilevatoreVelocita rilevatoreVelocita;
 	public String getStato() {
 		return this.stato;
 	}
@@ -18,7 +19,7 @@ public abstract class Centralina {
 	public int getVelocita() {
 		return this.velocita;
 	}
-	public void setVelocita(int Velocita) {
+	public void setVelocita(int velocita) {
 		this.velocita=velocita;
 	}
 

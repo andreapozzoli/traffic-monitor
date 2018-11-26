@@ -1,19 +1,21 @@
-
-public class Conteggio {
+public abstract class RilevatoreVeicoli {
 	private int numeroVeicoli;
-	private boolean overflow;
+	
+	public RilevatoreVeicoli RilevatoreVeicoli(int numeroVeicoli) {
+		this.numeroVeicoli = 0;
+
 	public int getNumeroVeicoli() {
 		return this.numeroVeicoli;
 	}
 	public void setNumeroVeicoli(int numeroVeicoli) {
 		this.numeroVeicoli=numeroVeicoli;
 	}
+
 	public void reset() {
-		this.numeroVeicoli=0;
+		this.numeroVeicoli = 0;
 	}
-	public Conteggio() {
-		this.numeroVeicoli=0;
-		this.overflow=false;
+
+	public int rilevaVeicoli() {
 	}
 
 }

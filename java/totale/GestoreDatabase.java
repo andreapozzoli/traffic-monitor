@@ -1,41 +1,65 @@
+import java.util.ArrayList;
 
 public class GestoreDatabase {
-	private static GestoreDatabase istance=null;
-	private DatoGenerico[] tabellaTraffico;
-	private NotificaApplicazione[] listaNotificheApplicazioni;
-	private DatoTraffico[] listaDatoTraffico;
-	private StatoVeicolo[] listaStatoVeicolo;
+	private static GestoreDatabase instance=null;
+	private ArrayList<DatoGenerico> tabellaTraffico;
+	private ArrayList<NotificaApplicazione> listaNotificheApplicazioni;
+	private ArrayList<DatoTraffico> listaDatoTraffico;
+	private ArrayList<StatoVeicolo> listaStatoVeicolo;
     private GestoreDatabase() {
-    	this.listaDatoTraffico=new DatoTraffico[100];
-    	this.listaStatoVeicolo=new StatoVeicolo[8000];
-    	this.listaNotificheApplicazioni=new NotificaApplicazione[20000];
-    	this.tabellaTraffico=new DatoGenerico[50000];
+    	this.listaDatoTraffico=new ArrayList<DatoTraffico>();
+    	this.listaStatoVeicolo=new ArrayList<StatoVeicolo>();
+    	this.listaNotificheApplicazioni=new ArrayList<NotificaApplicazione>();
+    	this.tabellaTraffico=new ArrayList<DatoGenerico>();
     }
-    public static GestoreDatabase getIstance() {
-            if(istance==null)
-                    istance = new GestoreDatabase();
-            return istance;
+    public static GestoreDatabase getInstance() {
+            if(instance==null)
+                    instance = new GestoreDatabase();
+            return instance;
     }
-    public DatoGenerico[] getTabellaTraffico() {
+    public ArrayList<DatoGenerico> getTabellaTraffico() {
     	return this.tabellaTraffico;
     }
     public void aggiungiNotificaApplicazione(NotificaApplicazione notifica) {
-    	int i=0;
-    	for (i=0; i<20000; i++) {
-    		if (this.listaNotificheApplicazioni[i]==null) {
-    			this.listaNotificheApplicazioni[i]=notifica;
-    			break;
+    	this.listaNotificheApplicazioni.add(notifica);
+    	aggiornaTabellaTraffico(notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra());
+    }
+    
+    public void aggiungiDatoTraffico (DatoTraffico dato) {
+    	this.listaDatoTraffico.add(dato);
+    	aggiornaTabellaTraffico(dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra());
+    }
+    
+    public void aggiungiStatoVeicolo (StatoVeicolo statoV) {
+    	this.listaStatoVeicolo.add(statoV);
+    	//elabora il tipo di traffico, aggiorna se lo facciamo
+    }
+    
+    public void rimuoviNotificaApplicazione (NotificaApplicazione notifica) {
+    	this.listaNotificheApplicazioni.remove(notifica);
+    }
+    
+    public void rimuoviDatoTraffico (DatoTraffico dato) {
+    	this.listaDatoTraffico.remove(dato);
+    }
+    
+    public void rimuoviStatoVeicolo (StatoVeicolo statoV) {
+    	this.listaStatoVeicolo.remove(statoV);
+    }
+    
+    public void aggiornaTabellaTraffico(Posizione pos, String tipo, String data, String ora) {
+    	DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora);
+    	for (DatoGenerico dato: this.tabellaTraffico) {
+    		if (dato.getPosizione().equals(pos)) {
+    			this.tabellaTraffico.remove(dato);
     		}
     	}
-    	if (i==20000) {
-    		System.out.println("immpossibile aggiungere notifica");
-    	}
+    	this.tabellaTraffico.add(datoGenerico);
+    	GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(pos, tipo);
     }
-    //public void aggiungiDatoTraffico
-    //public void aggiungiStatoVeicolo
-    //public void rimuoviNotificaApplicazione
-    //public void rimuoviDatoTraffico
-    //public void rimuoviStatoVeicolo
-    //aggiornaTabellaTraffico
+    
+    public DatoGenerico creaDatoGenerico(Posizione pos, String tipo, String data, String ora) {
+    	return new DatoGenerico(pos, tipo, data, ora);
+    }
 
 }
