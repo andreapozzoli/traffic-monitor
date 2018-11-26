@@ -1,13 +1,14 @@
-public abstract class RilevatoreVelocitaS extends RilevatoreVelocita{
+public class RilevatoreVelocitaS extends RilevatoreVelocita{
 	
 	private int sommaVelocita;
 
-	public RilevatoreVelocitaS RilevatoreVelocitaS(int velocita) {
-		this.velocita = velocita;
+	public RilevatoreVelocitaS() {
 		this.sommaVelocita = 0;
+	}
 
 	public int rilevaVelocita() {
-		
+		return 0;
+		//da fare
 	}
 
 	public void resetSommaVelocita() {
@@ -16,10 +17,6 @@ public abstract class RilevatoreVelocitaS extends RilevatoreVelocita{
 	}
 
 	public int getSommaVelocita() {
-		return this.SommaVelocita;
+		return this.sommaVelocita;
 	}
-
-	
-	public RilevatoreVelocitaS RilevatoreVelocitaS(int velocita) {
-		this.velocita = velocita;
 }

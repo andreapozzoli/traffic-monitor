@@ -7,6 +7,7 @@ public class CentralinaStradale extends Centralina {
 	private int intervalloMinimo;
 	private String tipoStrada;
 	private int idCentralinaStradale;
+	private RilevatoreVelocitaS rilevatoreVelocita;
 	
 	public CentralinaStradale(int intervalloDiTempo, Posizione posizione, int intervalloMinimo) {
 		this.intervalloDiTempo=intervalloDiTempo;

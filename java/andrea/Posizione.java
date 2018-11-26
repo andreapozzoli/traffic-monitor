@@ -4,7 +4,6 @@ public class Posizione {
 	private float longitudine;
 	
 	public Posizione() {
-		rilevaPosizione();
 	}
 	
 	public Posizione(float lat, float lon) {

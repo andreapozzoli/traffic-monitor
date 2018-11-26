@@ -2,20 +2,20 @@ import java.util.ArrayList;
 
 public class GestoreUtenti {
 	private ArrayList<Utente> listaUtenti;
-	private static GestoreUtenti istance=null;
+	private static GestoreUtenti instance=null;
     
 private GestoreUtenti() {
     	this.listaUtenti=new ArrayList<Utente>();
     }
 
-    public static GestoreUtenti getIstance() {
-            if(istance==null)
-                    istance = new GestoreUtenti();
-            return istance;
+    public static GestoreUtenti getInstance() {
+            if(instance==null)
+                    instance = new GestoreUtenti();
+            return instance;
     }
     public void aggiungiUtente(Utente utente) {
     	
-    	listaUtente.add(utente)
+    	this.listaUtenti.add(utente);
     }
     
     public void rimuoviUtente(String username) {
@@ -29,19 +29,18 @@ private GestoreUtenti() {
 
     }
 
-    public void getUtenti() {
-    	return listaUtenti;
+    public ArrayList<Utente> getUtenti() {
+    	return this.listaUtenti;
     }
 
-    public bool riconosciUtente(String username, String password) {
-		for(i=0, i<listaUtente.size();i++){
-		if (listaUtente[i].username==username && listaUtente[i].password==password) {
-			return 1;
+    public boolean riconosciUtente(String username, String password) {
+		for (Utente utente: this.listaUtenti) {
+			if (utente.getUsername().equals(username) && utente.getPassword().equals(password)) {
+				return true;
+			}
 		}
-	return 0;
+		return false;
+    	
 	}
     
-    
-    
-
 }

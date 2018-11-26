@@ -1,11 +1,13 @@
-public abstract class RilevatoreVelocitaA extends RilevatoreVelocita{
+public class RilevatoreVelocitaA extends RilevatoreVelocita{
 	
 	
-	public RilevatoreVelocitaA RilevatoreVelocitaA(int velocita) {
-		this.velocita = velocita;
+	public RilevatoreVelocitaA () {
+		
+	}
 
 	public int rilevaVelocita() {
-		
+		return 0;
+		//da fare
 	}
 
 

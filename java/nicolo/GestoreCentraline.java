@@ -6,17 +6,17 @@ import java.rmi.registry.*;
 public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline {
 	private ArrayList<CentralinaAutomobilistica> listaCentralineAuto;
 	private ArrayList<CentralinaStradale> listaCentralineStradali;
-	private static GestoreCentraline istance=null;
+	private static GestoreCentraline instance=null;
 	
-    private GestoreCentraline() {
+    private GestoreCentraline() throws RemoteException{
     	this.listaCentralineAuto=new ArrayList<CentralinaAutomobilistica>();
     	this.listaCentralineStradali=new ArrayList<CentralinaStradale>();
     }
     
-    public static GestoreCentraline getIstance() {
-            if(istance==null)
-                    istance = new GestoreCentraline();
-            return istance;
+    public static GestoreCentraline getInstance() throws RemoteException{
+            if(instance==null)
+                    instance = new GestoreCentraline();
+            return instance;
     }
     public void aggiungiCentralinaAuto(CentralinaAutomobilistica centralina) {
     	this.listaCentralineAuto.add(centralina);

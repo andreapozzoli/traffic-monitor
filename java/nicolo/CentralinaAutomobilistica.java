@@ -29,7 +29,7 @@ public class CentralinaAutomobilistica extends Centralina {
 		this.statoVeicolo= new StatoVeicolo (this.posizione, this.idVeicolo, this.velocita);
 	}
 	public void inviaStatoVeicolo() {
-		GestoreCentraline.getInstance().segnalaDatabaseA(statoVeicolo);
+		//GestoreCentraline.getInstance().segnalaDatabaseA(statoVeicolo);
 	}
 	
 
