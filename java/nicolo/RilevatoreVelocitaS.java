@@ -1,4 +1,4 @@
-public abstract class RilevatoreVelocitaA extends RilevatoreVelocita{
+public abstract class RilevatoreVelocitaS extends RilevatoreVelocita{
 	
 	private int sommaVelocita;
 
