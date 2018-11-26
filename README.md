@@ -4,8 +4,8 @@
 ## Mappatura delle cartelle e dei file
 
 . <br />
-├── design <br/>
-├── [design_UML.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/design_UML.mdj) [*diagramma complessivo*]<br/>
+├── [design](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/) <br/>
+&emsp;├── [design_UML.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/design_UML.mdj) [*diagramma complessivo*]<br/>
 &emsp;├── [Design_UML.pdf](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/Design_UML.pdf) [*documentazione del design*]<br/>
 &emsp;├── [diagrammi uml separati](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati) [*cartella con i diagrammi separati in file diversi*]<br/>
 &emsp;&emsp;├── [activity_diagram_CentralinaS-GestoreC-GestoreDB-GestoreApplicazioni-ApplicazioneM.mdj](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/diagrammi%20uml%20separati/activity_diagram_CentralinaS-GestoreC-GestoreDB-GestoreApplicazioni-ApplicazioneM.mdj)<br/>
