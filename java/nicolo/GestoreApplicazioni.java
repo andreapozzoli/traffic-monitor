@@ -14,10 +14,19 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
     	this.listaApplicazioni=new ArrayList<ApplicazioneMobile>();
     	this.raggio=500;
     }
-    public static GestoreApplicazioni getInstance() throws RemoteException{
+    public static GestoreApplicazioni getInstance(){
+    	try {    		
             if(instance==null)
                     instance = new GestoreApplicazioni();
             return instance;
+    	}
+    	catch (RemoteException a) {
+    		System.err.println(a.getMessage());
+    	}
+    	finally {
+    		System.out.println("Errore nella connessione RMI");
+    		return instance;
+    	}
     }
     public int getRaggio() {
     	return this.raggio;
