@@ -10,6 +10,7 @@ public class CentralinaAutomobilistica extends Centralina {
 		this.periodo=periodo;
 		this.rilevatoreVelocita=new RilevatoreVelocitaA();
 		this.sensore=new SensoreGPSAuto();
+		GestoreCentraline.getInstance().aggiungiCentralinaAuto(this);
 	}
 	public int getPeriodo() {
 		return this.periodo;

@@ -7,5 +7,6 @@ public interface IGestoreCentraline extends Remote{
     public void rimuoviCentralinaStradale(int id); 
     public void segnalaDatabaseS(DatoTraffico dato);
     public void segnalaDatabaseA(StatoVeicolo dato);
+    //public static GestoreCentraline getInstance();
     
 }

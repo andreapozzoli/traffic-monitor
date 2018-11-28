@@ -13,10 +13,19 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	this.listaCentralineStradali=new ArrayList<CentralinaStradale>();
     }
     
-    public static GestoreCentraline getInstance() throws RemoteException{
+    public static GestoreCentraline getInstance(){  		
+    	try {    		
             if(instance==null)
                     instance = new GestoreCentraline();
             return instance;
+    	}
+    	catch (RemoteException a) {
+    		System.err.println(a.getMessage());
+    	}
+    	finally {
+    		System.out.println("Errore nella connessione RMI");
+    		return instance;
+    	}
     }
     public void aggiungiCentralinaAuto(CentralinaAutomobilistica centralina) {
     	this.listaCentralineAuto.add(centralina);
@@ -51,7 +60,13 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	GestoreDatabase.getInstance().aggiungiStatoVeicolo(dato);
     }
     
+    public ArrayList<CentralinaAutomobilistica> getListaCentralineAuto(){
+    	return this.listaCentralineAuto;
+    }
     
+    public ArrayList<CentralinaStradale> getListaCentralineStradali(){
+    	return this.listaCentralineStradali;
+    }
     
 
 }

@@ -17,6 +17,7 @@ public class CentralinaStradale extends Centralina {
 		this.velocita=0;
 		this.stato="accesa";
 		this.intervalloMinimo=intervalloMinimo;
+		GestoreCentraline.getInstance().aggiungiCentralinaStradale(this);
 	}
 	public void calcolaIntervallo() {
 		float temp=this.rilevatoreVeicoli.getNumeroVeicoli()/this.intervalloDiTempo;
