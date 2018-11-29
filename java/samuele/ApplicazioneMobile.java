@@ -11,6 +11,12 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	private Posizione posizione;
 	private Utente utente;
 	
+	public ApplicazioneMobile() throws RemoteException{
+		this.sensore = new SensoreGPSTelefono();
+		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
+		this.posizione=this.sensore.rilevaPosizione();
+	}
+	
 	public ApplicazioneMobile(int id) throws RemoteException {
 		super ();
 		this.identificativo=id;
