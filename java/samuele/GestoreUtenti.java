@@ -1,10 +1,11 @@
+package gestionetraffico;
 import java.util.ArrayList;
 
 public class GestoreUtenti {
 	private ArrayList<Utente> listaUtenti;
 	private static GestoreUtenti instance=null;
     
-private GestoreUtenti() {
+    private GestoreUtenti() {
     	this.listaUtenti=new ArrayList<Utente>();
     }
 
@@ -29,13 +30,32 @@ private GestoreUtenti() {
 
     }
 
-    public ArrayList<Utente> getUtenti() {
-    	return this.listaUtenti;
+    public Utente getUtente(String username) {
+    	Utente utente=null;
+    	for(Utente var : this.listaUtenti) {
+    		if (var.getUsername().equals(username)) {
+    		utente=var;
+    		break;
+    		}
+    	}
+    	return utente;
+    	
     }
 
     public boolean riconosciUtente(String username, String password) {
 		for (Utente utente: this.listaUtenti) {
 			if (utente.getUsername().equals(username) && utente.getPassword().equals(password)) {
+				return true;
+			}
+		}
+		return false;
+    	
+	}
+    
+    //nuovo
+    public boolean riconosciUtente(String username) {
+		for (Utente utente: this.listaUtenti) {
+			if (utente.getUsername().equals(username) ) {
 				return true;
 			}
 		}

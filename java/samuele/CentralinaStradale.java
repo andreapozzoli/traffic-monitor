@@ -1,3 +1,6 @@
+package gestionetraffico;
+
+import java.util.*;
 
 public class CentralinaStradale extends Centralina {
 	private int intervalloDiTempo;
@@ -9,7 +12,8 @@ public class CentralinaStradale extends Centralina {
 	private int idCentralinaStradale;
 	private RilevatoreVelocitaS rilevatoreVelocita;
 	
-	public CentralinaStradale(int intervalloDiTempo, Posizione posizione, int intervalloMinimo) {
+	//modificato
+	public CentralinaStradale(int intervalloDiTempo, Posizione posizione, int intervalloMinimo,String tipoStrada) {
 		this.intervalloDiTempo=intervalloDiTempo;
 		this.rilevatoreVeicoli=new RilevatoreVeicoli();
 		this.rilevatoreVelocita=new RilevatoreVelocitaS();
@@ -17,6 +21,7 @@ public class CentralinaStradale extends Centralina {
 		this.velocita=0;
 		this.stato="accesa";
 		this.intervalloMinimo=intervalloMinimo;
+		this.tipoStrada=tipoStrada;
 		GestoreCentraline.getInstance().aggiungiCentralinaStradale(this);
 	}
 	public void calcolaIntervallo() {
@@ -44,7 +49,7 @@ public class CentralinaStradale extends Centralina {
 	public int getIntervalloMinimo() {
 		return this.intervalloMinimo;
 	}
-	public void serIntervalloMinimo(int intervalloMinimo) {
+	public void setIntervalloMinimo(int intervalloMinimo) {
 		this.intervalloMinimo=intervalloMinimo;
 	}
 	public String getTipoStrada() {
@@ -102,11 +107,26 @@ public class CentralinaStradale extends Centralina {
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
 	public void inviaDatoTraffico() {
-		//GestoreCentraline.getInstance.seganalaDatabaseS(this.datoTraffico);
+		GestoreCentraline.getInstance().segnalaDatabaseS(this.datoTraffico);
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia() {
 		this.velocita=(int)(this.rilevatoreVelocita.getSommaVelocita()/this.rilevatoreVeicoli.getNumeroVeicoli());
+	}
+	
+	//nuovo
+	public RilevatoreVeicoli getRilevatoreVeicoli() {
+		return this.rilevatoreVeicoli;
+	}
+	
+	//nuovo
+	public void run() {
+		this.calcolaIntervallo();
+		System.out.println("intervallo calcolato");
+		this.creaDatoTraffico();
+		System.out.println("dato traffico creato");
+		this.inviaDatoTraffico();
+		System.out.println("dato traffico inviato");
 	}
 
 

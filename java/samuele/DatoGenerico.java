@@ -1,3 +1,4 @@
+package gestionetraffico;
 import java.util.*;
 
 public class DatoGenerico {

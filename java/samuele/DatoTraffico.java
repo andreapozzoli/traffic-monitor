@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public class DatoTraffico extends Notifica {
 	private String tipo;
@@ -26,5 +27,6 @@ public class DatoTraffico extends Notifica {
 	public int getVelocita() {
 		return this.velocita;
 	}
+	
 
 }

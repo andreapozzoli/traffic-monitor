@@ -1,3 +1,4 @@
+package gestionetraffico;
 import java.util.ArrayList;
 
 public class GestoreDatabase {
@@ -6,6 +7,7 @@ public class GestoreDatabase {
 	private ArrayList<NotificaApplicazione> listaNotificheApplicazioni;
 	private ArrayList<DatoTraffico> listaDatoTraffico;
 	private ArrayList<StatoVeicolo> listaStatoVeicolo;
+	
     private GestoreDatabase() {
     	this.listaDatoTraffico=new ArrayList<DatoTraffico>();
     	this.listaStatoVeicolo=new ArrayList<StatoVeicolo>();
@@ -21,6 +23,7 @@ public class GestoreDatabase {
     	return this.tabellaTraffico;
     }
     public void aggiungiNotificaApplicazione(NotificaApplicazione notifica) {
+    	//verificare che non sia gia presente
     	this.listaNotificheApplicazioni.add(notifica);
     	aggiornaTabellaTraffico(notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra());
     }
@@ -55,7 +58,10 @@ public class GestoreDatabase {
     		}
     	}
     	this.tabellaTraffico.add(datoGenerico);
+    	//modificato
+    	if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
     	GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(pos, tipo);
+    	}
     }
     
     public DatoGenerico creaDatoGenerico(Posizione pos, String tipo, String data, String ora) {

@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public class Utente {
 	private String username;

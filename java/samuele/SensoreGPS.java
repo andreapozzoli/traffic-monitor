@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public abstract class SensoreGPS {
 	protected Posizione posizione;

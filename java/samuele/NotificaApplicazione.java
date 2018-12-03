@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public class NotificaApplicazione extends Notifica {
 	private String tipo;	
@@ -14,6 +15,11 @@ public class NotificaApplicazione extends Notifica {
 	
 	public String getTipo() {
 		return this.tipo;
+	}
+	
+	//nuovo
+	public void stampaNotifica() {
+		System.out.println("tipo: "+this.tipo+" posizione: "+this.posizione.getLatitudine()+" ; "+this.posizione.getLongitudine());
 	}
 	
 	

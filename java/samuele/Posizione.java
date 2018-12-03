@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public class Posizione {
 	private float latitudine;

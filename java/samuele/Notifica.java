@@ -1,4 +1,4 @@
-
+package gestionetraffico;
 import java.util.*;
 
 public abstract class Notifica {
@@ -31,6 +31,7 @@ public abstract class Notifica {
 	public Posizione getPosizione() {
 		return this.posizione;
 	}
+	
 	
 
 }

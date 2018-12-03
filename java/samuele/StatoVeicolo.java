@@ -1,3 +1,4 @@
+package gestionetraffico;
 
 public class StatoVeicolo extends Notifica {
 	private int idVeicolo;

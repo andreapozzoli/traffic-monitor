@@ -1,5 +1,7 @@
+package gestionetraffico;
+import java.util.*;
 
-public abstract class Centralina {
+public abstract class Centralina extends TimerTask {
 	protected String stato;
 	protected Posizione posizione;
 	protected int velocita;

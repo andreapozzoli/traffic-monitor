@@ -1,3 +1,4 @@
+package gestionetraffico;
 public abstract class RilevatoreVelocita {
 	protected int velocita;
 	

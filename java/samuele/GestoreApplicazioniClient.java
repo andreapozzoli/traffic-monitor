@@ -1,3 +1,4 @@
+package gestionetraffico;
 import java.rmi.*;
 
 public class GestoreApplicazioniClient {

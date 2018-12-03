@@ -1,9 +1,10 @@
+package gestionetraffico;
 import java.util.ArrayList;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 
-public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline {
+public class GestoreCentraline /*extends UnicastRemoteObject implements IGestoreCentraline*/ {
 	private ArrayList<CentralinaAutomobilistica> listaCentralineAuto;
 	private ArrayList<CentralinaStradale> listaCentralineStradali;
 	private static GestoreCentraline instance=null;
@@ -28,10 +29,12 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	}
     }
     public void aggiungiCentralinaAuto(CentralinaAutomobilistica centralina) {
+    	//si può verificare che non abbia lo sesso id di un'altra
     	this.listaCentralineAuto.add(centralina);
     }
     
     public void aggiungiCentralinaStradale(CentralinaStradale centralina) {
+    	//si puo verificare che non esista gia in quella posizione
     	this.listaCentralineStradali.add(centralina);
     }
     

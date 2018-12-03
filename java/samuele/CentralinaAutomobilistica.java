@@ -1,4 +1,4 @@
-
+package gestionetraffico;
 public class CentralinaAutomobilistica extends Centralina {
 	private int periodo;
 	private int idVeicolo;
@@ -29,8 +29,14 @@ public class CentralinaAutomobilistica extends Centralina {
 		this.velocita=this.rilevatoreVelocita.rilevaVelocita();
 		this.statoVeicolo= new StatoVeicolo (this.posizione, this.idVeicolo, this.velocita);
 	}
+	//modificato
 	public void inviaStatoVeicolo() {
-		//GestoreCentraline.getInstance().segnalaDatabaseA(statoVeicolo);
+		GestoreCentraline.getInstance().segnalaDatabaseA(statoVeicolo);
+	}
+	
+	//nuovo 
+	public void run() {
+		
 	}
 	
 
