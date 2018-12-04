@@ -82,8 +82,8 @@ public class Demo extends JFrame implements JMapViewerEventListener {
         button.addActionListener(e -> map().setDisplayToFitMapMarkers());
         JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
                 new OsmTileSource.Mapnik(),
-                new OsmTileSource.CycleMap(),
-                new BingAerialTileSource(),
+               // new OsmTileSource.CycleMap(),
+               // new BingAerialTileSource(),
         });
         tileSourceSelector.addItemListener(new ItemListener() {
             @Override
@@ -150,7 +150,8 @@ public class Demo extends JFrame implements JMapViewerEventListener {
         
         map().addMapMarker(automobile);
         map().addMapMarker(CS);
-
+        // map().removeMapMarker(automobile);
+        
 
         map().addMouseListener(new MouseAdapter() {
             @Override
