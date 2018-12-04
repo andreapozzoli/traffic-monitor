@@ -4,6 +4,8 @@ import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.Scanner;
 
+import org.openstreetmap.gui.jmapviewer.Demo;
+
 public class FunzionamentoSistemaCentrale {
 
 	public static void main(String[] args) {
@@ -14,14 +16,39 @@ public class FunzionamentoSistemaCentrale {
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
 		//è necessario un thread per ogni gestore 
 		//thread gestore amministratori 
-		System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma");
+		while(true) {
+		while(true) {
+			System.out.println("Digita 'l' se sei già registrato, 'r' se sei un nuovo amministratore");
+			Scanner sc= new Scanner(System.in);
+			String login=sc.nextLine();
+			if (login.equals("r")) {
+				GAmm.registraAmministratore();
+				break;
+			}
+			else if (login.equals("l")) {
+				if(GAmm.login()) {
+				break;
+				}
+				else {
+					System.out.println("Username o password non corretti");
+				}
+			}
+			}
+		while(true) {
+		System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
 		Scanner sc= new Scanner(System.in);
 		String comando=sc.nextLine();
 		if (comando.equals("m")) {
 			//visualizzazione mappa
+			 new Demo().setVisible(true);
 		}
 		else if (comando.equals("d")) {
 			//visualizzazione diagramma
+		}
+		else if (comando.equals("o"));{
+			break;
+		}
+		}
 		}
 		//fine gestore amministratori
 		/*SERVER GESTORE APPLICAZIONI
