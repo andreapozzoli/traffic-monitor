@@ -45,26 +45,26 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     private final JLabel mperpLabelValue;
 
    
-    public MapMarkerDot aggiungiAutomobile(Layer layer, String etichetta, double lat, double lon) {
-    	MapMarkerDot automobile = new MapMarkerDot(layer, etichetta, lat , lon);
+    public MapMarkerDot aggiungiAutomobile(String etichetta, double lat, double lon) {
+    	MapMarkerDot automobile = new MapMarkerDot(null, etichetta, lat , lon);
     	map().addMapMarker(automobile);
     	return automobile;
     }
     
-    public MapMarkerDot aggiungiCentralina(Layer layer, String etichetta, double lat, double lon) {
+    public MapMarkerDot aggiungiCentralina(String etichetta, double lat, double lon) {
     	Coordinate cooCS = new Coordinate(lat, lon);
         
         Font trb = new Font("Helvetica", Font.ITALIC, 13);
         
         Style styleCS = new Style(Color.BLACK, Color.BLUE, null, trb);
         
-        MapMarkerDot CS = new MapMarkerDot(layer, etichetta, cooCS, styleCS);
+        MapMarkerDot CS = new MapMarkerDot(null, etichetta, cooCS, styleCS);
         
         map().addMapMarker(CS);
         return CS;
        }
     
-    public MapMarkerDot aggiungiMarcatoreGenerico(Layer layer, String etichetta, double lat, double lon, Color colore)
+    public MapMarkerDot aggiungiMarcatoreGenerico(String etichetta, double lat, double lon, Color colore)
     {
     	Coordinate cooCS = new Coordinate(lat, lon);
         
@@ -72,7 +72,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         
         Style styleCS = new Style(Color.BLACK, colore, null, trb);
         
-        MapMarkerDot gen = new MapMarkerDot(layer, etichetta, cooCS, styleCS);
+        MapMarkerDot gen = new MapMarkerDot(null, etichetta, cooCS, styleCS);
         
         map().addMapMarker(gen);
         
@@ -171,15 +171,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
         add(treeMap, BorderLayout.CENTER);
 
-        
-        LayerGroup italyGroup = new LayerGroup("Italy");
-        Layer lombardiaLayer = italyGroup.addLayer("Lombardia");
-        
-        
-        
-        aggiungiAutomobile(lombardiaLayer, "Automobile gialla", 45, 12);
-        aggiungiCentralina(lombardiaLayer, "Centralina blu", 11, 43);
-        aggiungiMarcatoreGenerico(lombardiaLayer, "Marcatore rosso", 12, 33, Color.RED);
+
 
 
         map().addMouseListener(new MouseAdapter() {
