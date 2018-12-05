@@ -50,7 +50,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     }
     
     public MapMarkerDot aggiungiCentralinaVuota(String etichetta, double lat, double lon) {
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.WHITE);
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.GREEN);
     	// per le centraline che non hanno ancora rilevato nulla di particolare
     }
     
@@ -61,7 +61,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     
     public MapMarkerDot aggiungiCentralinaVelocitaLenta(String etichetta, double lat, double lon) {
     	
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.YELLOW);
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.MAGENTA);
     }
  
     public MapMarkerDot aggiungiCentralinaTraffico(String etichetta, double lat, double lon) {
@@ -94,8 +94,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
         treeMap = new JMapViewerTree("Zone");
 
-        // Listen to the map viewer for user operations so components will
-        // receive events and update
         map().addJMVListener(this);
 
         setLayout(new BorderLayout());
@@ -105,6 +103,8 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         JPanel panelTop = new JPanel();
         JPanel panelBottom = new JPanel();
         JPanel helpPanel = new JPanel();
+        
+        JPanel legenda = new JPanel(); // legenda dei colori
 
         mperpLabelName = new JLabel("Metri/Pixel: ");
         mperpLabelValue = new JLabel(String.format("%s", map().getMeterPerPixel()));
@@ -113,18 +113,32 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         zoomValue = new JLabel(String.format("%s", map().getZoom()));
 
         add(panel, BorderLayout.NORTH);
-        add(helpPanel, BorderLayout.SOUTH);
+        add(helpPanel, BorderLayout.EAST);
+                
         panel.add(panelTop, BorderLayout.NORTH);
         panel.add(panelBottom, BorderLayout.SOUTH);
-        JLabel helpLabel = new JLabel("Usare il pulsante destro del mouse per muoversi,\n "
-                + "doppio click con il pulsante sinistro o rotellina per fare lo zoom.");
+        JLabel helpLabel = new JLabel("<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
+                + "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
+                + "<u><b>Legenda:</b></u><br>"
+                + "<i>Centraline stradali:</i><br>"
+                + "<font color=\"red\">Coda</font><br>" + 
+                "<font color=\"purple\">Velocità lenta</font><br>"+
+                "<font color=\"black\">Traffico elevato</font><br>"+
+                "<font color=\"green\">Nessun dato</font><br><br>"
+                + "<i>Applicazioni mobile:</i><br>"+
+                "<font color=\"blue\">Coda</font>"+
+                "</html>"
+                );
         helpPanel.add(helpLabel);
+        
+        
+        
         JButton button = new JButton("Adatta zoom per vedere tutti i marker");
         button.addActionListener(e -> map().setDisplayToFitMapMarkers());
         JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
                 new OsmTileSource.Mapnik(),
-                new OsmTileSource.CycleMap(),
-                new BingAerialTileSource(),
+               // new OsmTileSource.CycleMap(),
+                //new BingAerialTileSource(),
         });
         tileSourceSelector.addItemListener(new ItemListener() {
             @Override
@@ -143,6 +157,8 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         map().setTileLoader((TileLoader) tileLoaderSelector.getSelectedItem());
         panelTop.add(tileSourceSelector);
         panelTop.add(tileLoaderSelector);
+        
+     
         final JCheckBox showMapMarker = new JCheckBox("Marcatori di mappa visibili");
         showMapMarker.setSelected(map().getMapMarkersVisible());
         showMapMarker.addActionListener(e -> map().setMapMarkerVisible(showMapMarker.isSelected()));
