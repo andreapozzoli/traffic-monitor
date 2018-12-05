@@ -71,17 +71,17 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     
     public MapMarkerDot aggiungiMarcatoreGenerico(String etichetta, double lat, double lon, Color colore)
     {
-    	Coordinate cooCS = new Coordinate(lat, lon);
+    	Coordinate posizione = new Coordinate(lat, lon);
         
-        Font trb = new Font("Helvetica", Font.PLAIN, 13);
+        Font font = new Font("Helvetica", Font.PLAIN, 13);
         
-        Style styleCS = new Style(Color.BLACK, colore, null, trb);
+        Style stile = new Style(Color.BLACK, colore, null, font);
         
-        MapMarkerDot gen = new MapMarkerDot(null, etichetta, cooCS, styleCS);
+        MapMarkerDot marcatoreGenerico = new MapMarkerDot(null, etichetta, posizione, stile);
         
-        map().addMapMarker(gen);
+        map().addMapMarker(marcatoreGenerico);
         
-        return gen;
+        return marcatoreGenerico;
     }
     
     public void rimuoviMarcatore(MapMarkerDot nome) {
