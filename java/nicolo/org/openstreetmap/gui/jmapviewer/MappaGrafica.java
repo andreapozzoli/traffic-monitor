@@ -45,24 +45,24 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     private final JLabel mperpLabelValue;
 
    
-    public MapMarkerDot aggiungiAutomobile(String etichetta, double lat, double lon) {
-    	MapMarkerDot automobile = new MapMarkerDot(null, etichetta, lat , lon);
-    	map().addMapMarker(automobile);
-    	return automobile;
+    public MapMarkerDot aggiungiApplicazioneMobile(String etichetta, double lat, double lon) {
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLUE);
     }
     
-    public MapMarkerDot aggiungiCentralina(String etichetta, double lat, double lon) {
-    	Coordinate cooCS = new Coordinate(lat, lon);
-        
-        Font trb = new Font("Helvetica", Font.ITALIC, 13);
-        
-        Style styleCS = new Style(Color.BLACK, Color.BLUE, null, trb);
-        
-        MapMarkerDot CS = new MapMarkerDot(null, etichetta, cooCS, styleCS);
-        
-        map().addMapMarker(CS);
-        return CS;
-       }
+    public MapMarkerDot aggiungiCentralinaCoda(String etichetta, double lat, double lon) {
+    	
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.RED);
+    }
+    
+    public MapMarkerDot aggiungiCentralinaVelocitaLenta(String etichetta, double lat, double lon) {
+    	
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.YELLOW);
+    }
+ 
+    public MapMarkerDot aggiungiCentralinaTraffico(String etichetta, double lat, double lon) {
+ 	
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLACK);
+    }
     
     public MapMarkerDot aggiungiMarcatoreGenerico(String etichetta, double lat, double lon, Color colore)
     {

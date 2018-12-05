@@ -52,8 +52,8 @@ public class FunzionamentoSistemaCentrale {
 			Scanner sc= new Scanner(System.in);
 			String comando=sc.nextLine();
 			if (comando.equals("m")) {
-				MapMarkerDot dinamica = mappa.aggiungiAutomobile("Automobile dinamica", 11, 23);
-				MapMarkerDot dinamica2 = mappa.aggiungiAutomobile("Automobile dinamica 2", 70, 23);
+				MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
+				MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
 				mappa.rimuoviMarcatore(dinamica2);
 			}
 		else if (comando.equals("d")) {
