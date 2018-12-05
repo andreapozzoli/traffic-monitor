@@ -3,14 +3,24 @@ package gestionetraffico;
 public class Posizione {
 	private float latitudine;
 	private float longitudine;
+	private String via;
 	
 	public Posizione() {
 	}
 	
-	public Posizione(float lat, float lon) {
+	public Posizione(String via,float lat, float lon) {
+		this.via=via;
 		this.latitudine = lat;
 		this.longitudine = lon;
 	} 
+	
+	public void setVia(String via) {
+		this.via=via;
+	}
+	
+	public String getVia() {
+		return this.via;
+	}
 	
 	public float getLatitudine() {
 		return this.latitudine;

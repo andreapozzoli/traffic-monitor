@@ -1,10 +1,15 @@
 package gestionetraffico;
+
+import java.io.IOException;
+
+import jxl.read.biff.BiffException;
+
 public class CentralinaAutomobilistica extends Centralina {
 	private int periodo;
 	private int idVeicolo;
 	private StatoVeicolo statoVeicolo;
 	private SensoreGPS sensore;
-	public CentralinaAutomobilistica (int periodo, int idVeicolo) {
+	public CentralinaAutomobilistica (int periodo, int idVeicolo) throws BiffException, IOException {
 		this.stato="accesa";
 		this.idVeicolo=idVeicolo;
 		this.periodo=periodo;
@@ -24,7 +29,7 @@ public class CentralinaAutomobilistica extends Centralina {
 	public void setIdVeicolo(int idVeicolo) {
 		this.idVeicolo=idVeicolo;
 	}
-	public void creaStatoVeicolo() {
+	public void creaStatoVeicolo() throws BiffException, IOException {
 		this.posizione=this.sensore.rilevaPosizione();
 		this.velocita=this.rilevatoreVelocita.rilevaVelocita();
 		this.statoVeicolo= new StatoVeicolo (this.posizione, this.idVeicolo, this.velocita);

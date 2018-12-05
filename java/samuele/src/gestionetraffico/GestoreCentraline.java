@@ -4,7 +4,7 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 
-public class GestoreCentraline /*extends UnicastRemoteObject implements IGestoreCentraline*/ {
+public class GestoreCentraline /*extends UnicastRemoteObject*/ implements /*IGestoreCentraline,*/ Runnable {
 	private ArrayList<CentralinaAutomobilistica> listaCentralineAuto;
 	private ArrayList<CentralinaStradale> listaCentralineStradali;
 	private static GestoreCentraline instance=null;
@@ -69,6 +69,13 @@ public class GestoreCentraline /*extends UnicastRemoteObject implements IGestore
     
     public ArrayList<CentralinaStradale> getListaCentralineStradali(){
     	return this.listaCentralineStradali;
+    }
+    
+    public void run() {
+    	/*SERVER GESTORE CENTRALINE
+		 * System.setSecurityManager(new RMISecurityManager()); 
+		   GestoreCentraline gestoreCentraline = GestoreCentraline.getInstance();
+		   Naming.rebind("GestoreCentraline", gestoreCentraline);*/
     }
     
 

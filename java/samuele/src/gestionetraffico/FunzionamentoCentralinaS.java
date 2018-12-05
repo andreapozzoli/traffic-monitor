@@ -19,7 +19,7 @@ public class FunzionamentoCentralinaS {
 		Thread t2=new Thread();
 		Timer     timer = new Timer();
 		// aspetta 10 secondi prima dell'esecuzione
-		timer.schedule( centralina, 10000 );
+		timer.schedule( centralina, centralina.getIntervallo() );
 		
 		/*CLIENT
 		 * System.setSecurityManager(new RMISecurityManager()); 

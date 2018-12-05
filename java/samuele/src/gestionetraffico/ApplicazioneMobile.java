@@ -1,9 +1,12 @@
 package gestionetraffico;
+import java.io.IOException;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import jxl.read.biff.BiffException;
 
 
 public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplicazioneMobile*/ {
@@ -13,14 +16,14 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	private Posizione posizione;
 	private Utente utente;
 	
-	public ApplicazioneMobile() /*throws RemoteException*/{
+	public ApplicazioneMobile() throws BiffException, IOException /*throws RemoteException*/{
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 	}
 	
-	public ApplicazioneMobile(int id) /*throws RemoteException*/ {
+	public ApplicazioneMobile(int id) throws BiffException, IOException /*throws RemoteException*/ {
 		super ();
 		this.identificativo=id;
 		this.sensore = new SensoreGPSTelefono();
@@ -30,10 +33,10 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 
 	}
 	
-	public void segnalaCoda()  {
+	public void segnalaCoda() throws BiffException, IOException  {
 		
 		this.posizione=this.sensore.rilevaPosizione();
-		NotificaApplicazione notifica=new NotificaApplicazione(this.posizione, "coda");
+		NotificaApplicazione notifica=new NotificaApplicazione(this.utente.getUsername(),this.posizione, "coda");
 		//nuovo
 		GestoreApplicazioni.getInstance().segnalaDatabase(notifica);
 		
@@ -49,13 +52,17 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.identificativo=id;
 	}
 	
-	public void aggiornaPosizione() {
+	public void aggiornaPosizione() throws BiffException, IOException {
 		this.posizione=this.sensore.rilevaPosizione();
 	}
 	
-	public Posizione getPosizione() {
+	public Posizione getPosizione() throws BiffException, IOException {
 		aggiornaPosizione();
 		return this.posizione;
+	}
+	
+	public String getUsenameUtente() {
+		return this.utente.getUsername();
 	}
 	
 	//modifica
@@ -65,11 +72,12 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	}
 	
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) {
-		return new NotificaApplicazione(pos,tipo);
+		return new NotificaApplicazione("SistemaCentrale",pos,tipo);
 	}
 	
 	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) {
 		this.listaNotificheRicevute.add(notifica);
+		this.segnalaUtente(notifica);
 	}
 	
 	public void svuotaLista() {
@@ -85,8 +93,8 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		System.out.println("Inserisci password: ");
 		Scanner sc1= new Scanner(System.in);
 		String password=sc.nextLine();
-		if(GestoreUtenti.getInstance().riconosciUtente(username, password)) {
-			this.utente=GestoreUtenti.getInstance().getUtente(username);
+		if(GestoreApplicazioni.getInstance().verificaAccesso(username, password)) {
+			this.utente=GestoreApplicazioni.getInstance().passaggioUtente(username);
 			return true;
 		}
 		else
@@ -102,7 +110,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		String username;
 		while(true) {
 		username=sc.nextLine();
-		if(GestoreUtenti.getInstance().riconosciUtente(username)) {
+		if(GestoreApplicazioni.getInstance().verificaAccesso(username)) {
 			System.out.println("Username già in uso");
 		}	
 		else {
@@ -113,7 +121,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		Scanner sc1= new Scanner(System.in);
 		String password=sc.nextLine();
 		this.utente=new Utente(username,password);
-		GestoreUtenti.getInstance().aggiungiUtente(this.utente);
+		GestoreApplicazioni.getInstance().registraUtente(utente);
 		return true;
 	}	
 	

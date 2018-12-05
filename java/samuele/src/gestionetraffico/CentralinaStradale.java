@@ -31,6 +31,8 @@ public class CentralinaStradale extends Centralina {
 			this.intervalloDiTempo=this.intervalloMinimo;
 		}
 		this.rapporto=temp;
+		this.rilevatoreVeicoli.reset();
+		this.calcolaVelocitaMedia();
 	}
 	
 	public void setIdCentralinaStradale(int id) {
@@ -112,6 +114,7 @@ public class CentralinaStradale extends Centralina {
 	}
 	public void calcolaVelocitaMedia() {
 		this.velocita=(int)(this.rilevatoreVelocita.getSommaVelocita()/this.rilevatoreVeicoli.getNumeroVeicoli());
+		this.rilevatoreVelocita.resetSommaVelocita();
 	}
 	
 	//nuovo

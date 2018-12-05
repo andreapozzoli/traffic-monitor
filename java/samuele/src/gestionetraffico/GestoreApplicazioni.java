@@ -3,6 +3,10 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 import java.util.ArrayList;
+
+import jxl.read.biff.BiffException;
+
+import java.io.IOException;
 import java.lang.Math;
 
 
@@ -54,17 +58,35 @@ public class GestoreApplicazioni /*extends UnicastRemoteObject implements IGesto
     public void segnalaDatabase(NotificaApplicazione notifica)/* throws RemoteException*/{
     	GestoreDatabase.getInstance().aggiungiNotificaApplicazione(notifica);
     }
-    public void calcolaApplicazioniDaNotificare(Posizione posizione, String tipo) {
+    public void calcolaApplicazioniDaNotificare(String mittente,Posizione posizione, String tipo) throws BiffException, IOException {
     	for (ApplicazioneMobile var: this.listaApplicazioni) {
+    		if (!(var.getUsenameUtente().equals(mittente))) {
     		if (Math.sqrt(Math.pow(var.getPosizione().getLatitudine()-posizione.getLatitudine(),2)+Math.pow(var.getPosizione().getLongitudine()-posizione.getLongitudine(),2))<this.raggio){
     			NotificaApplicazione notifica;
     			notifica=var.creaNotificaApplicazione(posizione, tipo);
-    			var.aggiungiNotificaInCoda(notifica);    			
+    			var.aggiungiNotificaInCoda(notifica);    
+    		}
     		}
     	}
     	
     }
     
+    public boolean verificaAccesso(String username, String password) {
+    	return GestoreUtenti.getInstance().riconosciUtente(username, password);
+    }
     
-
+    public boolean verificaAccesso(String username) {
+    	return GestoreUtenti.getInstance().riconosciUtente(username);
+    }
+    
+    public Utente passaggioUtente(String username) {
+    	return GestoreUtenti.getInstance().getUtente(username);
+    }
+    
+    public void registraUtente(Utente utente) {
+    	GestoreUtenti.getInstance().aggiungiUtente(utente);
+    }
+    
 }
+
+

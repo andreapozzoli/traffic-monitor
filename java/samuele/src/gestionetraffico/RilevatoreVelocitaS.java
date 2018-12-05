@@ -13,13 +13,15 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 	public int rilevaVelocita() {
 		
 		//da fare
-		Random random = new Random();
+		/*Random random = new Random();
 		int a = 0; // numero minimo
 		int b = 100; // numero massimo
 		int c = ((b-a) + 1);
 		int velocita = random.nextInt(c) + a;
-		this.sommaVelocita=this.sommaVelocita+velocita;
-		return velocita;
+		this.sommaVelocita=this.sommaVelocita+velocita;*/
+		int velocita=0;
+		this.velocita=velocita;
+		return this.velocita;
 	}
 
 	public void resetSommaVelocita() {
@@ -28,6 +30,7 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 	}
 
 	public int getSommaVelocita() {
+		this.rilevaVelocita();
 		return this.sommaVelocita;
 	}
 }

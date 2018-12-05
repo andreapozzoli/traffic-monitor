@@ -10,6 +10,7 @@ public class RilevatoreVeicoli implements Runnable {
 	}
 
 	public int getNumeroVeicoli() {
+		this.rilevaVeicoli();
 		return this.numeroVeicoli;
 	}
 	public void setNumeroVeicoli(int numeroVeicoli) {

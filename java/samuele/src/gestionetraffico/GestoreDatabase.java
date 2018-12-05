@@ -1,5 +1,8 @@
 package gestionetraffico;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import jxl.read.biff.BiffException;
 
 public class GestoreDatabase {
 	private static GestoreDatabase instance=null;
@@ -25,12 +28,22 @@ public class GestoreDatabase {
     public void aggiungiNotificaApplicazione(NotificaApplicazione notifica) {
     	//verificare che non sia gia presente
     	this.listaNotificheApplicazioni.add(notifica);
-    	aggiornaTabellaTraffico(notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra());
+    	try {
+			aggiornaTabellaTraffico(notifica.getMittente(),notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra());
+		} catch (BiffException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void aggiungiDatoTraffico (DatoTraffico dato) {
     	this.listaDatoTraffico.add(dato);
-    	aggiornaTabellaTraffico(dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra());
+    	try {
+			aggiornaTabellaTraffico("centralina",dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra());
+		} catch (BiffException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void aggiungiStatoVeicolo (StatoVeicolo statoV) {
@@ -50,7 +63,7 @@ public class GestoreDatabase {
     	this.listaStatoVeicolo.remove(statoV);
     }
     
-    public void aggiornaTabellaTraffico(Posizione pos, String tipo, String data, String ora) {
+    public void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora) throws BiffException, IOException {
     	DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora);
     	for (DatoGenerico dato: this.tabellaTraffico) {
     		if (dato.getPosizione().equals(pos)) {
@@ -60,7 +73,7 @@ public class GestoreDatabase {
     	this.tabellaTraffico.add(datoGenerico);
     	//modificato
     	if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
-    	GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(pos, tipo);
+    	GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
     	}
     }
     

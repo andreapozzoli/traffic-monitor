@@ -2,7 +2,9 @@ package gestionetraffico;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GestoreAmministratori {
+import org.openstreetmap.gui.jmapviewer.Demo;
+
+public class GestoreAmministratori implements Runnable {
 	private static GestoreAmministratori instance=null;
 	private ArrayList <Amministratore> listaAmministratori;
     private GestoreAmministratori() {
@@ -84,6 +86,47 @@ public class GestoreAmministratori {
 		return false;
     	
 	}
+    
+    public void run() {
+    	while(true) {
+    		while(true) {
+    			System.out.println("Digita 'l' se sei già registrato, 'r' se sei un nuovo amministratore");
+    			Scanner sc= new Scanner(System.in);
+    			String login=sc.nextLine();
+    			if (login.equals("r")) {
+    				this.registraAmministratore();
+    				break;
+    			}
+    			else if (login.equals("l")) {
+    				if(this.login()) {
+    				break;
+    				}
+    				else {
+    					System.out.println("Username o password non corretti");
+    				}
+    			}
+    			}
+    		while(true) {
+    		System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout,'c' se vuoi aggiungere una centralina stradale");
+    		Scanner sc= new Scanner(System.in);
+    		String comando=sc.nextLine();
+    		if (comando.equals("m")) {
+    			//visualizzazione mappa
+    			 new Demo().setVisible(true);
+    		}
+    		else if (comando.equals("d")) {
+    			//visualizzazione diagramma
+    		}
+    		else if (comando.equals("o"))
+    		{
+    			break;
+    		}
+    		else if(comando.equals("c")) {
+    			//comandi per aggiungere una nuova centralina
+    		}
+    		}
+    		}
+    }
     
 
 }
