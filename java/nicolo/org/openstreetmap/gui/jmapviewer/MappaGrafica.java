@@ -133,7 +133,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         
         
         
-        JButton button = new JButton("Adatta zoom per vedere tutti i marker");
+        JButton button = new JButton("Adatta zoom per vedere tutti i marcatori");
         button.addActionListener(e -> map().setDisplayToFitMapMarkers());
         JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
                 new OsmTileSource.Mapnik(),
@@ -159,30 +159,25 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         panelTop.add(tileLoaderSelector);
         
      
-        final JCheckBox showMapMarker = new JCheckBox("Marcatori di mappa visibili");
+        final JCheckBox showMapMarker = new JCheckBox("Marcatori");
         showMapMarker.setSelected(map().getMapMarkersVisible());
         showMapMarker.addActionListener(e -> map().setMapMarkerVisible(showMapMarker.isSelected()));
         panelBottom.add(showMapMarker);
         ///
-        final JCheckBox showTreeLayers = new JCheckBox("Tre layer visibili");
-        showTreeLayers.addActionListener(e -> treeMap.setTreeVisible(showTreeLayers.isSelected()));
-        panelBottom.add(showTreeLayers);
+        
         ///
-        final JCheckBox showToolTip = new JCheckBox("ToolTip visibile");
-        showToolTip.addActionListener(e -> map().setToolTipText(null));
-        panelBottom.add(showToolTip);
+        
         ///
-        final JCheckBox showTileGrid = new JCheckBox("Griglia visibile");
+        final JCheckBox showTileGrid = new JCheckBox("Griglia");
         showTileGrid.setSelected(map().isTileGridVisible());
         showTileGrid.addActionListener(e -> map().setTileGridVisible(showTileGrid.isSelected()));
         panelBottom.add(showTileGrid);
-        final JCheckBox showZoomControls = new JCheckBox("Mostrare i controlli dello zoom");
+        final JCheckBox showZoomControls = new JCheckBox("Controlli dello zoom");
         showZoomControls.setSelected(map().getZoomControlsVisible());
         showZoomControls.addActionListener(e -> map().setZoomControlsVisible(showZoomControls.isSelected()));
         panelBottom.add(showZoomControls);
-        final JCheckBox scrollWrapEnabled = new JCheckBox("Abilitazione scrollwrap");
-        scrollWrapEnabled.addActionListener(e -> map().setScrollWrapEnabled(scrollWrapEnabled.isSelected()));
-        panelBottom.add(scrollWrapEnabled);
+        
+        
         panelBottom.add(button);
 
         panelTop.add(zoomLabel);
@@ -214,7 +209,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
                 } else {
                     map().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
                 }
-                if (showToolTip.isSelected()) map().setToolTipText(map().getPosition(p).toString());
             }
         });
     }
