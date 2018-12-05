@@ -49,6 +49,11 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLUE);
     }
     
+    public MapMarkerDot aggiungiCentralinaVuota(String etichetta, double lat, double lon) {
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.WHITE);
+    	// per le centraline che non hanno ancora rilevato nulla di particolare
+    }
+    
     public MapMarkerDot aggiungiCentralinaCoda(String etichetta, double lat, double lon) {
     	
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.RED);

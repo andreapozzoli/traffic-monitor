@@ -2,6 +2,7 @@ package gestionetraffico;
 
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.openstreetmap.gui.jmapviewer.*;
@@ -13,6 +14,13 @@ public class FunzionamentoSistemaCentrale {
 		mappa.setVisible(true);
 		
 		return mappa;
+	}
+	
+	public static void posizionaCentraline(ArrayList<CentralinaStradale> listaCS, MappaGrafica mappa) {
+		for (Centralina c : listaCS) {
+			mappa.aggiungiCentralinaVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
+		}
+			
 	}
 	
 	public static void main(String[] args) {
@@ -46,6 +54,18 @@ public class FunzionamentoSistemaCentrale {
 		//visualizzazione mappa
 		
 		MappaGrafica mappa = visualizzazioneMappaBase();
+		
+		Posizione p1 = new Posizione((float)11.3, (float)11.5);
+		Posizione p2 = new Posizione((float)6.3, (float)31.5);
+
+		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
+		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
+
+		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
+		listaTest.add(c1);
+		listaTest.add(c2);
+		
+		posizionaCentraline(listaTest, mappa);
 		
 		while(true) {
 			System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
