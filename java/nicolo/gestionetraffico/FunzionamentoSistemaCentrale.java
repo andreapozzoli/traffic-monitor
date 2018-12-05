@@ -4,7 +4,7 @@ import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.Scanner;
 
-import org.openstreetmap.gui.jmapviewer.Demo;
+import org.openstreetmap.gui.jmapviewer.*;
 
 public class FunzionamentoSistemaCentrale {
 
@@ -14,11 +14,11 @@ public class FunzionamentoSistemaCentrale {
 		GestoreCentraline GCent=GestoreCentraline.getInstance();
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
-		//è necessario un thread per ogni gestore 
+		//ï¿½ necessario un thread per ogni gestore 
 		//thread gestore amministratori 
 		while(true) {
 		while(true) {
-			System.out.println("Digita 'l' se sei già registrato, 'r' se sei un nuovo amministratore");
+			System.out.println("Digita 'l' se sei giï¿½ registrato, 'r' se sei un nuovo amministratore");
 			Scanner sc= new Scanner(System.in);
 			String login=sc.nextLine();
 			if (login.equals("r")) {
@@ -34,13 +34,18 @@ public class FunzionamentoSistemaCentrale {
 				}
 			}
 			}
+		//visualizzazione mappa
+		MappaGrafica mappa = new MappaGrafica();
+		mappa.setVisible(true);
+		 
 		while(true) {
 		System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
 		Scanner sc= new Scanner(System.in);
 		String comando=sc.nextLine();
 		if (comando.equals("m")) {
-			//visualizzazione mappa
-			 new Demo().setVisible(true);
+			MapMarkerDot dinamica = mappa.aggiungiAutomobile(null, "Automobile dinamica", 11, 23);
+			MapMarkerDot dinamica2 = mappa.aggiungiAutomobile(null, "Automobile dinamica 2", 70, 23);
+			mappa.rimuoviMarcatore(dinamica2);
 		}
 		else if (comando.equals("d")) {
 			//visualizzazione diagramma

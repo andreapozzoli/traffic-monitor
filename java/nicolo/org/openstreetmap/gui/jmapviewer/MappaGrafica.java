@@ -32,7 +32,7 @@ import org.openstreetmap.gui.jmapviewer.tilesources.OsmTileSource;
  * @author Jan Peter Stotz
  *
  */
-public class Demo extends JFrame implements JMapViewerEventListener {
+public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
     private static final long serialVersionUID = 1L;
 
@@ -44,15 +44,14 @@ public class Demo extends JFrame implements JMapViewerEventListener {
     private final JLabel mperpLabelName;
     private final JLabel mperpLabelValue;
 
-    /**
-     * Constructs the {@code Demo}.
-     */
-    public void aggiungiAutomobile(Layer layer, String etichetta, double lat, double lon) {
+   
+    public MapMarkerDot aggiungiAutomobile(Layer layer, String etichetta, double lat, double lon) {
     	MapMarkerDot automobile = new MapMarkerDot(layer, etichetta, lat , lon);
     	map().addMapMarker(automobile);
+    	return automobile;
     }
     
-    public void aggiungiCentralina(Layer layer, String etichetta, double lat, double lon) {
+    public MapMarkerDot aggiungiCentralina(Layer layer, String etichetta, double lat, double lon) {
     	Coordinate cooCS = new Coordinate(lat, lon);
         
         Font trb = new Font("Helvetica", Font.ITALIC, 13);
@@ -62,9 +61,10 @@ public class Demo extends JFrame implements JMapViewerEventListener {
         MapMarkerDot CS = new MapMarkerDot(layer, etichetta, cooCS, styleCS);
         
         map().addMapMarker(CS);
+        return CS;
        }
     
-    public void aggiungiMarcatoreGenerico(Layer layer, String etichetta, double lat, double lon, Color colore)
+    public MapMarkerDot aggiungiMarcatoreGenerico(Layer layer, String etichetta, double lat, double lon, Color colore)
     {
     	Coordinate cooCS = new Coordinate(lat, lon);
         
@@ -75,9 +75,15 @@ public class Demo extends JFrame implements JMapViewerEventListener {
         MapMarkerDot gen = new MapMarkerDot(layer, etichetta, cooCS, styleCS);
         
         map().addMapMarker(gen);
+        
+        return gen;
+    }
+    
+    public void rimuoviMarcatore(MapMarkerDot nome) {
+    	map().removeMapMarker(nome);
     }
 
-	public Demo() {
+	public MappaGrafica() {
         super("Mappa del traffico");
         setSize(400, 400);
 
@@ -212,7 +218,7 @@ public class Demo extends JFrame implements JMapViewerEventListener {
      * @param args Main program arguments
      */
     public static void main(String[] args) {
-        new Demo().setVisible(true);
+        new MappaGrafica().setVisible(true);
         
     }
 
