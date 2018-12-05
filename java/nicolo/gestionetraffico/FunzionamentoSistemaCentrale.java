@@ -16,11 +16,22 @@ public class FunzionamentoSistemaCentrale {
 		return mappa;
 	}
 	
-	public static void posizionaCentraline(ArrayList<CentralinaStradale> listaCS, MappaGrafica mappa) {
+	public static ArrayList<MapMarkerDot> posizionaCentraline(ArrayList<CentralinaStradale> listaCS, MappaGrafica mappa) {
+		ArrayList<MapMarkerDot> lista = new ArrayList<MapMarkerDot>();
+		MapMarkerDot punto = new MapMarkerDot(0,0);
 		for (Centralina c : listaCS) {
-			mappa.aggiungiCentralinaVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
+			punto = mappa.aggiungiCentralinaVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
+			lista.add(punto);
 		}
+		return lista;
 			
+	}
+	
+	public static void aggiornaCentraline(ArrayList<MapMarkerDot> listaPuntiCS, ArrayList<CentralinaStradale> nuoveCS, MappaGrafica mappa) {
+		for (MapMarkerDot c : listaPuntiCS) {
+			mappa.rimuoviMarcatore(c);
+		}
+		posizionaCentraline(nuoveCS, mappa);
 	}
 	
 	public static void main(String[] args) {
@@ -57,15 +68,21 @@ public class FunzionamentoSistemaCentrale {
 		
 		Posizione p1 = new Posizione((float)11.3, (float)11.5);
 		Posizione p2 = new Posizione((float)6.3, (float)31.5);
+		Posizione p3 = new Posizione((float)80.3, (float)51.5);
+
 
 		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
 		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
+		CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
+
 
 		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
 		listaTest.add(c1);
 		listaTest.add(c2);
 		
-		posizionaCentraline(listaTest, mappa);
+		ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
+		listaPunti = posizionaCentraline(listaTest, mappa);
+		listaTest.add(c3);
 		
 		while(true) {
 			System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
@@ -75,6 +92,7 @@ public class FunzionamentoSistemaCentrale {
 				MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
 				MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
 				mappa.rimuoviMarcatore(dinamica2);
+				aggiornaCentraline(listaPunti, listaTest, mappa);
 			}
 		else if (comando.equals("d")) {
 			//visualizzazione diagramma
