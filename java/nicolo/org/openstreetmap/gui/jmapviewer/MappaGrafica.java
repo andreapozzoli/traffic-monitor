@@ -50,7 +50,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     }
     
     public MapMarkerDot aggiungiCentralinaVuota(String etichetta, double lat, double lon) {
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.WHITE);
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.GREEN);
     	// per le centraline che non hanno ancora rilevato nulla di particolare
     }
     
@@ -61,7 +61,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     
     public MapMarkerDot aggiungiCentralinaVelocitaLenta(String etichetta, double lat, double lon) {
     	
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.YELLOW);
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.MAGENTA);
     }
  
     public MapMarkerDot aggiungiCentralinaTraffico(String etichetta, double lat, double lon) {
@@ -94,8 +94,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
         treeMap = new JMapViewerTree("Zone");
 
-        // Listen to the map viewer for user operations so components will
-        // receive events and update
         map().addJMVListener(this);
 
         setLayout(new BorderLayout());
@@ -105,6 +103,8 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         JPanel panelTop = new JPanel();
         JPanel panelBottom = new JPanel();
         JPanel helpPanel = new JPanel();
+        
+        JPanel legenda = new JPanel(); // legenda dei colori
 
         mperpLabelName = new JLabel("Metri/Pixel: ");
         mperpLabelValue = new JLabel(String.format("%s", map().getMeterPerPixel()));
@@ -113,18 +113,32 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         zoomValue = new JLabel(String.format("%s", map().getZoom()));
 
         add(panel, BorderLayout.NORTH);
-        add(helpPanel, BorderLayout.SOUTH);
+        add(helpPanel, BorderLayout.EAST);
+                
         panel.add(panelTop, BorderLayout.NORTH);
         panel.add(panelBottom, BorderLayout.SOUTH);
-        JLabel helpLabel = new JLabel("Usare il pulsante destro del mouse per muoversi,\n "
-                + "doppio click con il pulsante sinistro o rotellina per fare lo zoom.");
+        JLabel helpLabel = new JLabel("<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
+                + "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
+                + "<u><b>Legenda:</b></u><br>"
+                + "<i>Centraline stradali:</i><br>"
+                + "<font color=\"red\">Coda</font><br>" + 
+                "<font color=\"purple\">Velocità lenta</font><br>"+
+                "<font color=\"black\">Traffico elevato</font><br>"+
+                "<font color=\"green\">Nessun dato</font><br><br>"
+                + "<i>Applicazioni mobile:</i><br>"+
+                "<font color=\"blue\">Coda</font>"+
+                "</html>"
+                );
         helpPanel.add(helpLabel);
-        JButton button = new JButton("Adatta zoom per vedere tutti i marker");
+        
+        
+        
+        JButton button = new JButton("Adatta zoom per vedere tutti i marcatori");
         button.addActionListener(e -> map().setDisplayToFitMapMarkers());
         JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
                 new OsmTileSource.Mapnik(),
-                new OsmTileSource.CycleMap(),
-                new BingAerialTileSource(),
+               // new OsmTileSource.CycleMap(),
+                //new BingAerialTileSource(),
         });
         tileSourceSelector.addItemListener(new ItemListener() {
             @Override
@@ -143,30 +157,27 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         map().setTileLoader((TileLoader) tileLoaderSelector.getSelectedItem());
         panelTop.add(tileSourceSelector);
         panelTop.add(tileLoaderSelector);
-        final JCheckBox showMapMarker = new JCheckBox("Marcatori di mappa visibili");
+        
+     
+        final JCheckBox showMapMarker = new JCheckBox("Marcatori");
         showMapMarker.setSelected(map().getMapMarkersVisible());
         showMapMarker.addActionListener(e -> map().setMapMarkerVisible(showMapMarker.isSelected()));
         panelBottom.add(showMapMarker);
         ///
-        final JCheckBox showTreeLayers = new JCheckBox("Tre layer visibili");
-        showTreeLayers.addActionListener(e -> treeMap.setTreeVisible(showTreeLayers.isSelected()));
-        panelBottom.add(showTreeLayers);
+        
         ///
-        final JCheckBox showToolTip = new JCheckBox("ToolTip visibile");
-        showToolTip.addActionListener(e -> map().setToolTipText(null));
-        panelBottom.add(showToolTip);
+        
         ///
-        final JCheckBox showTileGrid = new JCheckBox("Griglia visibile");
+        final JCheckBox showTileGrid = new JCheckBox("Griglia");
         showTileGrid.setSelected(map().isTileGridVisible());
         showTileGrid.addActionListener(e -> map().setTileGridVisible(showTileGrid.isSelected()));
         panelBottom.add(showTileGrid);
-        final JCheckBox showZoomControls = new JCheckBox("Mostrare i controlli dello zoom");
+        final JCheckBox showZoomControls = new JCheckBox("Controlli dello zoom");
         showZoomControls.setSelected(map().getZoomControlsVisible());
         showZoomControls.addActionListener(e -> map().setZoomControlsVisible(showZoomControls.isSelected()));
         panelBottom.add(showZoomControls);
-        final JCheckBox scrollWrapEnabled = new JCheckBox("Abilitazione scrollwrap");
-        scrollWrapEnabled.addActionListener(e -> map().setScrollWrapEnabled(scrollWrapEnabled.isSelected()));
-        panelBottom.add(scrollWrapEnabled);
+        
+        
         panelBottom.add(button);
 
         panelTop.add(zoomLabel);
@@ -198,7 +209,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
                 } else {
                     map().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
                 }
-                if (showToolTip.isSelected()) map().setToolTipText(map().getPosition(p).toString());
             }
         });
     }
