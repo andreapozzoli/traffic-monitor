@@ -34,6 +34,7 @@ public class FunzionamentoSistemaCentrale {
 		posizionaCentraline(nuoveCS, mappa);
 	}
 	
+	
 	public static void main(String[] args) {
 	
 		//instanziazione gestori
