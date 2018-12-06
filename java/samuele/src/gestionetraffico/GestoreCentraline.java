@@ -56,7 +56,7 @@ public class GestoreCentraline /*extends UnicastRemoteObject*/ implements /*IGes
     	}
     }
     
-    public void segnalaDatabaseS(DatoTraffico dato) {
+    public synchronized void segnalaDatabaseS(DatoTraffico dato) {
     	GestoreDatabase.getInstance().aggiungiDatoTraffico(dato);
     }
     public void segnalaDatabaseA(StatoVeicolo dato) {

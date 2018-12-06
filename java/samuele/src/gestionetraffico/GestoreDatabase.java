@@ -36,7 +36,7 @@ public class GestoreDatabase {
 		}
     }
     
-    public void aggiungiDatoTraffico (DatoTraffico dato) {
+    public synchronized void aggiungiDatoTraffico (DatoTraffico dato) {
     	this.listaDatoTraffico.add(dato);
     	try {
 			aggiornaTabellaTraffico("centralina",dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra());
@@ -63,7 +63,7 @@ public class GestoreDatabase {
     	this.listaStatoVeicolo.remove(statoV);
     }
     
-    public void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora) throws BiffException, IOException {
+    public synchronized void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora) throws BiffException, IOException {
     	DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora);
     	for (DatoGenerico dato: this.tabellaTraffico) {
     		if (dato.getPosizione().equals(pos)) {

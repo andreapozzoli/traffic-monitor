@@ -1,7 +1,7 @@
 package gestionetraffico;
 import java.util.*;
 
-public abstract class Centralina extends TimerTask {
+public abstract class Centralina implements Runnable {
 	protected String stato;
 	protected Posizione posizione;
 	protected int velocita;

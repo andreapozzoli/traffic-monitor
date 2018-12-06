@@ -32,7 +32,6 @@ public class CentralinaStradale extends Centralina {
 		}
 		this.rapporto=temp;
 		this.rilevatoreVeicoli.reset();
-		this.calcolaVelocitaMedia();
 	}
 	
 	public void setIdCentralinaStradale(int id) {
@@ -113,7 +112,12 @@ public class CentralinaStradale extends Centralina {
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia() {
+		if (this.rilevatoreVeicoli.getNumeroVeicoli()!=0) {
 		this.velocita=(int)(this.rilevatoreVelocita.getSommaVelocita()/this.rilevatoreVeicoli.getNumeroVeicoli());
+		}
+		else {
+			this.velocita=0;
+		}
 		this.rilevatoreVelocita.resetSommaVelocita();
 	}
 	
@@ -124,12 +128,21 @@ public class CentralinaStradale extends Centralina {
 	
 	//nuovo
 	public void run() {
+		while(true) {
+		try {
+			Thread.sleep(1000000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.calcolaIntervallo();
 		System.out.println("intervallo calcolato");
+		this.calcolaVelocitaMedia();
 		this.creaDatoTraffico();
 		System.out.println("dato traffico creato");
 		this.inviaDatoTraffico();
 		System.out.println("dato traffico inviato");
+		}
 	}
 
 

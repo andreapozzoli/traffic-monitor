@@ -16,8 +16,8 @@ public class SensoreGPSAuto extends SensoreGPS{
 	
 	public Posizione rilevaPosizione() throws BiffException, IOException {
 		
-		float latitudine=0;		
-		float longitudine=0;
+		double latitudine=0;		
+		double longitudine=0;
 		String via;
 		Workbook wb= Workbook.getWorkbook(new File("C://Users//semmo//Documents//eclipse//gestione traffico 2/vie.xls"));
 		Sheet sheet = wb.getSheet(0);

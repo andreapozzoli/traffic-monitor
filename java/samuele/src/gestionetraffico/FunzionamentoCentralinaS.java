@@ -8,7 +8,7 @@ public class FunzionamentoCentralinaS {
 
 	public static void main(String[] args) {
 		Posizione posizione=new Posizione();
-		CentralinaStradale centralina=new CentralinaStradale(100,posizione,10,"urbana");
+		CentralinaStradale centralina=new CentralinaStradale(10,posizione,10,"urbana");
 		
 		//thread rilevatore veicoli
 		Thread t1=new Thread(centralina.getRilevatoreVeicoli());
@@ -16,10 +16,10 @@ public class FunzionamentoCentralinaS {
 		
 		//deve solo aspettare che scada l'intervallo di tempo corrente
 		//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
-		Thread t2=new Thread();
-		Timer     timer = new Timer();
-		// aspetta 10 secondi prima dell'esecuzione
-		timer.schedule( centralina, centralina.getIntervallo() );
+		Thread t2=new Thread(centralina);
+		t2.run();
+		
+		
 		
 		/*CLIENT
 		 * System.setSecurityManager(new RMISecurityManager()); 
