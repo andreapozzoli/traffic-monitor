@@ -1,0 +1,14 @@
+INDEX VERSION 1.131+C:\Users\Matteo\Desktop\compilarevie\.metadata\.plugins\org.eclipse.jdt.core
+3504234198.index
+2956413718.index
+3166394829.index
+1089277317.index
+358470139.index
+3430823674.index
+2158312854.index
+1862507915.index
+1205978688.index
+3886284614.index
+578804249.index
+3021996428.index
+4284334967.index
