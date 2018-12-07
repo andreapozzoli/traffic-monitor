@@ -36,13 +36,13 @@ public class SensoreGPSAuto extends SensoreGPS{
 
 		Cell cella = sheet.getCell(0,miavar);
 		via = cella.getContents();
-		System.out.println(via);
+		//System.out.println(via);
 		cella=sheet.getCell(1,miavar);
-		System.out.println(cella.getContents());
+		//System.out.println(cella.getContents());
 		String lat=cella.getContents();
 		latitudine=Double.valueOf(cella.getContents());
 		cella=sheet.getCell(2,miavar);
-		System.out.println(cella.getContents());
+		//System.out.println(cella.getContents());
 		longitudine=Double.valueOf(cella.getContents());
 
 
@@ -62,7 +62,7 @@ public class SensoreGPSAuto extends SensoreGPS{
 			Sheet sheet = wb.getSheet(0);
 			Cell c = sheet.getCell(0,0);
 			String stringa1 = c.getContents();
-			System.out.print(stringa1);
+			//System.out.print(stringa1);
 		}
 		catch(java.io.IOException e) {
 			System.out.println("Errore di lettura del file");

@@ -8,7 +8,9 @@ import javax.swing.*;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.openstreetmap.gui.jmapviewer.*;
 
@@ -17,6 +19,7 @@ import jxl.read.biff.BiffException;
 
 public class FunzionamentoSistemaCentrale {
 
+	private static MappaGrafica mappa;
 	public static MappaGrafica visualizzazioneMappaBase() {
 		MappaGrafica mappa = new MappaGrafica();
 		mappa.setVisible(true);
@@ -25,7 +28,7 @@ public class FunzionamentoSistemaCentrale {
 	}
 
 
-	public static boolean loginGrafico(MappaGrafica mappa) {
+	public static boolean loginGrafico() {
 
 		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
 
@@ -48,8 +51,11 @@ public class FunzionamentoSistemaCentrale {
 							loginDlg.setVisible(false);
 							frame.setVisible(false);
 							try {
-								posizionaPuntiCasuali(mappa);
+								posizionaPuntiCasuali();
 							} catch (BiffException | IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} catch (InterruptedException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
@@ -60,7 +66,7 @@ public class FunzionamentoSistemaCentrale {
 
 	}
 
-	public static void posizionaPuntiTest(MappaGrafica mappa) {
+	public static void posizionaPuntiTest() {
 
 		Posizione p1 = new Posizione("",55,55);
 		Posizione p2 = new Posizione("",33,44);
@@ -84,24 +90,47 @@ public class FunzionamentoSistemaCentrale {
 		mappa.aggiornaMappa(listaTest);
 	}
 
-	public static void posizionaPuntiCasuali(MappaGrafica mappa) throws BiffException, IOException {
+	public static void posizionaPuntiCasuali() throws BiffException, IOException, InterruptedException {
+		GestoreDatabase dataProva = GestoreDatabase.getInstance();
 		SensoreGPSAuto sensoreCasuale = new SensoreGPSAuto();
-		ArrayList<DatoGenerico> listaCasuali = new ArrayList<DatoGenerico>();
+		Posizione casuale = new Posizione();
+		String tipoCasuale = new String();
 		
 		for (int i=0; i<10; ++i)
 		{
-			Posizione casuale = new Posizione();
+			tipoCasuale = "";
 			casuale = sensoreCasuale.rilevaPosizione();
-			DatoGenerico dato = new DatoGenerico(casuale, "M100 Coda", "11/11/2008", "12:50");
-			listaCasuali.add(dato);
+			Random r = new Random();
+			char c = r.nextBoolean() ? 'M' : 'S';
+			tipoCasuale += c;
+			int n = r.nextInt(100) + 1;
+			tipoCasuale += String.valueOf(n);
+			tipoCasuale += " ";
+			
+			int evento = r.nextInt(3);
+			if(evento == 0)
+			{
+				tipoCasuale += "Coda";
+			}
+			else if(evento == 1)
+			{
+				tipoCasuale += "Traffico elevato";
+			}
+			else
+			{
+				tipoCasuale += "Velocità lenta";
+			}
+			
+			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, "11/01/2008", "11:11");
 			
 		}
 
-		mappa.aggiornaMappa(listaCasuali);
 
 	}
 
-
+	public static MappaGrafica getMappa() {
+		return mappa;
+	}
 
 	public static void main(String[] args) throws BiffException, IOException {
 
@@ -110,10 +139,11 @@ public class FunzionamentoSistemaCentrale {
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
 
-		MappaGrafica mappa = visualizzazioneMappaBase();
+		mappa = visualizzazioneMappaBase();
 
-		loginGrafico(mappa);
-
+		loginGrafico();
+		
+		
 		
 
 
