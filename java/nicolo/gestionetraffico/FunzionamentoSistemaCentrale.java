@@ -20,23 +20,6 @@ public class FunzionamentoSistemaCentrale {
 		return mappa;
 	}
 	
-	public static ArrayList<MapMarkerDot> posizionaCentraline(ArrayList<CentralinaStradale> listaCS, MappaGrafica mappa) {
-		ArrayList<MapMarkerDot> lista = new ArrayList<MapMarkerDot>();
-		MapMarkerDot punto = new MapMarkerDot(0,0);
-		for (Centralina c : listaCS) {
-			punto = mappa.aggiungiVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
-			lista.add(punto);
-		}
-		return lista;
-			
-	}
-	
-	public static void aggiornaCentraline(ArrayList<MapMarkerDot> listaPuntiCS, ArrayList<CentralinaStradale> nuoveCS, MappaGrafica mappa) {
-		for (MapMarkerDot c : listaPuntiCS) {
-			mappa.rimuoviMarcatore(c);
-		}
-		posizionaCentraline(nuoveCS, mappa);
-	}
 	
 	public static boolean loginGrafico(MappaGrafica mappa) {
 		
