@@ -1,11 +1,15 @@
 package gestionetraffico;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.openstreetmap.gui.jmapviewer.*;
+
 
 public class FunzionamentoSistemaCentrale {
 
@@ -34,38 +38,37 @@ public class FunzionamentoSistemaCentrale {
 		posizionaCentraline(nuoveCS, mappa);
 	}
 	
-	
-	public static void main(String[] args) {
-	
-		//instanziazione gestori
-		GestoreApplicazioni GApp=GestoreApplicazioni.getInstance();
-		GestoreCentraline GCent=GestoreCentraline.getInstance();
-		GestoreUtenti GUt=GestoreUtenti.getInstance();
-		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
+	public static boolean loginGrafico(MappaGrafica mappa) {
 		
-		//� necessario un thread per ogni gestore 
-		//thread gestore amministratori 
-		while(true) {
-			while(true) {
-				System.out.println("Digita 'l' se sei gi� registrato, 'r' se sei un nuovo amministratore");
-				Scanner sc= new Scanner(System.in);
-				String login=sc.nextLine();
-				if (login.equals("r")) {
-					GAmm.registraAmministratore();
-					break;
-				}
-				else if (login.equals("l")) {
-					if(GAmm.login()) {
-					break;
-					}
-					else {
-						System.out.println("Username o password non corretti");
-					}
-				}
-			}
-		//visualizzazione mappa
-		
-		MappaGrafica mappa = visualizzazioneMappaBase();
+		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
+
+		final JFrame frame = new JFrame("Accesso al sistema centrale");
+        final JButton btnLogin = new JButton("Visualizzare la mappa");
+ 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 100);
+        frame.setLayout(new FlowLayout());
+        frame.getContentPane().add(btnLogin);
+        frame.setVisible(true);
+        
+        btnLogin.addActionListener(
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent e) {
+                        LoginDialog loginDlg = new LoginDialog(frame);
+                        loginDlg.setVisible(true);
+
+                        if(loginDlg.isSucceeded()){
+                            loginDlg.setVisible(false);
+                            frame.setVisible(false);
+                            posizionaPuntiTest(mappa);
+                        }
+                    }
+                });
+        return !(frame.isVisible());
+        
+	}
+	
+	public static void posizionaPuntiTest(MappaGrafica mappa) {
 		
 		Posizione p1 = new Posizione((float)11.3, (float)11.5);
 		Posizione p2 = new Posizione((float)6.3, (float)31.5);
@@ -85,24 +88,27 @@ public class FunzionamentoSistemaCentrale {
 		listaPunti = posizionaCentraline(listaTest, mappa);
 		listaTest.add(c3);
 		
-		while(true) {
-			System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
-			Scanner sc= new Scanner(System.in);
-			String comando=sc.nextLine();
-			if (comando.equals("m")) {
-				MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
-				MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
-				mappa.rimuoviMarcatore(dinamica2);
-				aggiornaCentraline(listaPunti, listaTest, mappa);
-			}
-		else if (comando.equals("d")) {
-			//visualizzazione diagramma
-		}
-		else if (comando.equals("o"));{
-			break;
-		}
+		MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
+		MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
+		mappa.rimuoviMarcatore(dinamica2);
+		aggiornaCentraline(listaPunti, listaTest, mappa);
 	}
-}
+	
+	
+	
+	public static void main(String[] args) {
+	
+		GestoreApplicazioni GApp=GestoreApplicazioni.getInstance();
+		GestoreCentraline GCent=GestoreCentraline.getInstance();
+		GestoreUtenti GUt=GestoreUtenti.getInstance();
+		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
+	
+		MappaGrafica mappa = visualizzazioneMappaBase();
+		
+		loginGrafico(mappa);
+				
+			
+		
 		//fine gestore amministratori
 		/*SERVER GESTORE APPLICAZIONI
 		 * System.setSecurityManager(new RMISecurityManager());
