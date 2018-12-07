@@ -7,7 +7,7 @@ public class ApplicazioneServer {
 		System.setSecurityManager(new RMISecurityManager());
 		ApplicazioneMobile applicazioneMobile= new ApplicazioneMobile();
 		//Naming.rebind("ApplicazioneMobile", applicazioneMobile);
-		
+
 
 	}
 

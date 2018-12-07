@@ -12,14 +12,14 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	private SensoreGPS sensore;
 	private Posizione posizione;
 	private Utente utente;
-	
+
 	public ApplicazioneMobile() /*throws RemoteException*/{
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 	}
-	
+
 	public ApplicazioneMobile(int id) /*throws RemoteException*/ {
 		super ();
 		this.identificativo=id;
@@ -29,53 +29,53 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 
 	}
-	
+
 	public void segnalaCoda()  {
-		
+
 		this.posizione=this.sensore.rilevaPosizione();
 		NotificaApplicazione notifica=new NotificaApplicazione(this.posizione, "coda");
 		//nuovo
 		GestoreApplicazioni.getInstance().segnalaDatabase(notifica);
-		
-		
-		
+
+
+
 	}
-	
+
 	public int getIdentificativo() {
 		return this.identificativo;
 	}
-	
+
 	public void setIdentificativo(int id) {
 		this.identificativo=id;
 	}
-	
+
 	public void aggiornaPosizione() {
 		this.posizione=this.sensore.rilevaPosizione();
 	}
-	
+
 	public Posizione getPosizione() {
 		aggiornaPosizione();
 		return this.posizione;
 	}
-	
+
 	//modifica
 	public void segnalaUtente(NotificaApplicazione notifica ) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 		notifica.stampaNotifica();
 	}
-	
+
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) {
 		return new NotificaApplicazione(pos,tipo);
 	}
-	
+
 	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) {
 		this.listaNotificheRicevute.add(notifica);
 	}
-	
+
 	public void svuotaLista() {
 		this.listaNotificheRicevute.clear();
 	}
-	
+
 	//modificato
 	public boolean login() {
 		//registrato inserisce dati e li verifica
@@ -91,9 +91,9 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		}
 		else
 			return false;
-		
+
 	}
-	
+
 	//modificato
 	public boolean registraUtente() {
 		//registrare nuovo utente
@@ -101,13 +101,13 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		Scanner sc= new Scanner(System.in);
 		String username;
 		while(true) {
-		username=sc.nextLine();
-		if(GestoreUtenti.getInstance().riconosciUtente(username)) {
-			System.out.println("Username già in uso");
-		}	
-		else {
-			break;
-		}
+			username=sc.nextLine();
+			if(GestoreUtenti.getInstance().riconosciUtente(username)) {
+				System.out.println("Username giï¿½ in uso");
+			}	
+			else {
+				break;
+			}
 		}
 		System.out.println("Inserisci password: ");
 		Scanner sc1= new Scanner(System.in);
@@ -116,7 +116,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		GestoreUtenti.getInstance().aggiungiUtente(this.utente);
 		return true;
 	}	
-	
+
 	//nuova
 	public void logout() {
 		this.utente=null;
