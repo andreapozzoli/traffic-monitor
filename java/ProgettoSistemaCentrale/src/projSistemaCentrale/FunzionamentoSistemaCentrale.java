@@ -1,4 +1,4 @@
-package gestionetraffico;
+package projSistemaCentrale;
 
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
@@ -15,7 +15,7 @@ public class FunzionamentoSistemaCentrale {
 		GestoreUtenti gUt=GestoreUtenti.getInstance();
 		GestoreAmministratori gAmm=GestoreAmministratori.getInstance();
 		
-		//è necessario un thread per ogni gestore 
+		//ï¿½ necessario un thread per ogni gestore 
 		//thread gestore amministratori 
 		Thread t1=new Thread(gAmm);
 		t1.start();
