@@ -24,7 +24,7 @@ public class FunzionamentoSistemaCentrale {
 		ArrayList<MapMarkerDot> lista = new ArrayList<MapMarkerDot>();
 		MapMarkerDot punto = new MapMarkerDot(0,0);
 		for (Centralina c : listaCS) {
-			punto = mappa.aggiungiCentralinaVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
+			punto = mappa.aggiungiVuota("Centralina", c.getPosizione().getLatitudine(), c.getPosizione().getLongitudine());
 			lista.add(punto);
 		}
 		return lista;
@@ -43,7 +43,7 @@ public class FunzionamentoSistemaCentrale {
 		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
 
 		final JFrame frame = new JFrame("Accesso al sistema centrale");
-        final JButton btnLogin = new JButton("Visualizzare la mappa");
+        final JButton btnLogin = new JButton("Visualizzare i marcatori");
  
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 100);
@@ -70,28 +70,26 @@ public class FunzionamentoSistemaCentrale {
 	
 	public static void posizionaPuntiTest(MappaGrafica mappa) {
 		
-		Posizione p1 = new Posizione((float)11.3, (float)11.5);
-		Posizione p2 = new Posizione((float)6.3, (float)31.5);
-		Posizione p3 = new Posizione((float)80.3, (float)51.5);
-
-
-		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
-		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
-		CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
-
-
-		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
-		listaTest.add(c1);
-		listaTest.add(c2);
+		Posizione p1 = new Posizione(55,55);
+		Posizione p2 = new Posizione(33,44);
+		Posizione p3 = new Posizione(50,69);
+		Posizione p4 = new Posizione(20,43);
+		Posizione p5 = new Posizione(11, 79);
 		
-		ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
-		listaPunti = posizionaCentraline(listaTest, mappa);
-		listaTest.add(c3);
+		DatoGenerico d1 = new DatoGenerico(p1, "M100 Coda", "11/12/2009", "11:32");
+		DatoGenerico d2 = new DatoGenerico(p2, "S200 Traffico elevato", "10/08/2004", "12:30");
+		DatoGenerico d3 = new DatoGenerico(p3, "S120 Coda", "19/03/2098", "07:32");
+		DatoGenerico d4 = new DatoGenerico(p4, "S30 Velocità lenta", "11/02/1969", "17:13");
+		DatoGenerico d5 = new DatoGenerico(p5, "S90 Qualcosa di indefinito", "07/07/1003", "00:02");
 		
-		MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
-		MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
-		mappa.rimuoviMarcatore(dinamica2);
-		aggiornaCentraline(listaPunti, listaTest, mappa);
+		ArrayList<DatoGenerico> listaTest = new ArrayList<DatoGenerico>();
+		listaTest.add(d1);
+		listaTest.add(d2);
+		listaTest.add(d3);
+		listaTest.add(d4);
+		listaTest.add(d5);
+		
+		mappa.aggiornaMappa(listaTest);
 	}
 	
 	

@@ -61,21 +61,24 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     public void aggiornaMappa(ArrayList<DatoGenerico> listaDati) {
     	pulisciMappa();
     	for (DatoGenerico dato : listaDati) {
-    		if(dato.getTipo().endsWith("Coda"))
+    		if(dato.getPosizione() != null)
     		{
-    			aggiungiCentralinaCoda(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
-    		}
-    		else if(dato.getTipo().endsWith("Traffico elevato"))
-    		{
-    			aggiungiCentralinaTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
-    		}
-    		else if(dato.getTipo().endsWith("Velocità lenta")) {
-    			aggiungiCentralinaVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
-    		}
-    		else
-    		{
-    			aggiungiCentralinaVuota(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
-
+    			if(dato.getTipo().endsWith("Coda"))
+	    		{
+	    			aggiungiCoda(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+	    		}
+	    		else if(dato.getTipo().endsWith("Traffico elevato"))
+	    		{
+	    			aggiungiTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+	    		}
+	    		else if(dato.getTipo().endsWith("Velocità lenta")) {
+	    			aggiungiVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+	    		}
+	    		else
+	    		{
+	    			aggiungiVuota(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+	
+	    		}
     		}
     	}
     	
@@ -84,27 +87,23 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     public void pulisciMappa() {
     	map().removeAllMapMarkers();
     }
-    
-    public MapMarkerDot aggiungiApplicazioneMobile(String etichetta, double lat, double lon) {
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLUE);
-    }
-    
-    public MapMarkerDot aggiungiCentralinaVuota(String etichetta, double lat, double lon) {
+     
+    public MapMarkerDot aggiungiVuota(String etichetta, double lat, double lon) {
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.GREEN);
     	// per le centraline che non hanno ancora rilevato nulla di particolare
     }
     
-    public MapMarkerDot aggiungiCentralinaCoda(String etichetta, double lat, double lon) {
+    public MapMarkerDot aggiungiCoda(String etichetta, double lat, double lon) {
     	
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.RED);
     }
     
-    public MapMarkerDot aggiungiCentralinaVelocitaLenta(String etichetta, double lat, double lon) {
+    public MapMarkerDot aggiungiVelocitaLenta(String etichetta, double lat, double lon) {
     	
-    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.MAGENTA);
+    	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLUE);
     }
  
-    public MapMarkerDot aggiungiCentralinaTraffico(String etichetta, double lat, double lon) {
+    public MapMarkerDot aggiungiTraffico(String etichetta, double lat, double lon) {
  	
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLACK);
     }
@@ -160,13 +159,10 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         JLabel helpLabel = new JLabel("<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
                 + "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
                 + "<u><b>Legenda:</b></u><br>"
-                + "<i>Centraline stradali:</i><br>"
                 + "<font color=\"red\">Coda</font><br>" + 
-                "<font color=\"purple\">Velocità lenta</font><br>"+
+                "<font color=\"blue\">Velocità lenta</font><br>"+
                 "<font color=\"black\">Traffico elevato</font><br>"+
-                "<font color=\"green\">Nessun dato</font><br><br>"
-                + "<i>Applicazioni mobile:</i><br>"+
-                "<font color=\"blue\">Coda</font>"+
+                "<font color=\"green\">Nessun dato</font><br><br>"+
                 "</html>"
                 );
         helpPanel.add(helpLabel);
@@ -230,8 +226,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         
         
         panelBottom.add(adattaZoom);
-        panelBottom.add(pulisciMappa);
-        panelBottom.add(aggiornaMappa);
+        panelBottom.add(pulisciMappaBtn);
 
         panelTop.add(zoomLabel);
         panelTop.add(zoomValue);
