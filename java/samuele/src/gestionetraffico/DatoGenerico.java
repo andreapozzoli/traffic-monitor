@@ -6,6 +6,11 @@ public class DatoGenerico {
 	private String ora;
 	private Posizione posizione;
 	private String tipo;
+	
+	public DatoGenerico() {
+		
+	}
+	
 	public DatoGenerico(Posizione posizione, String tipo, String data, String ora) {
 		this.posizione=posizione;
 		this.tipo=tipo;

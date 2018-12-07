@@ -65,9 +65,9 @@ public class GestoreDatabase {
     
     public synchronized void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora) throws BiffException, IOException {
     	DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora);
-    	for (DatoGenerico dato: this.tabellaTraffico) {
-    		if (dato.getPosizione().equals(pos)) {
-    			this.tabellaTraffico.remove(dato);
+    	for (int i=0;i<this.tabellaTraffico.size();i++) {
+    		if (this.tabellaTraffico.get(i).getPosizione().equals(pos)) {
+    			this.tabellaTraffico.remove(i);
     		}
     	}
     	this.tabellaTraffico.add(datoGenerico);

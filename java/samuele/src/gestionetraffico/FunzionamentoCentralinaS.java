@@ -20,6 +20,10 @@ public class FunzionamentoCentralinaS {
 		t2.run();
 		
 		
+	
+	
+		
+		
 		
 		/*CLIENT
 		 * System.setSecurityManager(new RMISecurityManager()); 
