@@ -95,12 +95,17 @@ public class FunzionamentoSistemaCentrale {
 		SensoreGPSAuto sensoreCasuale = new SensoreGPSAuto();
 		Posizione casuale = new Posizione();
 		String tipoCasuale = new String();
+		String dataCasuale = new String();
+		String oraCasuale = new String();
 		
 		for (int i=0; i<10; ++i)
 		{
+			oraCasuale="";
 			tipoCasuale = "";
 			casuale = sensoreCasuale.rilevaPosizione();
 			Random r = new Random();
+			dataCasuale = String.valueOf((r.nextInt(27)+1))+"/"+String.valueOf((r.nextInt(11)+1))+"/"+String.valueOf((r.nextInt(2017)+1));
+			oraCasuale = String.valueOf(r.nextInt(24))+":"+String.valueOf(r.nextInt(60));
 			char c = r.nextBoolean() ? 'M' : 'S';
 			tipoCasuale += c;
 			int n = r.nextInt(100) + 1;
@@ -121,7 +126,10 @@ public class FunzionamentoSistemaCentrale {
 				tipoCasuale += "Velocità lenta";
 			}
 			
-			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, "11/01/2008", "11:11");
+			
+			
+			
+			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, dataCasuale, oraCasuale);
 			
 		}
 
