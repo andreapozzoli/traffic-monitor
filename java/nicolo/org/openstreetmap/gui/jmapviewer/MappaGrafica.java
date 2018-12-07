@@ -10,6 +10,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -25,6 +26,8 @@ import org.openstreetmap.gui.jmapviewer.interfaces.TileLoader;
 import org.openstreetmap.gui.jmapviewer.interfaces.TileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.BingAerialTileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.OsmTileSource;
+
+import gestionetraffico.DatoGenerico;
 
 /**
  * Demonstrates the usage of {@link JMapViewer}
@@ -44,7 +47,44 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
     private final JLabel mperpLabelName;
     private final JLabel mperpLabelValue;
 
+    public String creaEtichetta(DatoGenerico dato)
+    {
+    	if(dato.getTipo().substring(0,1).equals("M")) {
+    		return dato.getData() + " " + dato.getOra();
+    	}
+    	else
+    	{
+    		return dato.getData() + " " + dato.getOra() + " " + dato.getTipo().substring(1, dato.getTipo().indexOf(' ')) + "km/h";
+    	}
+    }
    
+    public void aggiornaMappa(ArrayList<DatoGenerico> listaDati) {
+    	pulisciMappa();
+    	for (DatoGenerico dato : listaDati) {
+    		if(dato.getTipo().endsWith("Coda"))
+    		{
+    			aggiungiCentralinaCoda(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+    		}
+    		else if(dato.getTipo().endsWith("Traffico elevato"))
+    		{
+    			aggiungiCentralinaTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+    		}
+    		else if(dato.getTipo().endsWith("Velocità lenta")) {
+    			aggiungiCentralinaVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+    		}
+    		else
+    		{
+    			aggiungiCentralinaVuota(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
+
+    		}
+    	}
+    	
+    }
+    
+    public void pulisciMappa() {
+    	map().removeAllMapMarkers();
+    }
+    
     public MapMarkerDot aggiungiApplicazioneMobile(String etichetta, double lat, double lon) {
     	return aggiungiMarcatoreGenerico(etichetta, lat, lon, Color.BLUE);
     }
@@ -133,13 +173,24 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         
         
         
-        JButton button = new JButton("Adatta zoom per vedere tutti i marcatori");
-        button.addActionListener(e -> map().setDisplayToFitMapMarkers());
+        JButton adattaZoom = new JButton("Adatta zoom per vedere tutti i marcatori");
+        
+        adattaZoom.addActionListener(e -> map().setDisplayToFitMapMarkers());
+        
+        
+        JButton pulisciMappaBtn = new JButton("Pulire la mappa");
+        pulisciMappaBtn.addActionListener(e -> pulisciMappa());
+        
+        
         JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
                 new OsmTileSource.Mapnik(),
                // new OsmTileSource.CycleMap(),
                 //new BingAerialTileSource(),
         });
+        
+        
+        
+   
         tileSourceSelector.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -178,7 +229,9 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         panelBottom.add(showZoomControls);
         
         
-        panelBottom.add(button);
+        panelBottom.add(adattaZoom);
+        panelBottom.add(pulisciMappa);
+        panelBottom.add(aggiornaMappa);
 
         panelTop.add(zoomLabel);
         panelTop.add(zoomValue);

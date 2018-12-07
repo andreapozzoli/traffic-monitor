@@ -68,30 +68,30 @@ public class FunzionamentoSistemaCentrale {
         
 	}
 	
-	public static void posizionaPuntiTest(MappaGrafica Mappa) {
+	public static void posizionaPuntiTest(MappaGrafica mappa) {
 		
-		Posizione P1 = new Posizione((float)11.3, (float)11.5);
-		Posizione P2 = new Posizione((float)6.3, (float)31.5);
-		Posizione P3 = new Posizione((float)80.3, (float)51.5);
+		Posizione p1 = new Posizione((float)11.3, (float)11.5);
+		Posizione p2 = new Posizione((float)6.3, (float)31.5);
+		Posizione p3 = new Posizione((float)80.3, (float)51.5);
 
 
-		CentralinaStradale C1 = new CentralinaStradale(10, P1, 3, "extraurbana");
-		CentralinaStradale C2 = new CentralinaStradale(50, P2, 3, "urbana");
-		CentralinaStradale C3 = new CentralinaStradale(50, P3, 3, "urbana");
+		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
+		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
+		CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
 
 
-		ArrayList<CentralinaStradale> ListaTest = new ArrayList<CentralinaStradale>();
-		ListaTest.add(C1);
-		ListaTest.add(C2);
+		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
+		listaTest.add(c1);
+		listaTest.add(c2);
 		
-		ArrayList<MapMarkerDot> ListaPunti = new ArrayList<MapMarkerDot>();
-		ListaPunti = posizionaCentraline(ListaTest, Mappa);
-		ListaTest.add(C3);
+		ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
+		listaPunti = posizionaCentraline(listaTest, mappa);
+		listaTest.add(c3);
 		
-		MapMarkerDot Dinamica = Mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
-		MapMarkerDot Dinamica2 = Mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
-		Mappa.rimuoviMarcatore(Dinamica2);
-		aggiornaCentraline(ListaPunti, ListaTest, Mappa);
+		MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
+		MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
+		mappa.rimuoviMarcatore(dinamica2);
+		aggiornaCentraline(listaPunti, listaTest, mappa);
 	}
 	
 	
@@ -103,9 +103,9 @@ public class FunzionamentoSistemaCentrale {
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
 	
-		MappaGrafica Mappa = visualizzazioneMappaBase();
+		MappaGrafica mappa = visualizzazioneMappaBase();
 		
-		loginGrafico(Mappa);
+		loginGrafico(mappa);
 				
 			
 		
