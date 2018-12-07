@@ -38,9 +38,12 @@ public class FunzionamentoSistemaCentrale {
 		posizionaCentraline(nuoveCS, mappa);
 	}
 	
-	public static void loginGrafico() {
+	public static boolean loginGrafico(MappaGrafica mappa) {
+		
+		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
+
 		final JFrame frame = new JFrame("Accesso al sistema centrale");
-        final JButton btnLogin = new JButton("Accedere");
+        final JButton btnLogin = new JButton("Visualizzare la mappa");
  
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 100);
@@ -57,11 +60,38 @@ public class FunzionamentoSistemaCentrale {
                         if(loginDlg.isSucceeded()){
                             loginDlg.setVisible(false);
                             frame.setVisible(false);
+                            posizionaPuntiTest(mappa);
                         }
                     }
                 });
- 
+        return !(frame.isVisible());
         
+	}
+	
+	public static void posizionaPuntiTest(MappaGrafica mappa) {
+		
+		Posizione p1 = new Posizione((float)11.3, (float)11.5);
+		Posizione p2 = new Posizione((float)6.3, (float)31.5);
+		Posizione p3 = new Posizione((float)80.3, (float)51.5);
+
+
+		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
+		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
+		CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
+
+
+		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
+		listaTest.add(c1);
+		listaTest.add(c2);
+		
+		ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
+		listaPunti = posizionaCentraline(listaTest, mappa);
+		listaTest.add(c3);
+		
+		MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
+		MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
+		mappa.rimuoviMarcatore(dinamica2);
+		aggiornaCentraline(listaPunti, listaTest, mappa);
 	}
 	
 	
@@ -73,49 +103,12 @@ public class FunzionamentoSistemaCentrale {
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
 	
-		loginGrafico();
+		MappaGrafica mappa = visualizzazioneMappaBase();
 		
-		while(true) {
-			
-			MappaGrafica mappa = visualizzazioneMappaBase();
-			
+		loginGrafico(mappa);
 				
-			Posizione p1 = new Posizione((float)11.3, (float)11.5);
-			Posizione p2 = new Posizione((float)6.3, (float)31.5);
-			Posizione p3 = new Posizione((float)80.3, (float)51.5);
-	
-	
-			CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
-			CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
-			CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
-	
-	
-			ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
-			listaTest.add(c1);
-			listaTest.add(c2);
 			
-			ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
-			listaPunti = posizionaCentraline(listaTest, mappa);
-			listaTest.add(c3);
-			
-			while(true) {
-				System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
-				Scanner sc= new Scanner(System.in);
-				String comando=sc.nextLine();
-				if (comando.equals("m")) {
-					MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
-					MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
-					mappa.rimuoviMarcatore(dinamica2);
-					aggiornaCentraline(listaPunti, listaTest, mappa);
-				}
-				else if (comando.equals("d")) {
-					//visualizzazione diagramma
-				}
-				else if (comando.equals("o"));{
-					break;
-				}
-			}
-		}
+		
 		//fine gestore amministratori
 		/*SERVER GESTORE APPLICAZIONI
 		 * System.setSecurityManager(new RMISecurityManager());

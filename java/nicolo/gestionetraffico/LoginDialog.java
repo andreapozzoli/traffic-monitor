@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
- 
+
+//basato su http://www.zentut.com/java-swing/simple-login-dialog/
+
 public class LoginDialog extends JDialog {
  
     private JTextField tfUsername;
