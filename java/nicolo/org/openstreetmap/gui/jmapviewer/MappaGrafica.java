@@ -159,11 +159,17 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
         JLabel helpLabel = new JLabel("<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
                 + "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
                 + "<u><b>Legenda:</b></u><br>"
-                + "<font color=\"red\">Coda</font><br>" + 
-                "<font color=\"blue\">Velocità lenta</font><br>"+
-                "<font color=\"black\">Traffico elevato</font><br>"+
-                "<font color=\"green\">Nessun dato</font><br><br>"+
-                "</html>"
+                + "<font color=\"red\">Coda</font><br>"
+                +"<font color=\"blue\">Velocità lenta</font><br>"
+                +"<font color=\"black\">Traffico elevato</font><br>"
+                +"<font color=\"green\">Nessun dato</font><br><br>"
+                + "Il pulsante <i>Pulire la mappa</i><br>"
+                + "elimina tutti i dati<br>"
+                + "visualizzati sulla mappa<br>"
+                + "e ne aggiunge di nuovi<br>"
+                + "quando arrivano delle<br>"
+                + "notifiche dal sistema."
+                +"</html>"
                 );
         helpPanel.add(helpLabel);
         
