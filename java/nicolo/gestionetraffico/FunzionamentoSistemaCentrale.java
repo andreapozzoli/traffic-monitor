@@ -1,11 +1,15 @@
 package gestionetraffico;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.openstreetmap.gui.jmapviewer.*;
+
 
 public class FunzionamentoSistemaCentrale {
 
@@ -34,75 +38,84 @@ public class FunzionamentoSistemaCentrale {
 		posizionaCentraline(nuoveCS, mappa);
 	}
 	
+	public static void loginGrafico() {
+		final JFrame frame = new JFrame("Accesso al sistema centrale");
+        final JButton btnLogin = new JButton("Accedere");
+ 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 100);
+        frame.setLayout(new FlowLayout());
+        frame.getContentPane().add(btnLogin);
+        frame.setVisible(true);
+        
+        btnLogin.addActionListener(
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent e) {
+                        LoginDialog loginDlg = new LoginDialog(frame);
+                        loginDlg.setVisible(true);
+
+                        if(loginDlg.isSucceeded()){
+                            loginDlg.setVisible(false);
+                            frame.setVisible(false);
+                        }
+                    }
+                });
+ 
+        
+	}
+	
+	
 	
 	public static void main(String[] args) {
 	
-		//instanziazione gestori
 		GestoreApplicazioni GApp=GestoreApplicazioni.getInstance();
 		GestoreCentraline GCent=GestoreCentraline.getInstance();
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
+	
+		loginGrafico();
 		
-		//� necessario un thread per ogni gestore 
-		//thread gestore amministratori 
 		while(true) {
+			
+			MappaGrafica mappa = visualizzazioneMappaBase();
+			
+				
+			Posizione p1 = new Posizione((float)11.3, (float)11.5);
+			Posizione p2 = new Posizione((float)6.3, (float)31.5);
+			Posizione p3 = new Posizione((float)80.3, (float)51.5);
+	
+	
+			CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
+			CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
+			CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
+	
+	
+			ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
+			listaTest.add(c1);
+			listaTest.add(c2);
+			
+			ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
+			listaPunti = posizionaCentraline(listaTest, mappa);
+			listaTest.add(c3);
+			
 			while(true) {
-				System.out.println("Digita 'l' se sei gi� registrato, 'r' se sei un nuovo amministratore");
+				System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
 				Scanner sc= new Scanner(System.in);
-				String login=sc.nextLine();
-				if (login.equals("r")) {
-					GAmm.registraAmministratore();
+				String comando=sc.nextLine();
+				if (comando.equals("m")) {
+					MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
+					MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
+					mappa.rimuoviMarcatore(dinamica2);
+					aggiornaCentraline(listaPunti, listaTest, mappa);
+				}
+				else if (comando.equals("d")) {
+					//visualizzazione diagramma
+				}
+				else if (comando.equals("o"));{
 					break;
 				}
-				else if (login.equals("l")) {
-					if(GAmm.login()) {
-					break;
-					}
-					else {
-						System.out.println("Username o password non corretti");
-					}
-				}
 			}
-		//visualizzazione mappa
-		
-		MappaGrafica mappa = visualizzazioneMappaBase();
-		
-		Posizione p1 = new Posizione((float)11.3, (float)11.5);
-		Posizione p2 = new Posizione((float)6.3, (float)31.5);
-		Posizione p3 = new Posizione((float)80.3, (float)51.5);
-
-
-		CentralinaStradale c1 = new CentralinaStradale(10, p1, 3, "extraurbana");
-		CentralinaStradale c2 = new CentralinaStradale(50, p2, 3, "urbana");
-		CentralinaStradale c3 = new CentralinaStradale(50, p3, 3, "urbana");
-
-
-		ArrayList<CentralinaStradale> listaTest = new ArrayList<CentralinaStradale>();
-		listaTest.add(c1);
-		listaTest.add(c2);
-		
-		ArrayList<MapMarkerDot> listaPunti = new ArrayList<MapMarkerDot>();
-		listaPunti = posizionaCentraline(listaTest, mappa);
-		listaTest.add(c3);
-		
-		while(true) {
-			System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout");
-			Scanner sc= new Scanner(System.in);
-			String comando=sc.nextLine();
-			if (comando.equals("m")) {
-				MapMarkerDot dinamica = mappa.aggiungiApplicazioneMobile("App mobile dinamica", 11, 23);
-				MapMarkerDot dinamica2 = mappa.aggiungiApplicazioneMobile("App mobile dinamica 2", 70, 23);
-				mappa.rimuoviMarcatore(dinamica2);
-				aggiornaCentraline(listaPunti, listaTest, mappa);
-			}
-		else if (comando.equals("d")) {
-			//visualizzazione diagramma
 		}
-		else if (comando.equals("o"));{
-			break;
-		}
-	}
-}
 		//fine gestore amministratori
 		/*SERVER GESTORE APPLICAZIONI
 		 * System.setSecurityManager(new RMISecurityManager());
