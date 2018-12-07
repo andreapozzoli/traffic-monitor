@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 
 import org.openstreetmap.gui.jmapviewer.events.JMVCommandEvent;
 import org.openstreetmap.gui.jmapviewer.interfaces.JMapViewerEventListener;
+import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapPolygon;
 import org.openstreetmap.gui.jmapviewer.interfaces.TileLoader;
 import org.openstreetmap.gui.jmapviewer.interfaces.TileSource;
@@ -148,8 +149,18 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 		return marcatoreGenerico;
 	}
 
-	public void rimuoviMarcatore(MapMarkerDot nome) {
-		map().removeMapMarker(nome);
+	public void rimuoviMarcatore(double lat, double lon) {
+		ArrayList<MapMarker> listaEliminare = new ArrayList<MapMarker>();
+		for (MapMarker m : map().getMapMarkerList()) {
+			if(m.getLat() == lat && m.getLon() == lon) {
+				listaEliminare.add(m);
+			}
+		}
+		
+		for (int i=listaEliminare.size()-1; i>=0;--i) {
+			map().removeMapMarker(listaEliminare.get(i));
+		}
+		
 	}
 
 	public MappaGrafica() {
