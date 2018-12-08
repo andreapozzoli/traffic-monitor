@@ -179,20 +179,19 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 		JPanel panelBottom = new JPanel();
 		JPanel helpPanel = new JPanel();
 
-		JPanel legenda = new JPanel(); // legenda dei colori
-
 		mperpLabelName = new JLabel("Metri/Pixel: ");
-		mperpLabelValue = new JLabel(String.format("%s", map().getMeterPerPixel()));
+		mperpLabelValue = new JLabel(String.format("%.5g%n", map().getMeterPerPixel()));
 
 		zoomLabel = new JLabel("Zoom: ");
 		zoomValue = new JLabel(String.format("%s", map().getZoom()));
 
-		add(panel, BorderLayout.NORTH);
+		add(panel, BorderLayout.SOUTH);
 		add(helpPanel, BorderLayout.EAST);
 
 		panel.add(panelTop, BorderLayout.NORTH);
 		panel.add(panelBottom, BorderLayout.SOUTH);
-		JLabel helpLabel = new JLabel("<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
+		
+		String informazioni = "<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
 				+ "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
 				+ "<u><b>Legenda:</b></u><br>"
 				+ "<font color=\"red\">Coda</font><br>"
@@ -205,8 +204,13 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				+ "e ne aggiunge di nuovi<br>"
 				+ "quando arrivano delle<br>"
 				+ "notifiche dal sistema."
-				+"</html>"
-				);
+				+ "</html>";
+				
+			
+		
+		
+		JLabel helpLabel = new JLabel(informazioni);
+		
 		helpPanel.add(helpLabel);
 
 
@@ -219,33 +223,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 		JButton pulisciMappaBtn = new JButton("Pulire la mappa");
 		pulisciMappaBtn.addActionListener(e -> pulisciMappa());
 
-
-		JComboBox<TileSource> tileSourceSelector = new JComboBox<>(new TileSource[] {
-				new OsmTileSource.Mapnik(),
-				// new OsmTileSource.CycleMap(),
-				//new BingAerialTileSource(),
-		});
-
-
-
-
-		tileSourceSelector.addItemListener(new ItemListener() {
-			@Override
-			public void itemStateChanged(ItemEvent e) {
-				map().setTileSource((TileSource) e.getItem());
-			}
-		});
-		JComboBox<TileLoader> tileLoaderSelector;
-		tileLoaderSelector = new JComboBox<>(new TileLoader[] {new OsmTileLoader(map())});
-		tileLoaderSelector.addItemListener(new ItemListener() {
-			@Override
-			public void itemStateChanged(ItemEvent e) {
-				map().setTileLoader((TileLoader) e.getItem());
-			}
-		});
-		map().setTileLoader((TileLoader) tileLoaderSelector.getSelectedItem());
-		panelTop.add(tileSourceSelector);
-		panelTop.add(tileLoaderSelector);
 
 
 		final JCheckBox showMapMarker = new JCheckBox("Marcatori");
@@ -321,7 +298,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
 	private void updateZoomParameters() {
 		if (mperpLabelValue != null)
-			mperpLabelValue.setText(String.format("%s", map().getMeterPerPixel()));
+			mperpLabelValue.setText(String.format("%.5g%n", map().getMeterPerPixel()));
 		if (zoomValue != null)
 			zoomValue.setText(String.format("%s", map().getZoom()));
 	}

@@ -122,7 +122,7 @@ public class FunzionamentoSistemaCentrale {
 		String dataCasuale = new String();
 		String oraCasuale = new String();
 
-		for (int i=0; i<500; ++i)
+		for (int i=0; i<50; ++i)
 		{
 			oraCasuale="";
 			tipoCasuale = "";

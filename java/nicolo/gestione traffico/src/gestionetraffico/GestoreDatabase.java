@@ -75,6 +75,7 @@ public class GestoreDatabase {
 		this.tabellaTraffico.add(datoGenerico);
 
 		FunzionamentoSistemaCentrale.getMappa().aggiungiPunto(datoGenerico);
+		
 		//modificato
 		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
