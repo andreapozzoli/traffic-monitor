@@ -31,12 +31,14 @@ public class FunzionamentoSistemaCentrale {
 		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
 
 		final JFrame frame = new JFrame("Accesso al sistema centrale");
-		final JButton btnLogin = new JButton("Visualizzare i marcatori");
+		final JButton btnLogin = new JButton("Login");
+		final JButton btnRegistrazione = new JButton("Registrazione");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(300, 100);
 		frame.setLayout(new FlowLayout());
 		frame.getContentPane().add(btnLogin);
+		frame.getContentPane().add(btnRegistrazione);
 		frame.setVisible(true);
 
 		btnLogin.addActionListener(
@@ -47,6 +49,30 @@ public class FunzionamentoSistemaCentrale {
 
 						if(loginDlg.isSucceeded()){
 							loginDlg.setVisible(false);
+							frame.setVisible(false);
+							try {
+								posizionaPuntiCasuali();
+							} catch (BiffException | IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} catch (InterruptedException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+					}
+				});
+		
+		
+
+		btnRegistrazione.addActionListener(
+				new ActionListener(){
+					public void actionPerformed(ActionEvent e) {
+						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame);
+						registrazioneDlg.setVisible(true);
+
+						if(registrazioneDlg.isSucceeded()){
+							registrazioneDlg.setVisible(false);
 							frame.setVisible(false);
 							try {
 								posizionaPuntiCasuali();
@@ -95,7 +121,7 @@ public class FunzionamentoSistemaCentrale {
 		String tipoCasuale = new String();
 		String dataCasuale = new String();
 		String oraCasuale = new String();
-		
+
 		for (int i=0; i<500; ++i)
 		{
 			oraCasuale="";
@@ -109,7 +135,7 @@ public class FunzionamentoSistemaCentrale {
 			int n = r.nextInt(100) + 1;
 			tipoCasuale += String.valueOf(n);
 			tipoCasuale += " ";
-			
+
 			int evento = r.nextInt(3);
 			if(evento == 0)
 			{
@@ -123,12 +149,12 @@ public class FunzionamentoSistemaCentrale {
 			{
 				tipoCasuale += "Velocità lenta";
 			}
-			
-			
-			
-			
+
+
+
+
 			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, dataCasuale, oraCasuale);
-			
+
 		}
 
 
@@ -148,9 +174,9 @@ public class FunzionamentoSistemaCentrale {
 		mappa = visualizzazioneMappaBase();
 
 		loginGrafico();
-		
-		
-		
+
+
+
 
 
 
