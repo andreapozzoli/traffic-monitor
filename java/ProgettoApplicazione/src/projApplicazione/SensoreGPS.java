@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 
 import jxl.*;
 import jxl.read.biff.BiffException;

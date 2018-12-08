@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 
 public class DatoTraffico extends Notifica {
 	private String tipo;

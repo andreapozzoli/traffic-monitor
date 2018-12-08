@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 
 public class Utente {
 	private String username;

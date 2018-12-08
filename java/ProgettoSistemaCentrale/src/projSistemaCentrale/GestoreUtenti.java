@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 import java.util.ArrayList;
 
 public class GestoreUtenti {

@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 
 public class Utente {
 	private String username;

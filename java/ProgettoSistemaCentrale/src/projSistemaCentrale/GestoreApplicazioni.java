@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
@@ -10,28 +10,20 @@ import java.io.IOException;
 import java.lang.Math;
 
 
-public class GestoreApplicazioni /*extends UnicastRemoteObject implements IGestoreApplicazioni*/ {
+public class GestoreApplicazioni extends UnicastRemoteObject implements IGestoreApplicazioni {
 	private static GestoreApplicazioni instance=null;
 	private int raggio;
 	private ArrayList<ApplicazioneMobile> listaApplicazioni;
-    private GestoreApplicazioni() /*throws RemoteException*/ {
+    private GestoreApplicazioni() throws RemoteException {
     	super();
     	this.listaApplicazioni=new ArrayList<ApplicazioneMobile>();
     	this.raggio=500;
     }
     public static GestoreApplicazioni getInstance(){
-    	//try {    		
-            if(instance==null)
+    	    if(instance==null)
                     instance = new GestoreApplicazioni();
             return instance;
-    	//}
-    	/*catch (RemoteException a) {
-    		System.err.println(a.getMessage());
-    	}
-    	finally {*/
-    		//System.out.println("Errore nella connessione RMI");
-    		//return instance;
-    	//}
+    	
     }
     public int getRaggio() {
     	return this.raggio;
@@ -39,7 +31,7 @@ public class GestoreApplicazioni /*extends UnicastRemoteObject implements IGesto
     public void setRaggio(int raggio) {
     	this.raggio=raggio;
     }
-    public void aggiungiApplicazione(ApplicazioneMobile app) /*throws RemoteException*/{
+    public void aggiungiApplicazione(ApplicazioneMobile app) throws RemoteException{
     	this.listaApplicazioni.add(app);
     }
     public void rimuoviApplicazione(int id) throws RemoteException{
@@ -55,7 +47,7 @@ public class GestoreApplicazioni /*extends UnicastRemoteObject implements IGesto
     	return this.listaApplicazioni;
     }
    
-    public void segnalaDatabase(NotificaApplicazione notifica)/* throws RemoteException*/{
+    public void segnalaDatabase(NotificaApplicazione notifica) throws RemoteException{
     	GestoreDatabase.getInstance().aggiungiNotificaApplicazione(notifica);
     }
     public void calcolaApplicazioniDaNotificare(String mittente,Posizione posizione, String tipo) throws BiffException, IOException {

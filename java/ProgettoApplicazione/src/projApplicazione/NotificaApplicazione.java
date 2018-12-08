@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 
 public class NotificaApplicazione extends Notifica {
 	private String tipo;	

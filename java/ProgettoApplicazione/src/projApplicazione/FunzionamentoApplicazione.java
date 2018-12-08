@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 
 import java.io.*;
 import java.rmi.Naming;

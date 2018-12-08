@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -107,23 +107,23 @@ public class GestoreAmministratori implements Runnable {
     			}
     			}
     		while(true) {
-    		System.out.println("Premi 'm' se vuoi visualizzare la mappa, 'd' se vuoi visualizzare il diagramma,'o' se vuoi fare il logout,'c' se vuoi aggiungere una centralina stradale");
+    		System.out.println("Premi 'm' se vuoi visualizzare la mappa,'o' se vuoi fare il logout");
     		Scanner sc= new Scanner(System.in);
     		String comando=sc.nextLine();
     		if (comando.equals("m")) {
     			//visualizzazione mappa
     			 new Demo().setVisible(true);
     		}
-    		else if (comando.equals("d")) {
+    		/*else if (comando.equals("d")) {
     			//visualizzazione diagramma
-    		}
+    		}*/
     		else if (comando.equals("o"))
     		{
     			break;
     		}
-    		else if(comando.equals("c")) {
+    		/*else if(comando.equals("c")) {
     			//comandi per aggiungere una nuova centralina
-    		}
+    		}*/
     		}
     		}
     }

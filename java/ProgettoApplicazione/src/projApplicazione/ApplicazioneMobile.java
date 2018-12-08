@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 import java.io.IOException;
 import java.rmi.*;
 import java.rmi.server.*;
@@ -9,14 +9,15 @@ import java.util.Scanner;
 import jxl.read.biff.BiffException;
 
 
-public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplicazioneMobile*/ {
+public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicazioneMobile {
 	private int identificativo;
 	private ArrayList<NotificaApplicazione> listaNotificheRicevute;
 	private SensoreGPS sensore;
 	private Posizione posizione;
 	private Utente utente;
 	
-	public ApplicazioneMobile() throws BiffException, IOException /*throws RemoteException*/{
+	public ApplicazioneMobile() throws BiffException, IOException, RemoteException{
+		super();
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
@@ -44,11 +45,11 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		
 	}
 	
-	public int getIdentificativo() {
+	public int getIdentificativo() throws RemoteException{
 		return this.identificativo;
 	}
 	
-	public void setIdentificativo(int id) {
+	public void setIdentificativo(int id) throws RemoteException{
 		this.identificativo=id;
 	}
 	
@@ -56,7 +57,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.posizione=this.sensore.rilevaPosizione();
 	}
 	
-	public Posizione getPosizione() throws BiffException, IOException {
+	public Posizione getPosizione() throws BiffException, IOException, RemoteException {
 		aggiornaPosizione();
 		return this.posizione;
 	}
@@ -71,11 +72,11 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		notifica.stampaNotifica();
 	}
 	
-	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) {
+	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) throws RemoteException{
 		return new NotificaApplicazione("SistemaCentrale",pos,tipo);
 	}
 	
-	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) {
+	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) throws RemoteException{
 		this.listaNotificheRicevute.add(notifica);
 		this.segnalaUtente(notifica);
 	}

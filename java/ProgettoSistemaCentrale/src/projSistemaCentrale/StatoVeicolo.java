@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 
 public class StatoVeicolo extends Notifica {
 	private int idVeicolo;

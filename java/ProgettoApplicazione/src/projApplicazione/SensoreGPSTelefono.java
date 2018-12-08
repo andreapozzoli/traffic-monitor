@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 import java.util.*;
 
 import jxl.*;
@@ -20,7 +20,7 @@ public class SensoreGPSTelefono extends SensoreGPS {
 		double latitudine=0;		
 		double longitudine=0;
 		String via;
-		Workbook wb= Workbook.getWorkbook(new File("C://Users//Matteo//Desktop//prova finale//traffic-monitor//java//andrea//gestione traffico 2//vie3.xls"));
+		Workbook wb= Workbook.getWorkbook(new File("C://Users//Matteo//Desktop//prova finale//traffic-monitor//java//samuele//gestione traffico 2//vie3.xls"));
 		Sheet sheet = wb.getSheet(0);
 		Random random = new Random();
 		int a = 0; // numero minimo
@@ -32,13 +32,10 @@ public class SensoreGPSTelefono extends SensoreGPS {
 		
 		Cell cella = sheet.getCell(0,miavar);
 		via = cella.getContents();
-		System.out.println(via);
 		cella=sheet.getCell(1,miavar);
-		System.out.println(cella.getContents());
 		String lat=cella.getContents();
 		latitudine=Double.valueOf(cella.getContents());
 		cella=sheet.getCell(2,miavar);
-		System.out.println(cella.getContents());
 		longitudine=Double.valueOf(cella.getContents());
 		
 		

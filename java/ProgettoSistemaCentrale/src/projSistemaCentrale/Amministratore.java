@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjSistemaCentrale;
 public class Amministratore {
 	private String nomeUtente;
 	private String password;

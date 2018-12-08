@@ -1,4 +1,4 @@
-package projApplicazione;
+package ProjApplicazione;
 import java.util.*;
 
 public abstract class Notifica {

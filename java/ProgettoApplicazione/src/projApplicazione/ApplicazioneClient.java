@@ -1,8 +1,9 @@
-package projApplicazione;
+package ProjApplicazione;
 import java.io.IOException;
 import java.rmi.*;
 import java.util.Scanner;
 
+import ProjSistemaCentrale.IApplicazioneMobile;
 import jxl.read.biff.BiffException;
 
 public class ApplicazioneClient implements Runnable{
@@ -15,8 +16,14 @@ public class ApplicazioneClient implements Runnable{
 	}
 
 	public void run(){
-		//System.setSecurityManager(new RMISecurityManager());
-		//IGestoreApplicazioni iGestoreApplicazioni=(IGestoreApplicazioni) Naming.lookup("GestoreApplicazioni");
+		System.setSecurityManager(new RMISecurityManager());
+		try {
+			System.out.println("Security Manager loaded");
+			String url="rmi://localhost/GestoreApplicazioni"; //mettere :1099 dopo localhost se richiesto
+			IGestoreApplicazioni iGestoreApplicazioni = (IGestoreApplicazioni) Naming.lookup(url);
+			System.out.println("Got remote object");
+				
+		
 		
 		//while per gestire la possibilità di riloggarsi nel momento in cui si fa il log-out
 				while(true) {
@@ -46,6 +53,7 @@ public class ApplicazioneClient implements Runnable{
 				if (segnalazione.equals("s")) {
 				try {
 					this.applicazione.segnalaCoda();
+					System.out.println("posizione "+ this.applicazione.getPosizione().getVia());
 				} catch (BiffException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -60,7 +68,16 @@ public class ApplicazioneClient implements Runnable{
 				}
 				
 		
-
+		}
+		catch (RemoteException exc) {
+			System.out.println("Error in lookup: "+exc.toString());
+		}
+		catch (java.net.MalformedURLException exc) {
+			System.out.println("malformed URL: "+exc.toString());
+		}
+		catch (NotBoundException exc) {
+			System.out.println("NotBound: "+exc.toString());
+		}
 	}
 
 }
