@@ -3,6 +3,7 @@ package gestionetraffico;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
@@ -18,8 +19,8 @@ public class AppMobileGrafica extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 
-	private static JTextArea areaTesto = new JTextArea();
-	private static JScrollPane areaNotifiche = new JScrollPane(areaTesto);
+	private static JTextArea areaNotifiche = new JTextArea(10, 10);
+	private static JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
 	private static JPanel panel = new JPanel(new BorderLayout());
 	private static JPanel panelTop = new JPanel();
 	private static JPanel panelBottom = new JPanel();
@@ -30,21 +31,40 @@ public class AppMobileGrafica extends JFrame {
 	public AppMobileGrafica() {
 		super("App mobile");
 
-		add(panel, BorderLayout.SOUTH);
+		// da https://coderanch.com/t/341045/java/expand-JTextArea-main-panel-resized
+		
+	    paneNotifiche.setPreferredSize(new Dimension(175,150));
+
+		/*add(panel, BorderLayout.SOUTH);
 
 		panel.add(panelTop, BorderLayout.NORTH);
 		panel.add(panelBottom, BorderLayout.SOUTH);
 		
-		panelTop.add(areaNotifiche, BorderLayout.CENTER);
 		
-		/*areaNotifiche.setLineWrap(true);
-		areaNotifiche.setWrapStyleWord(true);*/
 		
 		segnalaCodaBtn.addActionListener(e -> segnalaCoda());
 		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
 		
 		panelBottom.add(segnalaCodaBtn);
-		panelBottom.add(svuotaNotificheBtn);
+		panelBottom.add(svuotaNotificheBtn);*/
+	    
+	    JPanel jp = new JPanel(new BorderLayout());
+	    JPanel top = new JPanel();
+	    JPanel bottom = new JPanel();
+	    bottom.add(segnalaCodaBtn);
+	    bottom.add(svuotaNotificheBtn);
+
+	    JPanel left = new JPanel();
+	    JPanel right = new JPanel();
+	    jp.add(top,BorderLayout.NORTH);
+	    jp.add(bottom,BorderLayout.SOUTH);
+	    jp.add(left,BorderLayout.WEST);
+	    jp.add(right,BorderLayout.EAST);
+	    jp.add(paneNotifiche,BorderLayout.CENTER);
+	    getContentPane().add(jp);
+	    
+	    segnalaCodaBtn.addActionListener(e -> segnalaCoda());
+		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
 		
 		
 
@@ -66,7 +86,7 @@ public class AppMobileGrafica extends JFrame {
 	}
 
 	private void pulisciNotifiche() {
-		//areaNotifiche.
+		areaNotifiche.setText("");
 	}
 
 	public static void main(String[] args) {
