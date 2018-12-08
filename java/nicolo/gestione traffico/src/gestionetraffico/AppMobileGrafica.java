@@ -14,8 +14,9 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-public class AppMobileGrafica extends JFrame {
+public class AppMobileGrafica /*extends JFrame*/ {
 
+	private JFrame frame;
 	private static final long serialVersionUID = 1L;
 
 	private static JTextArea areaNotifiche = new JTextArea(10, 10);
@@ -26,11 +27,15 @@ public class AppMobileGrafica extends JFrame {
 
 	private static JButton segnalaCodaBtn = new JButton("Segnala coda");
 	private static JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
+	
 
 	public AppMobileGrafica() {
-		super("App mobile");
+		frame = new JFrame();
 
+		frame.setTitle("Applicazione mobile");
+	
 		// da https://coderanch.com/t/341045/java/expand-JTextArea-main-panel-resized
+		// https://stackoverflow.com/questions/33100147/how-to-set-window-size-without-extending-jframe
 
 		paneNotifiche.setPreferredSize(new Dimension(175,150));
 
@@ -47,25 +52,21 @@ public class AppMobileGrafica extends JFrame {
 		jp.add(left,BorderLayout.WEST);
 		jp.add(right,BorderLayout.EAST);
 		jp.add(paneNotifiche,BorderLayout.CENTER);
-		getContentPane().add(jp);
+		frame.getContentPane().add(jp);
 
 		segnalaCodaBtn.addActionListener(e -> segnalaCoda());
 		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
 
 
-	}
-
-	public static void creaGUI(){
-		JFrame frame = new AppMobileGrafica();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
-
 	}
 
 
+
 	public void segnalaCoda() {
-		System.out.println("Funzione che segnala la coda... da fare...");
+		// todo
 	}
 
 	private void pulisciNotifiche() {
@@ -75,7 +76,8 @@ public class AppMobileGrafica extends JFrame {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
-				creaGUI();
+				//creaGUI();
+				new AppMobileGrafica();
 			}
 		});
 	}
