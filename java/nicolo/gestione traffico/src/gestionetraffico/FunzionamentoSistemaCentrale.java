@@ -154,9 +154,6 @@ public class FunzionamentoSistemaCentrale {
 				tipoCasuale += "Qualcosa di incomprensibile";
 			}
 
-
-
-
 			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, dataCasuale, oraCasuale);
 
 		}
