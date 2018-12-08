@@ -136,7 +136,7 @@ public class FunzionamentoSistemaCentrale {
 			tipoCasuale += String.valueOf(n);
 			tipoCasuale += " ";
 
-			int evento = r.nextInt(3);
+			int evento = r.nextInt(4);
 			if(evento == 0)
 			{
 				tipoCasuale += "Coda";
@@ -145,9 +145,13 @@ public class FunzionamentoSistemaCentrale {
 			{
 				tipoCasuale += "Traffico elevato";
 			}
-			else
+			else if(evento == 2)
 			{
 				tipoCasuale += "Velocità lenta";
+			}
+			else
+			{
+				tipoCasuale += "Qualcosa di incomprensibile";
 			}
 
 
