@@ -1,10 +1,19 @@
 package gestionetraffico;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 import jxl.read.biff.BiffException;
 
@@ -15,14 +24,66 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	private SensoreGPS sensore;
 	private Posizione posizione;
 	private Utente utente;
-	
+
+	private JFrame frame;
+	private static final long serialVersionUID = 1L;
+
+	private static JTextArea areaNotifiche = new JTextArea(10, 10);
+	private static JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
+
+
 	public ApplicazioneMobile() throws BiffException, IOException /*throws RemoteException*/{
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
+
+		JButton segnalaCodaBtn = new JButton("Segnala coda");
+		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
+		
+		frame = new JFrame();
+		frame.setTitle("Applicazione mobile");
+
+		// da https://coderanch.com/t/341045/java/expand-JTextArea-main-panel-resized
+		// https://stackoverflow.com/questions/33100147/how-to-set-window-size-without-extending-jframe
+
+		paneNotifiche.setPreferredSize(new Dimension(175,150));
+
+		JPanel jp = new JPanel(new BorderLayout());
+		JPanel top = new JPanel();
+		JPanel bottom = new JPanel();
+
+		JPanel left = new JPanel();
+		JPanel right = new JPanel();
+		jp.add(top,BorderLayout.NORTH);
+		jp.add(bottom,BorderLayout.SOUTH);
+		jp.add(left,BorderLayout.WEST);
+		jp.add(right,BorderLayout.EAST);
+		jp.add(paneNotifiche,BorderLayout.CENTER);
+		frame.getContentPane().add(jp);
+
+		segnalaCodaBtn.addActionListener(e -> {
+			try {
+				segnalaCoda();
+			} catch (BiffException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+		bottom.add(segnalaCodaBtn);
+
+		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
+
+		bottom.add(svuotaNotificheBtn);
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
 	}
-	
+
 	public ApplicazioneMobile(int id) throws BiffException, IOException /*throws RemoteException*/ {
 		super ();
 		this.identificativo=id;
@@ -32,58 +93,64 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 
 	}
-	
+
 	public void segnalaCoda() throws BiffException, IOException  {
-		
+
 		this.posizione=this.sensore.rilevaPosizione();
+		//NotificaApplicazione notifica=new NotificaApplicazione("user", this.posizione,"coda");
 		NotificaApplicazione notifica=new NotificaApplicazione(this.utente.getUsername(),this.posizione, "coda");
 		//nuovo
 		GestoreApplicazioni.getInstance().segnalaDatabase(notifica);
-		
-		
-		
+
+
+
 	}
-	
+
+	private void pulisciNotifiche() {
+		areaNotifiche.setText("");
+	}
+
+
 	public int getIdentificativo() {
 		return this.identificativo;
 	}
-	
+
 	public void setIdentificativo(int id) {
 		this.identificativo=id;
 	}
-	
+
 	public void aggiornaPosizione() throws BiffException, IOException {
 		this.posizione=this.sensore.rilevaPosizione();
 	}
-	
+
 	public Posizione getPosizione() throws BiffException, IOException {
 		aggiornaPosizione();
 		return this.posizione;
 	}
-	
+
 	public String getUsenameUtente() {
 		return this.utente.getUsername();
 	}
-	
+
 	//modifica
 	public void segnalaUtente(NotificaApplicazione notifica ) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 		notifica.stampaNotifica();
 	}
-	
+
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) {
 		return new NotificaApplicazione("SistemaCentrale",pos,tipo);
 	}
-	
+
 	public void aggiungiNotificaInCoda(NotificaApplicazione notifica) {
 		this.listaNotificheRicevute.add(notifica);
 		this.segnalaUtente(notifica);
 	}
-	
+
 	public void svuotaLista() {
 		this.listaNotificheRicevute.clear();
 	}
-	
+
 	//modificato
 	public boolean login() {
 		//registrato inserisce dati e li verifica
@@ -99,9 +166,9 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		}
 		else
 			return false;
-		
+
 	}
-	
+
 	//modificato
 	public boolean registraUtente() {
 		//registrare nuovo utente
@@ -109,13 +176,13 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		Scanner sc= new Scanner(System.in);
 		String username;
 		while(true) {
-		username=sc.nextLine();
-		if(GestoreApplicazioni.getInstance().verificaAccesso(username)) {
-			System.out.println("Username già in uso");
-		}	
-		else {
-			break;
-		}
+			username=sc.nextLine();
+			if(GestoreApplicazioni.getInstance().verificaAccesso(username)) {
+				System.out.println("Username giï¿½ in uso");
+			}	
+			else {
+				break;
+			}
 		}
 		System.out.println("Inserisci password: ");
 		Scanner sc1= new Scanner(System.in);
@@ -124,10 +191,24 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		GestoreApplicazioni.getInstance().registraUtente(utente);
 		return true;
 	}	
-	
+
 	//nuova
 	public void logout() {
 		this.utente=null;
+	}
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				//creaGUI();
+				try {
+					new ApplicazioneMobile();
+				} catch (BiffException | IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 }

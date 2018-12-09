@@ -20,7 +20,11 @@ public class SensoreGPSTelefono extends SensoreGPS {
 		double latitudine=0;		
 		double longitudine=0;
 		String via;
-		Workbook wb= Workbook.getWorkbook(new File("C://Users//semmo//Documents//eclipse//gestione traffico 2//vie3.xls"));
+		String percorsoCorrente = System.getProperty("user.dir");
+
+
+		Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
+		
 		Sheet sheet = wb.getSheet(0);
 		Random random = new Random();
 		int a = 0; // numero minimo
