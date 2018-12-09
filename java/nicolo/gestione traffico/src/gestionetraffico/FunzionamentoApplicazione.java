@@ -15,6 +15,9 @@ public class FunzionamentoApplicazione {
 
 		ApplicazioneMobile app1=new ApplicazioneMobile(123);
 		
+		
+		app1.loginGrafico(123);
+		
 		Thread t1=new Thread(new ApplicazioneClient(app1));
 		t1.start();
 		

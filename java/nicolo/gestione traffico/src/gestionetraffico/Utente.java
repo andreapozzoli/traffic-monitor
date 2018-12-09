@@ -11,6 +11,7 @@ public class Utente {
 		return this.username;
 	}
 	public void setUsername(String username) {
+		System.out.println("ok");
 		this.username=username;
 	}
 	public String getPassword() {

@@ -74,8 +74,13 @@ public class GestoreDatabase {
 		}
 		this.tabellaTraffico.add(datoGenerico);
 
-		FunzionamentoSistemaCentrale.getMappa().aggiungiPunto(datoGenerico);
-		
+		try {
+			FunzionamentoSistemaCentrale.getMappa().aggiungiPunto(datoGenerico);
+		}
+		catch(Exception e) {
+			System.out.println("Mappa non disponibile");
+		}
+
 		//modificato
 		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);

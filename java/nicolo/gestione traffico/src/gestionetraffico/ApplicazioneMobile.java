@@ -46,16 +46,15 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 
 		super ();
 
-		loginGrafico(id);
-	}
-
-	public void mostraGUI(int id) throws BiffException, IOException {
 		this.identificativo=id;
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
+		
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
+	}
 
+	public void mostraGUI(int id) throws BiffException, IOException {
 		JButton segnalaCodaBtn = new JButton("Segnala coda");
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
 
@@ -104,14 +103,18 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 
 	}
 
-	public void segnalaCoda() throws BiffException, IOException  {
+	private void segnalaCoda() throws BiffException, IOException  {
 
-		this.posizione=this.sensore.rilevaPosizione();
-		//NotificaApplicazione notifica=new NotificaApplicazione("user", this.posizione,"coda");
-		NotificaApplicazione notifica=new NotificaApplicazione(this.utente.getUsername(),this.posizione, "coda");
-		//nuovo
+		posizione=this.sensore.rilevaPosizione();
+
+		//System.out.println(posizione.getLatitudine());
+		
+		NotificaApplicazione notifica=new NotificaApplicazione(this.utente.getUsername(), posizione, "M10 Coda");
+	
+		
 		GestoreApplicazioni.getInstance().segnalaDatabase(notifica);
-
+		
+		
 
 
 	}
@@ -188,8 +191,9 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 							loginDlg.setVisible(false);
 							frame.setVisible(false);
 
+							
 							utente=GestoreApplicazioni.getInstance().passaggioUtente(loginDlg.getUsername());
-
+								
 
 							try {
 								mostraGUI(id);
@@ -213,9 +217,20 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame, "U");
 						registrazioneDlg.setVisible(true);
 
+						//utente=GestoreApplicazioni.getInstance().passaggioUtente(registrazioneDlg.getUsername());
+
+						
+						
 						if(registrazioneDlg.isSucceeded()){
 							registrazioneDlg.setVisible(false);
 							frame.setVisible(false);
+							
+							//System.out.println(registrazioneDlg.getUsername());
+							
+							utente = new Utente(registrazioneDlg.getUsername(), registrazioneDlg.getPassword());
+							//utente.setUsername(registrazioneDlg.getUsername());
+							//utente.setPassword(registrazioneDlg.getPassword());
+
 							try {
 								mostraGUI(id);
 							} catch (BiffException | IOException e1) {
