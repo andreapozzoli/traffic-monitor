@@ -15,14 +15,15 @@ public class ApplicazioneClient implements Runnable{
 	}
 
 	public void run(){
+		/*
 		//System.setSecurityManager(new RMISecurityManager());
 		//IGestoreApplicazioni iGestoreApplicazioni=(IGestoreApplicazioni) Naming.lookup("GestoreApplicazioni");
 		
-		//while per gestire la possibilità di riloggarsi nel momento in cui si fa il log-out
+		//while per gestire la possibilitï¿½ di riloggarsi nel momento in cui si fa il log-out
 				while(true) {
-				//L'utente deve scegliere se fare il login (è gia registrato) o registrarsi (è un nuovo utente)
+				//L'utente deve scegliere se fare il login (ï¿½ gia registrato) o registrarsi (ï¿½ un nuovo utente)
 				while(true) {
-				System.out.println("Digita 'l' se sei già registrato, 'r' se sei un nuovo utente");
+				System.out.println("Digita 'l' se sei giï¿½ registrato, 'r' se sei un nuovo utente");
 				Scanner sc= new Scanner(System.in);
 				String login=sc.nextLine();
 				if (login.equals("r")) {
@@ -38,7 +39,7 @@ public class ApplicazioneClient implements Runnable{
 					}
 				}
 				}
-				//segnalazione coda e possibilità di logout
+				//segnalazione coda e possibilitï¿½ di logout
 				while(true) {
 				System.out.println("Digita 's' se vuoi segnalare la presenza di coda, 'o' se vuoi fare il log-out");
 				Scanner sc= new Scanner(System.in);
@@ -60,7 +61,7 @@ public class ApplicazioneClient implements Runnable{
 				}
 				}
 				
-		
+		*/
 
 	}
 

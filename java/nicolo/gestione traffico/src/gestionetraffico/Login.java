@@ -18,7 +18,10 @@ public class Login {
 		{
 			if (username.equals("user") && password.equals("password")) {
 
-				return true;
+				if(GestoreAmministratori.getInstance().riconosciAmministratore(username, password)) {
+
+					return true;
+				}
 			}
 
 			return false;

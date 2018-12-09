@@ -230,24 +230,6 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	}
 
 
-	public boolean login() {
-		//registrato inserisce dati e li verifica
-		System.out.println("Inserisci username: ");
-		Scanner sc= new Scanner(System.in);
-		String username=sc.nextLine();
-		System.out.println("Inserisci password: ");
-		Scanner sc1= new Scanner(System.in);
-		String password=sc.nextLine();
-
-		if(GestoreApplicazioni.getInstance().verificaAccesso(username, password)) {
-			this.utente=GestoreApplicazioni.getInstance().passaggioUtente(username);
-			return true;
-		}
-		else
-			return false;
-
-	}
-
 	//modificato
 	public boolean registraUtente() {
 		//registrare nuovo utente
