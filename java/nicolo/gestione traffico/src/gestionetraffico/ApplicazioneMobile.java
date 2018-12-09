@@ -191,9 +191,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 							loginDlg.setVisible(false);
 							frame.setVisible(false);
 
-							
-							utente=GestoreApplicazioni.getInstance().passaggioUtente(loginDlg.getUsername());
-								
+							utente = new Utente(loginDlg.getUsername(), loginDlg.getPassword());								
 
 							try {
 								mostraGUI(id);
