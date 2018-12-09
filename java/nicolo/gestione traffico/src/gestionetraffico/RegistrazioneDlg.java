@@ -17,7 +17,7 @@ public class RegistrazioneDlg extends JDialog {
 	private JButton btnCancel;
 	private boolean succeeded;
 
-	public RegistrazioneDlg(Frame parent) {
+	public RegistrazioneDlg(Frame parent, String tipoRegistrazione) {
 		super(parent, "Registrazione", true);
 		//
 		JPanel panel = new JPanel(new GridBagLayout());

@@ -44,7 +44,7 @@ public class FunzionamentoSistemaCentrale {
 		btnLogin.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e) {
-						LoginDialog loginDlg = new LoginDialog(frame);
+						LoginDialog loginDlg = new LoginDialog(frame, "A");
 						loginDlg.setVisible(true);
 
 						if(loginDlg.isSucceeded()){
@@ -68,7 +68,7 @@ public class FunzionamentoSistemaCentrale {
 		btnRegistrazione.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e) {
-						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame);
+						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame, "A");
 						registrazioneDlg.setVisible(true);
 
 						if(registrazioneDlg.isSucceeded()){

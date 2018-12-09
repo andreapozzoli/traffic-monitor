@@ -1,6 +1,9 @@
 package gestionetraffico;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.rmi.*;
 import java.rmi.server.*;
@@ -26,10 +29,10 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	private Utente utente;
 
 	private JFrame frame;
-	private static final long serialVersionUID = 1L;
+	private final long serialVersionUID = 1L;
 
-	private static JTextArea areaNotifiche = new JTextArea(10, 10);
-	private static JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
+	private JTextArea areaNotifiche = new JTextArea(10, 10);
+	private JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
 
 
 	public ApplicazioneMobile() throws BiffException, IOException /*throws RemoteException*/{
@@ -37,10 +40,25 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
+	}
+
+	public ApplicazioneMobile(int id) throws BiffException, IOException /*throws RemoteException*/ {
+
+		super ();
+
+		loginGrafico(id);
+	}
+	
+	public void mostraGUI(int id) throws BiffException, IOException {
+		this.identificativo=id;
+		this.sensore = new SensoreGPSTelefono();
+		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
+		this.posizione=this.sensore.rilevaPosizione();
+		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 
 		JButton segnalaCodaBtn = new JButton("Segnala coda");
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
-		
+
 		frame = new JFrame();
 		frame.setTitle("Applicazione mobile");
 
@@ -82,15 +100,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
-	}
 
-	public ApplicazioneMobile(int id) throws BiffException, IOException /*throws RemoteException*/ {
-		super ();
-		this.identificativo=id;
-		this.sensore = new SensoreGPSTelefono();
-		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
-		this.posizione=this.sensore.rilevaPosizione();
-		GestoreApplicazioni.getInstance().aggiungiApplicazione(this);
 
 	}
 
@@ -152,6 +162,65 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	}
 
 	//modificato
+
+	public boolean loginGrafico(int id) {
+
+		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
+
+		final JFrame frame = new JFrame("Accesso all'applicazione mobile");
+		final JButton btnLogin = new JButton("Login");
+		final JButton btnRegistrazione = new JButton("Registrazione");
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(300, 100);
+		frame.setLayout(new FlowLayout());
+		frame.getContentPane().add(btnLogin);
+		frame.getContentPane().add(btnRegistrazione);
+		frame.setVisible(true);
+
+		btnLogin.addActionListener(
+				new ActionListener(){
+					public void actionPerformed(ActionEvent e) {
+						LoginDialog loginDlg = new LoginDialog(frame, "U");
+						loginDlg.setVisible(true);
+
+						if(loginDlg.isSucceeded()){
+							loginDlg.setVisible(false);
+							frame.setVisible(false);
+							try {
+								mostraGUI(id);
+							} catch (BiffException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+
+						}
+					}
+				});
+
+
+
+		btnRegistrazione.addActionListener(
+				new ActionListener(){
+					public void actionPerformed(ActionEvent e) {
+						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame, "U");
+						registrazioneDlg.setVisible(true);
+
+						if(registrazioneDlg.isSucceeded()){
+							registrazioneDlg.setVisible(false);
+							frame.setVisible(false);
+							System.out.println("prova2");
+						}
+					}
+				});
+		return !(frame.isVisible());
+
+	}
+
+
 	public boolean login() {
 		//registrato inserisce dati e li verifica
 		System.out.println("Inserisci username: ");
@@ -197,7 +266,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.utente=null;
 	}
 
-	public static void main(String[] args) {
+	/*	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
 				//creaGUI();
@@ -209,6 +278,6 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 				}
 			}
 		});
-	}
+	}*/
 
 }
