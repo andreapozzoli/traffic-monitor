@@ -48,7 +48,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 
 		loginGrafico(id);
 	}
-	
+
 	public void mostraGUI(int id) throws BiffException, IOException {
 		this.identificativo=id;
 		this.sensore = new SensoreGPSTelefono();
@@ -187,6 +187,10 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 						if(loginDlg.isSucceeded()){
 							loginDlg.setVisible(false);
 							frame.setVisible(false);
+
+							utente=GestoreApplicazioni.getInstance().passaggioUtente(loginDlg.getUsername());
+
+
 							try {
 								mostraGUI(id);
 							} catch (BiffException e1) {
@@ -212,7 +216,12 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 						if(registrazioneDlg.isSucceeded()){
 							registrazioneDlg.setVisible(false);
 							frame.setVisible(false);
-							System.out.println("prova2");
+							try {
+								mostraGUI(id);
+							} catch (BiffException | IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 						}
 					}
 				});
@@ -229,6 +238,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		System.out.println("Inserisci password: ");
 		Scanner sc1= new Scanner(System.in);
 		String password=sc.nextLine();
+
 		if(GestoreApplicazioni.getInstance().verificaAccesso(username, password)) {
 			this.utente=GestoreApplicazioni.getInstance().passaggioUtente(username);
 			return true;

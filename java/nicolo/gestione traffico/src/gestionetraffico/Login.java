@@ -5,9 +5,18 @@ package gestionetraffico;
 public class Login {
 
 	public static boolean authenticate(String username, String password, String tipoUtente) {
-		if(tipoUtente.equals("A"))
+		if(tipoUtente.equals("U"))
 		{
-			if (username.equals("admin") && password.equals("password")) {
+			if(GestoreApplicazioni.getInstance().verificaAccesso(username, password)) {
+
+				return true;
+			}
+
+			return false;
+		}
+		else if(tipoUtente.equals("A"))
+		{
+			if (username.equals("user") && password.equals("password")) {
 
 				return true;
 			}
@@ -16,11 +25,6 @@ public class Login {
 		}
 		else
 		{
-			if (username.equals("user") && password.equals("password")) {
-
-				return true;
-			}
-
 			return false;
 		}
 	}

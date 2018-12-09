@@ -60,6 +60,8 @@ public class RegistrazioneDlg extends JDialog {
 						"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
 						"Registrazione",
 						JOptionPane.INFORMATION_MESSAGE);
+				
+				
 				succeeded = true;
 				dispose();
 
