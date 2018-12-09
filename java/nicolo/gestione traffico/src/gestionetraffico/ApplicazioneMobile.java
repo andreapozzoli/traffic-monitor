@@ -181,6 +181,17 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		frame.getContentPane().add(btnRegistrazione);
 		frame.setVisible(true);
 
+		/* FunzionamentoSistemaCentrale test = new FunzionamentoSistemaCentrale();
+		try {
+			test.main();
+		} catch (BiffException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} */
+		
 		btnLogin.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e) {

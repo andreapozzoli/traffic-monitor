@@ -165,7 +165,7 @@ public class FunzionamentoSistemaCentrale {
 		return mappa;
 	}
 
-	public static void main(String[] args) throws BiffException, IOException {
+	public static void main() throws BiffException, IOException {
 
 		GestoreApplicazioni GApp=GestoreApplicazioni.getInstance();
 		GestoreCentraline GCent=GestoreCentraline.getInstance();
