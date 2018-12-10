@@ -180,10 +180,15 @@ public class FunzionamentoSistemaCentrale {
 		GestoreCentraline GCent=GestoreCentraline.getInstance();
 		GestoreUtenti GUt=GestoreUtenti.getInstance();
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
+		FunzionamentoApplicazione f1=new FunzionamentoApplicazione();
+		FunzionamentoCentralinaS f2=new FunzionamentoCentralinaS();
+		
 
 		//mappa = visualizzazioneMappaBase();
 
 		loginGrafico();
+		f1.main(null);
+		f2.main(null);
 
 
 

@@ -70,44 +70,44 @@ public class CentralinaStradale extends Centralina {
 		switch (this.tipoStrada){
 		case "urbana":
 			if (velocita<20)
-				tipo="coda";
+				tipo="S"+velocita+" Coda";
 			else if (velocita>=20 && velocita<30)
-				tipo="traffico elevato";
+				tipo="S"+velocita+" Traffico elevato";
 			else if (velocita>=30 && velocita<40)
-				tipo="velocita lenta";
+				tipo="S"+velocita+" Velocita lenta";
 			else 
-				tipo="traffico nella norma";			
+				tipo="S"+velocita+" Traffico nella norma";			
 			break;
 			
 		case "extraurbana":
 			if (velocita<20)
-				tipo="coda";
+				tipo="S"+velocita+" Coda";
 			else if (velocita>=20 && velocita<40)
-				tipo="traffico elevato";
+				tipo="S"+velocita+" Traffico elevato";
 			else if (velocita>=40 && velocita<50)
-				tipo="velocita lenta";
+				tipo="S"+velocita+" Velocita lenta";
 			else
-				tipo="traffico nella norma";
+				tipo="S"+velocita+" Traffico nella norma";
 			break;
 		case "superstrada":
 			if (velocita<20)
-				tipo="coda";
+				tipo="S"+velocita+" Coda";
 			else if (velocita>=20 && velocita<50)
-				tipo="traffico elevato";
+				tipo="S"+velocita+" Traffico elevato";
 			else if (velocita>=50 && velocita<70)
-				tipo="velocita lenta";
+				tipo="S"+velocita+" Velocita lenta";
 			else
-				tipo="traffico nella norma";
+				tipo="S"+velocita+" Traffico nella norma";
 			break;
 		case "autostrada":
 			if (velocita<20)
-				tipo="coda";
+				tipo="S"+velocita+" Coda";
 			else if (velocita>=20 && velocita<60)
-				tipo="traffico elevato";
+				tipo="S"+velocita+" Traffico elevato";
 			else if (velocita>=60 && velocita<80)
-				tipo="velocita lenta";
+				tipo="S"+velocita+" Velocita lenta";
 			else 
-				tipo="traffico nella norma";
+				tipo="S"+velocita+" Traffico nella norma";
 			break;
 			
 		}

@@ -148,7 +148,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		return this.posizione;
 	}
 
-	public String getUsenameUtente() {
+	public String getUsernameUtente() {
 		return this.utente.getUsername();
 	}
 

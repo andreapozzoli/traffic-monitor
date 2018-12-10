@@ -73,7 +73,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				{
 					aggiungiTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 				}
-				else if(dato.getTipo().endsWith("Velocità lenta")) {
+				else if(dato.getTipo().endsWith("Velocita lenta")) {
 					aggiungiVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 				}
 				else
@@ -98,7 +98,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 			{
 				aggiungiTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 			}
-			else if(dato.getTipo().endsWith("Velocità lenta")) {
+			else if(dato.getTipo().endsWith("Velocita lenta")) {
 				aggiungiVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 			}
 			else

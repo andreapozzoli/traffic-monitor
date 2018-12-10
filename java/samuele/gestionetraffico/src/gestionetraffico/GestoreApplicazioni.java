@@ -59,14 +59,17 @@ public class GestoreApplicazioni /*extends UnicastRemoteObject implements IGesto
     	GestoreDatabase.getInstance().aggiungiNotificaApplicazione(notifica);
     }
     public void calcolaApplicazioniDaNotificare(String mittente,Posizione posizione, String tipo) throws BiffException, IOException {
+    	System.out.println(this.listaApplicazioni.size());
+    	if(!(mittente.equals("centralina"))) {
     	for (ApplicazioneMobile var: this.listaApplicazioni) {
-    		if (!(var.getUsenameUtente().equals(mittente))) {
+    		if (!(var.getUsernameUtente().equals(mittente))) {
     		if (Math.sqrt(Math.pow(var.getPosizione().getLatitudine()-posizione.getLatitudine(),2)+Math.pow(var.getPosizione().getLongitudine()-posizione.getLongitudine(),2))<this.raggio){
     			NotificaApplicazione notifica;
     			notifica=var.creaNotificaApplicazione(posizione, tipo);
     			var.aggiungiNotificaInCoda(notifica);    
     		}
     		}
+    	}
     	}
     	
     }
