@@ -155,7 +155,8 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	//modifica
 	public void segnalaUtente(NotificaApplicazione notifica ) {
 		//metodo per segnalare all'utente la ricezione di una notifica
-		notifica.stampaNotifica();
+		areaNotifiche.setText(notifica.stampaNotifica());
+		
 	}
 
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo) {
