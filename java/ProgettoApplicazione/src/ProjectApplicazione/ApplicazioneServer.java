@@ -1,5 +1,8 @@
 package ProjectApplicazione;
 import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.ExportException;
 
 public class ApplicazioneServer implements Runnable {
 	
@@ -11,7 +14,7 @@ private ApplicazioneMobile applicazione;
 	}
 
 	public void run(){
-		try {
+		/*try {
 		System.setSecurityManager(new RMISecurityManager());
 		ApplicazioneMobile Server=this.applicazione;
 		Naming.rebind("ApplicazioneMobile", Server);
@@ -23,7 +26,23 @@ private ApplicazioneMobile applicazione;
 		catch (RemoteException re) {
 			System.out.println("Remote exception: "+re.toString());
 		}
+		*/
 		
+		
+		/*System.setProperty("java.security.policy", "grantFile.policy");
+		Registry serverRegistry=null;
+		
+			while(serverRegistry==null) {
+		
+					try {
+						serverRegistry=LocateRegistry.createRegistry(23456);
+					} catch (RemoteException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		
+		
+			}*/
 
 	}
 

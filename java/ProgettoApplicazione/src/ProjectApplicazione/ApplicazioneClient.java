@@ -216,6 +216,7 @@ public class ApplicazioneClient implements Runnable{
 	public void run(){
 		System.setSecurityManager(new RMISecurityManager());
 		try {
+			
 			System.out.println("Security Manager loaded");
 			String url="rmi://localhost/GestoreApplicazioni"; //mettere :1099 dopo localhost se richiesto
 			this.iGestoreApplicazioni = (IGestoreApplicazioni) Naming.lookup(url);
