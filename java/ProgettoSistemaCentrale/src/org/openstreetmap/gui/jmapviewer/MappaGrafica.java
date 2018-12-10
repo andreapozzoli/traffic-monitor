@@ -29,6 +29,7 @@ import org.openstreetmap.gui.jmapviewer.tilesources.BingAerialTileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.OsmTileSource;
 
 import gestionetraffico.DatoGenerico;
+import gestionetraffico.FunzionamentoSistemaCentrale;
 
 /**
  * Demonstrates the usage of {@link JMapViewer}
@@ -72,7 +73,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				{
 					aggiungiTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 				}
-				else if(dato.getTipo().endsWith("Velocità lenta")) {
+				else if(dato.getTipo().endsWith("Velocita lenta")) {
 					aggiungiVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 				}
 				else
@@ -97,7 +98,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 			{
 				aggiungiTraffico(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 			}
-			else if(dato.getTipo().endsWith("Velocità lenta")) {
+			else if(dato.getTipo().endsWith("Velocita lenta")) {
 				aggiungiVelocitaLenta(creaEtichetta(dato), dato.getPosizione().getLatitudine(), dato.getPosizione().getLongitudine());
 			}
 			else
@@ -216,8 +217,11 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
 
 		JButton adattaZoom = new JButton("Adatta zoom per vedere tutti i marcatori");
+		JButton logoutBtn = new JButton("Logout");
+		
 
 		adattaZoom.addActionListener(e -> map().setDisplayToFitMapMarkers());
+		logoutBtn.addActionListener(e -> FunzionamentoSistemaCentrale.logout());
 
 
 		JButton pulisciMappaBtn = new JButton("Pulire la mappa");
@@ -246,6 +250,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
 		panelBottom.add(adattaZoom);
 		panelBottom.add(pulisciMappaBtn);
+		panelBottom.add(logoutBtn);
 
 		panelTop.add(zoomLabel);
 		panelTop.add(zoomValue);

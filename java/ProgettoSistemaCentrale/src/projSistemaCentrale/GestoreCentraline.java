@@ -7,7 +7,7 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 
-public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline, Runnable {
+public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline {
 	//private ArrayList<CentralinaAutomobilistica> listaCentralineAuto;
 	private ArrayList<CentralinaStradale> listaCentralineStradali;
 	private static GestoreCentraline instance=null;
@@ -74,23 +74,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	return this.listaCentralineStradali;
     }
     
-    public void run() {
-    	
-		
-		try {
-			System.setSecurityManager(new RMISecurityManager());
-			GestoreCentraline gestoreCentraline = GestoreCentraline.getInstance();
-			Naming.rebind("GestoreCentraline", gestoreCentraline);
-			System.out.println("Server waiting.....");
-			}
-			catch (java.net.MalformedURLException me){
-				System.out.println("Malformed URL: "+me.toString());
-			}
-			catch (RemoteException re) {
-				System.out.println("Remote exception: "+re.toString());
-			}
-			
-    }
+    
     
 
 }
