@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectApplicazione;
 import java.io.IOException;
 import java.rmi.*;
 

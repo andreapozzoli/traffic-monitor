@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectSistemaCentrale;
 import java.rmi.*;
 
 public interface IGestoreApplicazioni extends Remote{

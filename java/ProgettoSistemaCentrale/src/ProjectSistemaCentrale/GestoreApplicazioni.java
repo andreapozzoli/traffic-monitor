@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectSistemaCentrale;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
@@ -19,7 +19,7 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
     	this.listaApplicazioni=new ArrayList<ApplicazioneMobile>();
     	this.raggio=500;
     }
-    public static GestoreApplicazioni getInstance(){
+    public static GestoreApplicazioni getInstance() throws RemoteException{
     	//try {    		
             if(instance==null)
                     instance = new GestoreApplicazioni();

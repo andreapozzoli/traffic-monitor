@@ -1,5 +1,6 @@
-package gestionetraffico;
+package ProjectCentralina;
 
+import java.rmi.RemoteException;
 import java.util.*;
 
 public class CentralinaStradale extends Centralina {
@@ -11,6 +12,7 @@ public class CentralinaStradale extends Centralina {
 	private String tipoStrada;
 	private int idCentralinaStradale;
 	private RilevatoreVelocitaS rilevatoreVelocita;
+	private IGestoreCentraline iGestoreCentraline;
 	
 	//modificato
 	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada) {
@@ -22,7 +24,6 @@ public class CentralinaStradale extends Centralina {
 		this.tipo="traffico nella norma";
 		this.intervalloMinimo=10;
 		this.tipoStrada=tipoStrada;
-		GestoreCentraline.getInstance().aggiungiCentralinaStradale(this);
 	}
 	public void calcolaIntervallo(int numeroVeicoli) {
 		float temp=((float)numeroVeicoli)/((float)this.intervalloDiTempo);
@@ -38,6 +39,10 @@ public class CentralinaStradale extends Centralina {
 			this.intervalloDiTempo=this.intervalloDiTempo*2;
 			System.out.println("ho fatto else");
 		}
+	}
+	
+	public void setInterfaccia (IGestoreCentraline iGestoreCentraline) {
+		this.iGestoreCentraline=iGestoreCentraline;
 	}
 	
 	public void setIdCentralinaStradale(int id) {
@@ -114,8 +119,8 @@ public class CentralinaStradale extends Centralina {
 		}
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
-	public void inviaDatoTraffico() {
-		GestoreCentraline.getInstance().segnalaDatabaseS(this.datoTraffico);
+	public void inviaDatoTraffico() throws RemoteException {
+		iGestoreCentraline.segnalaDatabaseS(this.datoTraffico);
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
@@ -156,7 +161,12 @@ public class CentralinaStradale extends Centralina {
 		System.out.println("velocita in ce2 "+this.velocita);
 		this.creaDatoTraffico();		
 		System.out.println("dato traffico creato");
-		this.inviaDatoTraffico();
+		try {
+			this.inviaDatoTraffico();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("dato traffico inviato");
 		}
 	}

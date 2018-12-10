@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectCentralina;
 
 import java.util.*;
 
@@ -16,10 +16,10 @@ public class FunzionamentoCentralinaS {
 
 	public static void main(String[] args) {
 		try {
-			Thread t15=new Thread(new CentralinaStradaleClient());
-			t15.start();
+			String percorsoCorrente=System.getProperty("user.dir");
+			
 			Workbook wb;
-			wb = Workbook.getWorkbook(new File("C://Users//semmo//Documents//eclipse//gestione traffico 2//vie3.xls"));
+			wb = Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
 			Sheet sheet = wb.getSheet(0);
 			Cell cella;
 			int i=0;
@@ -69,6 +69,10 @@ public class FunzionamentoCentralinaS {
 			}
 
 			CentralinaStradale centralina=new CentralinaStradale(intervallo,posizione,tipoStrada);
+			
+			Thread t15=new Thread(new CentralinaStradaleClient(centralina));
+			t15.start();
+			
 			//thread rilevatore veicoli
 			Thread t1=new Thread(centralina.getRilevatoreVeicoli());
 			t1.start();
@@ -77,6 +81,7 @@ public class FunzionamentoCentralinaS {
 			//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
 			Thread t2=new Thread(centralina);
 			t2.run();
+			
 
 		} catch (BiffException | IOException e) {
 			// TODO Auto-generated catch block

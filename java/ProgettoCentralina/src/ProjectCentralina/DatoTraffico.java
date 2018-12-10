@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectCentralina;
 
 public class DatoTraffico extends Notifica {
 	private String tipo;

@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectSistemaCentrale;
 import java.util.ArrayList;
 import java.rmi.*;
 import java.rmi.server.*;
@@ -14,7 +14,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	this.listaCentralineStradali=new ArrayList<CentralinaStradale>();
     }
     
-    public static GestoreCentraline getInstance(){  		
+    public static GestoreCentraline getInstance() throws RemoteException{  		
     	//try {    		
             if(instance==null)
                     instance = new GestoreCentraline();

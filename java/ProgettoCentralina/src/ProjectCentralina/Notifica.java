@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectCentralina;
 import java.util.*;
 
 public abstract class Notifica {

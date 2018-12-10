@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectSistemaCentrale;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -9,11 +9,11 @@ public class GestoreDatabase {
 	private ArrayList<DatoGenerico> tabellaTraffico;
 	private ArrayList<NotificaApplicazione> listaNotificheApplicazioni;
 	private ArrayList<DatoTraffico> listaDatoTraffico;
-	private ArrayList<StatoVeicolo> listaStatoVeicolo;
+	//private ArrayList<StatoVeicolo> listaStatoVeicolo;
 
 	private GestoreDatabase() {
 		this.listaDatoTraffico=new ArrayList<DatoTraffico>();
-		this.listaStatoVeicolo=new ArrayList<StatoVeicolo>();
+	//	this.listaStatoVeicolo=new ArrayList<StatoVeicolo>();
 		this.listaNotificheApplicazioni=new ArrayList<NotificaApplicazione>();
 		this.tabellaTraffico=new ArrayList<DatoGenerico>();
 	}
@@ -46,10 +46,10 @@ public class GestoreDatabase {
 		}
 	}
 
-	public void aggiungiStatoVeicolo (StatoVeicolo statoV) {
+	/*public void aggiungiStatoVeicolo (StatoVeicolo statoV) {
 		this.listaStatoVeicolo.add(statoV);
 		//elabora il tipo di traffico, aggiorna se lo facciamo
-	}
+	}*/
 
 	public void rimuoviNotificaApplicazione (NotificaApplicazione notifica) {
 		this.listaNotificheApplicazioni.remove(notifica);
@@ -59,9 +59,9 @@ public class GestoreDatabase {
 		this.listaDatoTraffico.remove(dato);
 	}
 
-	public void rimuoviStatoVeicolo (StatoVeicolo statoV) {
+	/*public void rimuoviStatoVeicolo (StatoVeicolo statoV) {
 		this.listaStatoVeicolo.remove(statoV);
-	}
+	}*/
 
 	public synchronized void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora) throws BiffException, IOException {
 		DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora);

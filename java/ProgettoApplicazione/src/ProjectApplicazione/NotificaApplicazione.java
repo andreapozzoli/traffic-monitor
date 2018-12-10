@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectApplicazione;
 
 public class NotificaApplicazione extends Notifica {
 	private String tipo;	

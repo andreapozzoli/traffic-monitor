@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectCentralina;
 public abstract class RilevatoreVelocita {
 	protected int velocita;
 	

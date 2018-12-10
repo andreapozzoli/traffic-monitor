@@ -1,4 +1,4 @@
-package ProjSistemaCentrale;
+package ProjectCentralina;
 import java.rmi.*;
 
 public interface IGestoreCentraline extends Remote{

@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectApplicazione;
 
 import java.io.*;
 import java.rmi.Naming;
@@ -17,6 +17,8 @@ public class FunzionamentoApplicazione {
 		
 		Thread t1=new Thread(new ApplicazioneClient(app1));
 		t1.start();
+		
+		
 		
 		Thread t2=new Thread(new ApplicazioneServer(app1));
 		t2.start();

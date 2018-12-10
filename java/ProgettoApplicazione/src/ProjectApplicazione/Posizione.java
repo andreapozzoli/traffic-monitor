@@ -1,4 +1,4 @@
-package gestionetraffico;
+package ProjectApplicazione;
 
 public class Posizione {
 	private double latitudine;

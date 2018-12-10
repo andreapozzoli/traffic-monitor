@@ -28,8 +28,8 @@ import org.openstreetmap.gui.jmapviewer.interfaces.TileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.BingAerialTileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.OsmTileSource;
 
-import gestionetraffico.DatoGenerico;
-import gestionetraffico.FunzionamentoSistemaCentrale;
+import ProjectSistemaCentrale.DatoGenerico;
+import ProjectSistemaCentrale.FunzionamentoSistemaCentrale;
 
 /**
  * Demonstrates the usage of {@link JMapViewer}

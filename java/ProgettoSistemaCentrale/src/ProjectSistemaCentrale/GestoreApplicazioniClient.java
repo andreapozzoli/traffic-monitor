@@ -1,4 +1,4 @@
-package ProjSistemaCentrale;
+package ProjectSistemaCentrale;
 import java.rmi.*;
 
 public class GestoreApplicazioniClient implements Runnable {

@@ -1,7 +1,9 @@
-package gestionetraffico;
+package ProjectApplicazione;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.rmi.RemoteException;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -16,10 +18,12 @@ public class LoginDialog extends JDialog {
 	private JButton btnLogin;
 	private JButton btnCancel;
 	private boolean succeeded;
+	private IGestoreApplicazioni iGestoreApplicazioni;
 
-	public LoginDialog(Frame parent, String tipoLogin) {
+	public LoginDialog(Frame parent, String tipoLogin, IGestoreApplicazioni iGestoreApplicazioni) {
 		super(parent, "Login", true);
 		//
+		this.iGestoreApplicazioni=iGestoreApplicazioni;
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints cs = new GridBagConstraints();
 
@@ -55,23 +59,29 @@ public class LoginDialog extends JDialog {
 		btnLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if(Login.authenticate(getUsername(), getPassword(), tipoLogin)) {
-					JOptionPane.showMessageDialog(LoginDialog.this,
-							"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
-							"Login",
-							JOptionPane.INFORMATION_MESSAGE);
-					succeeded = true;
-					dispose();
-				} else {
-					JOptionPane.showMessageDialog(LoginDialog.this,
-							"Le credenziali di accesso non sono valide.",
-							"Login",
-							JOptionPane.ERROR_MESSAGE);
-					// reset username and password
-					tfUsername.setText("");
-					pfPassword.setText("");
-					succeeded = false;
+				Login login=new Login();
+				try {
+					if(login.authenticate(getUsername(), getPassword(), tipoLogin, iGestoreApplicazioni)) {
+						JOptionPane.showMessageDialog(LoginDialog.this,
+								"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
+								"Login",
+								JOptionPane.INFORMATION_MESSAGE);
+						succeeded = true;
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(LoginDialog.this,
+								"Le credenziali di accesso non sono valide.",
+								"Login",
+								JOptionPane.ERROR_MESSAGE);
+						// reset username and password
+						tfUsername.setText("");
+						pfPassword.setText("");
+						succeeded = false;
 
+					}
+				} catch (HeadlessException | RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 		});

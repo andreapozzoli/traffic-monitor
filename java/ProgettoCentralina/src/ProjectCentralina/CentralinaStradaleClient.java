@@ -1,9 +1,14 @@
-package ProjCentralina;
+package ProjectCentralina;
 import java.rmi.*;
 
-import ProjSistemaCentrale.IApplicazioneMobile;
 
 public class CentralinaStradaleClient implements Runnable{
+	
+	private CentralinaStradale centralina;
+	
+	public CentralinaStradaleClient (CentralinaStradale centralina) {
+		this.centralina=centralina;
+	}
 
 	public void run() {
 		
@@ -14,6 +19,10 @@ public class CentralinaStradaleClient implements Runnable{
 			String url="rmi://localhost/GestoreCentraline";
 			IGestoreCentraline iGestoreCentraline = (IGestoreCentraline)Naming.lookup(url);
 			System.out.println("Got remote object");
+			iGestoreCentraline.aggiungiCentralinaStradale(this.centralina);
+			this.centralina.setInterfaccia(iGestoreCentraline);
+			
+
 			
 			
 		}

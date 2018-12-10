@@ -1,7 +1,9 @@
-package gestionetraffico;
+package ProjectApplicazione;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.rmi.RemoteException;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -16,10 +18,12 @@ public class RegistrazioneDlg extends JDialog {
 	private JButton btnRegistrazione;
 	private JButton btnCancel;
 	private boolean succeeded;
+	private IGestoreApplicazioni iGestoreApplicazioni;
 
-	public RegistrazioneDlg(Frame parent, String tipoRegistrazione) {
+	public RegistrazioneDlg(Frame parent, String tipoRegistrazione, IGestoreApplicazioni iGestoreApplicazioni) {
 		super(parent, "Registrazione", true);
 		//
+		this.iGestoreApplicazioni=iGestoreApplicazioni;
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints cs = new GridBagConstraints();
 
@@ -55,23 +59,29 @@ public class RegistrazioneDlg extends JDialog {
 		btnRegistrazione.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if(!(Login.authenticate(getUsername(), tipoRegistrazione))) {
-					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
-							"Registrazione",
-							JOptionPane.INFORMATION_MESSAGE);
-					succeeded = true;
-					dispose();
-				} else {
-					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Username già in uso.",
-							"Registrazione",
-							JOptionPane.ERROR_MESSAGE);
-					// reset username and password
-					tfUsername.setText("");
-					pfPassword.setText("");
-					succeeded = false;
+				Login login=new Login();
+				try {
+					if(!(login.authenticate(getUsername(), tipoRegistrazione, iGestoreApplicazioni))) {
+						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+								"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
+								"Registrazione",
+								JOptionPane.INFORMATION_MESSAGE);
+						succeeded = true;
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+								"Username già in uso.",
+								"Registrazione",
+								JOptionPane.ERROR_MESSAGE);
+						// reset username and password
+						tfUsername.setText("");
+						pfPassword.setText("");
+						succeeded = false;
 
+					}
+				} catch (HeadlessException | RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 		});

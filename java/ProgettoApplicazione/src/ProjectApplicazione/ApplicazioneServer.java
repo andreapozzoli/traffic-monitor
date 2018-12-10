@@ -1,4 +1,4 @@
-package ProjApplicazione;
+package ProjectApplicazione;
 import java.rmi.*;
 
 public class ApplicazioneServer implements Runnable {
