@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="andrea/gestione traffico 2/src"/>
+	<classpathentry excluding="src/main/javadoc/|src/main/java/|tests/src/java/|contribs/Jamie Tsao/|src/performance/java/|contribs/CekiGulcu/|contribs/JimMoore/|contribs/ThomasFenner/" kind="src" path="librerie/apache-log4j-1.2.17"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/contribs/CekiGulcu"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/contribs/Jamie Tsao"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/contribs/JimMoore"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/contribs/ThomasFenner"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/src/main/java"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/src/main/javadoc"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/src/performance/java"/>
+	<classpathentry kind="src" path="librerie/apache-log4j-1.2.17/tests/src/java"/>
+	<classpathentry kind="src" path="librerie/compilarevie/farevie/src"/>
+	<classpathentry kind="src" path="librerie/compilarevie/src"/>
+	<classpathentry kind="src" path="librerie/compilarevie/vieeeeeeeee/src"/>
+	<classpathentry kind="src" path="librerie/jexcelapi/build"/>
+	<classpathentry kind="src" path="librerie/jexcelapi/src"/>
+	<classpathentry kind="src" path="nicolo/gestione traffico/src"/>
+	<classpathentry kind="src" path="ProgettoApplicazione/src"/>
+	<classpathentry kind="src" path="ProgettoCentralina/src"/>
+	<classpathentry kind="src" path="ProgettoSistemaCentrale/src"/>
+	<classpathentry kind="src" path="samuele/gestionetraffico/src"/>
+	<classpathentry kind="src" path="totale/gestionetraffico/src"/>
+	<classpathentry kind="lib" path="andrea/gestione traffico 2/jxl.jar"/>
+	<classpathentry kind="lib" path="librerie/commons-io-2.6/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="librerie/commons-io-2.6/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="librerie/commons-io-2.6/commons-io-2.6-test-sources.jar"/>
+	<classpathentry kind="lib" path="librerie/commons-io-2.6/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="librerie/commons-io-2.6/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/jxl.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-examples-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-excelant-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-ooxml-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-ooxml-schemas-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/poi-scratchpad-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/commons-io-2.6-test-sources.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/jackson-all-1.9.0.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/jxl.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/org.codehaus.jackson.mapper.jar"/>
+	<classpathentry kind="lib" path="librerie/compilarevie/vieeeeeeeee/org.json.jar"/>
+	<classpathentry kind="lib" path="librerie/jackson-all-1.9.0.jar"/>
+	<classpathentry kind="lib" path="librerie/jexcelapi/jxl.jar"/>
+	<classpathentry kind="lib" path="librerie/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="librerie/org.codehaus.jackson.mapper.jar"/>
+	<classpathentry kind="lib" path="librerie/org.json.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/jaxb-api-2.3.0.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/jaxb-core-2.3.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/jaxb-impl-2.3.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/ooxml-lib/curvesapi-1.05.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/ooxml-lib/xmlbeans-3.0.2.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-examples-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-excelant-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-ooxml-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-ooxml-schemas-4.0.1.jar"/>
+	<classpathentry kind="lib" path="librerie/poi-4.0.1/poi-scratchpad-4.0.1.jar"/>
+	<classpathentry kind="lib" path="nicolo/gestione traffico/jxl.jar"/>
+	<classpathentry kind="lib" path="ProgettoApplicazione/jxl.jar"/>
+	<classpathentry kind="lib" path="ProgettoCentralina/jxl.jar"/>
+	<classpathentry kind="lib" path="ProgettoSistemaCentrale/jxl.jar"/>
+	<classpathentry kind="lib" path="samuele/gestionetraffico/jxl.jar"/>
+	<classpathentry kind="lib" path="totale/gestionetraffico/jxl.jar"/>
+	<classpathentry kind="output" path="ProgettoApplicazione/bin"/>
+</classpath>

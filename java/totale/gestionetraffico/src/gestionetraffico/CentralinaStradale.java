@@ -11,7 +11,7 @@ public class CentralinaStradale extends Centralina {
 	private String tipoStrada;
 	private int idCentralinaStradale;
 	private RilevatoreVelocitaS rilevatoreVelocita;
-	
+
 	//modificato
 	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada) {
 		this.intervalloDiTempo=intervalloDiTempo;
@@ -27,23 +27,23 @@ public class CentralinaStradale extends Centralina {
 	public void calcolaIntervallo(int numeroVeicoli) {
 		float temp=((float)numeroVeicoli)/((float)this.intervalloDiTempo);
 		if (temp>0.0) {
-		this.intervalloDiTempo=(int) (this.intervalloDiTempo*this.rapporto/temp);
-		if (this.intervalloDiTempo<this.intervalloMinimo) {
-			this.intervalloDiTempo=this.intervalloMinimo;
-		}
-		System.out.println("ho fatto if");
-		this.rapporto=temp;
+			this.intervalloDiTempo=(int) (this.intervalloDiTempo*this.rapporto/temp);
+			if (this.intervalloDiTempo<this.intervalloMinimo) {
+				this.intervalloDiTempo=this.intervalloMinimo;
+			}
+			System.out.println("ho fatto if");
+			this.rapporto=temp;
 		}
 		else {
 			this.intervalloDiTempo=this.intervalloDiTempo*2;
 			System.out.println("ho fatto else");
 		}
 	}
-	
+
 	public void setIdCentralinaStradale(int id) {
 		this.idCentralinaStradale=id;
 	}
-	
+
 	public int getIdCentralinaStradale() {
 		return this.idCentralinaStradale;
 	}
@@ -67,50 +67,50 @@ public class CentralinaStradale extends Centralina {
 	}
 	public void creaDatoTraffico() {
 		if (this.velocita!=0) {
-		switch (this.tipoStrada){
-		case "urbana":
-			if (velocita<20)
-				tipo="S"+velocita+" Coda";
-			else if (velocita>=20 && velocita<30)
-				tipo="S"+velocita+" Traffico elevato";
-			else if (velocita>=30 && velocita<40)
-				tipo="S"+velocita+" Velocita lenta";
-			else 
-				tipo="S"+velocita+" Traffico nella norma";			
-			break;
-			
-		case "extraurbana":
-			if (velocita<20)
-				tipo="S"+velocita+" Coda";
-			else if (velocita>=20 && velocita<40)
-				tipo="S"+velocita+" Traffico elevato";
-			else if (velocita>=40 && velocita<50)
-				tipo="S"+velocita+" Velocita lenta";
-			else
-				tipo="S"+velocita+" Traffico nella norma";
-			break;
-		case "superstrada":
-			if (velocita<20)
-				tipo="S"+velocita+" Coda";
-			else if (velocita>=20 && velocita<50)
-				tipo="S"+velocita+" Traffico elevato";
-			else if (velocita>=50 && velocita<70)
-				tipo="S"+velocita+" Velocita lenta";
-			else
-				tipo="S"+velocita+" Traffico nella norma";
-			break;
-		case "autostrada":
-			if (velocita<20)
-				tipo="S"+velocita+" Coda";
-			else if (velocita>=20 && velocita<60)
-				tipo="S"+velocita+" Traffico elevato";
-			else if (velocita>=60 && velocita<80)
-				tipo="S"+velocita+" Velocita lenta";
-			else 
-				tipo="S"+velocita+" Traffico nella norma";
-			break;
-			
-		}
+			switch (this.tipoStrada){
+			case "urbana":
+				if (velocita<20)
+					tipo="S"+velocita+" Coda";
+				else if (velocita>=20 && velocita<30)
+					tipo="S"+velocita+" Traffico elevato";
+				else if (velocita>=30 && velocita<40)
+					tipo="S"+velocita+" Velocita lenta";
+				else 
+					tipo="S"+velocita+" Traffico nella norma";			
+				break;
+
+			case "extraurbana":
+				if (velocita<20)
+					tipo="S"+velocita+" Coda";
+				else if (velocita>=20 && velocita<40)
+					tipo="S"+velocita+" Traffico elevato";
+				else if (velocita>=40 && velocita<50)
+					tipo="S"+velocita+" Velocita lenta";
+				else
+					tipo="S"+velocita+" Traffico nella norma";
+				break;
+			case "superstrada":
+				if (velocita<20)
+					tipo="S"+velocita+" Coda";
+				else if (velocita>=20 && velocita<50)
+					tipo="S"+velocita+" Traffico elevato";
+				else if (velocita>=50 && velocita<70)
+					tipo="S"+velocita+" Velocita lenta";
+				else
+					tipo="S"+velocita+" Traffico nella norma";
+				break;
+			case "autostrada":
+				if (velocita<20)
+					tipo="S"+velocita+" Coda";
+				else if (velocita>=20 && velocita<60)
+					tipo="S"+velocita+" Traffico elevato";
+				else if (velocita>=60 && velocita<80)
+					tipo="S"+velocita+" Velocita lenta";
+				else 
+					tipo="S"+velocita+" Traffico nella norma";
+				break;
+
+			}
 		}
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
@@ -120,44 +120,44 @@ public class CentralinaStradale extends Centralina {
 	}
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
 		if (numeroVeicoli!=0) {
-		this.velocita=(int)(somma/numeroVeicoli);
+			this.velocita=(int)(somma/numeroVeicoli);
 		}
 		else {
 			this.velocita=0;
 		}
 	}
-	
+
 	//nuovo
 	public RilevatoreVeicoli getRilevatoreVeicoli() {
 		return this.rilevatoreVeicoli;
 	}
-	
+
 	//nuovo
 	public void run() {
 		while(true) {
-		try {
-			System.out.println("intervallo "+this.intervalloDiTempo);
-			Thread.sleep(this.intervalloDiTempo*1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		int numeroVeicoli=this.rilevatoreVeicoli.getNumeroVeicoli();
-		int sommaVelocita=this.rilevatoreVelocita.getSommaVelocita();
-		if(numeroVeicoli!=0) {
-		this.calcolaVelocitaMedia(numeroVeicoli,sommaVelocita);
-		}
-		System.out.println("somma "+sommaVelocita);
-		System.out.println("numero "+numeroVeicoli);
-		System.out.println("velocita in ce "+this.velocita);
-		this.rilevatoreVeicoli.reset();
-		this.rilevatoreVelocita.resetSommaVelocita(this.velocita);
-		this.calcolaIntervallo(numeroVeicoli);
-		System.out.println("intervallo calcolato");
-		System.out.println("velocita in ce2 "+this.velocita);
-		this.creaDatoTraffico();		
-		System.out.println("dato traffico creato");
-		this.inviaDatoTraffico();
-		System.out.println("dato traffico inviato");
+			try {
+				System.out.println("intervallo "+this.intervalloDiTempo);
+				Thread.sleep(this.intervalloDiTempo*1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			int numeroVeicoli=this.rilevatoreVeicoli.getNumeroVeicoli();
+			int sommaVelocita=this.rilevatoreVelocita.getSommaVelocita();
+			if(numeroVeicoli!=0) {
+				this.calcolaVelocitaMedia(numeroVeicoli,sommaVelocita);
+			}
+			System.out.println("somma "+sommaVelocita);
+			System.out.println("numero "+numeroVeicoli);
+			System.out.println("velocita in ce "+this.velocita);
+			this.rilevatoreVeicoli.reset();
+			this.rilevatoreVelocita.resetSommaVelocita(this.velocita);
+			this.calcolaIntervallo(numeroVeicoli);
+			System.out.println("intervallo calcolato");
+			System.out.println("velocita in ce2 "+this.velocita);
+			this.creaDatoTraffico();		
+			System.out.println("dato traffico creato");
+			this.inviaDatoTraffico();
+			System.out.println("dato traffico inviato");
 		}
 	}
 

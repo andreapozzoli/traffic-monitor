@@ -46,6 +46,7 @@ public class ApplicazioneClient implements Runnable{
 		final JFrame frame = new JFrame("Accesso all'applicazione mobile");
 		final JButton btnLogin = new JButton("Login");
 		final JButton btnRegistrazione = new JButton("Registrazione");
+		
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(300, 100);

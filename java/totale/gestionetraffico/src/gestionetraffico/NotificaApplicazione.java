@@ -1,5 +1,7 @@
 package gestionetraffico;
 
+import java.util.ArrayList;
+
 public class NotificaApplicazione extends Notifica {
 	private String tipo;	
 	private String mittente;
@@ -29,7 +31,47 @@ public class NotificaApplicazione extends Notifica {
 	
 	//nuovo
 	public String stampaNotifica() {
-		return ("tipo: "+this.tipo+" via: "+this.posizione.getVia()+ " posizione: "+this.posizione.getLatitudine()+" ; "+this.posizione.getLongitudine());
+		
+		String finale = new String();
+		
+		if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Coda"))
+		{
+			finale = "<font color=\"red\">";
+		}
+		else if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Traffico elevato"))
+		{
+			finale = "<font color=\"black\">";
+		}
+		else if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Velocita lenta"))
+		{
+			finale = "<font color=\"blue\">";
+		}
+		else
+		{
+			finale = "<font color=\"green\">";
+		}
+		finale += this.getData()
+				+ ", "
+				+ this.getOra()
+				+ " | "
+				+ this.getTipo().substring(this.getTipo().indexOf(' ')+1)
+				+ " in "
+				+ this.posizione.getVia();
+		if(this.getTipo().substring(0,1).equals("M"))
+		{
+			// niente
+		}
+		else
+		{
+			finale += " ad una velocità media di "
+					+ this.getTipo().substring(1, this.getTipo().indexOf(' '))
+					+ " km/h";
+		}
+		finale += "</font>";
+
+
+		return finale;
+		//return ("tipo: "+this.tipo+" via: "+this.posizione.getVia()+ " posizione: "+this.posizione.getLatitudine()+" ; "+this.posizione.getLongitudine());
 	}
 	
 	

@@ -14,9 +14,13 @@ import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLEditorKit;
 
 import jxl.read.biff.BiffException;
 
@@ -29,14 +33,16 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	private Utente utente;
 	private static int id=0;
 	//private IGestoreApplicazioni iGestoreApplicazioni;
-	
+
 	private JFrame frame;
 	private final long serialVersionUID = 1L;
 
-	private JTextArea areaNotifiche = new JTextArea(10, 10);
+	private JTextPane areaNotifiche = new JTextPane();
 	private JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
+	JScrollBar scorrimentoVerticale = this.paneNotifiche.getVerticalScrollBar();
 
-	
+
+
 
 
 	/*public ApplicazioneMobile() throws BiffException, IOException, RemoteException{
@@ -60,30 +66,55 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 
-		
+		Posizione posizioneProva = new Posizione("via Rossi", 11, 33);
+
+		NotificaApplicazione notificaProva = new NotificaApplicazione("Mittente", posizioneProva, "M10 Coda");
+
+		segnalaUtente(notificaProva);
+
+		Posizione posizioneProva2 = new Posizione("via Neri", 11, 70);
+
+		NotificaApplicazione notificaProva2 = new NotificaApplicazione("Mittente", posizioneProva2, "S20 Traffico elevato");
+
+		segnalaUtente(notificaProva2);
+
+
+		Posizione posizioneProva3 = new Posizione("via Azzurri", 11, 70);
+
+		NotificaApplicazione notificaProva3 = new NotificaApplicazione("Mittente", posizioneProva3, "S30 Velocita lenta");
+
+		segnalaUtente(notificaProva3);
+
+
+		Posizione posizioneProva4 = new Posizione("via Verdi", 44, 70);
+
+		NotificaApplicazione notificaProva4 = new NotificaApplicazione("Mittente", posizioneProva4, "S50 QWERTY");
+
+		segnalaUtente(notificaProva4);
+
 	}
-	
+
 	public JFrame getFrame() {
 		return this.frame;
 	}
-	
+
 	public void setFrame(JFrame frame) {
 		this.frame=frame;
 	}
-	
-	public JTextArea getAreaNotifiche() {
+
+	public JTextPane getAreaNotifiche() {
 		return this.areaNotifiche;
 	}
-	
-	public void setAreaNotifiche(JTextArea area) {
+
+	public void setAreaNotifiche(JTextPane area) {
 		this.areaNotifiche=area;
 	}
-	
-	
+
+
 	public JScrollPane getPaneNotifiche() {
 		return this.paneNotifiche;
 	}
-	
+
 	public void setPaneNotifiche(JScrollPane pane) {
 		this.paneNotifiche=pane;
 	}
@@ -92,7 +123,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	/*public void setInterfaccia(IGestoreApplicazioni iGestoreApplicazioni) {
 		this.iGestoreApplicazioni=iGestoreApplicazioni;
 	}*/
-	
+
 	public void setPosizione (Posizione pos) {
 		this.posizione=pos;
 	}
@@ -100,8 +131,8 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	public SensoreGPS getSensore () {
 		return this.sensore;
 	}
-	
-	
+
+
 
 
 	public int getIdentificativo(){
@@ -134,15 +165,36 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 	}
 
 	//modifica
-	public void segnalaUtente(NotificaApplicazione notifica ) {
+	public void segnalaUtente(NotificaApplicazione notifica) {
 		//metodo per segnalare all'utente la ricezione di una notifica
-		this.areaNotifiche.setText(notifica.stampaNotifica()+"\n"+this.areaNotifiche.getText());
+
+
+
+		this.areaNotifiche.setContentType("text/html");
+
+		//HTMLEditorKit doc=(HTMLEditorKit)areaNotifiche.getEditorKit();
+
+		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument();
+		try {
+			
+			doc.insertBeforeStart(doc.getCharacterElement(0), notifica.stampaNotifica()+"<br>");
+		} catch (BadLocationException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+		/*String precedente = this.areaNotifiche.getText();
+
+		System.out.println(notifica.stampaNotifica()+"<br>"+precedente);
+		this.areaNotifiche.setText(notifica.stampaNotifica()+"<br>"+precedente);*/
 	}
-	
+
 	public void setUtente(Utente utente) {
 		this.utente=utente;
 	}
-	
+
 	public Utente getUtente() {
 		return this.utente;
 	}
