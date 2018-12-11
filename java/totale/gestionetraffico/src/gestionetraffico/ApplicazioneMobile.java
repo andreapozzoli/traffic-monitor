@@ -66,7 +66,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 
-		Posizione posizioneProva = new Posizione("via Rossi", 11, 33);
+		/*Posizione posizioneProva = new Posizione("via Rossi", 11, 33);
 
 		NotificaApplicazione notificaProva = new NotificaApplicazione("Mittente", posizioneProva, "M10 Coda");
 
@@ -90,7 +90,7 @@ public class ApplicazioneMobile /*extends UnicastRemoteObject implements IApplic
 
 		NotificaApplicazione notificaProva4 = new NotificaApplicazione("Mittente", posizioneProva4, "S50 QWERTY");
 
-		segnalaUtente(notificaProva4);
+		segnalaUtente(notificaProva4);*/
 
 	}
 

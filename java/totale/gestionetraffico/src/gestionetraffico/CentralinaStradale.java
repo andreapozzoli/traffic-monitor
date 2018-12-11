@@ -1,6 +1,15 @@
 package gestionetraffico;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.*;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import jxl.read.biff.BiffException;
 
 public class CentralinaStradale extends Centralina {
 	private int intervalloDiTempo;
@@ -160,6 +169,5 @@ public class CentralinaStradale extends Centralina {
 			System.out.println("dato traffico inviato");
 		}
 	}
-
 
 }
