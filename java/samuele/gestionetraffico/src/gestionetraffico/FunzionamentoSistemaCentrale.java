@@ -158,7 +158,7 @@ public class FunzionamentoSistemaCentrale {
 				tipoCasuale += "Qualcosa di incomprensibile";
 			}
 
-			dataProva.aggiornaTabellaTraffico("Mittente", casuale, tipoCasuale, dataCasuale, oraCasuale);
+			dataProva.aggiornaTabellaTraffico("centralina", casuale, tipoCasuale, dataCasuale, oraCasuale);
 
 		}
 
@@ -182,14 +182,17 @@ public class FunzionamentoSistemaCentrale {
 		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
 		FunzionamentoApplicazione f1=new FunzionamentoApplicazione();
 		FunzionamentoCentralinaS f2=new FunzionamentoCentralinaS();
+		FunzionamentoApplicazione f3=new FunzionamentoApplicazione();
+		FunzionamentoApplicazione f4=new FunzionamentoApplicazione();
 		
 
 		//mappa = visualizzazioneMappaBase();
 
 		loginGrafico();
 		f1.main(null);
+		f3.main(null);
+		f4.main(null);
 		f2.main(null);
-
 
 
 
