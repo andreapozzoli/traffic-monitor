@@ -29,7 +29,6 @@ public class FunzionamentoCentralinaS {
 			String percorsoCorrente = System.getProperty("user.dir");
 			Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
 			Sheet sheet = wb.getSheet(0);
-			String comando="";
 			Scanner sc;
 
 			JFrame frame = new JFrame("Centralina stradale");
@@ -123,11 +122,11 @@ public class FunzionamentoCentralinaS {
 					}
 				}
 				if(!trovato) {
-					JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non Ã¨ stato trovato.");
+					JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non è stato trovato.");
 				}
 				else
 				{
-					Posizione posizione=new Posizione(comando,Double.valueOf(sheet.getCell(1,i).getContents()),Double.valueOf(sheet.getCell(2,i).getContents()));
+					Posizione posizione=new Posizione(fieldVia.getText(),Double.valueOf(sheet.getCell(1,i).getContents()),Double.valueOf(sheet.getCell(2,i).getContents()));
 					String tipoStrada = (String) listaTipoStrada.getSelectedItem();
 					int intervallo = (int) spinner.getModel().getValue();
 					

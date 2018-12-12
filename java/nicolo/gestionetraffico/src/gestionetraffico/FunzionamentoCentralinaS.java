@@ -17,7 +17,7 @@ public class FunzionamentoCentralinaS {
 	public static void main(String[] args) {
 		try {
 		Workbook wb;
-			wb = Workbook.getWorkbook(new File("C://Users//semmo//Documents//eclipse//gestione traffico 2//vie3.xls"));
+			wb = Workbook.getWorkbook(new File("C://Users//Matteo//Desktop//prova finale//traffic-monitor//java//nicolo//vie3.xls"));
 			Sheet sheet = wb.getSheet(0);
 			Cell cella;
 			int i=0;
