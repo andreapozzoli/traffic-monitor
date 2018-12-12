@@ -189,10 +189,11 @@ public class FunzionamentoSistemaCentrale {
 		//mappa = visualizzazioneMappaBase();
 
 		loginGrafico();
+		f2.main(null);
 		f1.main(null);
 		f3.main(null);
 		f4.main(null);
-		f2.main(null);
+		
 
 
 

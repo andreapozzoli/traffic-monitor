@@ -69,7 +69,11 @@ public class GestoreDatabase {
 
 			if (this.tabellaTraffico.get(i).getPosizione().equals(pos)) {
 				this.tabellaTraffico.remove(i);
+				try {
 				FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(pos.getLatitudine(), pos.getLongitudine());
+				}catch(Exception e) {
+					System.out.println("Mappa non disponibile");
+				}
 			}
 		}
 		this.tabellaTraffico.add(datoGenerico);
