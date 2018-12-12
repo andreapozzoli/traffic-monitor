@@ -21,15 +21,18 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 public class FunzionamentoCentralinaS {
-
-	public static void main(String[] args) {
+	
+	public static void configurazioneGrafica(){
 		try {
 			//Workbook wb;
 
 			String percorsoCorrente = System.getProperty("user.dir");
 			Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
 			Sheet sheet = wb.getSheet(0);
+<<<<<<< HEAD
 			Scanner sc;
+=======
+>>>>>>> f4d887a70b42c267ed07a1a1886cbbd87bec14d6
 
 			JFrame frame = new JFrame("Centralina stradale");
 
@@ -126,6 +129,10 @@ public class FunzionamentoCentralinaS {
 				}
 				else
 				{
+<<<<<<< HEAD
+=======
+					frame.setVisible(false);
+>>>>>>> f4d887a70b42c267ed07a1a1886cbbd87bec14d6
 					Posizione posizione=new Posizione(fieldVia.getText(),Double.valueOf(sheet.getCell(1,i).getContents()),Double.valueOf(sheet.getCell(2,i).getContents()));
 					String tipoStrada = (String) listaTipoStrada.getSelectedItem();
 					int intervallo = (int) spinner.getModel().getValue();
@@ -154,6 +161,12 @@ public class FunzionamentoCentralinaS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+
+	public static void main(String[] args) {
+		
+		configurazioneGrafica();
 
 	}
 

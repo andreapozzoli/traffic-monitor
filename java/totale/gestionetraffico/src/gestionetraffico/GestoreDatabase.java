@@ -71,11 +71,18 @@ public class GestoreDatabase {
 				this.tabellaTraffico.remove(i);
 				try {
 				FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(pos.getLatitudine(), pos.getLongitudine());
+<<<<<<< HEAD
 				}
 				catch (Exception e) {
 					System.out.println ("mappa non disponibile");
 				}
 				}
+=======
+				}catch(Exception e) {
+					System.out.println("Mappa non disponibile");
+				}
+			}
+>>>>>>> f4d887a70b42c267ed07a1a1886cbbd87bec14d6
 		}
 		this.tabellaTraffico.add(datoGenerico);
 

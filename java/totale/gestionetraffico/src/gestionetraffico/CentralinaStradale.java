@@ -147,9 +147,6 @@ public class CentralinaStradale extends Centralina {
 			try {
 				System.out.println("intervallo "+this.intervalloDiTempo);
 				Thread.sleep(this.intervalloDiTempo*1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 			int numeroVeicoli=this.rilevatoreVeicoli.getNumeroVeicoli();
 			int sommaVelocita=this.rilevatoreVelocita.getSommaVelocita();
 			if(numeroVeicoli!=0) {
@@ -167,6 +164,10 @@ public class CentralinaStradale extends Centralina {
 			System.out.println("dato traffico creato");
 			this.inviaDatoTraffico();
 			System.out.println("dato traffico inviato");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				this.run();
+			}
 		}
 	}
 

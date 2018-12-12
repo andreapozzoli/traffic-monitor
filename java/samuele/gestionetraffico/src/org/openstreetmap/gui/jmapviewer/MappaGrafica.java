@@ -196,7 +196,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				+ "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
 				+ "<u><b>Legenda:</b></u><br>"
 				+ "<font color=\"red\">Coda</font><br>"
-				+"<font color=\"blue\">Velocit√† lenta</font><br>"
+				+"<font color=\"blue\">Velocit‡ lenta</font><br>"
 				+"<font color=\"black\">Traffico elevato</font><br>"
 				+"<font color=\"green\">Nessun dato</font><br><br>"
 				+ "Il pulsante <i>Pulire la mappa</i><br>"
