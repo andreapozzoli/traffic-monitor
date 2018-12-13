@@ -4,12 +4,12 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
 
-public class GestoreCentraline /*extends UnicastRemoteObject*/ /*IGestoreCentraline,*/ {
-	private ArrayList<CentralinaStradale> listaCentralineStradali;
+public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline {
+	private ArrayList<Cent> listaCentralineStradali;
 	private static GestoreCentraline instance=null;
 	
     private GestoreCentraline() throws RemoteException{
-    	this.listaCentralineStradali=new ArrayList<CentralinaStradale>();
+    	this.listaCentralineStradali=new ArrayList<Cent>();
     }
     
     public static GestoreCentraline getInstance() throws RemoteException{  		
@@ -20,32 +20,34 @@ public class GestoreCentraline /*extends UnicastRemoteObject*/ /*IGestoreCentral
     }
     
     
-    public void aggiungiCentralinaStradale(CentralinaStradale centralina) {
+    public void aggiungiCentralinaStradale(int id) throws RemoteException {
     	//si puo verificare che non esista gia in quella posizione
+    	Cent centralina=new Cent(id);
     	this.listaCentralineStradali.add(centralina);
     }
     
    
     
-    public void rimuoviCentralinaStradale(int id) {
-    	for (CentralinaStradale var : this.listaCentralineStradali) {
-    		if (var.getIdCentralinaStradale()==id) {
+    public void rimuoviCentralinaStradale(int id) throws RemoteException{
+    	for (Cent var : this.listaCentralineStradali) {
+    		if (var.getId()==id) {
     			this.listaCentralineStradali.remove(var);
     			break;
     		}
     	}
     }
     
-    public synchronized void segnalaDatabaseS(DatoTraffico dato) throws NotBoundException {
+    public synchronized void segnalaDatabaseS(DatoTraffico dato) throws NotBoundException, RemoteException{
     	GestoreDatabase.getInstance().aggiungiDatoTraffico(dato);
     }
     
     
   
     
-    public ArrayList<CentralinaStradale> getListaCentralineStradali(){
+    public ArrayList<Cent> getListaCentralineStradali(){
     	return this.listaCentralineStradali;
     }
-    
+
+	
 
 }

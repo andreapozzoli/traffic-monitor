@@ -193,6 +193,9 @@ public class FunzionamentoSistemaCentrale {
 
 		Thread t9= new Thread(new GestoreApplicazioniServer());
 		t9.start();
+		
+		Thread t12= new Thread(new GestoreCentralineServer());
+		t12.start();
 	
 		loginGrafico();
 		

@@ -1,13 +1,21 @@
 package prog;
 import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
-public class GestoreCentralineServer {
+public class GestoreCentralineServer implements Runnable {
 
-	public static void main(String[] args) throws Exception {
-		System.setSecurityManager(new RMISecurityManager()); 
-		GestoreCentraline gestoreCentraline = GestoreCentraline.getInstance();
-		//Naming.rebind("GestoreCentraline", gestoreCentraline);
+	public void run()  {
+		Registry registry = null;
+		try {
+			registry = LocateRegistry.createRegistry(12344);
+			
+			registry.rebind("gestCent", GestoreCentraline.getInstance());
+			System.out.println("Server online");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 
-	}
-
+}
 }

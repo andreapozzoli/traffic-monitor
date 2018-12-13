@@ -6,6 +6,7 @@ public abstract class Centralina implements Runnable {
 	protected Posizione posizione;
 	protected int velocita;
 	protected RilevatoreVelocita rilevatoreVelocita;
+	
 	public String getTipo() {
 		return this.tipo;
 	}

@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -23,9 +27,10 @@ public class CentralinaStradale extends Centralina {
 	private String tipoStrada;
 	private int idCentralinaStradale;
 	private RilevatoreVelocitaS rilevatoreVelocita;
+	private IGestoreCentraline centServer;
 
 	//modificato
-	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada) {
+	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada)  {
 		this.intervalloDiTempo=intervalloDiTempo;
 		this.rilevatoreVeicoli=new RilevatoreVeicoli();
 		this.rilevatoreVelocita=this.rilevatoreVeicoli.getRilevatoreVelocita();
@@ -34,7 +39,13 @@ public class CentralinaStradale extends Centralina {
 		this.tipo="traffico nella norma";
 		this.intervalloMinimo=10;
 		this.tipoStrada=tipoStrada;
-		//GestoreCentraline.getInstance().aggiungiCentralinaStradale(this);
+		this.idCentralinaStradale=0;
+		try {
+			centServer.aggiungiCentralinaStradale(this.idCentralinaStradale);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void calcolaIntervallo(int numeroVeicoli) {
 		float temp=((float)numeroVeicoli)/((float)this.intervalloDiTempo);
@@ -127,8 +138,8 @@ public class CentralinaStradale extends Centralina {
 		}
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
-	public void inviaDatoTraffico() {
-		//GestoreCentraline.getInstance().segnalaDatabaseS(this.datoTraffico);
+	public void inviaDatoTraffico() throws RemoteException {
+		centServer.segnalaDatabaseS(this.datoTraffico);
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
@@ -147,6 +158,26 @@ public class CentralinaStradale extends Centralina {
 
 	//nuovo
 	public void run() {
+		customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
+		System.setSecurityManager(cSM);
+
+		Registry registry = null;
+		try {
+			registry = LocateRegistry.getRegistry("127.0.0.1", 12344);
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			this.centServer = (IGestoreCentraline) registry.lookup("gestCent");
+		} catch (RemoteException | NotBoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+
+		
 		while(true) {
 			try {
 				System.out.println("intervallo "+this.intervalloDiTempo);
@@ -173,6 +204,9 @@ public class CentralinaStradale extends Centralina {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 				this.run();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
