@@ -3,9 +3,7 @@ import java.io.Serializable;
 import java.util.*;
 
 public abstract class Notifica implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -6817643823377378061L;
 	protected String data;
 	protected String ora;

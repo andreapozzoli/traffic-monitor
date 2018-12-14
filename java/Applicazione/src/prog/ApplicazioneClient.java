@@ -6,29 +6,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.rmi.*;
-import java.util.Scanner;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import jxl.read.biff.BiffException;
-import java.rmi.server.*;
 import java.rmi.registry.*;
-import java.util.ArrayList;
-
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
 
 
-public class ApplicazioneClient implements Runnable{
+public class ApplicazioneClient implements Runnable {
 
 	private ApplicazioneMobile applicazione;
 	private IGestoreApplicazioni server;
-	private boolean finito=true;
 	
 
 	public ApplicazioneClient(ApplicazioneMobile applicazione) {

@@ -2,9 +2,10 @@ package prog;
 import java.util.ArrayList;
 import java.rmi.*;
 import java.rmi.server.*;
-import java.rmi.registry.*;
 
 public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCentraline {
+	
+	private static final long serialVersionUID = -8583760378828514273L;
 	private ArrayList<Cent> listaCentralineStradali;
 	private static GestoreCentraline instance=null;
 	

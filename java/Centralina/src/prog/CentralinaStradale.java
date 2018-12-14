@@ -1,22 +1,11 @@
 package prog;
 
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
-import jxl.read.biff.BiffException;
 
 public class CentralinaStradale extends Centralina {
 	private int intervalloDiTempo;
@@ -29,7 +18,6 @@ public class CentralinaStradale extends Centralina {
 	private RilevatoreVelocitaS rilevatoreVelocita;
 	private IGestoreCentraline centServer;
 
-	//modificato
 	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada)  {
 		this.intervalloDiTempo=intervalloDiTempo;
 		this.rilevatoreVeicoli=new RilevatoreVeicoli();
@@ -126,7 +114,6 @@ public class CentralinaStradale extends Centralina {
 	}
 	public void inviaDatoTraffico() throws RemoteException {
 		centServer.segnalaDatabaseS(this.datoTraffico);
-		//fare con rmi
 	}
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
 		if (numeroVeicoli!=0) {
@@ -137,12 +124,10 @@ public class CentralinaStradale extends Centralina {
 		}
 	}
 
-	//nuovo
 	public RilevatoreVeicoli getRilevatoreVeicoli() {
 		return this.rilevatoreVeicoli;
 	}
 
-	//nuovo
 	public void run() {
 		customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
 		System.setSecurityManager(cSM);
@@ -168,8 +153,6 @@ public class CentralinaStradale extends Centralina {
 
 		while(true) {
 			try {
-				System.out.println("intervallo "+this.intervalloDiTempo);
-				//Thread.sleep(this.intervalloDiTempo*1000);
 				TimeUnit.SECONDS.sleep(this.intervalloDiTempo);
 
 				int numeroVeicoli=this.rilevatoreVeicoli.getNumeroVeicoli();

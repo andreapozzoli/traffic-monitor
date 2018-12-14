@@ -11,9 +11,6 @@ import javax.swing.border.*;
 
 public class LoginDialog extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6048442678825828787L;
 	private JTextField tfUsername;
 	private JPasswordField pfPassword;
@@ -26,7 +23,7 @@ public class LoginDialog extends JDialog {
 	public LoginDialog(Frame parent, String tipoLogin, IGestoreApplicazioni server) {
 		super(parent, "Login", true);
 		//
-		JPanel panel = new JPanel(new GridBagLayout());
+		JPanel panel = new JPanel(new GridBagLayout()); // disposizione degli elementi seguendo una griglia
 		GridBagConstraints cs = new GridBagConstraints();
 
 		cs.fill = GridBagConstraints.HORIZONTAL;
@@ -65,16 +62,17 @@ public class LoginDialog extends JDialog {
 					if(Login.authenticate(getUsername(), getPassword(), tipoLogin, server)) {
 						JOptionPane.showMessageDialog(LoginDialog.this,
 								"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
-								"Login",
-								JOptionPane.INFORMATION_MESSAGE);
+								"Login", // titolo della finestra
+								JOptionPane.INFORMATION_MESSAGE); // messaggio di informazione
 						succeeded = true;
 						dispose();
 					} else {
 						JOptionPane.showMessageDialog(LoginDialog.this,
 								"Le credenziali di accesso non sono valide.",
-								"Login",
-								JOptionPane.ERROR_MESSAGE);
-						// reset username and password
+								"Login", // titolo della finestra
+								JOptionPane.ERROR_MESSAGE); // messaggio di errore
+
+						// reset dei campi username e password
 						tfUsername.setText("");
 						pfPassword.setText("");
 						succeeded = false;

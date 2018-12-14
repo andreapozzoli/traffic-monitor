@@ -1,5 +1,4 @@
 package prog;
-import java.util.*;
 
 public abstract class Centralina implements Runnable {
 	protected String tipo;

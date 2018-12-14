@@ -97,7 +97,6 @@ public class GestoreDatabase {
 			System.out.println("Mappa non disponibile2");
 		}
 
-		//modificato
 		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
 		}

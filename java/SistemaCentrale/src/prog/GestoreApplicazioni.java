@@ -11,9 +11,7 @@ import java.lang.Math;
 
 
 public class GestoreApplicazioni extends UnicastRemoteObject implements IGestoreApplicazioni {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 4452171250708806895L;
 	private static GestoreApplicazioni instance=null;
 	private int raggio;
@@ -68,35 +66,35 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 	}
 
 	public void calcolaApplicazioniDaNotificare(String mittente,Posizione posizione, String tipo) throws BiffException, IOException, NotBoundException {
-		
-			if (!(this.listaApplicazioni.isEmpty())) {
-				for (App var: this.listaApplicazioni) {
-					if ((var.getUtente().getUsername()!=null)&&(!(var.getUtente().getUsername().equals(mittente)))) {
-						//conversione distanza coordinate in metri
-						IApplicazioneMobile appServer=this.getInterfacciaApp(var.getId());
 
-						double R = 6378.137; // Radius of earth in KM 
-						double lat1=posizione.getLatitudine();
-						double lat2=appServer.getPosizione().getLatitudine();
-						double lon1=posizione.getLongitudine();
-						double lon2=appServer.getPosizione().getLongitudine();
-						double dLat = lat1 * Math.PI/180 - lat2 * Math.PI/180; 
-						double dLon = lon1 * Math.PI/180 - lon2 * Math.PI/180; 
-						double a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) * Math.sin(dLon/2) * Math.sin(dLon/2); 
-						double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-						double d = R * c; 
-						//if (Math.sqrt(Math.pow(var.getPosizione().getLatitudine()-posizione.getLatitudine(),2)+Math.pow(var.getPosizione().getLongitudine()-posizione.getLongitudine(),2))<this.raggio){
-						if (d*1000<this.raggio) {
+		if (!(this.listaApplicazioni.isEmpty())) {
+			for (App var: this.listaApplicazioni) {
+				if ((var.getUtente().getUsername()!=null)&&(!(var.getUtente().getUsername().equals(mittente)))) {
+					//conversione distanza coordinate in metri
+					IApplicazioneMobile appServer=this.getInterfacciaApp(var.getId());
+
+					double R = 6378.137; // Radius of earth in KM 
+					double lat1=posizione.getLatitudine();
+					double lat2=appServer.getPosizione().getLatitudine();
+					double lon1=posizione.getLongitudine();
+					double lon2=appServer.getPosizione().getLongitudine();
+					double dLat = lat1 * Math.PI/180 - lat2 * Math.PI/180; 
+					double dLon = lon1 * Math.PI/180 - lon2 * Math.PI/180; 
+					double a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) * Math.sin(dLon/2) * Math.sin(dLon/2); 
+					double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+					double d = R * c; 
+
+					if (d*1000<this.raggio) {
 						NotificaApplicazione notifica;
 						notifica=appServer.creaNotificaApplicazione(posizione, tipo);
 						appServer.aggiungiNotificaInCoda(notifica);    
-							}
 					}
 				}
 			}
 		}
+	}
 
-	
+
 
 	public boolean verificaAccesso(String username, String password) {
 		return GestoreUtenti.getInstance().riconosciUtente(username, password);
@@ -117,14 +115,11 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 
 	public IApplicazioneMobile getInterfacciaApp(int id) throws RemoteException, NotBoundException {
 
-
-		//System.setSecurityManager(new SecurityManager());
-
 		customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
 		System.setSecurityManager(cSM);
 
 		Registry registry = LocateRegistry.getRegistry("127.0.0.1", 12346+id);
-		
+
 		IApplicazioneMobile appSer = (IApplicazioneMobile) registry.lookup("appServer");
 		return appSer;
 	}

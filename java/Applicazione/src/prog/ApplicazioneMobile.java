@@ -1,27 +1,16 @@
 package prog;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.*;
 import java.rmi.server.*;
-import java.rmi.registry.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
-import javax.swing.SwingUtilities;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
-import javax.swing.text.html.HTMLEditorKit;
 
 import jxl.read.biff.BiffException;
 
@@ -42,12 +31,6 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 	private JTextPane areaNotifiche = new JTextPane();
 	private JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
-	private JScrollBar scorrimentoVerticale = this.paneNotifiche.getVerticalScrollBar();
-
-
-
-
-
 
 	public ApplicazioneMobile() throws BiffException, IOException, RemoteException {
 		super();
@@ -55,7 +38,6 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 		this.sensore = new SensoreGPSTelefono();
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
-	
 
 	}
 
@@ -94,8 +76,6 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public SensoreGPS getSensore () {
 		return this.sensore;
 	}
-
-
 
 
 	public int getIdentificativo(){
@@ -142,11 +122,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void segnalaUtente(NotificaApplicazione notifica) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 
-
-
 		this.areaNotifiche.setContentType("text/html");
-
-		//HTMLEditorKit doc=(HTMLEditorKit)areaNotifiche.getEditorKit();
 
 		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument();
 		try {
@@ -157,12 +133,6 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 			e.printStackTrace();
 		}
 
-/*
-
-		String precedente = this.areaNotifiche.getText();
-
-		System.out.println(notifica.stampaNotifica()+"<br>"+precedente);
-		this.areaNotifiche.setText(notifica.stampaNotifica()+"<br>"+precedente);*/
 	}
 
 	public void setUtente(Utente utente) {

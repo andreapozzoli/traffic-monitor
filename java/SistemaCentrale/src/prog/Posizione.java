@@ -3,9 +3,7 @@ package prog;
 import java.io.Serializable;
 
 public class Posizione implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 3583111686129194940L;
 	private double latitudine;
 	private double longitudine;

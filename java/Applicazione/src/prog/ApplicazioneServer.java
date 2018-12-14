@@ -1,5 +1,4 @@
 package prog;
-import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
@@ -13,9 +12,6 @@ private ApplicazioneMobile applicazione;
 	}
 
 	public void run(){
-		//System.setSecurityManager(new RMISecurityManager());
-		//Naming.rebind("ApplicazioneMobile", this.applicazione);
-		
 		
 		Registry registry = null;
 		try {
@@ -26,8 +22,6 @@ private ApplicazioneMobile applicazione;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-		
-		
 
 	}
 

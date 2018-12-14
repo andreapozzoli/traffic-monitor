@@ -1,12 +1,9 @@
 package prog;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class NotificaApplicazione extends Notifica implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -2638683854845954842L;
 	private String tipo;	
 	private String mittente;
@@ -68,7 +65,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 		}
 		else
 		{
-			finale += " ad una velocità media di "
+			finale += " ad una velocitï¿½ media di "
 					+ this.getTipo().substring(1, this.getTipo().indexOf(' '))
 					+ " km/h";
 		}

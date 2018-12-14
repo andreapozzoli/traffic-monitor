@@ -3,9 +3,7 @@ package prog;
 import java.io.Serializable;
 
 public class Utente implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -4252662499305486130L;
 	private String username;
 	private String password;

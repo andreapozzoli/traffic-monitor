@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class NotificaApplicazione extends Notifica implements Serializable{
-	/**
-	 * 
-	 */
+
+
 	private static final long serialVersionUID = -2638683854845954842L;
 	private String tipo;	
 	private String mittente;
@@ -21,24 +20,23 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}
-	
+
 	public String getMittente() {
 		return this.mittente;
 	}
-	
+
 	public void setMittente(String mittente) {
 		this.tipo=mittente;
 	}
-	
+
 	public String getTipo() {
 		return this.tipo;
 	}
-	
-	//nuovo
+
 	public String stampaNotifica() {
-		
+
 		String finale = new String();
-		
+
 		if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Coda"))
 		{
 			finale = "<font color=\"red\">";
@@ -76,8 +74,5 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 
 
 		return finale;
-		//return ("tipo: "+this.tipo+" via: "+this.posizione.getVia()+ " posizione: "+this.posizione.getLatitudine()+" ; "+this.posizione.getLongitudine());
-	}
-	
-	
+	}	
 }

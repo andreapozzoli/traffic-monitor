@@ -52,7 +52,6 @@ public class GestoreUtenti {
     	
 	}
     
-    //nuovo
     public boolean riconosciUtente(String username) {
 		for (Utente utente: this.listaUtenti) {
 			if (utente.getUsername().equals(username) ) {

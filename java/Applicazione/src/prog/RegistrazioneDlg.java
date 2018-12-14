@@ -8,9 +8,11 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 //basato su http://www.zentut.com/java-swing/simple-login-dialog/
+// La struttura Ã¨ analoga a LoginDialog
 
 public class RegistrazioneDlg extends JDialog {
 
+	private static final long serialVersionUID = -3407157363359093068L;
 	private JTextField tfUsername;
 	private JPasswordField pfPassword;
 	private JLabel lbUsername;
@@ -67,10 +69,10 @@ public class RegistrazioneDlg extends JDialog {
 						dispose();
 					} else {
 						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-								"Username già in uso.",
+								"Username giï¿½ in uso.",
 								"Registrazione",
 								JOptionPane.ERROR_MESSAGE);
-						// reset username and password
+
 						tfUsername.setText("");
 						pfPassword.setText("");
 						succeeded = false;

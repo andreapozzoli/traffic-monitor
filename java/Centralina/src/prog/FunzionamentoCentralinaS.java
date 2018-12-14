@@ -2,32 +2,35 @@ package prog;
 
 import java.util.*;
 
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import jxl.*;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.rmi.Naming;
-import java.rmi.RMISecurityManager;
-import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 public class FunzionamentoCentralinaS {
 
 	public static void configurazioneGrafica(){
 		try {
-			//Workbook wb;
 
 			String percorsoCorrente = System.getProperty("user.dir");
 			Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
