@@ -30,29 +30,17 @@ public class CentralinaStradale extends Centralina {
 	private IGestoreCentraline centServer;
 
 	//modificato
-	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada) throws NotBoundException, RemoteException  {
+	public CentralinaStradale(int intervalloDiTempo, Posizione posizione,String tipoStrada)  {
 		this.intervalloDiTempo=intervalloDiTempo;
 		this.rilevatoreVeicoli=new RilevatoreVeicoli();
 		this.rilevatoreVelocita=this.rilevatoreVeicoli.getRilevatoreVelocita();
 		this.posizione=posizione;
 		this.velocita=0;
-		this.tipo="S0 traffico nella norma";
+		this.tipo="traffico nella norma";
 		this.intervalloMinimo=10;
 		this.tipoStrada=tipoStrada;
 		this.idCentralinaStradale=0;
-
-
-
-		customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
-		System.setSecurityManager(cSM);
-
-		Registry registry = LocateRegistry.getRegistry("127.0.0.1", 12344);
-
-		IGestoreCentraline centServer = (IGestoreCentraline) registry.lookup("gestCent");
-
-
-		centServer.aggiungiCentralinaStradale(this.idCentralinaStradale);
-
+		
 	}
 	public void calcolaIntervallo(int numeroVeicoli) {
 		float temp=((float)numeroVeicoli)/((float)this.intervalloDiTempo);
@@ -67,7 +55,7 @@ public class CentralinaStradale extends Centralina {
 		else {
 			this.intervalloDiTempo=this.intervalloDiTempo*2;
 			System.out.println("ho fatto else");
-
+		
 		}
 	}
 
@@ -146,12 +134,7 @@ public class CentralinaStradale extends Centralina {
 		this.datoTraffico=new DatoTraffico(this.posizione, tipo, this.velocita);
 	}
 	public void inviaDatoTraffico() throws RemoteException {
-		try {
-			centServer.segnalaDatabaseS(this.datoTraffico);
-		} catch (NotBoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		centServer.segnalaDatabaseS(this.datoTraffico);
 		//fare con rmi
 	}
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
@@ -180,16 +163,21 @@ public class CentralinaStradale extends Centralina {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
+		
 		try {
 			this.centServer = (IGestoreCentraline) registry.lookup("gestCent");
 		} catch (RemoteException | NotBoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-
-
+		
+		try {
+			centServer.aggiungiCentralinaStradale(this.idCentralinaStradale);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		while(true) {
 			try {
 				System.out.println("intervallo "+this.intervalloDiTempo);

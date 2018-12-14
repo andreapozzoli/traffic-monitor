@@ -19,10 +19,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RMISecurityManager;
-import java.rmi.RemoteException;
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
@@ -171,9 +168,9 @@ public class FunzionamentoCentralinaS {
 			frame.setVisible(true);
 
 
+			
 
-
-
+			
 			domandaVelocita.addActionListener(
 					new ActionListener(){
 						public void actionPerformed(ActionEvent e) {
@@ -198,7 +195,6 @@ public class FunzionamentoCentralinaS {
 									break;
 								}
 							}
-
 							if(!trovato) {
 								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non � stato trovato.");
 							}
@@ -209,53 +205,45 @@ public class FunzionamentoCentralinaS {
 								String tipoStrada = (String) listaTipoStrada.getSelectedItem();
 								int intervallo = (int) spinner.getModel().getValue();
 
-								CentralinaStradale centralina;
-								try {
-									centralina = new CentralinaStradale(intervallo,posizione,tipoStrada);
-
-
-
-									if(spinnerVelocita.isEnabled())
-									{
-										centralina.setVelocita((int) spinnerVelocita.getModel().getValue());
-									}
-
-									fieldVia.setEnabled(false);
-									spinner.setEnabled(false);
-									listaTipoStrada.setEnabled(false);
-									btnOK.setEnabled(false);
-									btnGeneraTraffico.setEnabled(true);
-
-									String titoloQuasiCompleto = frame.getTitle() + " (" + fieldVia.getText() + ")";
-									frame.setTitle(titoloQuasiCompleto);
-
-									btnGeneraTraffico.addActionListener(
-											new ActionListener(){
-												public void actionPerformed(ActionEvent e) {
-													if(spinnerVelocita.isEnabled()) {
-														centralina.setVelocita((int) spinnerVelocita.getModel().getValue());
-													}
-													else
-													{
-														JOptionPane.showMessageDialog(frame, "Nessuna velocità selezionata.");
-													}
-												}
-											});
-
-									//thread rilevatore veicoli
-									Thread t1=new Thread(centralina.getRilevatoreVeicoli());
-									t1.start();
-
-									//deve solo aspettare che scada l'intervallo di tempo corrente
-									//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
-									Thread t2=new Thread(centralina);
-									t2.start();
-								} catch (RemoteException | NotBoundException e1) {
-									// TODO Auto-generated catch block
-									e1.printStackTrace();
+								CentralinaStradale centralina=new CentralinaStradale(intervallo,posizione,tipoStrada);
+								
+								if(spinnerVelocita.isEnabled())
+								{
+									centralina.setVelocita((int) spinnerVelocita.getModel().getValue());
 								}
 
+								fieldVia.setEnabled(false);
+								spinner.setEnabled(false);
+								listaTipoStrada.setEnabled(false);
+								btnOK.setEnabled(false);
+								btnGeneraTraffico.setEnabled(true);
+								
+								String titoloQuasiCompleto = frame.getTitle() + " (" + fieldVia.getText() + ")";
+								frame.setTitle(titoloQuasiCompleto);
 
+								btnGeneraTraffico.addActionListener(
+										new ActionListener(){
+											public void actionPerformed(ActionEvent e) {
+												if(spinnerVelocita.isEnabled()) {
+													centralina.setVelocita((int) spinnerVelocita.getModel().getValue());
+												}
+												else
+												{
+													JOptionPane.showMessageDialog(frame, "Nessuna velocità selezionata.");
+												}
+											}
+										});
+								
+								//thread rilevatore veicoli
+								Thread t1=new Thread(centralina.getRilevatoreVeicoli());
+								t1.start();
+
+								//deve solo aspettare che scada l'intervallo di tempo corrente
+								//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
+								Thread t2=new Thread(centralina);
+								t2.start();
+								
+								
 							}
 						}
 
