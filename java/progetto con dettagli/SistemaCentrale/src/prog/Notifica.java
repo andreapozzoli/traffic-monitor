@@ -13,7 +13,7 @@ public abstract class Notifica implements Serializable{
 	
 	public void setData() {
 		GregorianCalendar dat = new GregorianCalendar();
-		this.data = dat.get(Calendar.DAY_OF_MONTH)+ "/" + dat.get(Calendar.MONTH) + "/" + dat.get(Calendar.YEAR);		
+		this.data = dat.get(Calendar.DAY_OF_MONTH)+ "/" + (dat.get(Calendar.MONTH)+1) + "/" + dat.get(Calendar.YEAR);		
 	}
 	
 	public void setOra() {

@@ -97,11 +97,11 @@ public class FunzionamentoCentralinaS {
 
 			velGrid.fill = GridBagConstraints.BOTH;
 
-			final JLabel labelVelocita = new JLabel("Velocità iniziale [km/h]:");
+			final JLabel labelVelocita = new JLabel("Velocitï¿½ [km/h]:");
 			final SpinnerNumberModel modelloVelocita = new SpinnerNumberModel(20, 1, 110, 1);
 			final JSpinner spinnerVelocita = new JSpinner(modelloVelocita);
 
-			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocità iniziale casuale");
+			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocitï¿½ iniziale casuale");
 
 			labelVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			spinnerVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
@@ -134,7 +134,7 @@ public class FunzionamentoCentralinaS {
 			bottGrid.fill = GridBagConstraints.BOTH;
 
 			JButton btnOK = new JButton("OK");
-			JButton btnGeneraTraffico = new JButton("Imporre una velocità");
+			JButton btnGeneraTraffico = new JButton("Imporre una velocitï¿½");
 			btnGeneraTraffico.setEnabled(false);
 
 
@@ -162,7 +162,7 @@ public class FunzionamentoCentralinaS {
 			frame.setLocationRelativeTo(frame);
 
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setSize(400, 250);
+			frame.setSize(425, 250);
 			//frame.setLayout(new FlowLayout());
 			//frame.getContentPane().add(btnOK);
 			frame.setVisible(true);
@@ -196,7 +196,7 @@ public class FunzionamentoCentralinaS {
 								}
 							}
 							if(!trovato) {
-								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non è stato trovato.");
+								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non ï¿½ stato trovato.");
 							}
 							else
 							{
@@ -239,7 +239,7 @@ public class FunzionamentoCentralinaS {
 												}
 												else
 												{
-													JOptionPane.showMessageDialog(frame, "Nessuna velocità selezionata.");
+													JOptionPane.showMessageDialog(frame, "Nessuna velocitï¿½ selezionata.");
 												}
 											}
 										});

@@ -153,7 +153,7 @@ public class ApplicazioneClient implements Runnable{
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
 		JButton logoutBtn = new JButton("Logout");
 		JCheckBox fissaPosizione = new JCheckBox("Selezionare per fissare la posizione");
-		fissaPosizione.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
+		//fissaPosizione.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
 
 		this.applicazione.setFrame(new JFrame());
 		this.applicazione.getFrame().setTitle("Applicazione mobile");
@@ -202,7 +202,7 @@ public class ApplicazioneClient implements Runnable{
 		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
 		
 		bottom.add(svuotaNotificheBtn);
-		bottom.add(fissaPosizione);
+		top.add(fissaPosizione);
 		
 		fissaPosizione.addActionListener(
 				new ActionListener(){
