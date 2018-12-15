@@ -18,8 +18,8 @@ public class RegistrazioneDlg extends JDialog {
 	private JLabel lbUsername;
 	private JLabel lbPassword;
 	private JButton btnRegistrazione;
-	private JButton btnCancel;
-	private boolean succeeded;
+	private JButton btnAnnulla;
+	private boolean riuscito;
 
 	public RegistrazioneDlg(Frame parent, String tipoRegistrazione) {
 		super(parent, "Registrazione", true);
@@ -64,7 +64,7 @@ public class RegistrazioneDlg extends JDialog {
 							"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
 							"Registrazione",
 							JOptionPane.INFORMATION_MESSAGE);
-					succeeded = true;
+					riuscito = true;
 					dispose();
 				} else {
 					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
@@ -74,13 +74,13 @@ public class RegistrazioneDlg extends JDialog {
 					// reset username and password
 					tfUsername.setText("");
 					pfPassword.setText("");
-					succeeded = false;
+					riuscito = false;
 
 				}
 			}
 		});
-		btnCancel = new JButton("Annulla");
-		btnCancel.addActionListener(new ActionListener() {
+		btnAnnulla = new JButton("Annulla");
+		btnAnnulla.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -88,7 +88,7 @@ public class RegistrazioneDlg extends JDialog {
 		});
 		JPanel bp = new JPanel();
 		bp.add(btnRegistrazione);
-		bp.add(btnCancel);
+		bp.add(btnAnnulla);
 
 		getContentPane().add(panel, BorderLayout.CENTER);
 		getContentPane().add(bp, BorderLayout.PAGE_END);
@@ -106,7 +106,7 @@ public class RegistrazioneDlg extends JDialog {
 		return new String(pfPassword.getPassword());
 	}
 
-	public boolean isSucceeded() {
-		return succeeded;
+	public boolean registrazioneRiuscita() {
+		return riuscito;
 	}
 }

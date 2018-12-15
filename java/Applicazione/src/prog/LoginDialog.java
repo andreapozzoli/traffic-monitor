@@ -17,8 +17,8 @@ public class LoginDialog extends JDialog {
 	private JLabel lbUsername;
 	private JLabel lbPassword;
 	private JButton btnLogin;
-	private JButton btnCancel;
-	private boolean succeeded;
+	private JButton btnAnnulla;
+	private boolean riuscito;
 
 	public LoginDialog(Frame parent, String tipoLogin, IGestoreApplicazioni server) {
 		super(parent, "Login", true);
@@ -64,7 +64,7 @@ public class LoginDialog extends JDialog {
 								"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
 								"Login", // titolo della finestra
 								JOptionPane.INFORMATION_MESSAGE); // messaggio di informazione
-						succeeded = true;
+						riuscito = true;
 						dispose();
 					} else {
 						JOptionPane.showMessageDialog(LoginDialog.this,
@@ -75,7 +75,7 @@ public class LoginDialog extends JDialog {
 						// reset dei campi username e password
 						tfUsername.setText("");
 						pfPassword.setText("");
-						succeeded = false;
+						riuscito = false;
 
 					}
 				} catch (HeadlessException | RemoteException e1) {
@@ -84,8 +84,8 @@ public class LoginDialog extends JDialog {
 				}
 			}
 		});
-		btnCancel = new JButton("Annulla");
-		btnCancel.addActionListener(new ActionListener() {
+		btnAnnulla = new JButton("Annulla");
+		btnAnnulla.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -93,7 +93,7 @@ public class LoginDialog extends JDialog {
 		});
 		JPanel bp = new JPanel();
 		bp.add(btnLogin);
-		bp.add(btnCancel);
+		bp.add(btnAnnulla);
 
 		getContentPane().add(panel, BorderLayout.CENTER);
 		getContentPane().add(bp, BorderLayout.PAGE_END);
@@ -111,7 +111,7 @@ public class LoginDialog extends JDialog {
 		return new String(pfPassword.getPassword());
 	}
 
-	public boolean isSucceeded() {
-		return succeeded;
+	public boolean loginRiuscito() {
+		return riuscito;
 	}
 }

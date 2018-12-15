@@ -12,6 +12,7 @@ import java.rmi.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import jxl.read.biff.BiffException;
@@ -48,8 +49,8 @@ public class ApplicazioneClient implements Runnable {
 
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(300, 100);
-		frame.setLayout(new FlowLayout());
+		frame.setSize(260, 100);
+		frame.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 20));
 		frame.getContentPane().add(btnLogin);
 		frame.getContentPane().add(btnRegistrazione);
 		frame.setVisible(true);
@@ -61,7 +62,7 @@ public class ApplicazioneClient implements Runnable {
 						LoginDialog loginDlg = new LoginDialog(frame, "U", server);
 						loginDlg.setVisible(true);
 
-						if(loginDlg.isSucceeded()){
+						if(loginDlg.loginRiuscito()){
 							loginDlg.setVisible(false);
 							frame.setVisible(false);
 
@@ -102,7 +103,7 @@ public class ApplicazioneClient implements Runnable {
 
 
 						System.out.println(registrazioneDlg.getUsername());
-						if(registrazioneDlg.isSucceeded()){
+						if(registrazioneDlg.registrazioneRiuscita()){
 							registrazioneDlg.setVisible(false);
 							frame.setVisible(false);
 
@@ -147,7 +148,6 @@ public class ApplicazioneClient implements Runnable {
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
 		JButton logoutBtn = new JButton("Logout");
 		JCheckBox fissaPosizione = new JCheckBox("Selezionare per fissare la posizione");
-		//fissaPosizione.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
 
 		this.applicazione.setFrame(new JFrame());
 		this.applicazione.getFrame().setTitle("Applicazione mobile");
@@ -217,10 +217,8 @@ public class ApplicazioneClient implements Runnable {
 			}
 		});
 
-		//this.applicazione.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.applicazione.getFrame().pack();
 		this.applicazione.getFrame().setVisible(true);
-
 
 	}
 
@@ -228,14 +226,9 @@ public class ApplicazioneClient implements Runnable {
 		this.applicazione.getAreaNotifiche().setText("");
 	}
 
-
-
 	public void run(){
 
 		try {
-
-			//System.setSecurityManager(new SecurityManager());
-
 
 			customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
 			System.setSecurityManager(cSM);
@@ -249,16 +242,13 @@ public class ApplicazioneClient implements Runnable {
 			Thread t2=new Thread(new ApplicazioneServer(this.applicazione));
 			t2.start();
 
-
 			loginGrafico(this.applicazione.getIdentificativo());
 
-
-
-
-
-		}catch (Exception e) {
-			e.printStackTrace(System.err);
-			System.out.println("HelloClient exception: " + e);
+		} catch (Exception e) {
+			  JOptionPane.showMessageDialog(null,
+				        "Il sistema centrale non è disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
+				        "Errore di connessione",
+				        JOptionPane.ERROR_MESSAGE);
 		}
 
 	}

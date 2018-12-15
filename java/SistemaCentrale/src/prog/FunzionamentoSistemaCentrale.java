@@ -34,8 +34,8 @@ public class FunzionamentoSistemaCentrale {
 		final JButton btnRegistrazione = new JButton("Registrazione");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(300, 100); // dimensione della finestra di login (larghezza, altezza)
-		frame.setLayout(new FlowLayout()); // impostazione della tipologia di layout
+		frame.setSize(260, 100);
+		frame.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 20));
 		
 		// Aggiunta dei bottoni al frame
 		frame.getContentPane().add(btnLogin);
@@ -50,7 +50,7 @@ public class FunzionamentoSistemaCentrale {
 						LoginDialog loginDlg = new LoginDialog(frame, "A"); // "A" si riferisce al fatto che si stia considerando un amministratore
 						loginDlg.setVisible(true); // mostra la schermata di login con la richiesta di nome utente e password
 
-						if(loginDlg.isSucceeded()){ // se il nome utente e la password inseriti sono corretti
+						if(loginDlg.loginRiuscito()){ // se il nome utente e la password inseriti sono corretti
 							loginDlg.setVisible(false); // nascondere schermata di login
 							frame.setVisible(false); // nascondere schermata di scelta tra login e registrazione
 
@@ -68,7 +68,7 @@ public class FunzionamentoSistemaCentrale {
 						RegistrazioneDlg registrazioneDlg = new RegistrazioneDlg(frame, "A");
 						registrazioneDlg.setVisible(true); // schermata di registrazione
 
-						if(registrazioneDlg.isSucceeded()){
+						if(registrazioneDlg.registrazioneRiuscita()){
 							registrazioneDlg.setVisible(false);
 							frame.setVisible(false);
 							Amministratore admin=new Amministratore(registrazioneDlg.getUsername(),registrazioneDlg.getPassword()); // creazione di un nuovo amminsitratore con le credenziali inserite (se accettate)
