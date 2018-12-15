@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.rmi.*;
 
@@ -20,22 +22,22 @@ public class ApplicazioneClient implements Runnable {
 
 	private ApplicazioneMobile applicazione;
 	private IGestoreApplicazioni server;
-	
+
 
 	public ApplicazioneClient(ApplicazioneMobile applicazione) {
 		this.applicazione=applicazione;
 	}
-	
+
 	private void segnalaCoda() throws BiffException, IOException  {
 
 		if (!applicazione.getFissa()) {
-		this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione());
+			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione());
 		}
 		NotificaApplicazione notifica=new NotificaApplicazione(this.applicazione.getUsernameUtente(), this.applicazione.getPosizione(), "M10 Coda");
 		server.segnalaDatabase(notifica);
 
 	}
-	
+
 	public boolean loginGrafico(int id) throws RemoteException {
 
 		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
@@ -43,7 +45,7 @@ public class ApplicazioneClient implements Runnable {
 		final JFrame frame = new JFrame("Accesso all'applicazione mobile");
 		final JButton btnLogin = new JButton("Login");
 		final JButton btnRegistrazione = new JButton("Registrazione");
-		
+
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(300, 100);
@@ -51,6 +53,7 @@ public class ApplicazioneClient implements Runnable {
 		frame.getContentPane().add(btnLogin);
 		frame.getContentPane().add(btnRegistrazione);
 		frame.setVisible(true);
+
 
 		btnLogin.addActionListener(
 				new ActionListener(){
@@ -98,47 +101,47 @@ public class ApplicazioneClient implements Runnable {
 						registrazioneDlg.setVisible(true);
 
 
-							System.out.println(registrazioneDlg.getUsername());
-							if(registrazioneDlg.isSucceeded()){
-								registrazioneDlg.setVisible(false);
-								frame.setVisible(false);
+						System.out.println(registrazioneDlg.getUsername());
+						if(registrazioneDlg.isSucceeded()){
+							registrazioneDlg.setVisible(false);
+							frame.setVisible(false);
 
-								applicazione.setUtente ( new Utente(registrazioneDlg.getUsername(), registrazioneDlg.getPassword()));
-								try {
-									server.aggiungiApplicazione(applicazione.getIdentificativo(), applicazione.getUtente());
-								} catch (RemoteException e3) {
-									// TODO Auto-generated catch block
-									e3.printStackTrace();
-								}
-								try {
-									server.registraUtente(applicazione.getUtente());
-								} catch (RemoteException e2) {
-									// TODO Auto-generated catch block
-									e2.printStackTrace();
-								}
+							applicazione.setUtente ( new Utente(registrazioneDlg.getUsername(), registrazioneDlg.getPassword()));
+							try {
+								server.aggiungiApplicazione(applicazione.getIdentificativo(), applicazione.getUtente());
+							} catch (RemoteException e3) {
+								// TODO Auto-generated catch block
+								e3.printStackTrace();
+							}
+							try {
+								server.registraUtente(applicazione.getUtente());
+							} catch (RemoteException e2) {
+								// TODO Auto-generated catch block
+								e2.printStackTrace();
+							}
 
-								try {
-									mostraGUI(id);
-								} catch (BiffException | IOException e1) {
-									// TODO Auto-generated catch block
-									e1.printStackTrace();
-								}
+							try {
+								mostraGUI(id);
+							} catch (BiffException | IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
 							}
 						}
+					}
 				});
-		
-		
+
+
 		return !(frame.isVisible());
 
 	}
-	
+
 	public void logout() throws RemoteException {
 		this.applicazione.setUtente(null);
 		server.rimuoviApplicazione(this.applicazione.getIdentificativo());
 		this.applicazione.getFrame().setVisible(false);
 		this.loginGrafico(this.applicazione.getIdentificativo());
 	}
-	
+
 	public void mostraGUI(int id) throws BiffException, IOException {
 		JButton segnalaCodaBtn = new JButton("Segnala coda");
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
@@ -191,61 +194,72 @@ public class ApplicazioneClient implements Runnable {
 		bottom.add(logoutBtn);
 
 		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
-		
+
 		bottom.add(svuotaNotificheBtn);
 		top.add(fissaPosizione);
-		
+
 		fissaPosizione.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e) {
 						applicazione.setFissa(fissaPosizione.isSelected());
 					}
 				});
-		
 
-		this.applicazione.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		this.applicazione.getFrame().addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				try {
+					logout();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		//this.applicazione.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.applicazione.getFrame().pack();
 		this.applicazione.getFrame().setVisible(true);
 
 
 	}
-	
+
 	private void pulisciNotifiche() {
 		this.applicazione.getAreaNotifiche().setText("");
 	}
 
-	
-	
+
+
 	public void run(){
-		
-try {
-			
+
+		try {
+
 			//System.setSecurityManager(new SecurityManager());
-			
-			
+
+
 			customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());
-			   System.setSecurityManager(cSM);
+			System.setSecurityManager(cSM);
 
 			Registry registry = LocateRegistry.getRegistry("127.0.0.1", 12345);
 
 			this.server = (IGestoreApplicazioni) registry.lookup("gestApp");
-			
-			this.applicazione.setIdentificativo(this.server.getIdApp());
-			
-Thread t2=new Thread(new ApplicazioneServer(this.applicazione));
-			t2.start();
-			
-		
-			loginGrafico(this.applicazione.getIdentificativo());
-			
-			
-			
 
-	
-}catch (Exception e) {
-	e.printStackTrace(System.err);
-	System.out.println("HelloClient exception: " + e);
-	}
+			this.applicazione.setIdentificativo(this.server.getIdApp());
+
+			Thread t2=new Thread(new ApplicazioneServer(this.applicazione));
+			t2.start();
+
+
+			loginGrafico(this.applicazione.getIdentificativo());
+
+
+
+
+
+		}catch (Exception e) {
+			e.printStackTrace(System.err);
+			System.out.println("HelloClient exception: " + e);
+		}
 
 	}
 

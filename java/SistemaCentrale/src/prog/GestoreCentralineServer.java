@@ -2,6 +2,8 @@ package prog;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+import javax.swing.JOptionPane;
+
 public class GestoreCentralineServer implements Runnable {
 
 	public void run()  {
@@ -13,7 +15,8 @@ public class GestoreCentralineServer implements Runnable {
 			System.out.println("Server online");
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			
+			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle centraline è già in uso");
 		} 
 
 	}

@@ -94,10 +94,10 @@ public class FunzionamentoSistemaCentrale {
 
 	public static void main(String[] args) throws BiffException, IOException {
 
-		GestoreApplicazioni GApp=GestoreApplicazioni.getInstance();
-		GestoreCentraline GCent=GestoreCentraline.getInstance();
-		GestoreUtenti GUt=GestoreUtenti.getInstance();
-		GestoreAmministratori GAmm=GestoreAmministratori.getInstance();
+		GestoreApplicazioni.getInstance();
+		GestoreCentraline.getInstance();
+		GestoreUtenti.getInstance();
+		GestoreAmministratori.getInstance();
 
 
 		Thread t9= new Thread(new GestoreApplicazioniServer());

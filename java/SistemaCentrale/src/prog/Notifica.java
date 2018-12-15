@@ -32,6 +32,7 @@ public abstract class Notifica implements Serializable{
 	}
 
 	public String getData() {
+	
 		return this.data;
 	}
 

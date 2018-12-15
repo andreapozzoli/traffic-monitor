@@ -10,6 +10,9 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -157,11 +160,11 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				listaEliminare.add(m);
 			}
 		}
-		
+
 		for (int i=listaEliminare.size()-1; i>=0;--i) {
 			map().removeMapMarker(listaEliminare.get(i));
 		}
-		
+
 	}
 
 	public MappaGrafica() {
@@ -173,7 +176,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 		map().addJMVListener(this);
 
 		setLayout(new BorderLayout());
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panelTop = new JPanel();
@@ -191,12 +194,12 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 
 		panel.add(panelTop, BorderLayout.NORTH);
 		panel.add(panelBottom, BorderLayout.SOUTH);
-		
+
 		String informazioni = "<html>Usare il pulsante destro<br>del mouse per muoversi,<br> "
 				+ "doppio click con il pulsante <br>sinistro o rotellina per <br>fare lo zoom.<br><br>"
 				+ "<u><b>Legenda:</b></u><br>"
 				+ "<font color=\"red\">Coda</font><br>"
-				+"<font color=\"blue\">Velocità lenta</font><br>"
+				+"<font color=\"blue\">Velocitï¿½ lenta</font><br>"
 				+"<font color=\"black\">Traffico elevato</font><br>"
 				+"<font color=\"green\">Nessun dato</font><br><br>"
 				+ "Il pulsante <i>Pulire la mappa</i><br>"
@@ -206,19 +209,19 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				+ "quando arrivano delle<br>"
 				+ "notifiche dal sistema."
 				+ "</html>";
-				
-			
-		
-		
+
+
+
+
 		JLabel helpLabel = new JLabel(informazioni);
-		
+
 		helpPanel.add(helpLabel);
 
 
 
 		JButton adattaZoom = new JButton("Adatta zoom per vedere tutti i marcatori");
 		JButton logoutBtn = new JButton("Logout");
-		
+
 
 		adattaZoom.addActionListener(e -> map().setDisplayToFitMapMarkers());
 		logoutBtn.addActionListener(e -> FunzionamentoSistemaCentrale.logout());
@@ -281,6 +284,13 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 				} else {
 					map().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
+			}
+		});
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				FunzionamentoSistemaCentrale.logout();
+
 			}
 		});
 	}

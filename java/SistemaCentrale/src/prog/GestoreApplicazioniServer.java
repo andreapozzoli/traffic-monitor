@@ -2,6 +2,8 @@ package prog;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+import javax.swing.JOptionPane;
+
 
 public class GestoreApplicazioniServer implements Runnable{
 
@@ -15,9 +17,7 @@ public class GestoreApplicazioniServer implements Runnable{
 			System.out.println("Server online");
 
 		} catch (Exception e) {
-
-
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle applicazioni mobili è già in uso");
 		} 
 
 	}

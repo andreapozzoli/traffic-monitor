@@ -53,6 +53,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 		{
 			finale = "<font color=\"green\">";
 		}
+		
 		finale += this.getData()
 				+ ", "
 				+ this.getOra()

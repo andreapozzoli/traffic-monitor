@@ -55,7 +55,7 @@ public class RegistrazioneDlg extends JDialog {
 		panel.setBorder(new LineBorder(Color.GRAY));
 
 		btnRegistrazione = new JButton("Registrazione");
-
+	
 		btnRegistrazione.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -68,7 +68,7 @@ public class RegistrazioneDlg extends JDialog {
 					dispose();
 				} else {
 					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Username già in uso.",
+							"Username giï¿½ in uso.",
 							"Registrazione",
 							JOptionPane.ERROR_MESSAGE);
 					// reset username and password
