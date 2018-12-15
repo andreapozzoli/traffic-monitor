@@ -3,13 +3,14 @@ package prog;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AggiuntaUtentiTest {
 	private GestoreUtenti gest;
-
-	@Test
-	void test() {
+	
+	@BeforeEach
+	void setup() {
 		gest=GestoreUtenti.getInstance();
 		Utente a=new Utente("1","1p");
 		Utente b=new Utente("2","2p");
@@ -18,6 +19,12 @@ class AggiuntaUtentiTest {
 		gest.aggiungiUtente(a);
 		gest.aggiungiUtente(b);
 		gest.aggiungiUtente(c);
+		
+		
+	}
+
+	@Test
+	void test() {
 		
 		gest.rimuoviUtente("1");
 		gest.rimuoviUtente("2");
