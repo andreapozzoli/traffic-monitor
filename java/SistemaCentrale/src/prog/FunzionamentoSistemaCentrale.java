@@ -25,9 +25,7 @@ public class FunzionamentoSistemaCentrale {
 
 
 	public static boolean loginGrafico() {
-
-		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
-
+		
 		// Dichiarazione degli elementi che costituiscono l'interfaccia grafica per la scelta tra login e registrazione
 		final JFrame frame = new JFrame("Accesso al sistema centrale");
 		final JButton btnLogin = new JButton("Login");
@@ -94,19 +92,19 @@ public class FunzionamentoSistemaCentrale {
 
 	public static void main(String[] args) throws BiffException, IOException {
 
-		GestoreApplicazioni.getInstance();
+		GestoreApplicazioni.getInstance(); // vengono instanziati tutti i gestori
 		GestoreCentraline.getInstance();
 		GestoreUtenti.getInstance();
 		GestoreAmministratori.getInstance();			
 
 
-		Thread t9= new Thread(new GestoreApplicazioniServer());
-		t9.start();
+		Thread t9= new Thread(new GestoreApplicazioniServer()); 
+		t9.start(); // viene fatto partire il lato server del gestore applicazioni
 
-		Thread t12= new Thread(new GestoreCentralineServer());
-		t12.start();
+		Thread t12= new Thread(new GestoreCentralineServer()); 
+		t12.start(); // viene fatto partire il lato client del gestore centraline
 
-		loginGrafico();
+		loginGrafico(); // viene aperta la finestra di login e gestito il login
 
 	}
 
