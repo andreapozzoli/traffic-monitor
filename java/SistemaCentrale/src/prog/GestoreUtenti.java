@@ -19,6 +19,10 @@ public class GestoreUtenti {
     	this.listaUtenti.add(utente);
     }
     
+    public ArrayList<Utente> getListaUtenti(){
+    	return this.listaUtenti;
+    }
+    
     public void rimuoviUtente(String username) {
     	
 	for(Utente var : this.listaUtenti) {

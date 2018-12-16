@@ -59,4 +59,16 @@ public class DatoGenerico {
 		return this.oraArrivo;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		DatoGenerico b=(DatoGenerico)obj;
+		if (this.posizione.getVia().equals(b.getPosizione().getVia())&&
+				this.data.equals(b.getData())&&this.ora.equals(b.getOra())&&
+				this.tipo.equals(b.getTipo())&&this.minutoArrivo==b.getMinA()&&
+				this.oraArrivo==b.getOraA()) {
+			return true;
+		}
+		return false;
+	}
+	
 }

@@ -7,6 +7,7 @@ public class GestoreAmministratori {
     private GestoreAmministratori() {
     	this.listaAmministratori=new ArrayList<Amministratore>();
     }
+    
     public static GestoreAmministratori getInstance() {
             if(instance==null)
                     instance = new GestoreAmministratori();

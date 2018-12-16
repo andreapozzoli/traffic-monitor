@@ -97,7 +97,7 @@ public class FunzionamentoSistemaCentrale {
 		GestoreApplicazioni.getInstance();
 		GestoreCentraline.getInstance();
 		GestoreUtenti.getInstance();
-		GestoreAmministratori.getInstance();
+		GestoreAmministratori.getInstance();			
 
 
 		Thread t9= new Thread(new GestoreApplicazioniServer());

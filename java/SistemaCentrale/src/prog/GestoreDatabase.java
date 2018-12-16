@@ -105,5 +105,7 @@ public class GestoreDatabase {
 	public DatoGenerico creaDatoGenerico(Posizione pos, String tipo, String data, String ora, int minA, int oraA) {
 		return new DatoGenerico(pos, tipo, data, ora, minA, oraA);
 	}
+	
+	
 
 }
