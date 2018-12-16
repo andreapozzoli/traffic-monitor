@@ -31,17 +31,16 @@ public class ApplicazioneClient implements Runnable {
 
 	private void segnalaCoda() throws BiffException, IOException  {
 
-		if (!applicazione.getFissa()) {
-			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione());
+		if (!applicazione.getFissa()) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
+			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione()); // e non viene perciò aggiornata la posizione dell'applicazione
 		}
-		NotificaApplicazione notifica=new NotificaApplicazione(this.applicazione.getUsernameUtente(), this.applicazione.getPosizione(), "M10 Coda");
-		server.segnalaDatabase(notifica);
+		NotificaApplicazione notifica=new NotificaApplicazione(this.applicazione.getUsernameUtente(), this.applicazione.getPosizione(), "M10 Coda"); // viene creata la notifica
+		server.segnalaDatabase(notifica); // viene inviata la notifica al sistema centrale
 
 	}
 
 	public boolean loginGrafico(int id) throws RemoteException {
 
-		// basato su http://www.zentut.com/java-swing/simple-login-dialog/
 
 		final JFrame frame = new JFrame("Accesso all'applicazione mobile");
 		final JButton btnLogin = new JButton("Login");
@@ -71,21 +70,17 @@ public class ApplicazioneClient implements Runnable {
 								try {
 									server.aggiungiApplicazione(applicazione.getIdentificativo(), applicazione.getUtente());
 								} catch (RemoteException e3) {
-									// TODO Auto-generated catch block
 									e3.printStackTrace();
 								}
 							} catch (RemoteException e2) {
-								// TODO Auto-generated catch block
 								e2.printStackTrace();
 							}								
 
 							try {
 								mostraGUI(id);
 							} catch (BiffException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (IOException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
 
@@ -111,20 +106,17 @@ public class ApplicazioneClient implements Runnable {
 							try {
 								server.aggiungiApplicazione(applicazione.getIdentificativo(), applicazione.getUtente());
 							} catch (RemoteException e3) {
-								// TODO Auto-generated catch block
 								e3.printStackTrace();
 							}
 							try {
 								server.registraUtente(applicazione.getUtente());
 							} catch (RemoteException e2) {
-								// TODO Auto-generated catch block
 								e2.printStackTrace();
 							}
 
 							try {
 								mostraGUI(id);
 							} catch (BiffException | IOException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
 						}
@@ -136,11 +128,11 @@ public class ApplicazioneClient implements Runnable {
 
 	}
 
-	public void logout() throws RemoteException {
-		this.applicazione.setUtente(null);
+	public void logout() throws RemoteException { // se l'utente decide di fare il logout dall'applicazione, viene settato l'utente a null
+		this.applicazione.setUtente(null);        // e viene rimossa l'applicazione dall'elenco delle applicazioni segnalabili dal sistema centrale
 		server.rimuoviApplicazione(this.applicazione.getIdentificativo());
-		this.applicazione.getFrame().setVisible(false);
-		this.loginGrafico(this.applicazione.getIdentificativo());
+		this.applicazione.getFrame().setVisible(false);  // viene chiusa la finestra di segnalazione
+		this.loginGrafico(this.applicazione.getIdentificativo()); // viene fatto ripartire il login
 	}
 
 	public void mostraGUI(int id) throws BiffException, IOException {
@@ -152,8 +144,6 @@ public class ApplicazioneClient implements Runnable {
 		this.applicazione.setFrame(new JFrame());
 		this.applicazione.getFrame().setTitle("Applicazione mobile");
 
-		// da https://coderanch.com/t/341045/java/expand-JTextArea-main-panel-resized
-		// https://stackoverflow.com/questions/33100147/how-to-set-window-size-without-extending-jframe
 
 		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(175,150));
 
@@ -237,14 +227,14 @@ public class ApplicazioneClient implements Runnable {
 
 			this.server = (IGestoreApplicazioni) registry.lookup("gestApp");
 
-			this.applicazione.setIdentificativo(this.server.getIdApp());
+			this.applicazione.setIdentificativo(this.server.getIdApp()); // viene calcolato l'identificativo dell'applicazione appena creata
 
-			Thread t2=new Thread(new ApplicazioneServer(this.applicazione));
+			Thread t2=new Thread(new ApplicazioneServer(this.applicazione)); // viene fatto partire il lato server dell'applicazione
 			t2.start();
 
-			loginGrafico(this.applicazione.getIdentificativo());
+			loginGrafico(this.applicazione.getIdentificativo()); // si apre la finestra di login
 
-		} catch (Exception e) {
+		} catch (Exception e) { // se non è ancora stato attivato il sistema centrale non è possibile inviare segnalazioni
 			  JOptionPane.showMessageDialog(null,
 				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
 				        "Errore di connessione",
