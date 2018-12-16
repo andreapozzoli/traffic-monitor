@@ -1,0 +1,290 @@
+package prog;
+
+import java.util.*;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import jxl.*;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
+public class FunzionamentoCentralinaS {
+
+	public static void configurazioneGrafica(){
+		try {
+
+			String percorsoCorrente = System.getProperty("user.dir");
+			Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
+			Sheet sheet = wb.getSheet(0);
+
+			JFrame frame = new JFrame("Centralina stradale");
+
+			JPanel panel = new JPanel(new GridBagLayout());
+			GridBagConstraints cs = new GridBagConstraints();
+
+			cs.fill = GridBagConstraints.BOTH;
+
+			final JLabel labelVia = new JLabel("Via:");
+			final JTextField fieldVia = new JTextField(20);
+
+			final JLabel labelTipoStrada = new JLabel("Tipo di strada:");
+
+			String[] scelteTipoStrada = {"urbana", "extraurbana", "superstrada"};
+
+			final JComboBox listaTipoStrada = new JComboBox(scelteTipoStrada);
+
+			final JLabel labelIntervallo = new JLabel("Intervallo di tempo iniziale [s]:");
+			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 360000, 1);
+			final JSpinner spinner = new JSpinner(sceltaIntervallo);
+
+			labelVia.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+			labelTipoStrada.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 0));
+			labelIntervallo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+
+			listaTipoStrada.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+			spinner.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
+
+			cs.gridx = 0;
+			cs.gridy = 0;
+			cs.gridwidth = 1;
+			panel.add(labelVia, cs);
+
+			cs.gridx = 1;
+			cs.gridy = 0;
+			cs.gridwidth = 2;
+			panel.add(fieldVia, cs);
+
+			cs.gridx = 0;
+			cs.gridy = 1;
+			cs.gridwidth = 1;
+			panel.add(labelTipoStrada, cs);
+
+			cs.gridx = 1;
+			cs.gridy = 1;
+			cs.gridwidth = 2;
+			panel.add(listaTipoStrada, cs);
+
+			cs.gridx = 0;
+			cs.gridy = 2;
+			cs.gridwidth = 1;
+			panel.add(labelIntervallo, cs);
+
+			cs.gridx = 1;
+			cs.gridy = 2;
+			cs.gridwidth = 1;
+			panel.add(spinner, cs);
+
+			panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
+
+			JPanel velocitaPanel = new JPanel(new GridBagLayout());
+			GridBagConstraints velGrid = new GridBagConstraints();
+
+			velGrid.fill = GridBagConstraints.BOTH;
+
+			final JLabel labelVelocita = new JLabel("Velocit� [km/h]:");
+			final SpinnerNumberModel modelloVelocita = new SpinnerNumberModel(20, 1, 110, 1);
+			final JSpinner spinnerVelocita = new JSpinner(modelloVelocita);
+
+			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocit� iniziale casuale");
+
+			labelVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+			spinnerVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+			domandaVelocita.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
+
+
+			velGrid.gridx = 0;
+			velGrid.gridy = 0;
+			velGrid.gridwidth = 1;
+			velocitaPanel.add(labelVelocita, velGrid);
+
+			velGrid.gridx = 1;
+			velGrid.gridy = 0;
+			velGrid.gridwidth = 2;
+			velocitaPanel.add(spinnerVelocita, velGrid);
+
+			spinnerVelocita.setEnabled(true);
+
+			velGrid.gridx = 0;
+			velGrid.gridy = 1;
+			velGrid.gridwidth = 2;
+			velocitaPanel.add(domandaVelocita, velGrid);
+
+			velocitaPanel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 0));
+
+
+			JPanel bottoniPanel = new JPanel(new GridBagLayout());
+			GridBagConstraints bottGrid = new GridBagConstraints();
+
+			bottGrid.fill = GridBagConstraints.BOTH;
+
+			JButton btnOK = new JButton("OK");
+			JButton btnGeneraTraffico = new JButton("Imporre una velocit�");
+			btnGeneraTraffico.setEnabled(false);
+
+
+			bottGrid.gridx = 0;
+			bottGrid.gridy = 0;
+			bottGrid.gridwidth = 1;
+			bottoniPanel.add(btnOK, bottGrid);
+
+			bottGrid.gridx = 1;
+			bottGrid.gridy = 0;
+			bottGrid.gridwidth = 1;
+
+
+			bottoniPanel.add(btnGeneraTraffico, bottGrid);
+
+
+
+			bottoniPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+
+			frame.add(panel, BorderLayout.PAGE_START);
+			frame.add(velocitaPanel, BorderLayout.CENTER);
+			frame.add(bottoniPanel, BorderLayout.PAGE_END);
+
+			frame.pack();
+			frame.setLocationRelativeTo(frame);
+
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setSize(425, 250);
+			//frame.setLayout(new FlowLayout());
+			//frame.getContentPane().add(btnOK);
+			frame.setVisible(true);
+
+
+			
+
+			
+			domandaVelocita.addActionListener(
+					new ActionListener(){
+						public void actionPerformed(ActionEvent e) {
+							spinnerVelocita.setEnabled(!spinnerVelocita.isEnabled());
+							btnGeneraTraffico.setEnabled(spinnerVelocita.isEnabled() && !btnOK.isEnabled());
+						}
+					});
+
+
+			btnOK.addActionListener(
+					new ActionListener(){
+						public void actionPerformed(ActionEvent e) {
+
+							boolean trovato = false;
+							int i = 0;
+							Cell cella;
+
+							for(i=0;i<543;i++) {
+								cella=sheet.getCell(0,i);
+								if(cella.getContents().toLowerCase().equals(fieldVia.getText().toLowerCase())) {
+									trovato=true;
+									break;
+								}
+							}
+							if(!trovato) {
+								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non � stato trovato.");
+							}
+							else
+							{
+								//frame.setVisible(false);
+								Posizione posizione=new Posizione(fieldVia.getText(),Double.valueOf(sheet.getCell(1,i).getContents()),Double.valueOf(sheet.getCell(2,i).getContents()));
+								String tipoStrada = (String) listaTipoStrada.getSelectedItem();
+								int intervallo = (int) spinner.getModel().getValue();
+
+								CentralinaStradale centralina=new CentralinaStradale(intervallo,posizione,tipoStrada);
+								
+								if(spinnerVelocita.isEnabled())
+								{
+									centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita((int) spinnerVelocita.getModel().getValue());
+								}
+								else {
+									Random random = new Random();
+									int a=0;
+									int b=110;
+									int c = ((b-a) + 1);
+									int vel = random.nextInt(c) + a;
+									centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita(vel);
+								}
+
+								fieldVia.setEnabled(false);
+								spinner.setEnabled(false);
+								listaTipoStrada.setEnabled(false);
+								btnOK.setEnabled(false);
+								btnGeneraTraffico.setEnabled(true);
+								domandaVelocita.setEnabled(false);
+								spinnerVelocita.setEnabled(true);
+								
+								String titoloQuasiCompleto = frame.getTitle() + " (" + fieldVia.getText() + ")";
+								frame.setTitle(titoloQuasiCompleto);
+
+								btnGeneraTraffico.addActionListener(
+										new ActionListener(){
+											public void actionPerformed(ActionEvent e) {
+												if(spinnerVelocita.isEnabled()) {
+													centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita((int) spinnerVelocita.getModel().getValue());
+												}
+												else
+												{
+													JOptionPane.showMessageDialog(frame, "Nessuna velocit� selezionata.");
+												}
+											}
+										});
+								
+								//thread rilevatore veicoli
+								Thread t1=new Thread(centralina.getRilevatoreVeicoli());
+								t1.start();
+
+								//deve solo aspettare che scada l'intervallo di tempo corrente
+								//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
+								Thread t2=new Thread(centralina);
+								t2.start();
+								
+								
+							}
+						}
+
+					});
+
+
+
+
+
+
+		} catch (BiffException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		configurazioneGrafica();
+
+	}
+
+
+
+
+
+
+
+
+}
