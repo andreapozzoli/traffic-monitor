@@ -3,9 +3,7 @@ import java.io.Serializable;
 import java.util.*;
 
 public abstract class Notifica implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -6817643823377378061L;
 	protected String data;
 	protected String ora;
@@ -15,11 +13,13 @@ public abstract class Notifica implements Serializable{
 	protected int oraArrivo;
 
 	public void setData() {
+		// metodo per rilevare la data del momento in cui viene creata la notifica
 		GregorianCalendar dat = new GregorianCalendar();
 		this.data = dat.get(Calendar.DAY_OF_MONTH)+ "/" + (dat.get(Calendar.MONTH)+1) + "/" + dat.get(Calendar.YEAR);		
 	}
 
 	public void setOra() {
+		// metodo per rilevare l'ora del momento in cui viene creata la notifica
 		GregorianCalendar dat = new GregorianCalendar();
 		this.ora = dat.get(Calendar.HOUR) + "." + dat.get(Calendar.MINUTE) + "." + dat.get(Calendar.SECOND);
 		this.oraArrivo=dat.get(Calendar.HOUR);
