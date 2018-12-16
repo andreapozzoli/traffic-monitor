@@ -9,11 +9,11 @@ public class FunzionamentoApplicazione {
 	public static void main(String[] args) throws IOException, BiffException  {
 	
 
-		ApplicazioneMobile app1=new ApplicazioneMobile();
+		ApplicazioneMobile app1=new ApplicazioneMobile(); // creazione nuova applicazione
 		
-		ApplicazioneClient appClient=new ApplicazioneClient(app1);
+		ApplicazioneClient appClient=new ApplicazioneClient(app1); 
 		
-		Thread t1=new Thread(appClient);
+		Thread t1=new Thread(appClient); // viene fatto partire il lato client dell'applicazione
 		t1.start();
 		
 	
