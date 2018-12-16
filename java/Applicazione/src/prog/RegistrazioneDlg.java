@@ -11,10 +11,10 @@ import javax.swing.border.*;
 public class RegistrazioneDlg extends JDialog {
 
 	private static final long serialVersionUID = -3407157363359093068L;
-	private JTextField tfUsername;
-	private JPasswordField pfPassword;
-	private JLabel lbUsername;
-	private JLabel lbPassword;
+	private JTextField fieldUsername;
+	private JPasswordField fieldPassword;
+	private JLabel labelUsername;
+	private JLabel labelPassword;
 	private JButton btnRegistrazione;
 	private JButton btnAnnulla;
 	private boolean riuscito;
@@ -22,35 +22,36 @@ public class RegistrazioneDlg extends JDialog {
 	public RegistrazioneDlg(Frame parent, String tipoRegistrazione, IGestoreApplicazioni server) {
 		super(parent, "Registrazione", true);
 		//
-		JPanel panel = new JPanel(new GridBagLayout());
-		GridBagConstraints cs = new GridBagConstraints();
+		JPanel pannelloInformazioni = new JPanel(new GridBagLayout());
+		GridBagConstraints disposizioneGriglia = new GridBagConstraints();
 
-		cs.fill = GridBagConstraints.HORIZONTAL;
+		disposizioneGriglia.fill = GridBagConstraints.HORIZONTAL;
 
-		lbUsername = new JLabel("Nome utente: ");
-		cs.gridx = 0;
-		cs.gridy = 0;
-		cs.gridwidth = 1;
-		panel.add(lbUsername, cs);
+		labelUsername = new JLabel("Nome utente: ");
+		disposizioneGriglia.gridx = 0;
+		disposizioneGriglia.gridy = 0;
+		disposizioneGriglia.gridwidth = 1;
+		pannelloInformazioni.add(labelUsername, disposizioneGriglia);
 
-		tfUsername = new JTextField(20);
-		cs.gridx = 1;
-		cs.gridy = 0;
-		cs.gridwidth = 2;
-		panel.add(tfUsername, cs);
+		fieldUsername = new JTextField(20);
+		disposizioneGriglia.gridx = 1;
+		disposizioneGriglia.gridy = 0;
+		disposizioneGriglia.gridwidth = 2;
+		pannelloInformazioni.add(fieldUsername, disposizioneGriglia);
 
-		lbPassword = new JLabel("Password: ");
-		cs.gridx = 0;
-		cs.gridy = 1;
-		cs.gridwidth = 1;
-		panel.add(lbPassword, cs);
+		labelPassword = new JLabel("Password: ");
+		disposizioneGriglia.gridx = 0;
+		disposizioneGriglia.gridy = 1;
+		disposizioneGriglia.gridwidth = 1;
+		pannelloInformazioni.add(labelPassword, disposizioneGriglia);
 
-		pfPassword = new JPasswordField(20);
-		cs.gridx = 1;
-		cs.gridy = 1;
-		cs.gridwidth = 2;
-		panel.add(pfPassword, cs);
-		panel.setBorder(new LineBorder(Color.GRAY));
+		fieldPassword = new JPasswordField(20);
+		disposizioneGriglia.gridx = 1;
+		disposizioneGriglia.gridy = 1;
+		disposizioneGriglia.gridwidth = 2;
+		pannelloInformazioni.add(fieldPassword, disposizioneGriglia);
+
+		pannelloInformazioni.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 20));
 
 		btnRegistrazione = new JButton("Registrazione");
 
@@ -58,7 +59,7 @@ public class RegistrazioneDlg extends JDialog {
 
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(!(Login.authenticate(getUsername(), tipoRegistrazione, server))) {
+					if(!(Login.autenticazione(getUsername(), tipoRegistrazione, server))) {
 						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
 								"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
 								"Registrazione",
@@ -71,8 +72,8 @@ public class RegistrazioneDlg extends JDialog {
 								"Registrazione",
 								JOptionPane.ERROR_MESSAGE);
 
-						tfUsername.setText("");
-						pfPassword.setText("");
+						fieldUsername.setText("");
+						fieldPassword.setText("");
 						riuscito = false;
 
 					}
@@ -89,24 +90,26 @@ public class RegistrazioneDlg extends JDialog {
 				dispose();
 			}
 		});
-		JPanel bp = new JPanel();
-		bp.add(btnRegistrazione);
-		bp.add(btnAnnulla);
+		JPanel pannelloBottoni = new JPanel();
+		pannelloBottoni.add(btnRegistrazione);
+		pannelloBottoni.add(btnAnnulla);
+		
+		pannelloBottoni.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
 
-		getContentPane().add(panel, BorderLayout.CENTER);
-		getContentPane().add(bp, BorderLayout.PAGE_END);
+
+		getContentPane().add(pannelloInformazioni, BorderLayout.CENTER);
+		getContentPane().add(pannelloBottoni, BorderLayout.PAGE_END);
 
 		pack();
 		setResizable(false);
-		setLocationRelativeTo(parent);
 	}
 
 	public String getUsername() {
-		return tfUsername.getText().trim();
+		return fieldUsername.getText().trim();
 	}
 
 	public String getPassword() {
-		return new String(pfPassword.getPassword());
+		return new String(fieldPassword.getPassword());
 	}
 
 	public boolean registrazioneRiuscita() {

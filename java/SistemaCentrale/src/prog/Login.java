@@ -4,7 +4,7 @@ package prog;
 
 public class Login {
 
-	public static boolean authenticate(String username, String password, String tipoUtente) {
+	public static boolean autenticazione(String username, String password, String tipoUtente) {
 		if(tipoUtente.equals("A"))
 		{
 
@@ -21,7 +21,7 @@ public class Login {
 		}
 	}
 	
-	public static boolean authenticate(String username,String tipoUtente) {
+	public static boolean autenticazione(String username,String tipoUtente) {
 		if(tipoUtente.equals("A"))
 		{
 

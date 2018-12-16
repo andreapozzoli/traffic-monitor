@@ -2,81 +2,81 @@ package prog;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.rmi.RemoteException;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
-//basato su http://www.zentut.com/java-swing/simple-login-dialog/
-
 public class LoginDialog extends JDialog {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5590675779732270498L;
-	private JTextField tfUsername;
-	private JPasswordField pfPassword;
-	private JLabel lbUsername;
-	private JLabel lbPassword;
+	private static final long serialVersionUID = 6048442678825828787L;
+	private JTextField fieldUsername;
+	private JPasswordField fieldPassword;
+	private JLabel labelUsername;
+	private JLabel labelPassword;
 	private JButton btnLogin;
 	private JButton btnAnnulla;
 	private boolean riuscito;
 
-	public LoginDialog(Frame parent, String tipoLogin) {
-		super(parent, "Login", true);
+	public LoginDialog(Frame contenitore, String tipoLogin, IGestoreApplicazioni server) {
+		super(contenitore, "Login", true);
 		//
-		JPanel panel = new JPanel(new GridBagLayout());
-		GridBagConstraints cs = new GridBagConstraints();
+		JPanel pannelloInformazioni = new JPanel(new GridBagLayout()); // disposizione degli elementi seguendo una griglia
+		GridBagConstraints disposizioneGriglia = new GridBagConstraints();
 
-		cs.fill = GridBagConstraints.HORIZONTAL;
+		disposizioneGriglia.fill = GridBagConstraints.HORIZONTAL;
 
-		lbUsername = new JLabel("Nome utente: ");
-		cs.gridx = 0;
-		cs.gridy = 0;
-		cs.gridwidth = 1;
-		panel.add(lbUsername, cs);
+		labelUsername = new JLabel("Nome utente: ");
+		disposizioneGriglia.gridx = 0;
+		disposizioneGriglia.gridy = 0;
+		disposizioneGriglia.gridwidth = 1;
+		pannelloInformazioni.add(labelUsername, disposizioneGriglia);
 
-		tfUsername = new JTextField(20);
-		cs.gridx = 1;
-		cs.gridy = 0;
-		cs.gridwidth = 2;
-		panel.add(tfUsername, cs);
+		fieldUsername = new JTextField(20);
+		disposizioneGriglia.gridx = 1;
+		disposizioneGriglia.gridy = 0;
+		disposizioneGriglia.gridwidth = 2;
+		pannelloInformazioni.add(fieldUsername, disposizioneGriglia);
 
-		lbPassword = new JLabel("Password: ");
-		cs.gridx = 0;
-		cs.gridy = 1;
-		cs.gridwidth = 1;
-		panel.add(lbPassword, cs);
+		labelPassword = new JLabel("Password: ");
+		disposizioneGriglia.gridx = 0;
+		disposizioneGriglia.gridy = 1;
+		disposizioneGriglia.gridwidth = 1;
+		pannelloInformazioni.add(labelPassword, disposizioneGriglia);
 
-		pfPassword = new JPasswordField(20);
-		cs.gridx = 1;
-		cs.gridy = 1;
-		cs.gridwidth = 2;
-		panel.add(pfPassword, cs);
-		panel.setBorder(new LineBorder(Color.GRAY));
+		fieldPassword = new JPasswordField(20);
+		disposizioneGriglia.gridx = 1;
+		disposizioneGriglia.gridy = 1;
+		disposizioneGriglia.gridwidth = 2;
+		pannelloInformazioni.add(fieldPassword, disposizioneGriglia);
+
+		pannelloInformazioni.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 20));
 
 		btnLogin = new JButton("Login");
 
 		btnLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if(Login.authenticate(getUsername(), getPassword(), tipoLogin)) {
+				if(Login.autenticazione(getUsername(), getPassword(), tipoLogin)) {
 					JOptionPane.showMessageDialog(LoginDialog.this,
 							"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
-							"Login",
-							JOptionPane.INFORMATION_MESSAGE);
+							"Login", // titolo della finestra
+							JOptionPane.INFORMATION_MESSAGE); // messaggio di informazione
 					riuscito = true;
-					dispose();
+					dispose(); // chiusura della finestra
 				} else {
 					JOptionPane.showMessageDialog(LoginDialog.this,
 							"Le credenziali di accesso non sono valide.",
-							"Login",
-							JOptionPane.ERROR_MESSAGE);
-					// reset username and password
-					tfUsername.setText("");
-					pfPassword.setText("");
+							"Login", // titolo della finestra
+							JOptionPane.ERROR_MESSAGE); // messaggio di errore
+
+					// reset dei campi username e password
+					fieldUsername.setText("");
+					fieldPassword.setText("");
 					riuscito = false;
 
 				}
+
 			}
 		});
 		btnAnnulla = new JButton("Annulla");
@@ -86,24 +86,25 @@ public class LoginDialog extends JDialog {
 				dispose();
 			}
 		});
-		JPanel bp = new JPanel();
-		bp.add(btnLogin);
-		bp.add(btnAnnulla);
+		JPanel pannelloBottoni = new JPanel();
+		pannelloBottoni.add(btnLogin);
+		pannelloBottoni.add(btnAnnulla);
 
-		getContentPane().add(panel, BorderLayout.CENTER);
-		getContentPane().add(bp, BorderLayout.PAGE_END);
+		pannelloBottoni.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
+
+		getContentPane().add(pannelloInformazioni, BorderLayout.CENTER);
+		getContentPane().add(pannelloBottoni, BorderLayout.PAGE_END);
 
 		pack();
 		setResizable(false);
-		setLocationRelativeTo(parent);
 	}
 
 	public String getUsername() {
-		return tfUsername.getText().trim();
+		return fieldUsername.getText().trim();
 	}
 
 	public String getPassword() {
-		return new String(pfPassword.getPassword());
+		return new String(fieldPassword.getPassword());
 	}
 
 	public boolean loginRiuscito() {

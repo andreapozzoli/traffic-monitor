@@ -32,7 +32,7 @@ public class ApplicazioneClient implements Runnable {
 	private void segnalaCoda() throws BiffException, IOException  {
 
 		if (!applicazione.getFissa()) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
-			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione()); // e non viene perciò aggiornata la posizione dell'applicazione
+			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione()); // e non viene perciï¿½ aggiornata la posizione dell'applicazione
 		}
 		NotificaApplicazione notifica=new NotificaApplicazione(this.applicazione.getUsernameUtente(), this.applicazione.getPosizione(), "M10 Coda"); // viene creata la notifica
 		server.segnalaDatabase(notifica); // viene inviata la notifica al sistema centrale
@@ -142,24 +142,38 @@ public class ApplicazioneClient implements Runnable {
 		JCheckBox fissaPosizione = new JCheckBox("Selezionare per fissare la posizione");
 
 		this.applicazione.setFrame(new JFrame());
-		this.applicazione.getFrame().setTitle("Applicazione mobile");
-
+		this.applicazione.getFrame().setTitle("Applicazione mobile"); // titolo della finestra
 
 		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(175,150));
 
-		JPanel jp = new JPanel(new BorderLayout());
-		JPanel top = new JPanel();
-		JPanel bottom = new JPanel();
+		// Pannello contenitore
+		JPanel principale = new JPanel(new BorderLayout());
+		
+		// Pannello in alto
+		JPanel alto = new JPanel();
+		principale.add(alto,BorderLayout.NORTH);
+		alto.add(fissaPosizione); // spunta per fissare la posizione dell'applicazione
 
-		JPanel left = new JPanel();
-		JPanel right = new JPanel();
-		jp.add(top,BorderLayout.NORTH);
-		jp.add(bottom,BorderLayout.SOUTH);
-		jp.add(left,BorderLayout.WEST);
-		jp.add(right,BorderLayout.EAST);
-		jp.add(this.applicazione.getPaneNotifiche(),BorderLayout.CENTER);
-		this.applicazione.getFrame().getContentPane().add(jp);
+		// Pannello in basso
+		JPanel basso = new JPanel();
+		principale.add(basso,BorderLayout.SOUTH);
+		basso.add(segnalaCodaBtn); // bottone per la segnalazione della coda
+		basso.add(logoutBtn); // bottone per il logout
+		basso.add(svuotaNotificheBtn); // bottone per svuotare le notifiche
 
+		// Pannello a sinistra
+		JPanel sinistra = new JPanel();
+		principale.add(sinistra,BorderLayout.WEST);
+
+		// Pannello a destra
+		JPanel destra = new JPanel();
+		principale.add(destra,BorderLayout.EAST);
+		
+		// Area centrale
+		principale.add(this.applicazione.getPaneNotifiche(),BorderLayout.CENTER);
+		this.applicazione.getFrame().getContentPane().add(principale);
+
+		// Azioni dei bottoni
 		segnalaCodaBtn.addActionListener(e -> {
 			try {
 				segnalaCoda();
@@ -171,7 +185,6 @@ public class ApplicazioneClient implements Runnable {
 				e1.printStackTrace();
 			}
 		});
-		bottom.add(segnalaCodaBtn);
 
 		logoutBtn.addActionListener(e -> {
 			try {
@@ -181,13 +194,10 @@ public class ApplicazioneClient implements Runnable {
 				e1.printStackTrace();
 			}
 		});
-		bottom.add(logoutBtn);
 
 		svuotaNotificheBtn.addActionListener(e -> pulisciNotifiche());
 
-		bottom.add(svuotaNotificheBtn);
-		top.add(fissaPosizione);
-
+		// Azioni della spunta
 		fissaPosizione.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e) {
@@ -196,6 +206,7 @@ public class ApplicazioneClient implements Runnable {
 				});
 
 
+		// Alla chiusura della finestra deve fare il logout
 		this.applicazione.getFrame().addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				try {
@@ -234,7 +245,7 @@ public class ApplicazioneClient implements Runnable {
 
 			loginGrafico(this.applicazione.getIdentificativo()); // si apre la finestra di login
 
-		} catch (Exception e) { // se non è ancora stato attivato il sistema centrale non è possibile inviare segnalazioni
+		} catch (Exception e) { // se non ï¿½ ancora stato attivato il sistema centrale non ï¿½ possibile inviare segnalazioni
 			  JOptionPane.showMessageDialog(null,
 				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
 				        "Errore di connessione",
