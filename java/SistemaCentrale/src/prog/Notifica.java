@@ -18,7 +18,31 @@ public abstract class Notifica implements Serializable{
 
 	public void setOra() {
 		GregorianCalendar dat = new GregorianCalendar();
-		this.ora = dat.get(Calendar.HOUR) + "." + dat.get(Calendar.MINUTE) + "." + dat.get(Calendar.SECOND);
+		int a=dat.get(Calendar.HOUR);
+		String a1="";
+		if (a<10) {
+			a1="0"+a;
+		}
+		else {
+			a1=""+a;
+		}
+		int b=dat.get(Calendar.MINUTE);
+		String b1="";
+		if (b<10) {
+			b1="0"+b;
+		}
+		else {
+			b1=""+b;
+		}
+		int c=dat.get(Calendar.SECOND);
+		String c1="";
+		if (c<10) {
+			c1="0"+c;
+		}
+		else {
+			c1=""+c;
+		}
+		this.ora = a1 + ":" + b1 + ":" + c1;
 		this.oraArrivo=dat.get(Calendar.HOUR);
 		this.minutoArrivo=dat.get(Calendar.MINUTE);
 	}
