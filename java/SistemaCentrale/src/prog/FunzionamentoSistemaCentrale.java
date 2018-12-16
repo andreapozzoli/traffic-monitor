@@ -32,7 +32,7 @@ public class FunzionamentoSistemaCentrale {
 		final JButton btnRegistrazione = new JButton("Registrazione");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(260, 100);
+		frame.setSize(360, 100);
 		frame.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 20));
 		
 		// Aggiunta dei bottoni al frame
