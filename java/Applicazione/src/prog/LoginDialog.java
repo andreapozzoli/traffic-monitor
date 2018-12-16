@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.rmi.RemoteException;
 
 import javax.swing.*;
-import javax.swing.border.*;
+
 
 public class LoginDialog extends JDialog {
 
