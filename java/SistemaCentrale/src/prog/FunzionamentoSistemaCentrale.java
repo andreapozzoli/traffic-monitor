@@ -104,8 +104,10 @@ public class FunzionamentoSistemaCentrale {
 		Thread t12= new Thread(new GestoreCentralineServer()); 
 		t12.start(); // viene fatto partire il lato client del gestore centraline
 
-		loginGrafico(); // viene aperta la finestra di login e gestito il login
-
+		
+		 // viene aperta la finestra di login e gestito il login
+		
+		
 	}
 
 }

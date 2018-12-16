@@ -14,6 +14,7 @@ public class GestoreCentralineServer implements Runnable {
 
 			registry.rebind("gestCent", GestoreCentraline.getInstance());
 			System.out.println("Server online");
+			FunzionamentoSistemaCentrale.loginGrafico();
 
 		} catch (Exception e) {
 			
