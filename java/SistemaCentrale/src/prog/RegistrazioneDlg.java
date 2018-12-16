@@ -58,8 +58,20 @@ public class RegistrazioneDlg extends JDialog {
 		btnRegistrazione.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				String nome=getUsername();
+				String pass=getPassword();
+				if (nome.equals("") || pass.equals("")) {
+					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+							"Campo username o password vuoto.",
+							"Registrazione",
+							JOptionPane.ERROR_MESSAGE);
 
-				if(!(Login.autenticazione(getUsername(), tipoRegistrazione))) {
+					fieldUsername.setText("");
+					fieldPassword.setText("");
+					riuscito = false;
+				}
+
+				else if(!(Login.autenticazione(nome, tipoRegistrazione))) {
 					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
 							"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
 							"Registrazione",
