@@ -48,7 +48,7 @@ public class ApplicazioneClient implements Runnable {
 
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(260, 100);
+		frame.setSize(360, 100);
 		frame.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 20));
 		frame.getContentPane().add(btnLogin);
 		frame.getContentPane().add(btnRegistrazione);
@@ -250,6 +250,7 @@ public class ApplicazioneClient implements Runnable {
 				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
 				        "Errore di connessione",
 				        JOptionPane.ERROR_MESSAGE);
+			  
 		}
 
 	}
