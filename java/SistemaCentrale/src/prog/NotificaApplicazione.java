@@ -1,7 +1,7 @@
 package prog;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
 
 public class NotificaApplicazione extends Notifica implements Serializable{
 
