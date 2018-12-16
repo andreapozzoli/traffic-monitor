@@ -1,11 +1,15 @@
 package test;
 import prog.*;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
-public class FunzionamentoSistemaCentraleTest extends TestCase {
+class FunzionamentoSistemaCentraleTest {
 
-	public void testVisualizzazioneMappaBase() {
+	@Test
+	void testVisualizzazioneMappaBase() {
 		
 		// Vedere se la mappa è effettivamente visibile
 		assertEquals("La mappa deve essere visibile se la funzione visualizzazioneMappaBase viene chiamata", true, FunzionamentoSistemaCentrale.visualizzazioneMappaBase().isVisible());
