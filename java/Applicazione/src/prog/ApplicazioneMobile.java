@@ -88,8 +88,8 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 	public void aggiornaPosizione() {
 		try {
-			if (!(this.fissa)) {
-			this.posizione=this.sensore.rilevaPosizione();
+			if (!(this.fissa)) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
+			this.posizione=this.sensore.rilevaPosizione(); // e non viene perciò aggiornata la posizione dell'applicazione
 			}
 		} catch (BiffException | IOException e) {
 			e.printStackTrace();
@@ -105,31 +105,29 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	}
 
 	public Posizione getPosizione() {
-		if (!(this.fissa)){
-			aggiornaPosizione();
+		if (!(this.fissa)){ // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
+			aggiornaPosizione(); // e non viene perciò aggiornata la posizione dell'applicazione
 		}
 		return this.posizione;
 	}
 
 	public String getUsernameUtente(){
-		if (this.utente==null) {
+		if (this.utente==null) { // in questo modo se l'utente è null non si accede ad un puntatore nullo
 			return null;
 		}
 		return this.utente.getUsername();
 	}
 
-	//modifica
 	public void segnalaUtente(NotificaApplicazione notifica) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 
-		this.areaNotifiche.setContentType("text/html");
+		this.areaNotifiche.setContentType("text/html"); // in questo modo è possibile colorare le notifiche in modo diverso
 
-		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument();
+		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument(); 
 		try {
 
-			doc.insertBeforeStart(doc.getCharacterElement(0), notifica.stampaNotifica()+"<br>");
+			doc.insertBeforeStart(doc.getCharacterElement(0), notifica.stampaNotifica()+"<br>"); // viene stampata la notifica ricevuta nell'apposizta area
 		} catch (BadLocationException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -144,15 +142,18 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	}
 
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo){
+		// metodo di creazione della notifica di tipo NotificaApplicazione
 		return new NotificaApplicazione("SistemaCentrale",pos,tipo);
 	}
 
 	public void aggiungiNotificaInCoda(NotificaApplicazione notifica){
+		// metodo che aggiunge la notifica ricevuta alla lista delle notifiche ricevute in precedenza
 		this.listaNotificheRicevute.add(notifica);
-		this.segnalaUtente(notifica);
+		this.segnalaUtente(notifica); // viene quindi segnalato l'utente della ricezione
 	}
 
 	public void svuotaLista() {
+		// metodo per suotare la lista delle notifiche ricevute
 		this.listaNotificheRicevute.clear();
 	}
 	
