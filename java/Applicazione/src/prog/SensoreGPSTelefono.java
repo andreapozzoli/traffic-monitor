@@ -18,14 +18,14 @@ public class SensoreGPSTelefono extends SensoreGPS implements Serializable{
 	}
 	
 	public Posizione rilevaPosizione() throws BiffException, IOException {
-		
+		// metodo per la rilevazione casuale della posizione
 		double latitudine=0;		
 		double longitudine=0;
 		String via;
 		String percorsoCorrente = System.getProperty("user.dir");
 
 
-		Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls"));
+		Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls")); // file excel contenente nome via e relative latitudine e longitudine
 		
 		Sheet sheet = wb.getSheet(0);
 		Random random = new Random();
@@ -36,15 +36,15 @@ public class SensoreGPSTelefono extends SensoreGPS implements Serializable{
 		
 		
 		
-		Cell cella = sheet.getCell(0,miavar);
+		Cell cella = sheet.getCell(0,miavar); // nella prima colonna vi è il nome della via
 		via = cella.getContents();
-		cella=sheet.getCell(1,miavar);
+		cella=sheet.getCell(1,miavar); // nella seconda colonna vi è la latitudine
 		latitudine=Double.valueOf(cella.getContents());
-		cella=sheet.getCell(2,miavar);
+		cella=sheet.getCell(2,miavar); // nella terza colonna vi è la longitudine
 		longitudine=Double.valueOf(cella.getContents());
 		
 		
-		this.posizione=new Posizione(via,latitudine,longitudine);
+		this.posizione=new Posizione(via,latitudine,longitudine); // viene creata la posizione
 		return this.posizione;
 		
 	}

@@ -33,7 +33,8 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 	
 	//nuovo
 	public String stampaNotifica() {
-		
+		// metodo per stampare la notifica 
+		// viene usato un colore diverso per il tipo di evento occorso
 		String finale = new String();
 		
 		if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Coda"))
@@ -65,7 +66,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 		}
 		else
 		{
-			finale += " ad una velocit� media di "
+			finale += " ad una velocita' media di "
 					+ this.getTipo().substring(1, this.getTipo().indexOf(' '))
 					+ " km/h";
 		}

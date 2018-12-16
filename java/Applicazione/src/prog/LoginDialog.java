@@ -7,8 +7,6 @@ import java.rmi.RemoteException;
 import javax.swing.*;
 import javax.swing.border.*;
 
-//basato su http://www.zentut.com/java-swing/simple-login-dialog/
-
 public class LoginDialog extends JDialog {
 
 	private static final long serialVersionUID = 6048442678825828787L;

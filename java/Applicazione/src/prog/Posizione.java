@@ -21,6 +21,7 @@ public class Posizione implements Serializable{
 	} 
 
 	public boolean equals(Posizione pos) {
+		// override dell'equals della classe Object necessario per il confronto tra posizioni
 		if (pos == null) return false;
 
 		return ((this.latitudine == pos.getLatitudine())

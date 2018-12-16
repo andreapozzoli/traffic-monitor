@@ -6,9 +6,7 @@ import java.rmi.RemoteException;
 
 import javax.swing.*;
 import javax.swing.border.*;
-
-//basato su http://www.zentut.com/java-swing/simple-login-dialog/
-// La struttura è analoga a LoginDialog
+// La struttura e' analoga a LoginDialog
 
 public class RegistrazioneDlg extends JDialog {
 
