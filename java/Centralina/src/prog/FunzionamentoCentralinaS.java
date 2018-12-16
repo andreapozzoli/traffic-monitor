@@ -58,7 +58,7 @@ public class FunzionamentoCentralinaS {
 			 * (minimo: 10, valore mostrato 
 			 * inizialmente: 10, massimo: 360 000, step: 1) */
 			
-			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 360000, 1); 
+			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 90, 1); 
 			final JSpinner spinner = new JSpinner(sceltaIntervallo); // spinner
 
 			// Impostazione dei margini per una migliore disposizioen grafica
@@ -172,7 +172,7 @@ public class FunzionamentoCentralinaS {
 			frame.setLocationRelativeTo(frame);
 
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // azione predefinita quando si chiude usando il pulsante di chiusura della finestra
-			frame.setSize(425, 250); // dimensione del frame (altezza * larghezza)
+			frame.setSize(470, 250); // dimensione del frame (altezza * larghezza)
 
 			frame.setVisible(true);
 
