@@ -11,13 +11,14 @@ public class GestoreApplicazioniServer implements Runnable{
 
 		Registry registry = null;
 		try {
+			// viene caricata l'interfaccia del GestoreApplicazioni necessaria per la comunicazione rmi
 			registry = LocateRegistry.createRegistry(12345);
 
 			registry.rebind("gestApp", GestoreApplicazioni.getInstance());
 			System.out.println("Server online");
 
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle applicazioni mobili è già in uso");
+			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle applicazioni mobili e' gia'� in uso");
 		} 
 
 	}

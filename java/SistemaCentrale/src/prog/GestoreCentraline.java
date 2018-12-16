@@ -14,7 +14,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     }
     
     public static GestoreCentraline getInstance() throws RemoteException{  		
-    		
+    		// metodo per mantenere la classe singleton
             if(instance==null)
                     instance = new GestoreCentraline();
             return instance;
@@ -22,7 +22,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     
     
     public void aggiungiCentralinaStradale(int id) throws RemoteException {
-    	//si puo verificare che non esista gia in quella posizione
+    	// metodo per aggiungere una nuova centralina
     	Cent centralina=new Cent(id);
     	this.listaCentralineStradali.add(centralina);
     }
@@ -30,6 +30,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
    
     
     public void rimuoviCentralinaStradale(int id) throws RemoteException{
+    	// metodo per rimuovere una centralina
     	for (Cent var : this.listaCentralineStradali) {
     		if (var.getId()==id) {
     			this.listaCentralineStradali.remove(var);
@@ -39,6 +40,8 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     }
     
     public synchronized void segnalaDatabaseS(DatoTraffico dato) throws NotBoundException, RemoteException{
+    	// metodo per segnalare il sistema centrale e inviargli quindi una notifica nel momento in cui
+    	// scade l'intervallo di tempo della centralina
     	GestoreDatabase.getInstance().aggiungiDatoTraffico(dato);
     }
     
