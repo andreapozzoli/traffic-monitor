@@ -3,7 +3,7 @@ import java.security.*;
 
 public class customSecurityManager extends SecurityManager {
 
-
+//questa classe serve per ovviare ai problemi di security manager nelle connessioni rmi
 	SecurityManager original;
 
 	customSecurityManager(SecurityManager original) {
