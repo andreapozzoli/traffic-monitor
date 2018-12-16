@@ -73,9 +73,9 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 	public void calcolaApplicazioniDaNotificare(String mittente,Posizione posizione, String tipo) throws BiffException, IOException, NotBoundException {
 		// metodo per calcolare le applicazioni da notificare nel momento in cui avviene un evento di traffico 
 		// e viene notificato al sistema centale
-		if (!(this.listaApplicazioni.isEmpty())) { // se la lista è vuota non ci sono applicazioni da notificare
+		if (!(this.listaApplicazioni.isEmpty())) { // se la lista ï¿½ vuota non ci sono applicazioni da notificare
 			for (App var: this.listaApplicazioni) {
-				// se l'utente associato all'applicazione è nullo o è il mittente della notifica, l'applicazione non viene notificata
+				// se l'utente associato all'applicazione ï¿½ nullo o ï¿½ il mittente della notifica, l'applicazione non viene notificata
 				if ((var.getUtente().getUsername()!=null)&&(!(var.getUtente().getUsername().equals(mittente)))) {
 					//conversione distanza coordinate in metri
 					IApplicazioneMobile appServer=this.getInterfacciaApp(var.getId());
@@ -92,7 +92,7 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 					double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 					double d = R * c; 
 
-					if (d*1000<this.raggio) { // se lìapplicazione non è all'interno del raggio non viene notificata
+					if (d*1000<this.raggio) { // se lï¿½applicazione non ï¿½ all'interno del raggio non viene notificata
 						NotificaApplicazione notifica;
 						notifica=appServer.creaNotificaApplicazione(posizione, tipo);
 						appServer.aggiungiNotificaInCoda(notifica);    
@@ -106,18 +106,18 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 
 	public boolean verificaAccesso(String username, String password) {
 		// metodo per riconoscere un utente che sta facendo il login
-		// necessario per fare da tramite tra GedtoreUtenti e applicazione
+		// necessario per fare da tramite tra GestoreUtenti e applicazione
 		return GestoreUtenti.getInstance().riconosciUtente(username, password);
 	}
 
 	public boolean verificaAccesso(String username) {
-		// metodo per evitare che un utente che si sta registrando utilizzi un username già in uso
+		// metodo per evitare che un utente che si sta registrando utilizzi un username giï¿½ in uso
 		// necessario per fare da tramite tra GedtoreUtenti e applicazione
 		return GestoreUtenti.getInstance().riconosciUtente(username);
 	}
 
 	public Utente passaggioUtente(String username) {
-		// metodo per riassegnare l'utente già registrato all'applicazione da cui egli ha fatto il login
+		// metodo per riassegnare l'utente giï¿½ registrato all'applicazione da cui egli ha fatto il login
 		// necessario per fare da tramite tra GedtoreUtenti e applicazione
 		return GestoreUtenti.getInstance().getUtente(username);
 	}

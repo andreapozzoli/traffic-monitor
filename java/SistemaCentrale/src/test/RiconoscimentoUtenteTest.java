@@ -2,6 +2,7 @@ package test;
 import prog.*;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.*;
@@ -29,6 +30,16 @@ class RiconoscimentoUtenteTest {
 	void riconoscimentoUtenteTest() {
 		assertTrue("L'utente deve essere riconosciuto.",gest.riconosciUtente("prova nome","prova password"));
 
+	}
+	
+	@Test
+	void test3() {
+		assertFalse("L'utente non deve essere riconosciuto.", gest.riconosciUtente("utente non registrato"));
+	}
+	
+	@Test
+	void test4() {
+		assertFalse("L'utente non deve essere riconosciuto.", gest.riconosciUtente("utente non registrato", "password qualunque"));
 	}
 
 

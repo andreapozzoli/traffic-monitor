@@ -40,5 +40,15 @@ class RegistrazioneUtenteTest {
 		assertTrue("L'utente deve essere riconosciuto.",gest.verificaAccesso("prova","prova password"));
 		
 	}
+	
+	@Test
+	void test3() {
+		assertFalse("L'utente non deve essere riconosciuto.", gest.verificaAccesso("utente non registrato"));
+	}
+	
+	@Test
+	void test4() {
+		assertFalse("L'utente non deve essere riconosciuto.", gest.verificaAccesso("utente non registrato", "password qualunque"));
+	}
 
 }
