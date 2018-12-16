@@ -40,6 +40,7 @@ public class GestoreDatabase {
 	public synchronized void aggiungiDatoTraffico (DatoTraffico dato) throws NotBoundException {
 		this.listaDatoTraffico.add(dato);
 		try {
+			// aggiorna la tabella del traffico con un mittente "centralina"
 			aggiornaTabellaTraffico("centralina",dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra(), dato.getMinA(), dato.getOraA());
 		} catch (BiffException | IOException e) {
 			// TODO Auto-generated catch block
@@ -47,7 +48,7 @@ public class GestoreDatabase {
 		}
 	}
 
-	
+
 
 	public void rimuoviNotificaApplicazione (NotificaApplicazione notifica) {
 		this.listaNotificheApplicazioni.remove(notifica);
@@ -57,7 +58,7 @@ public class GestoreDatabase {
 		this.listaDatoTraffico.remove(dato);
 	}
 
-	
+
 
 	public synchronized void aggiornaTabellaTraffico(String mittente,Posizione pos, String tipo, String data, String ora, int minA, int oraA) throws BiffException, IOException, NotBoundException {
 		DatoGenerico datoGenerico=creaDatoGenerico(pos, tipo, data, ora, minA, oraA);
@@ -68,21 +69,26 @@ public class GestoreDatabase {
 			int minAttuale=dat.get(Calendar.MINUTE);
 			int minArr=this.tabellaTraffico.get(i).getMinA();
 			int oraArr=this.tabellaTraffico.get(i).getOraA();
+
+			// serve per eliminare le notifiche dalla mappa dopo tre minuti dalla visualizzazione, tempo dopo il quale vengono considerate obsolete
+			// In ogni caso le centraline continuano a notificare e, in caso di eventi di traffico, generalmente non passa molto tempo tra una notifica e la successiva
+			// Per quanto riguarda le segnalazioni di coda da parte delle applicazioni, si suppone che in una situazione reale, laddove si formi una coda più persone continuino a notificarne la presenza
+			// Una coda, inoltre, potrebbe esaurirsi in breve tempo per cause di vari tipi, di conseguenza mantenere una segnalazione troppo a lungo potrebbe trasmettere informazioni fuorvianti
 			
 			if ((oraAttuale==oraArr&&(minAttuale-minArr>2))||(oraAttuale>oraArr&&minArr<58)||(oraAttuale==0&&oraArr==11&&minArr<58)) {
 				try {
 					FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(this.tabellaTraffico.get(i).getPosizione().getLatitudine(), this.tabellaTraffico.get(i).getPosizione().getLongitudine());
-					}catch(Exception e) {
-						System.out.println("Mappa non disponibile");
-					}
+				}catch(Exception e) {
+					System.out.println("Mappa non disponibile");
+				}
 			}
-			
-			
-			
+
+
+
 			if (this.tabellaTraffico.get(i).getPosizione().equals(pos)) {
 				this.tabellaTraffico.remove(i);
 				try {
-				FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(pos.getLatitudine(), pos.getLongitudine());
+					FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(pos.getLatitudine(), pos.getLongitudine());
 				}catch(Exception e) {
 					System.out.println("Mappa non disponibile");
 				}
@@ -98,6 +104,8 @@ public class GestoreDatabase {
 		}
 
 		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
+			// Non ci sono notifiche se il traffico è del tipo "traffico nella norma"
+			// le applicazioni da notificare sono quelle nel raggio di 500 m dalla segnalazione
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
 		}
 	}
@@ -105,7 +113,7 @@ public class GestoreDatabase {
 	public DatoGenerico creaDatoGenerico(Posizione pos, String tipo, String data, String ora, int minA, int oraA) {
 		return new DatoGenerico(pos, tipo, data, ora, minA, oraA);
 	}
-	
-	
+
+
 
 }

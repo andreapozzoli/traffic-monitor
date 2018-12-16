@@ -13,7 +13,6 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 
 	public void rilevaVelocita() {
 		
-		//da fare
 		Random random = new Random();
 		int a;
 		if (this.velocita>15) {
@@ -35,7 +34,7 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 
 	public void resetSommaVelocita(int velocita) {
 
-		this.velocita=velocita; //indica la velocità dell'intervallo precedente
+		this.velocita=velocita; //indica la velocitï¿½ dell'intervallo precedente
 		this.sommaVelocita = 0;
 	}
 

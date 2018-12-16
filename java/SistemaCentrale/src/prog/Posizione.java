@@ -18,7 +18,7 @@ public class Posizione implements Serializable{
 		this.longitudine = lon;
 	} 
 
-	public boolean equals(Posizione pos) {
+	public boolean equals(Posizione pos) { // override di equals per la posizione
 		if (pos == null) return false;
 
 		return ((this.latitudine == pos.getLatitudine())

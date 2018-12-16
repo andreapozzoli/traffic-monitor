@@ -4,7 +4,6 @@ import java.util.*;
 public class RilevatoreVeicoli implements Runnable {
 	private int numeroVeicoli;
 	private RilevatoreVelocitaS rilevatoreVelocita;
-	//secondo me necessario attributo rilevatore velocità associato e lo togliamo da centralina
 	
 	public RilevatoreVeicoli () {
 		this.rilevatoreVelocita=new RilevatoreVelocitaS();

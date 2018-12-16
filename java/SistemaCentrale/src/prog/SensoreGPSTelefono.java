@@ -11,9 +11,6 @@ import java.io.*;
 
 public class SensoreGPSTelefono extends SensoreGPS implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -961906414779596754L;
 
 	public SensoreGPSTelefono () throws BiffException, IOException {
@@ -42,7 +39,6 @@ public class SensoreGPSTelefono extends SensoreGPS implements Serializable {
 		Cell cella = sheet.getCell(0,miavar);
 		via = cella.getContents();
 		cella=sheet.getCell(1,miavar);
-		String lat=cella.getContents();
 		latitudine=Double.valueOf(cella.getContents());
 		cella=sheet.getCell(2,miavar);
 		longitudine=Double.valueOf(cella.getContents());
