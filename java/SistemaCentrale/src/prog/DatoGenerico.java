@@ -18,8 +18,8 @@ public class DatoGenerico {
 		this.tipo=tipo;
 		this.data=data; 
 		this.ora=ora;
-		this.minutoArrivo=minutoArrivo;
-		this.oraArrivo=oraArrivo;
+		this.minutoArrivo=minutoArrivo; //intero indicante il minuto di arrivo della notifica necessario per la rimozione delle notifiche dalla mappa dopo un certo tempo
+		this.oraArrivo=oraArrivo; //intero indicante l'ora di arrivo della notifica necessario per la rimozione delle notifiche dalla mappa dopo un certo tempo
 	}
 	public void setData() {
 		GregorianCalendar dat = new GregorianCalendar();
@@ -61,6 +61,7 @@ public class DatoGenerico {
 	
 	@Override
 	public boolean equals(Object obj) {
+		// override del metodo equals della classe Object necessario per comparare questo tipo di notifiche 
 		DatoGenerico b=(DatoGenerico)obj;
 		if (this.posizione.getVia().equals(b.getPosizione().getVia())&&
 				this.data.equals(b.getData())&&this.ora.equals(b.getOra())&&

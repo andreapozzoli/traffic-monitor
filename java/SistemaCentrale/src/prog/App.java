@@ -1,6 +1,6 @@
 package prog;
 
-public class App {
+public class App { // classe necessaria a salvare i dati dell'applicazione nel sistema centrale
 	private int identificativo;
 	private Utente utente;
 

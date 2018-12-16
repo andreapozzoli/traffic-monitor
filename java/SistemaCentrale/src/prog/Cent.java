@@ -1,6 +1,6 @@
 package prog;
 
-public class Cent {
+public class Cent { // classe necessaria a salvare i dati delle centraline nel sistema centrale
 	
 	private int idCentralinaStradale;
 	
