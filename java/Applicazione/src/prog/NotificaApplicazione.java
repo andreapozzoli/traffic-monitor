@@ -59,7 +59,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 				+ " | "
 				+ this.getTipo().substring(this.getTipo().indexOf(' ')+1)
 				+ " in "
-				+ this.posizione.getVia();
+				+ inizialiMaiuscole(this.posizione.getVia());
 		if(this.getTipo().substring(0,1).equals("M"))
 		{
 			// niente
@@ -74,8 +74,16 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 
 
 		return finale;
-		//return ("tipo: "+this.tipo+" via: "+this.posizione.getVia()+ " posizione: "+this.posizione.getLatitudine()+" ; "+this.posizione.getLongitudine());
 	}
 	
+	private static String inizialiMaiuscole(String stringaDaTrasformare) {
+		String[] parole = stringaDaTrasformare.split(" ");
+
+		for(int p=0; p<parole.length; ++p) {
+			parole[p] = parole[p].substring(0,1).toUpperCase() + parole[p].substring(1).toLowerCase();
+		}
+								
+		return String.join(" ", parole);
+	}
 	
 }
