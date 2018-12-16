@@ -18,7 +18,7 @@ public class LoginDialog extends JDialog {
 	private JButton btnAnnulla;
 	private boolean riuscito;
 
-	public LoginDialog(Frame contenitore, String tipoLogin, IGestoreApplicazioni server) {
+	public LoginDialog(Frame contenitore, String tipoLogin) {
 		super(contenitore, "Login", true);
 		//
 		JPanel pannelloInformazioni = new JPanel(new GridBagLayout()); // disposizione degli elementi seguendo una griglia

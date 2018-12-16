@@ -19,7 +19,7 @@ public class RegistrazioneDlg extends JDialog {
 	private JButton btnAnnulla;
 	private boolean riuscito;
 
-	public RegistrazioneDlg(Frame parent, String tipoRegistrazione, IGestoreApplicazioni server) {
+	public RegistrazioneDlg(Frame parent, String tipoRegistrazione) {
 		super(parent, "Registrazione", true);
 		//
 		JPanel pannelloInformazioni = new JPanel(new GridBagLayout());
