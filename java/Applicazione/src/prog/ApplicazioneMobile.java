@@ -155,5 +155,9 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void svuotaLista() {
 		this.listaNotificheRicevute.clear();
 	}
+	
+	public ArrayList<NotificaApplicazione> getListaNotifiche(){
+		return this.listaNotificheRicevute;
+	}
 
 }

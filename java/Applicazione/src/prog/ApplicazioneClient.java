@@ -246,7 +246,7 @@ public class ApplicazioneClient implements Runnable {
 
 		} catch (Exception e) {
 			  JOptionPane.showMessageDialog(null,
-				        "Il sistema centrale non è disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
+				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
 				        "Errore di connessione",
 				        JOptionPane.ERROR_MESSAGE);
 		}
