@@ -12,6 +12,7 @@ import java.rmi.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -24,7 +25,7 @@ public class ApplicazioneClient implements Runnable {
 	private ApplicazioneMobile applicazione;
 	private IGestoreApplicazioni server;
 
-
+	
 	public ApplicazioneClient(ApplicazioneMobile applicazione) {
 		this.applicazione=applicazione;
 	}
@@ -139,12 +140,12 @@ public class ApplicazioneClient implements Runnable {
 		JButton segnalaCodaBtn = new JButton("Segnala coda");
 		JButton svuotaNotificheBtn = new JButton("Svuotare area delle notifiche");
 		JButton logoutBtn = new JButton("Logout");
-		JCheckBox fissaPosizione = new JCheckBox("Selezionare per fissare la posizione");
+		JCheckBox fissaPosizione = new JCheckBox("Fissare la posizione");
 
 		this.applicazione.setFrame(new JFrame());
 		this.applicazione.getFrame().setTitle("Applicazione mobile"); // titolo della finestra
 
-		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(175,150));
+		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(400,150));
 
 		// Pannello contenitore
 		JPanel principale = new JPanel(new BorderLayout());
@@ -153,14 +154,15 @@ public class ApplicazioneClient implements Runnable {
 		JPanel alto = new JPanel();
 		principale.add(alto,BorderLayout.NORTH);
 		alto.add(fissaPosizione); // spunta per fissare la posizione dell'applicazione
-
+		alto.add(this.applicazione.getLabelPosizione()); // etichetta per visualizzare la posizione corrente
+		
 		// Pannello in basso
 		JPanel basso = new JPanel();
 		principale.add(basso,BorderLayout.SOUTH);
 		basso.add(segnalaCodaBtn); // bottone per la segnalazione della coda
 		basso.add(logoutBtn); // bottone per il logout
 		basso.add(svuotaNotificheBtn); // bottone per svuotare le notifiche
-
+		
 		// Pannello a sinistra
 		JPanel sinistra = new JPanel();
 		principale.add(sinistra,BorderLayout.WEST);

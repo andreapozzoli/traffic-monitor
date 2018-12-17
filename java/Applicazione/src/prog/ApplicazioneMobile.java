@@ -7,6 +7,7 @@ import java.rmi.server.*;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -31,6 +32,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 	private JTextPane areaNotifiche = new JTextPane();
 	private JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
+	private JLabel posizioneCorrente = new JLabel("Nessuna posizione rilevata.");
 
 	public ApplicazioneMobile() throws BiffException, IOException, RemoteException {
 		super();
@@ -39,6 +41,14 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 		this.listaNotificheRicevute=new ArrayList<NotificaApplicazione>();
 		this.posizione=this.sensore.rilevaPosizione();
 
+	}
+	
+	public void impostaEtichettaPosizione(String via) {
+		posizioneCorrente.setText("Ultima posizione rilevata: " + via);
+	}
+	
+	public JLabel getLabelPosizione() {
+		return posizioneCorrente;
 	}
 
 	public JFrame getFrame() {
@@ -89,7 +99,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void aggiornaPosizione() {
 		try {
 			if (!(this.fissa)) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
-			this.posizione=this.sensore.rilevaPosizione(); // e non viene perciò aggiornata la posizione dell'applicazione
+			this.posizione=this.sensore.rilevaPosizione(); // e non viene perciï¿½ aggiornata la posizione dell'applicazione
 			}
 		} catch (BiffException | IOException e) {
 			e.printStackTrace();
@@ -106,10 +116,13 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 	public Posizione getPosizione() {
 		if (!(this.fissa)){ // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
-			aggiornaPosizione(); // e non viene perciò aggiornata la posizione dell'applicazione
+			aggiornaPosizione(); // e non viene percio' aggiornata la posizione dell'applicazione
 		}
+		
+		impostaEtichettaPosizione(this.posizione.getVia());
 		return this.posizione;
 	}
+
 
 	public String getUsernameUtente(){
 		if (this.utente==null) { // in questo modo se l'utente e' null non si accede ad un puntatore nullo
