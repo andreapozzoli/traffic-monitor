@@ -1,7 +1,7 @@
 
 # Gestione del traffico
 
-## Mappatura delle cartelle e dei file
+## Mappatura delle cartelle e dei file (requisiti e design)
 
 . <br />
 ├── [design](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/design/) <br/>
@@ -83,9 +83,9 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 	* Documento PDF riassuntivo dei diagrammi fatti, commentati
 
 * Consegna 3) Implementazione: Java 
-	* Progetto Java completo e funzionante
-	* Casi di test Junit
-	* Documento PDF riassuntivo 
+	* Progetto Java completo e funzionante [*Sistema centrale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/SistemaCentrale) - [*Applicazione mobile*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Applicazione) - [*Centralina stradale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Centralina)
+	* Casi di test Junit [*Sistema centrale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/SistemaCentrale/src/test) - [*Applicazione mobile*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Applicazione/src/test) - [*Centralina stradale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Centralina/src/test)
+	* Documento PDF riassuntivo [*Documentazione*](https://gitlab.com/sweng2018/group1/traffic-monitor/blob/master/java/Documentazione.pdf)
 
 * Consegna 4) Completo
 	* Progetto e documento completo e funzionante
