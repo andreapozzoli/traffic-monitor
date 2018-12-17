@@ -11,7 +11,7 @@ public class DatoTraffico extends Notifica implements Serializable{ // classe pe
 	private int velocita;
 
 	public DatoTraffico(Posizione pos, String tipo, int vel) {
-		this.tipo=tipo;
+		this.tipo=tipo;		//tipo indica il tipo di evento di traffico
 		this.velocita=vel;
 		this.setData(); 
 		this.setOra();

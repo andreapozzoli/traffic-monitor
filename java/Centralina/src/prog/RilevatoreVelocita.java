@@ -1,5 +1,8 @@
 package prog;
+
+
 public abstract class RilevatoreVelocita {
+	//questa classe e' implementata perche' nel momento in cui si volesse creare un diverso rilevatore di velocita' si potrebbe ereditare la struttura
 	protected int velocita;
 
 

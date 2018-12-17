@@ -20,6 +20,7 @@ public abstract class Notifica implements Serializable{
 
 	public void setOra() {
 		// metodo per rilevare l'ora del momento in cui viene creata la notifica
+		//si mette l'ora nel formato hh:mm:ss, quindi se i valori rilevati sono minori di 10, viene anteposto uno zero
 		GregorianCalendar dat = new GregorianCalendar();
 		int a=dat.get(Calendar.HOUR);
 		String a1="";

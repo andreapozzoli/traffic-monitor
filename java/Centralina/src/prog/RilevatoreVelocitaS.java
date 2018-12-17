@@ -13,7 +13,7 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 
 	public void rilevaVelocita() {
 
-
+//la velocita' viene calcolata in modo random in un intorno +-15 della velocita' media registrata in precedenza
 		Random random = new Random();
 		int min;
 		int max;

@@ -26,12 +26,12 @@ public class RilevatoreVeicoli implements Runnable {
 		this.numeroVeicoli = 0;
 	}
 
-	public void rilevaVeicoli() {
+	public void rilevaVeicoli() {		//la rilevazione del transito di un veicolo e' un numero random tra 0 (non transitato) e 1 (transitato)
 		Random random = new Random();
-		int a = 0; // numero minimo
-		int b = 1; // numero massimo
-		int c = ((b-a) + 1);
-		int rilevato= random.nextInt(c) + a;
+		int min = 0; // numero minimo
+		int max = 1; // numero massimo
+		int rilevazione = ((b-a) + 1);
+		int rilevato= random.nextInt(rilevazione) + min;
 		if (rilevato==1) {
 			this.numeroVeicoli++;
 			this.rilevatoreVelocita.rilevaVelocita();
@@ -43,7 +43,7 @@ public class RilevatoreVeicoli implements Runnable {
 		while (true) {
 			rilevaVeicoli();
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(3000);			//il rilevatore di veicoli viene chiamato ogni tre secondi
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
