@@ -3,6 +3,7 @@ package prog;
 import java.io.Serializable;
 
 public class NotificaApplicazione extends Notifica implements Serializable{
+	//classe per le notifiche inviate e ricevute dall'applicazione
 	
 	private static final long serialVersionUID = -2638683854845954842L;
 	private String tipo;	

@@ -21,6 +21,7 @@ public class GestoreDatabase {
 		this.tabellaTraffico=new ArrayList<DatoGenerico>();
 	}
 	public static GestoreDatabase getInstance() {
+		//per tenere la classe singleton
 		if(instance==null)
 			instance = new GestoreDatabase();
 		return instance;

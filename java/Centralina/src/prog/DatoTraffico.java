@@ -2,7 +2,8 @@ package prog;
 
 import java.io.Serializable;
 
-public class DatoTraffico extends Notifica implements Serializable{ // classe per salvare le notifiche ricevute nel database e ricondurle quindi ad un unico tipo
+public class DatoTraffico extends Notifica implements Serializable{ 
+	// classe per le notifiche inviate dalla centralina stradale
 	/**
 	 * 
 	 */

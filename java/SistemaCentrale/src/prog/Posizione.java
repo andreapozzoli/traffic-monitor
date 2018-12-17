@@ -9,9 +9,7 @@ public class Posizione implements Serializable{
 	private double longitudine;
 	private String via;
 
-	public Posizione() {
-	}
-
+	
 	public Posizione(String via,double lat, double lon) {
 		this.via=via;
 		this.latitudine = lat;

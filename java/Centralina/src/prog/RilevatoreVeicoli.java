@@ -30,7 +30,7 @@ public class RilevatoreVeicoli implements Runnable {
 		Random random = new Random();
 		int min = 0; // numero minimo
 		int max = 1; // numero massimo
-		int rilevazione = ((b-a) + 1);
+		int rilevazione = ((max-min) + 1);
 		int rilevato= random.nextInt(rilevazione) + min;
 		if (rilevato==1) {
 			this.numeroVeicoli++;

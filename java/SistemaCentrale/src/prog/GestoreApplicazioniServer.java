@@ -11,7 +11,7 @@ public class GestoreApplicazioniServer implements Runnable{
 
 		Registry registry = null;
 		try {
-			// viene caricata l'interfaccia del GestoreApplicazioni necessaria per la comunicazione rmi
+			// viene caricata l'interfaccia del GestoreApplicazioni necessaria per la comunicazione rmi con l'applicazione e configurato il lato server
 			registry = LocateRegistry.createRegistry(12345);
 
 			registry.rebind("gestApp", GestoreApplicazioni.getInstance());

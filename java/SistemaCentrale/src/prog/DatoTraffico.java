@@ -2,7 +2,8 @@ package prog;
 
 import java.io.Serializable;
 
-public class DatoTraffico extends Notifica implements Serializable{ // classe per salvare le notifiche ricevute nel database e ricondurle quindi ad un unico tipo
+public class DatoTraffico extends Notifica implements Serializable{ 
+	// classe per le notifiche inviate dalla centralina stradale
 	/**
 	 * 
 	 */
@@ -11,7 +12,7 @@ public class DatoTraffico extends Notifica implements Serializable{ // classe pe
 	private int velocita;
 	
 	public DatoTraffico(Posizione pos, String tipo, int vel) {
-		this.tipo=tipo;
+		this.tipo=tipo;		//tipo indica il tipo di evento di traffico
 		this.velocita=vel;
 		this.setData(); 
 		this.setOra();
