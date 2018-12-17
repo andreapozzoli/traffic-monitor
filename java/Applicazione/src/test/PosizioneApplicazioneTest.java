@@ -33,7 +33,7 @@ public class PosizioneApplicazioneTest {
 	
 	@Test
 	void test2() throws BiffException, RemoteException, IOException {
-		Posizione pos2=app.getPosizione();
+		app.getPosizione();
 		app.setFissa(false);
 		Posizione pos3=app.getPosizione();
 		assertFalse(pos.equals(pos3), "Le posizioni devono essere diverse.");

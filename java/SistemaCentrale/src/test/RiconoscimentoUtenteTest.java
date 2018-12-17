@@ -3,9 +3,8 @@ import prog.*;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

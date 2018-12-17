@@ -2,11 +2,9 @@ package test;
 import prog.*;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.rmi.RemoteException;
 
-import org.junit.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
