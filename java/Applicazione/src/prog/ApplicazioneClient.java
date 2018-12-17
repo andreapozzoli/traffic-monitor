@@ -245,12 +245,13 @@ public class ApplicazioneClient implements Runnable {
 
 			loginGrafico(this.applicazione.getIdentificativo()); // si apre la finestra di login
 
-		} catch (Exception e) { // se non � ancora stato attivato il sistema centrale non � possibile inviare segnalazioni
+		} catch (Exception e) { // se non e' ancora stato attivato il sistema centrale non e' possibile inviare segnalazioni
 			  JOptionPane.showMessageDialog(null,
-				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.",
+				        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale."
+					  +"\nL'applicazione verra' chiusa.",
 				        "Errore di connessione",
 				        JOptionPane.ERROR_MESSAGE);
-			  
+			  System.exit(1);
 		}
 
 	}
