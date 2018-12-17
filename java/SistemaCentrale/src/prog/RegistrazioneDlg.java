@@ -80,7 +80,7 @@ public class RegistrazioneDlg extends JDialog {
 					dispose();
 				} else {
 					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Username gi� in uso.",
+							"Username gia' in uso.",
 							"Registrazione",
 							JOptionPane.ERROR_MESSAGE);
 

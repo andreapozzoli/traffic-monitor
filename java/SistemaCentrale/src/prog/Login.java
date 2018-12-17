@@ -6,10 +6,10 @@ public class Login {
 		if(tipoUtente.equals("A"))
 		{
 
-				if(GestoreAmministratori.getInstance().riconosciAmministratore(username, password)) {
+			if(GestoreAmministratori.getInstance().riconosciAmministratore(username, password)) {
 
-					return true;
-				}
+				return true;
+			}
 
 			return false;
 		}
@@ -18,15 +18,15 @@ public class Login {
 			return false;
 		}
 	}
-	
+
 	public static boolean autenticazione(String username,String tipoUtente) {
 		if(tipoUtente.equals("A"))
 		{
 
-				if(GestoreAmministratori.getInstance().riconosciAmministratore(username)) {
+			if(GestoreAmministratori.getInstance().riconosciAmministratore(username)) {
 
-					return true;
-				}
+				return true;
+			}
 
 			return false;
 		}

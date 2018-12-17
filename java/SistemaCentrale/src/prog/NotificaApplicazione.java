@@ -35,10 +35,10 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 
 	public String stampaNotifica() {
 
-		/* La stringa è in formato HTML per permettere 
+		/* La stringa e' in formato HTML per permettere 
 		 * all'utente di capire rapidamente la tipologia
 		 * degli eventi di traffico che lo circondano.
-		 * Con questo formato, infatti, è possibile scegliere
+		 * Con questo formato, infatti, e' possibile scegliere
 		 * colori diversi per notifiche diverse.
 		 */
 		String finale = new String();
@@ -60,7 +60,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 		{
 			finale = "<font color=\"green\">";
 		}
-		
+
 		finale += this.getData()
 				+ ", "
 				+ this.getOra()
@@ -70,9 +70,9 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 				+ this.posizione.getVia();
 		if(this.getTipo().substring(0,1).equals("M")) // M si riferisce alle applicazioni mobili
 		{
-			// non viene aggiunto nulla perché le applicazioni mobili non registrano la velocità
+			// non viene aggiunto nulla perche' le applicazioni mobili non registrano la velocita'�
 		}
-		else // caso generico (il formato standard è S per le centraline stradali)
+		else // caso generico (il formato standard e' S per le centraline stradali)
 		{
 			finale += " ad una velocità media di "
 					+ this.getTipo().substring(1, this.getTipo().indexOf(' '))

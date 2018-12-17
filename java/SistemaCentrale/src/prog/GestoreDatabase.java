@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import javax.swing.JOptionPane;
+
 import jxl.read.biff.BiffException;
 
 public class GestoreDatabase {
@@ -27,12 +29,11 @@ public class GestoreDatabase {
 		return this.tabellaTraffico;
 	}
 	public void aggiungiNotificaApplicazione(NotificaApplicazione notifica) throws NotBoundException {
-		//verificare che non sia gia presente
+		//verificare che non sia gia' presente
 		this.listaNotificheApplicazioni.add(notifica);
 		try {
 			aggiornaTabellaTraffico(notifica.getMittente(),notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra(), notifica.getMinA(), notifica.getOraA());
 		} catch (BiffException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -43,7 +44,6 @@ public class GestoreDatabase {
 			// aggiorna la tabella del traffico con un mittente "centralina"
 			aggiornaTabellaTraffico("centralina",dato.getPosizione(), dato.getTipo(), dato.getData(), dato.getOra(), dato.getMinA(), dato.getOraA());
 		} catch (BiffException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -72,14 +72,14 @@ public class GestoreDatabase {
 
 			// serve per eliminare le notifiche dalla mappa dopo tre minuti dalla visualizzazione, tempo dopo il quale vengono considerate obsolete
 			// In ogni caso le centraline continuano a notificare e, in caso di eventi di traffico, generalmente non passa molto tempo tra una notifica e la successiva
-			// Per quanto riguarda le segnalazioni di coda da parte delle applicazioni, si suppone che in una situazione reale, laddove si formi una coda più persone continuino a notificarne la presenza
+			// Per quanto riguarda le segnalazioni di coda da parte delle applicazioni, si suppone che in una situazione reale, laddove si formi una coda piu' persone continuino a notificarne la presenza
 			// Una coda, inoltre, potrebbe esaurirsi in breve tempo per cause di vari tipi, di conseguenza mantenere una segnalazione troppo a lungo potrebbe trasmettere informazioni fuorvianti
-			
+
 			if ((oraAttuale==oraArr&&(minAttuale-minArr>2))||(oraAttuale>oraArr&&minArr<58)||(oraAttuale==0&&oraArr==11&&minArr<58)) {
 				try {
 					FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(this.tabellaTraffico.get(i).getPosizione().getLatitudine(), this.tabellaTraffico.get(i).getPosizione().getLongitudine());
 				}catch(Exception e) {
-					System.out.println("Mappa non disponibile");
+					JOptionPane.showMessageDialog(null, "La mappa non e' disponibile.");
 				}
 			}
 
@@ -90,7 +90,7 @@ public class GestoreDatabase {
 				try {
 					FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(pos.getLatitudine(), pos.getLongitudine());
 				}catch(Exception e) {
-					System.out.println("Mappa non disponibile");
+					JOptionPane.showMessageDialog(null, "La mappa non e' disponibile.");
 				}
 			}
 		}
@@ -100,11 +100,11 @@ public class GestoreDatabase {
 			FunzionamentoSistemaCentrale.getMappa().aggiungiPunto(datoGenerico);
 		}
 		catch(Exception e) {
-			System.out.println("Mappa non disponibile2");
+			JOptionPane.showMessageDialog(null, "La mappa non e' disponibile.");
 		}
 
 		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
-			// Non ci sono notifiche se il traffico è del tipo "traffico nella norma"
+			// Non ci sono notifiche se il traffico e' del tipo "traffico nella norma"
 			// le applicazioni da notificare sono quelle nel raggio di 500 m dalla segnalazione
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
 		}

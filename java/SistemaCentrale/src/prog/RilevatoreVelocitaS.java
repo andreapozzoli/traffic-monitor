@@ -3,7 +3,7 @@ package prog;
 import java.util.Random;
 
 public class RilevatoreVelocitaS extends RilevatoreVelocita{
-	
+
 	private int sommaVelocita;
 
 	public RilevatoreVelocitaS() {
@@ -12,14 +12,14 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 	}
 
 	public void rilevaVelocita() {
-		
+
 		Random random = new Random();
 		int a;
 		if (this.velocita>15) {
-		     a = this.velocita-15; // numero minimo
+			a = this.velocita-15; // numero minimo
 		}
 		else {
-		      a =0;
+			a =0;
 		}
 		System.out.println(this.velocita);
 		int b = this.velocita+15; // numero massimo
@@ -34,7 +34,7 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 
 	public void resetSommaVelocita(int velocita) {
 
-		this.velocita=velocita; //indica la velocit� dell'intervallo precedente
+		this.velocita=velocita; //indica la velocita' dell'intervallo precedente
 		this.sommaVelocita = 0;
 	}
 
