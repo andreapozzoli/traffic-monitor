@@ -29,10 +29,10 @@ public class SensoreGPSTelefono extends SensoreGPS implements Serializable{
 		
 		Sheet sheet = wb.getSheet(0);
 		Random random = new Random();
-		int a = 0; // numero minimo
-		int b = 543; // numero massimo
-		int c = ((b-a) + 1);
-		int miavar = random.nextInt(c) + a;
+		int min = 0; // numero minimo
+		int max = 543; // numero massimo
+		int viaCasuale = ((max-min) + 1);
+		int miavar = random.nextInt(viaCasuale) + min;
 		
 		
 		

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public abstract class SensoreGPS implements Serializable{
-	
+	//questa classe è stata implementata perché se si volesse creare un altro tipo di sensore GPS si potrebbe ereditare la struttura
 	private static final long serialVersionUID = -5390680567909102648L;
 	protected Posizione posizione;
 	protected static Posizione listaPosizioni;

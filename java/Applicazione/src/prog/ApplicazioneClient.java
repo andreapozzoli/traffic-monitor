@@ -222,7 +222,7 @@ public class ApplicazioneClient implements Runnable {
 	}
 
 	private void pulisciNotifiche() {
-		this.applicazione.getAreaNotifiche().setText("");
+		this.applicazione.getAreaNotifiche().setText("");	//vengono rimosse tutte le notifiche stampate
 	}
 
 	public void run(){

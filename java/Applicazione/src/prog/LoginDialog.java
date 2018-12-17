@@ -20,7 +20,7 @@ public class LoginDialog extends JDialog {
 
 	public LoginDialog(Frame contenitore, String tipoLogin, IGestoreApplicazioni server) {
 		super(contenitore, "Login", true);
-		//
+		
 		JPanel pannelloInformazioni = new JPanel(new GridBagLayout()); // disposizione degli elementi seguendo una griglia
 		GridBagConstraints disposizioneGriglia = new GridBagConstraints();
 

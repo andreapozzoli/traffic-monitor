@@ -8,7 +8,7 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 	private String tipo;	
 	private String mittente;
 	public NotificaApplicazione(String mittente,Posizione pos, String tipo) {
-		this.tipo=tipo;
+		this.tipo=tipo;		//con tipo si intende il tipo di evento di traffico
 		this.setData(); 
 		this.setOra();
 		this.posizione=pos;

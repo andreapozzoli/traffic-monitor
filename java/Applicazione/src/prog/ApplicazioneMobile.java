@@ -28,8 +28,8 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	private boolean fissa=false;
 
 
+//grafica delle notifiche mostrate all'utente	
 	private JFrame frame;
-
 	private JTextPane areaNotifiche = new JTextPane();
 	private JScrollPane paneNotifiche = new JScrollPane(areaNotifiche);
 	private JLabel posizioneCorrente = new JLabel("Nessuna posizione rilevata.");
@@ -43,10 +43,12 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 	}
 	
-	public void impostaEtichettaPosizione(String via) {
+	public void impostaEtichettaPosizione(String via) {		//stampare l'ultima posizione rilevata
 		posizioneCorrente.setText("Ultima posizione rilevata: " + via);
 	}
 	
+	
+	//getter e setter grafici
 	public JLabel getLabelPosizione() {
 		return posizioneCorrente;
 	}
@@ -78,7 +80,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 
 	
-
+//getter e setter attributi non grafici
 	public void setPosizione (Posizione pos) {
 		this.posizione=pos;
 	}
@@ -87,6 +89,13 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 		return this.sensore;
 	}
 
+	public void setFissa(boolean val) {
+		this.fissa=val;
+	}
+	
+	public boolean getFissa() {
+		return this.fissa;
+	}
 
 	public int getIdentificativo(){
 		return this.identificativo;
@@ -95,8 +104,25 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void setIdentificativo(int id){
 		this.identificativo=id;
 	}
+	
+	public void setUtente(Utente utente) {
+		this.utente=utente;
+	}
 
-	public void aggiornaPosizione() {
+	public Utente getUtente() {
+		return this.utente;
+	}
+		
+	public String getUsernameUtente(){
+		if (this.utente==null) { // in questo modo se l'utente e' null non si accede ad un puntatore nullo
+			return null;
+		}
+		return this.utente.getUsername();
+	}
+
+	
+
+	public void aggiornaPosizione() {	//chiama il sensore gps per aggiornare la posizione
 		try {
 			if (!(this.fissa)) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
 			this.posizione=this.sensore.rilevaPosizione(); // e non viene percio' aggiornata la posizione dell'applicazione
@@ -106,15 +132,8 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 		}
 	}
 	
-	public void setFissa(boolean val) {
-		this.fissa=val;
-	}
-	
-	public boolean getFissa() {
-		return this.fissa;
-	}
 
-	public Posizione getPosizione() {
+	public Posizione getPosizione() {		//è il metodo che viene chiamato dal sistema centrale per ottenere la posizione dell'applicazione
 		if (!(this.fissa)){ // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
 			aggiornaPosizione(); // e non viene percio' aggiornata la posizione dell'applicazione
 		}
@@ -124,13 +143,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	}
 
 
-	public String getUsernameUtente(){
-		if (this.utente==null) { // in questo modo se l'utente e' null non si accede ad un puntatore nullo
-			return null;
-		}
-		return this.utente.getUsername();
-	}
-
+	
 	public void segnalaUtente(NotificaApplicazione notifica) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 
@@ -138,21 +151,14 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 
 		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument(); 
 		try {
-
-			doc.insertBeforeStart(doc.getCharacterElement(0), notifica.stampaNotifica()+"<br>"); // viene stampata la notifica ricevuta nell'apposizta area
+									//le notifiche vengono stampate mettendo la più recente in alto
+			doc.insertBeforeStart(doc.getCharacterElement(0), notifica.stampaNotifica()+"<br>"); // viene stampata la notifica ricevuta nell'apposita area
 		} catch (BadLocationException | IOException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	public void setUtente(Utente utente) {
-		this.utente=utente;
-	}
-
-	public Utente getUtente() {
-		return this.utente;
-	}
 
 	public NotificaApplicazione creaNotificaApplicazione(Posizione pos, String tipo){
 		// metodo di creazione della notifica di tipo NotificaApplicazione
