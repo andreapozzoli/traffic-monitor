@@ -29,6 +29,12 @@ import java.io.IOException;
 
 public class FunzionamentoCentralinaS {
 
+	private static JLabel velocitaCorrente = new JLabel("Velocita' corrente non definita.");
+
+	public static void impostaEtichettaVelocita(int velocita) {
+		velocitaCorrente.setText("Ultima velocita' rilevata: " + velocita + " km/h");
+	}
+	
 	public static void configurazioneGrafica(){
 		try {
 
@@ -43,7 +49,7 @@ public class FunzionamentoCentralinaS {
 
 			cs.fill = GridBagConstraints.BOTH;
 
-			final JLabel labelVia = new JLabel("Via:"); // Etichetta
+			final JLabel labelVia = new JLabel("Via o piazza:"); // Etichetta
 			final JTextField fieldVia = new JTextField(20); // Campo per inserire il nome della via o della piazza (es. via valleggio)
 
 			final JLabel labelTipoStrada = new JLabel("Tipo di strada:"); // etichetta
@@ -61,7 +67,7 @@ public class FunzionamentoCentralinaS {
 			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 90, 1); 
 			final JSpinner spinner = new JSpinner(sceltaIntervallo); // spinner
 
-			// Impostazione dei margini per una migliore disposizioen grafica
+			// Impostazione dei margini per una migliore disposizione grafica
 			labelVia.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			labelTipoStrada.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 0));
 			labelIntervallo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
@@ -107,12 +113,12 @@ public class FunzionamentoCentralinaS {
 
 			velGrid.fill = GridBagConstraints.BOTH;
 
-			final JLabel labelVelocita = new JLabel("Velocit� [km/h]:");
+			final JLabel labelVelocita = new JLabel("Velocita' [km/h]:");
 			final SpinnerNumberModel modelloVelocita = new SpinnerNumberModel(20, 1, 110, 1);
 			final JSpinner spinnerVelocita = new JSpinner(modelloVelocita);
 
-			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocit� iniziale casuale");
-
+			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocita' iniziale casuale");
+			
 			labelVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			spinnerVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			domandaVelocita.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
@@ -125,7 +131,7 @@ public class FunzionamentoCentralinaS {
 
 			velGrid.gridx = 1;
 			velGrid.gridy = 0;
-			velGrid.gridwidth = 2;
+			velGrid.gridwidth = 1;
 			velocitaPanel.add(spinnerVelocita, velGrid);
 
 			spinnerVelocita.setEnabled(true);
@@ -135,6 +141,15 @@ public class FunzionamentoCentralinaS {
 			velGrid.gridwidth = 2;
 			velocitaPanel.add(domandaVelocita, velGrid);
 
+			velocitaCorrente.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
+		    velocitaCorrente.setHorizontalAlignment(JLabel.CENTER);
+
+			velGrid.gridx = 0;
+			velGrid.gridy = 2;
+			velGrid.gridwidth = 2;
+			velocitaPanel.add(velocitaCorrente, velGrid);
+			
+			
 			velocitaPanel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 0));
 
 
@@ -144,7 +159,7 @@ public class FunzionamentoCentralinaS {
 			bottGrid.fill = GridBagConstraints.BOTH;
 
 			JButton btnOK = new JButton("OK"); // bottone
-			JButton btnGeneraTraffico = new JButton("Imporre una velocit�"); // bottone
+			JButton btnGeneraTraffico = new JButton("Imporre una velocita'"); // bottone
 			btnGeneraTraffico.setEnabled(false);
 
 
@@ -169,7 +184,6 @@ public class FunzionamentoCentralinaS {
 			frame.add(bottoniPanel, BorderLayout.PAGE_END);
 
 			frame.pack();
-			frame.setLocationRelativeTo(frame);
 
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // azione predefinita quando si chiude usando il pulsante di chiusura della finestra
 			frame.setSize(470, 250); // dimensione del frame (altezza * larghezza)
@@ -229,10 +243,10 @@ public class FunzionamentoCentralinaS {
 								}
 								else {
 									Random random = new Random();
-									int a=0; // valore minimo di velocità
-									int b=110; // valore massimo di velocità
-									int c = ((b-a) + 1); // range di valori di velocità
-									int vel = random.nextInt(c) + a; // velocità casuale
+									int min =0; // valore minimo di velocità
+									int max =110; // valore massimo di velocità
+									int intorno = ((max-min) + 1); // range di valori di velocità
+									int vel = random.nextInt(intorno) + min; // velocità casuale
 									centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita(vel);
 								}
 

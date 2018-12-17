@@ -136,6 +136,8 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 		else {						
 			this.velocita=0;		
 		}
+		
+		FunzionamentoCentralinaS.impostaEtichettaVelocita(this.velocita);
 	}
 
 	public RilevatoreVeicoli getRilevatoreVeicoli() {
