@@ -103,7 +103,7 @@ public class GestoreDatabase {
 			JOptionPane.showMessageDialog(null, "La mappa non e' disponibile.");
 		}
 
-		if (!(datoGenerico.getTipo().equals("traffico nella norma"))){
+		if (!(datoGenerico.getTipo().endsWith("Traffico nella norma"))){
 			// Non ci sono notifiche se il traffico e' del tipo "traffico nella norma"
 			// le applicazioni da notificare sono quelle nel raggio di 500 m dalla segnalazione
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
