@@ -17,7 +17,6 @@ public class GestoreCentralineServer implements Runnable {
 
 		} catch (Exception e) {
 			
-			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle centraline e' gia'  in uso");
 		} 
 
 	}

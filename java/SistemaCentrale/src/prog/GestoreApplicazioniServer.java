@@ -17,7 +17,7 @@ public class GestoreApplicazioniServer implements Runnable{
 			registry.rebind("gestApp", GestoreApplicazioni.getInstance());
 
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle applicazioni mobili e' gia'  in uso");
+			JOptionPane.showMessageDialog(null, "Il sistema e' gia'  in uso");
 		} 
 
 	}
