@@ -32,7 +32,6 @@ public class RilevatoreVeicoli implements Runnable {
 		int b = 1; // numero massimo
 		int c = ((b-a) + 1);
 		int rilevato= random.nextInt(c) + a;
-		System.out.println("veicolo: " + rilevato);
 		if (rilevato==1) {
 			this.numeroVeicoli++;
 			this.rilevatoreVelocita.rilevaVelocita();
