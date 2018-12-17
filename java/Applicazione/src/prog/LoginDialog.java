@@ -2,10 +2,8 @@ package prog;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.rmi.RemoteException;
 
 import javax.swing.*;
-
 
 public class LoginDialog extends JDialog {
 
@@ -18,7 +16,7 @@ public class LoginDialog extends JDialog {
 	private JButton btnAnnulla;
 	private boolean riuscito;
 
-	public LoginDialog(Frame contenitore, String tipoLogin, IGestoreApplicazioni server) {
+	public LoginDialog(Frame contenitore, String tipoLogin) {
 		super(contenitore, "Login", true);
 		//
 		JPanel pannelloInformazioni = new JPanel(new GridBagLayout()); // disposizione degli elementi seguendo una griglia
@@ -57,30 +55,26 @@ public class LoginDialog extends JDialog {
 		btnLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				try {
-					if(Login.autenticazione(getUsername(), getPassword(), tipoLogin, server)) {
-						JOptionPane.showMessageDialog(LoginDialog.this,
-								"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
-								"Login", // titolo della finestra
-								JOptionPane.INFORMATION_MESSAGE); // messaggio di informazione
-						riuscito = true;
-						dispose(); // chiusura della finestra
-					} else {
-						JOptionPane.showMessageDialog(LoginDialog.this,
-								"Le credenziali di accesso non sono valide.",
-								"Login", // titolo della finestra
-								JOptionPane.ERROR_MESSAGE); // messaggio di errore
+				if(Login.autenticazione(getUsername(), getPassword(), tipoLogin)) {
+					JOptionPane.showMessageDialog(LoginDialog.this,
+							"Benvenuto/a " + getUsername() + "! Login effettuato con successo.",
+							"Login", // titolo della finestra
+							JOptionPane.INFORMATION_MESSAGE); // messaggio di informazione
+					riuscito = true;
+					dispose(); // chiusura della finestra
+				} else {
+					JOptionPane.showMessageDialog(LoginDialog.this,
+							"Le credenziali di accesso non sono valide.",
+							"Login", // titolo della finestra
+							JOptionPane.ERROR_MESSAGE); // messaggio di errore
 
-						// reset dei campi username e password
-						fieldUsername.setText("");
-						fieldPassword.setText("");
-						riuscito = false;
+					// reset dei campi username e password
+					fieldUsername.setText("");
+					fieldPassword.setText("");
+					riuscito = false;
 
-					}
-				} catch (HeadlessException | RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				}
+
 			}
 		});
 		btnAnnulla = new JButton("Annulla");
@@ -93,7 +87,7 @@ public class LoginDialog extends JDialog {
 		JPanel pannelloBottoni = new JPanel();
 		pannelloBottoni.add(btnLogin);
 		pannelloBottoni.add(btnAnnulla);
-		
+
 		pannelloBottoni.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
 
 		getContentPane().add(pannelloInformazioni, BorderLayout.CENTER);

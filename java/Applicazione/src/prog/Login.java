@@ -1,19 +1,15 @@
 package prog;
 
-import java.rmi.RemoteException;
-
-// basato su http://www.zentut.com/java-swing/simple-login-dialog/
-
 public class Login {
 
-	public static boolean autenticazione(String username, String password, String tipoUtente, IGestoreApplicazioni server) throws RemoteException {
-		// metodo per verificare che l'utente che sta facendo il login sia registrato
-		if(tipoUtente.equals("U"))
+	public static boolean autenticazione(String username, String password, String tipoUtente) {
+		if(tipoUtente.equals("A"))
 		{
-			if(server.verificaAccesso(username, password)) {
 
-				return true;
-			}
+				if(GestoreAmministratori.getInstance().riconosciAmministratore(username, password)) {
+
+					return true;
+				}
 
 			return false;
 		}
@@ -23,14 +19,14 @@ public class Login {
 		}
 	}
 	
-	public static boolean autenticazione(String username,String tipoUtente, IGestoreApplicazioni server) throws RemoteException {
-		// metodo per verificare che l'username immesso dall'utente che si sta registrando non sia gi� in uso
-		if(tipoUtente.equals("U"))
+	public static boolean autenticazione(String username,String tipoUtente) {
+		if(tipoUtente.equals("A"))
 		{
-			if(server.verificaAccesso(username)) {
 
-				return true;
-			}
+				if(GestoreAmministratori.getInstance().riconosciAmministratore(username)) {
+
+					return true;
+				}
 
 			return false;
 		}
