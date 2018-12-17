@@ -2,6 +2,7 @@ package prog;
 import java.util.ArrayList;
 
 public class GestoreUtenti {
+	//classe necessaria a salavre i dati relativi agli utenti
 	private ArrayList<Utente> listaUtenti;
 	private static GestoreUtenti instance=null;
 
@@ -16,6 +17,7 @@ public class GestoreUtenti {
 		return instance;
 	}
 	public void aggiungiUtente(Utente utente) {
+		//metodo per aggiungere un nuovo utente alla lista degli utenti registrati
 		this.listaUtenti.add(utente);
 	}
 
@@ -24,6 +26,7 @@ public class GestoreUtenti {
 	}
 
 	public void rimuoviUtente(String username) {
+		//metodo per rimuovere un utente dalla lista degli utenti registrati
 		for(Utente var : this.listaUtenti) {
 			if (var.getUsername().equals(username)) {
 				this.listaUtenti.remove(var);
