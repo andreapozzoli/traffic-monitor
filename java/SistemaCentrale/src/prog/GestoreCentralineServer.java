@@ -2,7 +2,7 @@ package prog;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import javax.swing.JOptionPane;
+
 
 public class GestoreCentralineServer implements Runnable {
 
