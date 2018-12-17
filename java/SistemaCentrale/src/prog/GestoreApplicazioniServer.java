@@ -15,7 +15,6 @@ public class GestoreApplicazioniServer implements Runnable{
 			registry = LocateRegistry.createRegistry(12345);
 
 			registry.rebind("gestApp", GestoreApplicazioni.getInstance());
-			System.out.println("Server online");
 
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Il sistema per la gestione delle applicazioni mobili e' gia'  in uso");

@@ -13,7 +13,6 @@ public class GestoreCentralineServer implements Runnable {
 			registry = LocateRegistry.createRegistry(12344);
 
 			registry.rebind("gestCent", GestoreCentraline.getInstance());
-			System.out.println("Server online");
 			FunzionamentoSistemaCentrale.loginGrafico();
 
 		} catch (Exception e) {
