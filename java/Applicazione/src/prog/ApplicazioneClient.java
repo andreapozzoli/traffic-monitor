@@ -192,7 +192,12 @@ public class ApplicazioneClient implements Runnable {
 			try {
 				logout();
 			} catch (RemoteException e1) {
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+						"Il sistema centrale non e' disponibile.\n"
+						+"L'applicazione verra' chiusa.",
+								"Errore di connessione",
+								JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
 			}
 		});
 

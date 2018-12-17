@@ -74,7 +74,7 @@ public class GestoreDatabase {
 			int minArr=this.tabellaTraffico.get(i).getMinA();
 			int oraArr=this.tabellaTraffico.get(i).getOraA();
 
-			// serve per eliminare le notifiche dalla mappa dopo tre minuti dalla visualizzazione, tempo dopo il quale vengono considerate obsolete
+			// serve per eliminare le notifiche dalla mappa dopo due minuti dalla visualizzazione, tempo dopo il quale vengono considerate obsolete
 			// In ogni caso le centraline continuano a notificare e, in caso di eventi di traffico, generalmente non passa molto tempo tra una notifica e la successiva
 			// Per quanto riguarda le segnalazioni di coda da parte delle applicazioni, si suppone che in una situazione reale, laddove si formi una coda piu' persone continuino a notificarne la presenza
 			// Una coda, inoltre, potrebbe esaurirsi in breve tempo per cause di vari tipi, di conseguenza mantenere una segnalazione troppo a lungo potrebbe trasmettere informazioni fuorvianti
