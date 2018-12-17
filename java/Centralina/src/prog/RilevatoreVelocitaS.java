@@ -15,24 +15,24 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 		
 		
 		Random random = new Random();
-		int a;
-		int b;
+		int min;
+		int max;
 		if (this.velocita>15) {
-		     a = this.velocita-15; // numero minimo
+		     min = this.velocita-15; // numero minimo
 		}
 		else {
-		      a =0;
+		      min =0;
 		}
 		System.out.println(this.velocita);
 		if(this.velocita<95) {
-		b = this.velocita+15;
+		max = this.velocita+15;
 		} // numero massimo
 		else {
-			b=110;
+			max=110;
 		}
-		int c = ((b-a) + 1);
+		int intorno = ((max-min) + 1);
 		
-		int vel = random.nextInt(c) + a;
+		int vel = random.nextInt(intorno) + min;
 		System.out.println("vel "+vel);
 		this.sommaVelocita=this.sommaVelocita+vel;
 	}

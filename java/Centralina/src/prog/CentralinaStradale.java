@@ -70,10 +70,13 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 	public float getRapporto () {
 		return this.rapporto;
 	}
+	public DatoTraffico getDatoTraffico() {
+		return this.datoTraffico;
+	}
 	public int getIntervalloMinimo() {				
 		return this.intervalloMinimo;
 	}
-	public void setIntervalloMinimo(int intervalloMinimo) {		//!!!!!!!!!!!!!!!!!!!
+	public void setIntervalloMinimo(int intervalloMinimo) {		
 		this.intervalloMinimo=intervalloMinimo;
 	}
 	public String getTipoStrada() {
@@ -130,7 +133,7 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 		if (numeroVeicoli!=0) {
 			this.velocita=(int)(somma/numeroVeicoli);
 		}
-		else {							//!!!!!!!!!!!!!!!!!!!
+		else {						
 			this.velocita=0;		
 		}
 	}
