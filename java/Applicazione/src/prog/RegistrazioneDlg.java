@@ -2,7 +2,7 @@ package prog;
 
 import java.awt.*;
 import java.awt.event.*;
-
+import java.rmi.RemoteException;
 
 import javax.swing.*;
 
@@ -19,7 +19,7 @@ public class RegistrazioneDlg extends JDialog {
 	private JButton btnAnnulla;
 	private boolean riuscito;
 
-	public RegistrazioneDlg(Frame parent, String tipoRegistrazione) {
+	public RegistrazioneDlg(Frame parent, String tipoRegistrazione, IGestoreApplicazioni server) {
 		super(parent, "Registrazione", true);
 		//
 		JPanel pannelloInformazioni = new JPanel(new GridBagLayout());
@@ -58,6 +58,7 @@ public class RegistrazioneDlg extends JDialog {
 		btnRegistrazione.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				try {
 				String nome=getUsername();
 				String pass=getPassword();
 				if (nome.equals("") || pass.equals("")) {
@@ -70,23 +71,27 @@ public class RegistrazioneDlg extends JDialog {
 					fieldPassword.setText("");
 					riuscito = false;
 				}
+				
+				else if(!(Login.autenticazione(nome, tipoRegistrazione, server))) {
+						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+								"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
+								"Registrazione",
+								JOptionPane.INFORMATION_MESSAGE);
+						riuscito = true;
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+								"Username gia' in uso.",
+								"Registrazione",
+								JOptionPane.ERROR_MESSAGE);
 
-				else if(!(Login.autenticazione(nome, tipoRegistrazione))) {
-					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Benvenuto/a " + getUsername() + "! Registrazione effettuata con successo.",
-							"Registrazione",
-							JOptionPane.INFORMATION_MESSAGE);
-					riuscito = true;
-					dispose();
-				} else {
-					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
-							"Username gi� in uso.",
-							"Registrazione",
-							JOptionPane.ERROR_MESSAGE);
+						fieldUsername.setText("");
+						fieldPassword.setText("");
+						riuscito = false;
 
-					fieldUsername.setText("");
-					fieldPassword.setText("");
-					riuscito = false;
+					}
+				} catch (HeadlessException | RemoteException e1) {
+					e1.printStackTrace();
 				}
 			}
 		});
@@ -100,7 +105,7 @@ public class RegistrazioneDlg extends JDialog {
 		JPanel pannelloBottoni = new JPanel();
 		pannelloBottoni.add(btnRegistrazione);
 		pannelloBottoni.add(btnAnnulla);
-
+		
 		pannelloBottoni.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
 
 

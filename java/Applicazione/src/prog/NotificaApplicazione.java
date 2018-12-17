@@ -2,10 +2,8 @@ package prog;
 
 import java.io.Serializable;
 
-
 public class NotificaApplicazione extends Notifica implements Serializable{
-
-
+	
 	private static final long serialVersionUID = -2638683854845954842L;
 	private String tipo;	
 	private String mittente;
@@ -20,30 +18,25 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}
-
+	
 	public String getMittente() {
 		return this.mittente;
 	}
-
+	
 	public void setMittente(String mittente) {
 		this.tipo=mittente;
 	}
-
+	
 	public String getTipo() {
 		return this.tipo;
 	}
-
+	
+	//nuovo
 	public String stampaNotifica() {
-
-		/* La stringa è in formato HTML per permettere 
-		 * all'utente di capire rapidamente la tipologia
-		 * degli eventi di traffico che lo circondano.
-		 * Con questo formato, infatti, è possibile scegliere
-		 * colori diversi per notifiche diverse.
-		 */
+		// metodo per stampare la notifica 
+		// viene usato un colore diverso per il tipo di evento occorso
 		String finale = new String();
-
-		// Impostazione del colore in base al tipo di notifica
+		
 		if(this.getTipo().substring(this.getTipo().indexOf(' ')+1).equals("Coda"))
 		{
 			finale = "<font color=\"red\">";
@@ -56,25 +49,24 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 		{
 			finale = "<font color=\"blue\">";
 		}
-		else // Evento non definito (ad esempio traffico nella norma, oppure una stringa generica)
+		else
 		{
 			finale = "<font color=\"green\">";
 		}
-		
 		finale += this.getData()
 				+ ", "
 				+ this.getOra()
 				+ " | "
 				+ this.getTipo().substring(this.getTipo().indexOf(' ')+1)
 				+ " in "
-				+ this.posizione.getVia();
-		if(this.getTipo().substring(0,1).equals("M")) // M si riferisce alle applicazioni mobili
+				+ inizialiMaiuscole(this.posizione.getVia());
+		if(this.getTipo().substring(0,1).equals("M"))
 		{
-			// non viene aggiunto nulla perché le applicazioni mobili non registrano la velocità
+			// niente
 		}
-		else // caso generico (il formato standard è S per le centraline stradali)
+		else
 		{
-			finale += " ad una velocità media di "
+			finale += " ad una velocita' media di "
 					+ this.getTipo().substring(1, this.getTipo().indexOf(' '))
 					+ " km/h";
 		}
@@ -82,5 +74,16 @@ public class NotificaApplicazione extends Notifica implements Serializable{
 
 
 		return finale;
-	}	
+	}
+	
+	private static String inizialiMaiuscole(String stringaDaTrasformare) {
+		String[] parole = stringaDaTrasformare.split(" ");
+
+		for(int p=0; p<parole.length; ++p) {
+			parole[p] = parole[p].substring(0,1).toUpperCase() + parole[p].substring(1).toLowerCase();
+		}
+								
+		return String.join(" ", parole);
+	}
+	
 }

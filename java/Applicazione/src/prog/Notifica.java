@@ -8,15 +8,18 @@ public abstract class Notifica implements Serializable{
 	protected String data;
 	protected String ora;
 	protected Posizione posizione;
+	
 	protected int minutoArrivo;
 	protected int oraArrivo;
 
 	public void setData() {
+		// metodo per rilevare la data del momento in cui viene creata la notifica
 		GregorianCalendar dat = new GregorianCalendar();
 		this.data = dat.get(Calendar.DAY_OF_MONTH)+ "/" + (dat.get(Calendar.MONTH)+1) + "/" + dat.get(Calendar.YEAR);		
 	}
 
 	public void setOra() {
+		// metodo per rilevare l'ora del momento in cui viene creata la notifica
 		GregorianCalendar dat = new GregorianCalendar();
 		int a=dat.get(Calendar.HOUR);
 		String a1="";
@@ -42,8 +45,7 @@ public abstract class Notifica implements Serializable{
 		else {
 			c1=""+c;
 		}
-		this.ora = a1 + ":" + b1 + ":" + c1;
-		this.oraArrivo=dat.get(Calendar.HOUR);
+		this.ora = a1 + ":" + b1 + ":" + c1;		this.oraArrivo=dat.get(Calendar.HOUR);
 		this.minutoArrivo=dat.get(Calendar.MINUTE);
 	}
 	
@@ -54,24 +56,23 @@ public abstract class Notifica implements Serializable{
 	public int getOraA() {
 		return this.oraArrivo;
 	}
-
-	public String getData() {
 	
+	public String getData() {
 		return this.data;
 	}
-
+	
 	public String getOra() {
 		return this.ora;
 	}
-
+	
 	public void setPosizione(Posizione pos) {
 		this.posizione = pos;		
 	}
-
+	
 	public Posizione getPosizione() {
 		return this.posizione;
 	}
-
-
+	
+	
 
 }

@@ -32,7 +32,7 @@ public class ApplicazioneClient implements Runnable {
 	private void segnalaCoda() throws BiffException, IOException  {
 
 		if (!applicazione.getFissa()) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
-			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione()); // e non viene perci� aggiornata la posizione dell'applicazione
+			this.applicazione.setPosizione(this.applicazione.getSensore().rilevaPosizione()); // e non viene percio' aggiornata la posizione dell'applicazione
 		}
 		NotificaApplicazione notifica=new NotificaApplicazione(this.applicazione.getUsernameUtente(), this.applicazione.getPosizione(), "M10 Coda"); // viene creata la notifica
 		server.segnalaDatabase(notifica); // viene inviata la notifica al sistema centrale
@@ -190,7 +190,6 @@ public class ApplicazioneClient implements Runnable {
 			try {
 				logout();
 			} catch (RemoteException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		});
@@ -212,7 +211,6 @@ public class ApplicazioneClient implements Runnable {
 				try {
 					logout();
 				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}

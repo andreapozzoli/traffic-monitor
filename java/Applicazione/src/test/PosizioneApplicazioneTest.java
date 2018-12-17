@@ -26,7 +26,7 @@ public class PosizioneApplicazioneTest {
 	@Test
 	void test() throws BiffException, RemoteException, IOException {
 		Posizione pos2=app.getPosizione();
-		assertTrue(pos.equals(pos2), "posizioni devono essere uguali");
+		assertTrue(pos.equals(pos2), "Le posizioni devono essere uguali.");
 		
 		
 	}
@@ -36,7 +36,7 @@ public class PosizioneApplicazioneTest {
 		Posizione pos2=app.getPosizione();
 		app.setFissa(false);
 		Posizione pos3=app.getPosizione();
-		assertFalse(pos.equals(pos3), "posizioni devono essere diverse");
+		assertFalse(pos.equals(pos3), "Le posizioni devono essere diverse.");
 	}
 
 

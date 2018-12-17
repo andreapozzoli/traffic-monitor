@@ -29,14 +29,14 @@ public class SegnalaApplicazioneTest {
 
 	@Test
 	void test() throws BiffException, RemoteException, IOException {
-		assertEquals(app.getListaNotifiche().size(), 3,"devono esserci tre notifiche");
+		assertEquals(app.getListaNotifiche().size(), 3,"Devono esserci tre notifiche.");
 
 	}
 
 	@Test
 	void test2() throws BiffException, RemoteException, IOException {
 		app.svuotaLista();
-		assertEquals(app.getListaNotifiche().size(), 0,"devono esserci zero notifiche");
+		assertEquals(app.getListaNotifiche().size(), 0,"Devono esserci zero notifiche.");
 
 	}
 

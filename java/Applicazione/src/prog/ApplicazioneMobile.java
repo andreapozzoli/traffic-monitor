@@ -112,7 +112,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	}
 
 	public String getUsernameUtente(){
-		if (this.utente==null) { // in questo modo se l'utente è null non si accede ad un puntatore nullo
+		if (this.utente==null) { // in questo modo se l'utente e' null non si accede ad un puntatore nullo
 			return null;
 		}
 		return this.utente.getUsername();
@@ -121,7 +121,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void segnalaUtente(NotificaApplicazione notifica) {
 		//metodo per segnalare all'utente la ricezione di una notifica
 
-		this.areaNotifiche.setContentType("text/html"); // in questo modo è possibile colorare le notifiche in modo diverso
+		this.areaNotifiche.setContentType("text/html"); // in questo modo e' possibile colorare le notifiche in modo diverso
 
 		HTMLDocument doc =(HTMLDocument)areaNotifiche.getStyledDocument(); 
 		try {

@@ -3,7 +3,9 @@ package prog;
 import java.io.Serializable;
 
 public class Posizione implements Serializable{
-
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 3583111686129194940L;
 	private double latitudine;
 	private double longitudine;
@@ -18,7 +20,8 @@ public class Posizione implements Serializable{
 		this.longitudine = lon;
 	} 
 
-	public boolean equals(Posizione pos) { // override di equals per la posizione
+	public boolean equals(Posizione pos) {
+		// override dell'equals della classe Object necessario per il confronto tra posizioni
 		if (pos == null) return false;
 
 		return ((this.latitudine == pos.getLatitudine())
