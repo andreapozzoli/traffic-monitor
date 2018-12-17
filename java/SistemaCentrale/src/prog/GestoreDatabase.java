@@ -30,9 +30,10 @@ public class GestoreDatabase {
 		return this.tabellaTraffico;
 	}
 	public void aggiungiNotificaApplicazione(NotificaApplicazione notifica) throws NotBoundException {
-		//verificare che non sia gia' presente
+		//metodo per aggiungere una nuova notifica del tipo NotificaApplicazione alla lista
 		this.listaNotificheApplicazioni.add(notifica);
 		try {
+			//una volta aggiunta la notifica viene chiamato il metodo apposito per aggiornare la tabella di traffico
 			aggiornaTabellaTraffico(notifica.getMittente(),notifica.getPosizione(), notifica.getTipo(), notifica.getData(), notifica.getOra(), notifica.getMinA(), notifica.getOraA());
 		} catch (BiffException | IOException e) {
 			e.printStackTrace();
@@ -52,10 +53,12 @@ public class GestoreDatabase {
 
 
 	public void rimuoviNotificaApplicazione (NotificaApplicazione notifica) {
+		//metodo per rimuovere una notifica del tipo NotificaApplicazione dalla lista
 		this.listaNotificheApplicazioni.remove(notifica);
 	}
 
 	public void rimuoviDatoTraffico (DatoTraffico dato) {
+		//metodo per rimuovere una notifica del tipo DatoTraffico dalla lista
 		this.listaDatoTraffico.remove(dato);
 	}
 
@@ -105,13 +108,14 @@ public class GestoreDatabase {
 		}
 
 		if (!(datoGenerico.getTipo().endsWith("Traffico nella norma"))){
-			// Non ci sono notifiche se il traffico e' del tipo "traffico nella norma"
+			// Non ci sono notifiche se il traffico e' del tipo "Traffico nella norma"
 			// le applicazioni da notificare sono quelle nel raggio di 500 m dalla segnalazione
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
 		}
 	}
 
 	public DatoGenerico creaDatoGenerico(Posizione pos, String tipo, String data, String ora, int minA, int oraA) {
+		// metodo per trasformare una notifica di qualsiasi tipo in dato di tipo DatoGenerico
 		return new DatoGenerico(pos, tipo, data, ora, minA, oraA);
 	}
 
