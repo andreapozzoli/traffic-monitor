@@ -130,6 +130,8 @@ public class ApplicazioneClient implements Runnable {
 	public void logout() throws RemoteException { // se l'utente decide di fare il logout dall'applicazione, viene settato l'utente a null
 		this.applicazione.setUtente(null);        // e viene rimossa l'applicazione dall'elenco delle applicazioni segnalabili dal sistema centrale
 		server.rimuoviApplicazione(this.applicazione.getIdentificativo());
+		this.applicazione.svuotaLista();
+		this.pulisciNotifiche();
 		this.applicazione.getFrame().setVisible(false);  // viene chiusa la finestra di segnalazione
 		this.loginGrafico(this.applicazione.getIdentificativo()); // viene fatto ripartire il login
 	}
