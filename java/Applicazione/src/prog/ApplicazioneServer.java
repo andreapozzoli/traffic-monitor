@@ -17,7 +17,6 @@ private ApplicazioneMobile applicazione;
 		try {
 			registry = LocateRegistry.createRegistry(12346+this.applicazione.getIdentificativo());
 			registry.rebind("appServer", this.applicazione);
-			System.out.println("Server online");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

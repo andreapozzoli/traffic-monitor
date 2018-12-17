@@ -99,7 +99,7 @@ public class ApplicazioneMobile extends UnicastRemoteObject implements IApplicaz
 	public void aggiornaPosizione() {
 		try {
 			if (!(this.fissa)) { // in questo modo se l'utente vuole tenere fissa l'applicazione gli basta spuntare la casella dedicata 
-			this.posizione=this.sensore.rilevaPosizione(); // e non viene perci� aggiornata la posizione dell'applicazione
+			this.posizione=this.sensore.rilevaPosizione(); // e non viene percio' aggiornata la posizione dell'applicazione
 			}
 		} catch (BiffException | IOException e) {
 			e.printStackTrace();
