@@ -3,12 +3,12 @@ import java.io.Serializable;
 import java.util.*;
 
 public abstract class Notifica implements Serializable{
-	
+
 	private static final long serialVersionUID = -6817643823377378061L;
 	protected String data;
 	protected String ora;
 	protected Posizione posizione;
-	
+
 	protected int minutoArrivo;
 	protected int oraArrivo;
 
@@ -48,31 +48,31 @@ public abstract class Notifica implements Serializable{
 		this.ora = a1 + ":" + b1 + ":" + c1;		this.oraArrivo=dat.get(Calendar.HOUR);
 		this.minutoArrivo=dat.get(Calendar.MINUTE);
 	}
-	
+
 	public int getMinA() {
 		return this.minutoArrivo;
 	}
-	
+
 	public int getOraA() {
 		return this.oraArrivo;
 	}
-	
+
 	public String getData() {
 		return this.data;
 	}
-	
+
 	public String getOra() {
 		return this.ora;
 	}
-	
+
 	public void setPosizione(Posizione pos) {
 		this.posizione = pos;		
 	}
-	
+
 	public Posizione getPosizione() {
 		return this.posizione;
 	}
-	
-	
+
+
 
 }

@@ -1,7 +1,7 @@
 package prog;
 public abstract class RilevatoreVelocita {
 	protected int velocita;
-	
+
 
 	public int getVelocita() {
 		return this.velocita;
@@ -11,6 +11,6 @@ public abstract class RilevatoreVelocita {
 	}
 
 	public abstract void rilevaVelocita();
-	
+
 
 }

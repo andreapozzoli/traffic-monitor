@@ -1,14 +1,14 @@
 package prog;
 
 public abstract class Centralina implements Runnable {
-	protected String tipo;				//tipo indica il tipo di evento di traffico: coda, traffico elevato, velocità lenta o traffico nella norma
+	protected String tipo;				//tipo indica il tipo di evento di traffico: coda, traffico elevato, velocita' lenta o traffico nella norma
 	protected Posizione posizione;
-	protected int velocita;				//per velocità si intende la velocità media in un intervallo di tempo
+	protected int velocita;				//per velocita' si intende la velocita' media in un intervallo di tempo
 	protected RilevatoreVelocita rilevatoreVelocita;
-	
-	
-	//di seguito ci sono i setter e i getter di tipo, posizione e velocità
-	
+
+
+	//di seguito ci sono i setter e i getter di tipo, posizione e velocita'
+
 	public String getTipo() {
 		return this.tipo;
 	}

@@ -34,7 +34,7 @@ public class FunzionamentoCentralinaS {
 	public static void impostaEtichettaVelocita(int velocita) {
 		velocitaCorrente.setText("Ultima velocita' rilevata: " + velocita + " km/h");
 	}
-	
+
 	public static void configurazioneGrafica(){
 		try {
 
@@ -59,11 +59,11 @@ public class FunzionamentoCentralinaS {
 			final JComboBox listaTipoStrada = new JComboBox(scelteTipoStrada); // impostazione della lista di scelta
 
 			final JLabel labelIntervallo = new JLabel("Intervallo di tempo iniziale [s]:"); // etichetta
-			
+
 			/* modello per lo spinner per selezionare l'intervallo di aggiornamento iniziale
 			 * (minimo: 10, valore mostrato 
 			 * inizialmente: 10, massimo: 360 000, step: 1) */
-			
+
 			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 90, 1); 
 			final JSpinner spinner = new JSpinner(sceltaIntervallo); // spinner
 
@@ -118,7 +118,7 @@ public class FunzionamentoCentralinaS {
 			final JSpinner spinnerVelocita = new JSpinner(modelloVelocita);
 
 			JCheckBox domandaVelocita = new JCheckBox("Selezionare per impostare una velocita' iniziale casuale");
-			
+
 			labelVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			spinnerVelocita.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 			domandaVelocita.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0));
@@ -142,14 +142,14 @@ public class FunzionamentoCentralinaS {
 			velocitaPanel.add(domandaVelocita, velGrid);
 
 			velocitaCorrente.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
-		    velocitaCorrente.setHorizontalAlignment(JLabel.CENTER);
+			velocitaCorrente.setHorizontalAlignment(JLabel.CENTER);
 
 			velGrid.gridx = 0;
 			velGrid.gridy = 2;
 			velGrid.gridwidth = 2;
 			velocitaPanel.add(velocitaCorrente, velGrid);
-			
-			
+
+
 			velocitaPanel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 0));
 
 
@@ -191,17 +191,17 @@ public class FunzionamentoCentralinaS {
 			frame.setVisible(true);
 
 
-			
 
-			
-			domandaVelocita.addActionListener( // comportamento quando si vuole imporre una velocità casuale
+
+
+			domandaVelocita.addActionListener( // comportamento quando si vuole imporre una velocita' casuale
 					new ActionListener(){
 						public void actionPerformed(ActionEvent e) {
-							spinnerVelocita.setEnabled(!spinnerVelocita.isEnabled()); // cambia lo stato di attivazione dello spinner di velocità
+							spinnerVelocita.setEnabled(!spinnerVelocita.isEnabled()); // cambia lo stato di attivazione dello spinner di velocita'�
 							btnGeneraTraffico.setEnabled(spinnerVelocita.isEnabled() && !btnOK.isEnabled()); 
-							/* attiva il bottone per l'imposizione della velocità se lo spinner è abilitato e il bottone OK è disabilitato
-							 * (quindi è possibile abilitare il bottone soltanto dopo l'avvio della centralina e solo se è stata selezionata
-							 * una velocità da imporre).
+							/* attiva il bottone per l'imposizione della velocita'� se lo spinner e' abilitato e il bottone OK e' disabilitato
+							 * (quindi e' possibile abilitare il bottone soltanto dopo l'avvio della centralina e solo se e' stata selezionata
+							 * una velocita' da imporre).
 							 */
 						}
 					});
@@ -224,7 +224,7 @@ public class FunzionamentoCentralinaS {
 								}
 							}
 							if(!trovato) { // se l'indirizzo non viene trovato
-								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non � stato trovato.");
+								JOptionPane.showMessageDialog(frame, "L'indirizzo inserito non e' stato trovato.");
 							}
 							else
 							{
@@ -236,21 +236,21 @@ public class FunzionamentoCentralinaS {
 								int intervallo = (int) spinner.getModel().getValue();
 
 								CentralinaStradale centralina=new CentralinaStradale(intervallo,posizione,tipoStrada);
-								
+
 								if(spinnerVelocita.isEnabled())
 								{
 									centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita((int) spinnerVelocita.getModel().getValue());
 								}
 								else {
 									Random random = new Random();
-									int min =0; // valore minimo di velocità
-									int max =110; // valore massimo di velocità
-									int intorno = ((max-min) + 1); // range di valori di velocità
-									int vel = random.nextInt(intorno) + min; // velocità casuale
+									int min =0; // valore minimo di velocita'�
+									int max =110; // valore massimo di velocita'
+									int intorno = ((max-min) + 1); // range di valori di velocita'
+									int vel = random.nextInt(intorno) + min; // velocita' casuale
 									centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita(vel);
 								}
 
-								// Vengono disabilitati gli oggetti non più utilizzati e attivati quelli utilizzabili
+								// Vengono disabilitati gli oggetti non piu' utilizzati e attivati quelli utilizzabili
 								fieldVia.setEnabled(false);
 								spinner.setEnabled(false);
 								listaTipoStrada.setEnabled(false);
@@ -258,7 +258,7 @@ public class FunzionamentoCentralinaS {
 								btnGeneraTraffico.setEnabled(true);
 								domandaVelocita.setEnabled(false);
 								spinnerVelocita.setEnabled(true);
-																
+
 								// Impostazione del titolo della finestra
 								String titolo = frame.getTitle() + " (" + inizialiMaiuscole(fieldVia.getText()) + ")";
 								frame.setTitle(titolo);
@@ -266,16 +266,16 @@ public class FunzionamentoCentralinaS {
 								btnGeneraTraffico.addActionListener(
 										new ActionListener(){
 											public void actionPerformed(ActionEvent e) {
-												if(spinnerVelocita.isEnabled()) { // imponi la velocità selezionata in quell'istante
+												if(spinnerVelocita.isEnabled()) { // imponi la velocita' selezionata in quell'istante
 													centralina.getRilevatoreVeicoli().getRilevatoreVelocita().setVelocita((int) spinnerVelocita.getModel().getValue());
 												}
 												else
 												{
-													JOptionPane.showMessageDialog(frame, "Nessuna velocit� selezionata.");
+													JOptionPane.showMessageDialog(frame, "Nessuna velocita' selezionata.");
 												}
 											}
 										});
-								
+
 								//thread rilevatore veicoli
 								Thread t1=new Thread(centralina.getRilevatoreVeicoli());
 								t1.start();
@@ -284,8 +284,8 @@ public class FunzionamentoCentralinaS {
 								//scaduto l'intervallo calcola immediatamente quello successivo e crea il dato di traffico
 								Thread t2=new Thread(centralina);
 								t2.start();
-								
-								
+
+
 							}
 						}
 
@@ -297,19 +297,18 @@ public class FunzionamentoCentralinaS {
 
 
 		} catch (BiffException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	private static String inizialiMaiuscole(String stringaDaTrasformare) {
 		String[] parole = stringaDaTrasformare.split(" ");
 
 		for(int p=0; p<parole.length; ++p) {
 			parole[p] = parole[p].substring(0,1).toUpperCase() + parole[p].substring(1).toLowerCase();
 		}
-								
+
 		return String.join(" ", parole);
 	}
 
@@ -320,7 +319,7 @@ public class FunzionamentoCentralinaS {
 	}
 
 
-	
+
 
 
 

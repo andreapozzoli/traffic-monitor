@@ -9,15 +9,15 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
 
-public class CentralinaStradale extends Centralina {	//� la classe che contiene il run della centralina stradale e 
-														//funge da client nella connessione rmi con il gestore centraline
-	
+public class CentralinaStradale extends Centralina {	//e' la classe che contiene il run della centralina stradale e 
+	//funge da client nella connessione rmi con il gestore centraline
+
 	private int intervalloDiTempo;
 	private RilevatoreVeicoli rilevatoreVeicoli;
-	private DatoTraffico datoTraffico;				//� il dato che viene inviato al sistema centrale
+	private DatoTraffico datoTraffico;				//e' il dato che viene inviato al sistema centrale
 	private float rapporto;							//serve per calcolare il nuovo intervallo di tempo
 	private int intervalloMinimo;
-	private String tipoStrada;						//pu� essere urbana, extraurbana, superstrada
+	private String tipoStrada;						//puo' essere urbana, extraurbana, superstrada
 	private int idCentralinaStradale;
 	private RilevatoreVelocitaS rilevatoreVelocita;
 	private IGestoreCentraline centServer;			//interfaccia del server rmi del GestoreCentraline
@@ -35,19 +35,19 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 
 	}
 	public void calcolaIntervallo(int numeroVeicoli) {			//metodo per l'aggiornamento dell'intervallo di tempo
-																//in proporzione al traffico che � espresso in macchine al secondo
-		
+		//in proporzione al traffico che e' espresso in macchine al secondo
+
 		float temp=((float)numeroVeicoli)/((float)this.intervalloDiTempo);		//rapporto tra il numero di veicoli transitati 
-																				//nell'intervallo di tempo e l'intervallo di tempo
+		//nell'intervallo di tempo e l'intervallo di tempo
 		if (temp>0.0) {
-			this.intervalloDiTempo=(int) (this.intervalloDiTempo*this.rapporto/temp);	//rapporto � la quantit� di traffico dell'intervallo precedente
-																						//all'aumentare delle macchine che transitano, diminuisce l'intervallo
-			
+			this.intervalloDiTempo=(int) (this.intervalloDiTempo*this.rapporto/temp);	//rapporto e' la quantita' di traffico dell'intervallo precedente
+			//all'aumentare delle macchine che transitano, diminuisce l'intervallo
+
 			if (this.intervalloDiTempo<this.intervalloMinimo) {
-				this.intervalloDiTempo=this.intervalloMinimo;			//l'intervallo non pu� essere minore di 10secondi
+				this.intervalloDiTempo=this.intervalloMinimo;			//l'intervallo non puo' essere minore di 10 secondi
 			}
 			else if (this.intervalloDiTempo>90) {
-				this.intervalloDiTempo=90;								//l'intervallo non pu� essere maggiore di 90 secondi
+				this.intervalloDiTempo=90;								//l'intervallo non puo' essere maggiore di 90 secondi
 			}
 			this.rapporto=temp;											//aggiornamento del rapporto
 		}
@@ -85,10 +85,10 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 	public void setTipoStrada(String tipoStrada) {
 		this.tipoStrada=tipoStrada;
 	}
-	
+
 	public void creaDatoTraffico() {			//viene settato il dato di traffico da inviare al sistema centrale
-		if (this.velocita!=0) {					//se la velocit� media � uguale a zero, si tiene la velocit� e il tipo di traffico precedenti
-			switch (this.tipoStrada){			//in base al tipo di strada, a seconda della velocit� si decide il tipo di evento  di traffico
+		if (this.velocita!=0) {					//se la velocita' media e' uguale a zero, si tiene la velocita' e il tipo di traffico precedenti
+			switch (this.tipoStrada){			//in base al tipo di strada, a seconda della velocita' si decide il tipo di evento  di traffico
 			case "urbana":
 				if (velocita<20)
 					tipo="S"+velocita+" Coda";
@@ -128,7 +128,7 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 	public void inviaDatoTraffico() throws RemoteException {		//invia il dato di traffico al GestoreCentraline
 		centServer.segnalaDatabaseS(this.datoTraffico);
 	}
-	
+
 	public void calcolaVelocitaMedia(int numeroVeicoli, int somma) {
 		if (numeroVeicoli!=0) {
 			this.velocita=(int)(somma/numeroVeicoli);
@@ -136,7 +136,7 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 		else {						
 			this.velocita=0;		
 		}
-		
+
 		FunzionamentoCentralinaS.impostaEtichettaVelocita(this.velocita);
 	}
 
@@ -145,7 +145,7 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 	}
 
 	public void run() {
-		
+
 		customSecurityManager cSM = new customSecurityManager(System.getSecurityManager());		//setta il security manager di rmi
 		System.setSecurityManager(cSM);
 
@@ -162,10 +162,10 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 
 		} catch (RemoteException | NotBoundException e1) {
 			JOptionPane.showMessageDialog(null,
-			        "Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.\n"
-			        + "\nIl pannello di configurazione della centralina verrà chiuso.",
-			        "Errore di connessione",
-			        JOptionPane.ERROR_MESSAGE);
+					"Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.\n"
+							+ "\nIl pannello di configurazione della centralina verrà chiuso.",
+							"Errore di connessione",
+							JOptionPane.ERROR_MESSAGE);
 			System.exit(1);
 		}
 
@@ -175,13 +175,13 @@ public class CentralinaStradale extends Centralina {	//� la classe che contien
 				TimeUnit.SECONDS.sleep(this.intervalloDiTempo);			//la centralina aspetta che scada l'intervallo
 
 				int numeroVeicoli=this.rilevatoreVeicoli.getNumeroVeicoli();		//raccoglie il numero di veicoli transitati e
-				int sommaVelocita=this.rilevatoreVelocita.getSommaVelocita();		//la somma delle loro velocit�
-				if(numeroVeicoli!=0) {												//se � passato almeno un veicolo calcola la velocit� media
+				int sommaVelocita=this.rilevatoreVelocita.getSommaVelocita();		//la somma delle loro velocita'
+				if(numeroVeicoli!=0) {												//se e' passato almeno un veicolo calcola la velocita' media
 					this.calcolaVelocitaMedia(numeroVeicoli,sommaVelocita);			//altrimenti la lascia uguale alla precedente
 				}
 
 				this.rilevatoreVeicoli.reset();										//si resettano i conteggi dei veicoli
-				this.rilevatoreVelocita.resetSommaVelocita(this.velocita);			//e delle velocit�
+				this.rilevatoreVelocita.resetSommaVelocita(this.velocita);			//e delle velocita'
 				this.calcolaIntervallo(numeroVeicoli);								//si calcola il nuovo intervallo
 
 				this.creaDatoTraffico();					//viene creato il dato di traffico
