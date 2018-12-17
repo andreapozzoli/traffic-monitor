@@ -143,7 +143,7 @@ public class ApplicazioneClient implements Runnable {
 		this.applicazione.setFrame(new JFrame());
 		this.applicazione.getFrame().setTitle("Applicazione mobile"); // titolo della finestra
 
-		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(400,150));
+		this.applicazione.getPaneNotifiche().setPreferredSize(new Dimension(500,150));
 
 		// Pannello contenitore
 		JPanel principale = new JPanel(new BorderLayout());
