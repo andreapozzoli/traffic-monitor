@@ -163,7 +163,7 @@ public class CentralinaStradale extends Centralina {	//e' la classe che contiene
 		} catch (RemoteException | NotBoundException e1) {
 			JOptionPane.showMessageDialog(null,
 					"Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.\n"
-							+ "\nIl pannello di configurazione della centralina verrà chiuso.",
+							+ "\nIl pannello di configurazione della centralina verra' chiuso.",
 							"Errore di connessione",
 							JOptionPane.ERROR_MESSAGE);
 			System.exit(1);
