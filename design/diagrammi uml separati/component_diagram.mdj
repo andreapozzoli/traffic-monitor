@@ -9392,11 +9392,11 @@
 							},
 							"fillColor": "#ffff91",
 							"font": "Arial;13;0",
-							"left": 1400,
-							"top": 704,
-							"width": 186.99267578125,
-							"height": 77,
-							"text": "Il sensore GPS è all'esterno dell'applicazione mobile perché l'applicazione sfrutta il sensore installlato sul telefono"
+							"left": 1416,
+							"top": 760,
+							"width": 222.3505859375,
+							"height": 169,
+							"text": "L'ApplicazioneMobile è installata su un telefono dotato di un sensore GPS dal quale è possibile ricevere dati relativi alla posizione (in coordinate geografiche) attraverso ApplicazioneSensoreGPSTelefono, già presente sul dispositivo mobile. Per questo motivo le applicazioni sono state rappresentate come due componenti distinti che comunicano tramite un'interfaccia."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -9412,7 +9412,23 @@
 								"$ref": "AAAAAAFnLINAJcvqJhY="
 							},
 							"lineStyle": 1,
-							"points": "1306:736;1399:739"
+							"points": "1287:757;1415:804"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFnwWaPcXa2u1s=",
+							"_parent": {
+								"$ref": "AAAAAAFmwIbnvMCt9mg="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnRfgSxGwHU8Q="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmwJgqAMMIkKM="
+							},
+							"lineStyle": 1,
+							"points": "1329:897;1415:874"
 						}
 					]
 				},
