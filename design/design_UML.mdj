@@ -40772,7 +40772,7 @@
 							"font": "Arial;13;0",
 							"top": 8,
 							"width": 729,
-							"height": 2041,
+							"height": 1377,
 							"nameLabel": {
 								"$ref": "AAAAAAFnRsc/72zEf+8="
 							}
@@ -40830,7 +40830,7 @@
 							"left": 728,
 							"top": 8,
 							"width": 353,
-							"height": 2041,
+							"height": 1377,
 							"nameLabel": {
 								"$ref": "AAAAAAFnRsc/720SpB0="
 							}
@@ -61764,6 +61764,36 @@
 							},
 							"lineStyle": 1,
 							"points": "1329:903;1399:888"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFn0b44PMX/jq0=",
+							"_parent": {
+								"$ref": "AAAAAAFnRsiLTIAwvzk="
+							},
+							"fillColor": "#ffff91",
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1168,
+							"width": 273,
+							"height": 103,
+							"text": "Non viene usato un vero e proprio database per memorizzare i dati, si vuole tuttavia con questo componente mettere in evidenza la presenza di una quantità abbastanza grossa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFn0cH2TceJDTU=",
+							"_parent": {
+								"$ref": "AAAAAAFnRsiLTIAwvzk="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnRsiLTH7d+dM="
+							},
+							"tail": {
+								"$ref": "AAAAAAFn0b44PMX/jq0="
+							},
+							"lineStyle": 1,
+							"points": "639:1217;555:1216"
 						}
 					]
 				},
@@ -70054,6 +70084,36 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAFnRskVk4bSgfI="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFn0cKwEc+PhdU=",
+							"_parent": {
+								"$ref": "AAAAAAFnRskVk4bUPOI="
+							},
+							"fillColor": "#ffff91",
+							"font": "Arial;13;0",
+							"left": 1040,
+							"top": 1000,
+							"width": 273,
+							"height": 103,
+							"text": "Non viene usato un vero e proprio database per memorizzare i dati, si vuole tuttavia con questo componente mettere in evidenza la presenza di una quantità abbastanza grossa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFn0cLZttAbOZ8=",
+							"_parent": {
+								"$ref": "AAAAAAFnRskVk4bUPOI="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFnRskVk4Y3+X0="
+							},
+							"tail": {
+								"$ref": "AAAAAAFn0cKwEc+PhdU="
+							},
+							"lineStyle": 1,
+							"points": "1039:1055;825:1060"
 						}
 					]
 				},
