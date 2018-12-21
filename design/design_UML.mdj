@@ -37610,7 +37610,7 @@
 							"top": 344,
 							"width": 153,
 							"height": 129,
-							"text": "Per rapporto si intende il numero di veicoli al secondo,necessario per calcolare il nuovo intervallo di tempo in modo proporzionale al traffico."
+							"text": "Per rapporto si intende il numero di veicoli al secondo, necessario per calcolare il nuovo intervallo di tempo in modo proporzionale al traffico."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -42572,7 +42572,7 @@
 							"top": 80,
 							"width": 241,
 							"height": 105,
-							"text": "Questo activity diagram speiga come avviene la creazione e l'aggiornamento della mappa, che è sviluppata come elemeto grafico e quindi non viene approfondita nel class diagram"
+							"text": "Questo activity diagram spiega come avvengono la creazione e l'aggiornamento della mappa, sviluppata come elemento grafico e per questo motivo non descritta in modo approfondito nel class diagram"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -61776,8 +61776,8 @@
 							"left": 640,
 							"top": 1168,
 							"width": 273,
-							"height": 103,
-							"text": "Non viene usato un vero e proprio database per memorizzare i dati, si vuole tuttavia con questo componente mettere in evidenza la presenza di una quantità abbastanza grossa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
+							"height": 116,
+							"text": "Nonostante non debba essere necessariamente utilizzato un vero e proprio database per memorizzare i dati, si vuole mettere in evidenza la presenza di una quantità significativa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -61793,7 +61793,7 @@
 								"$ref": "AAAAAAFn0b44PMX/jq0="
 							},
 							"lineStyle": 1,
-							"points": "639:1217;555:1216"
+							"points": "639:1220;555:1218"
 						}
 					]
 				},
@@ -70096,8 +70096,8 @@
 							"left": 1040,
 							"top": 1000,
 							"width": 273,
-							"height": 103,
-							"text": "Non viene usato un vero e proprio database per memorizzare i dati, si vuole tuttavia con questo componente mettere in evidenza la presenza di una quantità abbastanza grossa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
+							"height": 116,
+							"text": "Nonostante non debba essere necessariamente utilizzato un vero e proprio database per memorizzare i dati, si vuole mettere in evidenza la presenza di una quantità significativa di dati che vengono registrati e organizzati, così da poter essere elaborati nel modo più comodo possibile."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -70113,7 +70113,7 @@
 								"$ref": "AAAAAAFn0cKwEc+PhdU="
 							},
 							"lineStyle": 1,
-							"points": "1039:1055;825:1060"
+							"points": "1039:1059;825:1061"
 						}
 					]
 				},
