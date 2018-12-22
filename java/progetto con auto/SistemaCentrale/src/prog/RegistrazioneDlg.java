@@ -70,6 +70,14 @@ public class RegistrazioneDlg extends JDialog {
 					fieldPassword.setText("");
 					riuscito = false;
 				}
+				
+				else if(nome.equals("centralina") || nome.equals("auto")) {
+					JOptionPane.showMessageDialog(RegistrazioneDlg.this,
+							"Nome utente riservato.\nI nomi 'centralina' e 'auto' non possono\nessere usati come username.",
+							"Registrazione",
+							JOptionPane.ERROR_MESSAGE);
+					riuscito = false;
+				}
 
 				else if(!(Login.autenticazione(nome, tipoRegistrazione))) {
 					JOptionPane.showMessageDialog(RegistrazioneDlg.this,

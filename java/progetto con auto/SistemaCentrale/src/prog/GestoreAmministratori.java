@@ -36,7 +36,7 @@ public class GestoreAmministratori {
     public boolean riconosciAmministratore(String username, String password) {
     	// metodo per riconoscere un amministratore nel momento in cui sta facendo il login se egli e' gia' registrato
 		for (Amministratore amministratore: this.listaAmministratori) {
-			if (amministratore.getNomeUtente() != "centralina" && amministratore.getNomeUtente() != "auto" && amministratore.getNomeUtente().equals(username) && amministratore.getPassword().equals(password)) {
+			if (amministratore.getNomeUtente().equals(username) && amministratore.getPassword().equals(password)) {
 				return true;
 			}
 		}
