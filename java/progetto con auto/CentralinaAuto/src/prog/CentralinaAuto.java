@@ -13,7 +13,7 @@ import jxl.read.biff.BiffException;
 public class CentralinaAuto extends Centralina{
 	private IGestoreCentraline centServer;
 	private int idCentralinaAuto;
-	private int intervalloDiTempo=10;
+	private int intervalloDiTempo=90;
 	private SensoreGPSAuto sensore;
 	private RilevatoreVelocitaA rilevatore;
 	private StatoVeicolo stato;
@@ -24,7 +24,7 @@ public class CentralinaAuto extends Centralina{
 	public CentralinaAuto(Posizione pos, int velocita) throws BiffException, IOException {
 		this.rilevatore=new RilevatoreVelocitaA();
 		this.sensore=new SensoreGPSAuto(pos);
-		this.raggio=3.25;
+		this.raggio=1.50;
 		this.velocita=velocita;
 		this.posizione=pos;
 		this.stato=new StatoVeicolo();
@@ -75,6 +75,9 @@ public class CentralinaAuto extends Centralina{
 	}
 
 	private void calcolaRaggio() {
+		System.out.println("ultimaPosizione: "+this.ultimaPosizione.getVia());
+		System.out.println("posizioneNuova: "+this.posizione.getVia());
+		System.out.println("velocita: "+this.velocita);
 		if(this.velocita==0) {
 			this.raggio=0;
 		}
@@ -82,8 +85,9 @@ public class CentralinaAuto extends Centralina{
 			this.raggio=this.raggio*2;
 		}
 		else {
-			this.raggio=this.velocita*this.intervalloDiTempo/3600;
+			this.raggio=((float)(this.velocita))*((float)(this.intervalloDiTempo))/3600;
 		}
+		System.out.println("raggio: "+this.raggio);
 	}
 	
 
@@ -122,7 +126,7 @@ public class CentralinaAuto extends Centralina{
 				this.ultimaPosizione=this.posizione;
 				this.posizione=sensore.rilevaPosizione();
 				this.velocita=rilevatore.rilevaVelocita();
-				//this.calcolaRaggio();
+				this.calcolaRaggio();
 				this.creaStatoVeicolo(this.velocita, this.posizione);					//viene creato il dato di traffico
 				this.inviaStatoVeicolo();					//e inviato
 			} catch (InterruptedException e) {

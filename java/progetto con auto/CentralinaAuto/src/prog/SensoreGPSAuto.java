@@ -78,6 +78,7 @@ public class SensoreGPSAuto extends SensoreGPS{
 			int indice=random.nextInt(intorno) + min;
 			this.posizione=this.listaPosizioni.get(indice);
 		}
+		System.out.println("posizione: "+this.posizione.getVia());
 		return this.posizione;
 	}
 
