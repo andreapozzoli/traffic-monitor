@@ -83,7 +83,7 @@ public class FunzionamentoCentralinaA {
 	}
 	
 	public static void setVelocitaLabel(int velocita) {
-		velocitaLabel.setText("Ultima velocita' rilevata: " + velocita);
+		velocitaLabel.setText("Ultima velocita' rilevata: " + velocita + " km/h");
 	}
 	
 	public static void setPosizioneLabel(String via) {
