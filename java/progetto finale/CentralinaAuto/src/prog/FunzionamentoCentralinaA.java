@@ -87,7 +87,17 @@ public class FunzionamentoCentralinaA {
 	}
 	
 	public static void setPosizioneLabel(String via) {
-		posizioneLabel.setText("Ultima posizione rilevata: " + via);
+		posizioneLabel.setText("Ultima posizione rilevata: " + inizialiMaiuscole(via));
+	}
+	
+	private static String inizialiMaiuscole(String stringaDaTrasformare) {
+		String[] parole = stringaDaTrasformare.split(" ");
+
+		for(int p=0; p<parole.length; ++p) {
+			parole[p] = parole[p].substring(0,1).toUpperCase() + parole[p].substring(1).toLowerCase();
+		}
+
+		return String.join(" ", parole);
 	}
 
 }
