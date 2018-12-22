@@ -111946,19 +111946,6 @@
 							"height": 15
 						},
 						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAFnRsxssKXwir4=",
-							"_parent": {
-								"$ref": "AAAAAAFnRsxssKbEiJA="
-							},
-							"font": "Arial;13;0",
-							"left": 56,
-							"top": 648,
-							"width": 185,
-							"height": 25,
-							"text": "richiestaStato/inviaStato"
-						},
-						{
 							"_type": "UMLPseudostateView",
 							"_id": "AAAAAAFnRsxssKX0S6k=",
 							"_parent": {
@@ -116229,36 +116216,6 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAFnRsxssKbADEY="
 							}
-						},
-						{
-							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnRsxssKbCH/Q=",
-							"_parent": {
-								"$ref": "AAAAAAFnRsxssKbEiJA="
-							},
-							"fillColor": "#ffff91",
-							"font": "Arial;13;0",
-							"left": 248,
-							"top": 744,
-							"width": 241,
-							"height": 64,
-							"text": "Ogni volta che viene chiesto all'applicazione il suo stato (accesa o spenta), l'applicazione invia il suo stato"
-						},
-						{
-							"_type": "UMLNoteLinkView",
-							"_id": "AAAAAAFnRsxssKbD8dw=",
-							"_parent": {
-								"$ref": "AAAAAAFnRsxssKbEiJA="
-							},
-							"font": "Arial;13;0",
-							"head": {
-								"$ref": "AAAAAAFnRsxssKbCH/Q="
-							},
-							"tail": {
-								"$ref": "AAAAAAFnRsxssKXwir4="
-							},
-							"lineStyle": 1,
-							"points": "173:673;307:743"
 						}
 					]
 				}
