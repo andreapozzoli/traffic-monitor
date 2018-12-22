@@ -46,7 +46,8 @@ public abstract class Notifica implements Serializable{
 		else {
 			c1=""+c;
 		}
-		this.ora = a1 + ":" + b1 + ":" + c1;		this.oraArrivo=dat.get(Calendar.HOUR);
+		this.ora = a1 + ":" + b1 + ":" + c1;		
+		this.oraArrivo=dat.get(Calendar.HOUR);
 		this.minutoArrivo=dat.get(Calendar.MINUTE);
 	}
 

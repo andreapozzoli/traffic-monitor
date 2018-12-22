@@ -61,7 +61,7 @@ public class SensoreGPSAuto extends SensoreGPS{
 				d = R * c;
 
 				if (d<raggio) {
-					this.listaPosizioni.add(new Posizione(via, lat2, lon2)); 
+					this.listaPosizioni.add(new Posizione(via.toLowerCase(), lat2, lon2)); 
 				}
 
 			}
