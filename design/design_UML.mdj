@@ -6284,7 +6284,7 @@
 											"top": 1839,
 											"width": 348.6767578125,
 											"height": 13,
-											"text": "+StatoVeicolo(int idVeicolo, Posizione posizione, int velocità)",
+											"text": "+StatoVeicolo(Posizione posizione, int velocità)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -29793,8 +29793,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFnQb+/e5/Uu/g="
 									},
-									"name": "int idVeicolo",
-									"type": ""
+									"name": "Posizione posizione"
 								},
 								{
 									"_type": "UMLParameter",
@@ -29802,17 +29801,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFnQb+/e5/Uu/g="
 									},
-									"name": "Posizione posizione",
-									"type": ""
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnQcCLoaEn6SE=",
-									"_parent": {
-										"$ref": "AAAAAAFnQb+/e5/Uu/g="
-									},
-									"name": "int velocità",
-									"type": ""
+									"name": "int velocità"
 								}
 							]
 						}
