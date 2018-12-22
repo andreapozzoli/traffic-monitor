@@ -44339,17 +44339,17 @@
 										"$ref": "AAAAAAFn0aaqbFEIPSI="
 									},
 									"font": "Arial;13;0",
-									"left": 311,
-									"top": 719,
+									"left": 304,
+									"top": 711,
 									"width": 185,
-									"height": 26,
-									"alpha": -2.0989445764653576,
-									"distance": 41.182520563948,
+									"height": 39,
+									"alpha": -2.0442591667505456,
+									"distance": 48.75448697299562,
 									"hostEdge": {
 										"$ref": "AAAAAAFn0aaqbFEJBIo="
 									},
 									"edgePosition": 1,
-									"text": "presenza dato relativo alla stessa posizione",
+									"text": "presenza dato relativo alla stessa posizione o informazione obsoleta",
 									"wordWrap": true
 								},
 								{
@@ -47156,7 +47156,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnRsc/725dUMw="
 					},
-					"name": "presenza dato relativo alla stessa posizione",
+					"name": "presenza dato relativo alla stessa posizione o informazione obsoleta",
 					"source": {
 						"$ref": "AAAAAAFnRsc/725IqSU="
 					},
