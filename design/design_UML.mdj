@@ -23504,9 +23504,9 @@
 										"$ref": "AAAAAAFn1tmqhE+62qM="
 									},
 									"font": "Arial;13;0",
-									"left": 3397,
+									"left": 3396,
 									"top": 406,
-									"width": 19.5126953125,
+									"width": 20,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -26774,7 +26774,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFm7o7F45K9CNc="
 									},
-									"name": "int intervallo"
+									"name": "int intervallo",
+									"type": ""
 								}
 							]
 						},
@@ -26867,7 +26868,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnHG1WBdhazvg="
 									},
-									"name": "Posizione posizione"
+									"name": "Posizione posizione",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -26875,7 +26877,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnHG1WBdhazvg="
 									},
-									"name": "int velocita"
+									"name": "int velocita",
+									"type": ""
 								}
 							]
 						},
@@ -26921,7 +26924,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnHVlXKbf9xwQ="
 									},
-									"name": "int idVeicolo"
+									"name": "int idVeicolo",
+									"type": ""
 								}
 							]
 						},
@@ -29723,7 +29727,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFm7rLJ6Ik2jyw="
 									},
-									"name": "String tipo"
+									"name": "String tipo",
+									"type": ""
 								}
 							]
 						},
@@ -30229,7 +30234,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/TWaICBBWHk="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -30284,7 +30290,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFm/TbvEShBzng="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -33158,7 +33165,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnMhNIu80XtDE="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -33185,7 +33193,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnMhPemNgkwE8="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -33212,7 +33221,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnMhQN79oNLJU="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -33239,7 +33249,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnMhRol9v2wug="
 									},
-									"name": "int id"
+									"name": "int id",
+									"type": ""
 								}
 							]
 						},
@@ -33472,7 +33483,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFn1uNa8jo57eM="
 									},
-									"name": "double raggio"
+									"name": "double raggio",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -98245,7 +98257,7 @@
 											"width": 209.548828125,
 											"height": 13,
 											"underline": true,
-											"text": "serverC: GestoreCentralineServer"
+											"text": "serverC: GestCentStradaliServer"
 										},
 										{
 											"_type": "LabelView",
