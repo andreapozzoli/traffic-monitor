@@ -1,6 +1,8 @@
 package prog;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import jxl.read.biff.BiffException;
 
 import java.io.IOException;
@@ -72,8 +74,7 @@ public class GestoreCentraline extends UnicastRemoteObject implements IGestoreCe
     	try {
 			GestoreDatabase.getInstance().aggiungiStatoVeicolo(stato);
 		} catch (BiffException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		}
     }
   

@@ -50,7 +50,7 @@ public class GestoreUtenti {
 
 	public boolean riconosciUtente(String username, String password) {
 		for (Utente utente: this.listaUtenti) {
-			if (utente.getUsername().equals(username) && utente.getPassword().equals(password)) {
+			if (utente.getUsername() != "centralina" && utente.getUsername() != "auto" && utente.getUsername().equals(username) && utente.getPassword().equals(password)) {
 				return true;
 			}
 		}

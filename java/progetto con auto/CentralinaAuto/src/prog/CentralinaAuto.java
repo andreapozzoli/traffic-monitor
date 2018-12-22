@@ -19,8 +19,8 @@ public class CentralinaAuto extends Centralina{
 	private StatoVeicolo stato;
 	double raggio;
 	private Posizione ultimaPosizione;
-	
-	
+
+
 	public CentralinaAuto(Posizione pos, int velocita) throws BiffException, IOException {
 		this.rilevatore=new RilevatoreVelocitaA();
 		this.sensore=new SensoreGPSAuto(pos);
@@ -28,9 +28,9 @@ public class CentralinaAuto extends Centralina{
 		this.velocita=velocita;
 		this.posizione=pos;
 		this.stato=new StatoVeicolo();
-		
+
 	}
-	
+
 	public void setId (int id) {
 		this.idCentralinaAuto=id;
 	}
@@ -61,7 +61,7 @@ public class CentralinaAuto extends Centralina{
 	public double getRaggio() {
 		return this.raggio;
 	}
-	
+
 	private void inviaStatoVeicolo() throws NotBoundException, BiffException, IOException {
 		centServer.segnalaDatabaseA(this.stato);
 	}
@@ -79,7 +79,7 @@ public class CentralinaAuto extends Centralina{
 		FunzionamentoCentralinaA.setVelocitaLabel(this.velocita);
 		FunzionamentoCentralinaA.setPosizioneLabel(this.posizione.getVia());
 
-		
+
 		if(this.velocita==0) {
 			this.raggio=0;
 		}
@@ -90,7 +90,7 @@ public class CentralinaAuto extends Centralina{
 			this.raggio=((float)(this.velocita))*((float)(this.intervalloDiTempo))/3600;
 		}
 	}
-	
+
 
 	public void run() {
 
@@ -101,7 +101,12 @@ public class CentralinaAuto extends Centralina{
 		try {
 			registry = LocateRegistry.getRegistry("127.0.0.1", 13344);
 		} catch (RemoteException e1) {
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null,
+					"Errore di connessione.\n"
+							+ "\nLa finestra verra' chiusa.",
+							"Errore di connessione",
+							JOptionPane.ERROR_MESSAGE);
+			System.exit(1);		
 		}
 
 		try {
@@ -111,7 +116,7 @@ public class CentralinaAuto extends Centralina{
 		} catch (RemoteException | NotBoundException e1) {
 			JOptionPane.showMessageDialog(null,
 					"Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.\n"
-							+ "\nIl pannello di configurazione della centralina verra' chiuso.",
+							+ "\nLa finestra della centralina verra' chiusa.",
 							"Errore di connessione",
 							JOptionPane.ERROR_MESSAGE);
 			System.exit(1);
@@ -130,23 +135,39 @@ public class CentralinaAuto extends Centralina{
 				this.creaStatoVeicolo(this.velocita, this.posizione);					//viene creato il dato di traffico
 				this.inviaStatoVeicolo();					//e inviato
 			} catch (InterruptedException e) {
-				e.printStackTrace();
-				this.run();						//se avviene un interruzione si fa ripartire il run
+				this.run();						//se avviene un'interruzione si fa ripartire il run
 			} catch (RemoteException e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+						"Errore di connessione.\n"
+								+ "\nLa finestra verra' chiusa.",
+								"Errore di connessione",
+								JOptionPane.ERROR_MESSAGE);
+				System.exit(1);			
 			} catch (BiffException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+						"Errore nella lettura del file delle posizioni.\n"
+								+ "\nLa finestra verra' chiusa.",
+								"Errore di lettura",
+								JOptionPane.ERROR_MESSAGE);
+				System.exit(1);			
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+						"Errore di input/output.\n"
+								+ "\nLa finestra verra' chiusa.",
+								"Errore di input/output",
+								JOptionPane.ERROR_MESSAGE);
+				System.exit(1);			
 			} catch (NotBoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+						"Errore di connessione.\n"
+								+ "\nLa finestra verra' chiusa.",
+								"Errore di connessione",
+								JOptionPane.ERROR_MESSAGE);
+				System.exit(1);							
 			}
 		}
 	}
 
-	
+
 
 }

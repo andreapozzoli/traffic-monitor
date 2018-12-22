@@ -4,6 +4,8 @@ import java.rmi.server.*;
 import java.rmi.registry.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import jxl.read.biff.BiffException;
 
 import java.io.IOException;
@@ -66,7 +68,12 @@ public class GestoreApplicazioni extends UnicastRemoteObject implements IGestore
 		try {
 			GestoreDatabase.getInstance().aggiungiNotificaApplicazione(notifica);
 		} catch (NotBoundException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,
+					"Errore di connessione.\n"
+							+ "\nLa finestra verra' chiusa.",
+							"Errore di connessione",
+							JOptionPane.ERROR_MESSAGE);
+			System.exit(1);		
 		}
 	}
 

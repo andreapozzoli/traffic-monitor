@@ -17,9 +17,13 @@ public class GestoreApplicazioniServer implements Runnable{
 			registry.rebind("gestApp", GestoreApplicazioni.getInstance());
 
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Il sistema e' gia' in uso");
-		} 
+			JOptionPane.showMessageDialog(null,
+					"Errore di connessione.\n"
+							+ "\nIl sistema e' gia' in uso.",
+							"Errore di connessione",
+							JOptionPane.ERROR_MESSAGE);
+
+		}
 
 	}
-
 }

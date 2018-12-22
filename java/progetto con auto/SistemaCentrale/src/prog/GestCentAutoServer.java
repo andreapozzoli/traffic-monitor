@@ -2,6 +2,8 @@ package prog;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+import javax.swing.JOptionPane;
+
 
 
 public class GestCentAutoServer implements Runnable {
@@ -16,7 +18,7 @@ public class GestCentAutoServer implements Runnable {
 		
 
 		} catch (Exception e) {
-			
+				
 		} 
 
 	}
