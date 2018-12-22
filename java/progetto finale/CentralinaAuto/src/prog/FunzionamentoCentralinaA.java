@@ -77,7 +77,7 @@ public class FunzionamentoCentralinaA {
 		frame.pack();
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // azione predefinita quando si chiude usando il pulsante di chiusura della finestra
-		frame.setSize(300, 100); // dimensione del frame (larghezza * altezza)
+		frame.setSize(500, 100); // dimensione del frame (larghezza * altezza)
 
 		frame.setVisible(true);
 	}

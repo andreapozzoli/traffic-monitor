@@ -17,7 +17,7 @@ public class CentralinaAuto extends Centralina{
 	private SensoreGPSAuto sensore;
 	private RilevatoreVelocitaA rilevatore;
 	private StatoVeicolo stato;
-	double raggio;
+	private double raggio;
 	private Posizione ultimaPosizione;
 
 
@@ -63,11 +63,11 @@ public class CentralinaAuto extends Centralina{
 		return this.raggio;
 	}
 
-	private void inviaStatoVeicolo() throws NotBoundException, BiffException, IOException {
+	public void inviaStatoVeicolo() throws NotBoundException, BiffException, IOException {
 		centServer.segnalaDatabaseA(this.stato);
 	}
 
-	private void creaStatoVeicolo(int velocita, Posizione posizione) {
+	public void creaStatoVeicolo(int velocita, Posizione posizione) {
 		this.stato.setVelocita(velocita);
 		this.stato.setPosizione(posizione);
 		this.stato.setData();
@@ -75,7 +75,7 @@ public class CentralinaAuto extends Centralina{
 		this.stato.setTipo();
 	}
 
-	private void calcolaRaggio() {
+	public void calcolaRaggio() {
 
 		FunzionamentoCentralinaA.setVelocitaLabel(this.velocita);
 		FunzionamentoCentralinaA.setPosizioneLabel(this.posizione.getVia());
@@ -92,6 +92,9 @@ public class CentralinaAuto extends Centralina{
 		}
 	}
 
+	public void setUltimaPosizione(Posizione pos) {
+		this.ultimaPosizione=pos;
+	}
 
 	public void run() {
 

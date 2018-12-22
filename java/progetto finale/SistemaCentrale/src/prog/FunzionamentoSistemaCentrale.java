@@ -101,7 +101,7 @@ public class FunzionamentoSistemaCentrale {
 		Thread t9= new Thread(new GestoreApplicazioniServer()); 
 		t9.start(); // viene fatto partire il lato server del gestore applicazioni
 
-		Thread t12= new Thread(new GestoreCentralineServer()); 
+		Thread t12= new Thread(new GestCentStradaliServer()); 
 		t12.start(); // viene fatto partire il lato client del gestore centraline
 
 		Thread t17=new Thread(new GestCentAutoServer());

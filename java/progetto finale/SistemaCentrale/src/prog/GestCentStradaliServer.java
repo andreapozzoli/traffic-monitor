@@ -4,7 +4,7 @@ import java.rmi.registry.Registry;
 
 
 
-public class GestoreCentralineServer implements Runnable {
+public class GestCentStradaliServer implements Runnable {
 
 	public void run()  {
 		Registry registry = null;

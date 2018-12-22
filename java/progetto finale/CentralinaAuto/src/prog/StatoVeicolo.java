@@ -26,7 +26,7 @@ public class StatoVeicolo extends Notifica implements Serializable{
 			this.tipo="V"+this.velocita+" Velocita lenta";
 		}
 		else {
-			this.tipo="v"+this.velocita+" Traffico nella norma";
+			this.tipo="V"+this.velocita+" Traffico nella norma";
 		}
 	}
 	
