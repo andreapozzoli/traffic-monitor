@@ -171,11 +171,7 @@ public class FunzionamentoCentralinaS {
 			bottGrid.gridx = 1;
 			bottGrid.gridy = 0;
 			bottGrid.gridwidth = 1;
-
-
 			bottoniPanel.add(btnGeneraTraffico, bottGrid);
-
-
 
 			bottoniPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
@@ -190,16 +186,13 @@ public class FunzionamentoCentralinaS {
 
 			frame.setVisible(true);
 
-
-
-
-
+			
 			domandaVelocita.addActionListener( // comportamento quando si vuole imporre una velocita' casuale
 					new ActionListener(){
 						public void actionPerformed(ActionEvent e) {
-							spinnerVelocita.setEnabled(!spinnerVelocita.isEnabled()); // cambia lo stato di attivazione dello spinner di velocita' 
+							spinnerVelocita.setEnabled(!spinnerVelocita.isEnabled()); // cambia lo stato di attivazione dello spinner di velocita'ï¿½
 							btnGeneraTraffico.setEnabled(spinnerVelocita.isEnabled() && !btnOK.isEnabled()); 
-							/* attiva il bottone per l'imposizione della velocita'  se lo spinner e' abilitato e il bottone OK e' disabilitato
+							/* attiva il bottone per l'imposizione della velocita'ï¿½ se lo spinner e' abilitato e il bottone OK e' disabilitato
 							 * (quindi e' possibile abilitare il bottone soltanto dopo l'avvio della centralina e solo se e' stata selezionata
 							 * una velocita' da imporre).
 							 */
@@ -243,7 +236,7 @@ public class FunzionamentoCentralinaS {
 								}
 								else {
 									Random random = new Random();
-									int min =0; // valore minimo di velocita' 
+									int min =0; // valore minimo di velocita'ï¿½
 									int max =110; // valore massimo di velocita'
 									int intorno = ((max-min) + 1); // range di valori di velocita'
 									int vel = random.nextInt(intorno) + min; // velocita' casuale

@@ -1,8 +1,5 @@
 package prog;
-import java.io.IOException;
 import java.rmi.*;
-
-import jxl.read.biff.BiffException;
 
 public interface IGestoreCentraline extends Remote{
     public void aggiungiCentralinaStradale(int id) throws RemoteException;

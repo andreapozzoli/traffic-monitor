@@ -75,19 +75,20 @@ public class CentralinaAuto extends Centralina{
 	}
 
 	private void calcolaRaggio() {
-		System.out.println("ultimaPosizione: "+this.ultimaPosizione.getVia());
-		System.out.println("posizioneNuova: "+this.posizione.getVia());
-		System.out.println("velocita: "+this.velocita);
+
+		FunzionamentoCentralinaA.setVelocitaLabel(this.velocita);
+		FunzionamentoCentralinaA.setPosizioneLabel(this.posizione.getVia());
+
+		
 		if(this.velocita==0) {
 			this.raggio=0;
 		}
-		else if (this.ultimaPosizione.getLatitudine()==this.posizione.getLatitudine()&&this.ultimaPosizione.getLongitudine()==this.posizione.getLongitudine()) {
+		else if (raggio!=0 && this.ultimaPosizione.getLatitudine()==this.posizione.getLatitudine()&&this.ultimaPosizione.getLongitudine()==this.posizione.getLongitudine()) {
 			this.raggio=this.raggio*2;
 		}
 		else {
 			this.raggio=((float)(this.velocita))*((float)(this.intervalloDiTempo))/3600;
 		}
-		System.out.println("raggio: "+this.raggio);
 	}
 	
 
@@ -108,7 +109,6 @@ public class CentralinaAuto extends Centralina{
 			centServer.aggiungiCentralinaAuto(this.idCentralinaAuto);		//aggiunge la centralina alla lista centraline
 
 		} catch (RemoteException | NotBoundException e1) {
-			e1.printStackTrace();
 			JOptionPane.showMessageDialog(null,
 					"Il sistema centrale non e' disponibile.\nI dati possono essere trasmessi solo in presenza\ndi una connessione con il sistema centrale.\n"
 							+ "\nIl pannello di configurazione della centralina verra' chiuso.",
