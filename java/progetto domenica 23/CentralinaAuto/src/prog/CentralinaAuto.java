@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
 import jxl.read.biff.BiffException;
 
 public class CentralinaAuto extends Centralina{
-	private IGestoreCentraline centServer;
+	private IGestoreCentraline centServer; // interfaccia per comunicare con il GestoreCentraline
 	private int idCentralinaAuto;
-	private int intervalloDiTempo=90;
+	private int intervalloDiTempo=90; // l'intervallo rimane fisso
 	private SensoreGPSAuto sensore;
 	private RilevatoreVelocitaA rilevatore;
-	private StatoVeicolo stato;
-	private double raggio;
-	private Posizione ultimaPosizione;
+	private StatoVeicolo stato; 
+	private double raggio; // necessario per calcolare le vie in cui la macchina può essere andata dopo la scadenza dell'intervallo di tempo
+	private Posizione ultimaPosizione; // necessaria per calcolare la posizione successiva
 
 
 	public CentralinaAuto(Posizione pos, int velocita) throws BiffException, IOException {
@@ -64,10 +64,12 @@ public class CentralinaAuto extends Centralina{
 	}
 
 	public void inviaStatoVeicolo() throws NotBoundException, BiffException, IOException {
+		// metodo per inviare la notifica al GestoreCentraline
 		centServer.segnalaDatabaseA(this.stato);
 	}
 
 	public void creaStatoVeicolo(int velocita, Posizione posizione) {
+		// metodo per creare la notifica da inviare
 		this.stato.setVelocita(velocita);
 		this.stato.setPosizione(posizione);
 		this.stato.setData();
@@ -76,17 +78,22 @@ public class CentralinaAuto extends Centralina{
 	}
 
 	public void calcolaRaggio() {
+		// metodo per calcolare il raggio all'interno del quale si può trovare l'auto allo scadere
+		// dell'intervallo di tempo
 
 		FunzionamentoCentralinaA.setVelocitaLabel(this.velocita);
 		FunzionamentoCentralinaA.setPosizioneLabel(this.posizione.getVia());
 
 
-		if(this.velocita==0) {
+		if(this.velocita==0) { // se l'auto e' ferma il suo raggio e' 0
 			this.raggio=0;
 		}
+		// se l'auto e' rimasta nella stessa via in cui era nell'intervallo precedente
+		// viene raddoppiato il raggio
 		else if (raggio!=0 && this.ultimaPosizione.getLatitudine()==this.posizione.getLatitudine()&&this.ultimaPosizione.getLongitudine()==this.posizione.getLongitudine()) {
-			this.raggio=this.raggio*2;
+			this.raggio=this.raggio*2; 
 		}
+		// altrimenti il raggio viene calcolato moltiplicando la velocita' attuale del veicolo per l'intervallo di tempo
 		else {
 			this.raggio=((float)(this.velocita))*((float)(this.intervalloDiTempo))/3600;
 		}

@@ -3,6 +3,7 @@ package prog;
 import java.io.Serializable;
 
 public class StatoVeicolo extends Notifica implements Serializable{
+	// classe che definisce il formato della notifica scambiata tra CentralinaAuto e GestoreCentraline
 	
 	private static final long serialVersionUID = -2994446088339863214L;
 	private int velocita;

@@ -17,11 +17,12 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 public class FunzionamentoCentralinaA {
-	
+
 	private static JLabel velocitaLabel;
 	private static JLabel posizioneLabel;
-	
+
 	public static void main(String[] args) throws BiffException, IOException {
+		// la centralina automobilistica viene creata con velocita' e posizione casuali
 		Random random = new Random();
 		int minVel =0;
 		int maxVel=90;
@@ -47,7 +48,7 @@ public class FunzionamentoCentralinaA {
 		t1.start();
 		mostraGUI();
 	}
-	
+
 	public static void mostraGUI() 
 	{
 		JFrame frame = new JFrame("Centralina automobilistica"); // titolo del frame
@@ -59,21 +60,21 @@ public class FunzionamentoCentralinaA {
 
 		velocitaLabel = new JLabel("Nessuna velocita' rilevata");
 		posizioneLabel = new JLabel("Nessuna posizione rilevata");
-		
+
 		// Disposizione degli elementi secondo una griglia
 		cs.gridx = 0; // colonna 0
 		cs.gridy = 0; // riga 0
 		cs.gridwidth = 1; // ampiezza in colonne 1
 		panel.add(velocitaLabel, cs); // Aggiunta alla griglia come definito dalle tre linee precedenti
-		
-		
+
+
 		cs.gridx = 0; // colonna 0
 		cs.gridy = 1; // riga 1
 		cs.gridwidth = 1; // ampiezza in colonne 1
 		panel.add(posizioneLabel, cs); // Aggiunta alla griglia come definito dalle tre linee precedenti
-		
+
 		frame.add(panel);
-		
+
 		frame.pack();
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // azione predefinita quando si chiude usando il pulsante di chiusura della finestra
@@ -81,16 +82,17 @@ public class FunzionamentoCentralinaA {
 
 		frame.setVisible(true);
 	}
-	
+
 	public static void setVelocitaLabel(int velocita) {
 		velocitaLabel.setText("Ultima velocita' rilevata: " + velocita + " km/h");
 	}
-	
+
 	public static void setPosizioneLabel(String via) {
 		posizioneLabel.setText("Ultima posizione rilevata: " + inizialiMaiuscole(via));
 	}
-	
+
 	private static String inizialiMaiuscole(String stringaDaTrasformare) {
+		// metodo necessario a stampare le vie con le iniziali maiuscole
 		String[] parole = stringaDaTrasformare.split(" ");
 
 		for(int p=0; p<parole.length; ++p) {
