@@ -17,10 +17,10 @@ class SegnalaDatabaseTest {
 
 	@BeforeEach
 	void setup() throws RemoteException {
-		notifica=new NotificaApplicazione("io", new Posizione("via dante", 1, 1), "M10 Coda");
+		notifica=new NotificaApplicazione("andrea", new Posizione("via dante", 1, 1), "M10 Coda");
 		gest=GestoreApplicazioni.getInstance();
 		gest.segnalaDatabase(notifica);
-		notifica2=new NotificaApplicazione("tu", new Posizione("via ciao", 2, 2), "M15 Coda");
+		notifica2=new NotificaApplicazione("samuele", new Posizione("via milano", 2, 2), "M15 Coda");
 		gest.segnalaDatabase(notifica2);
 
 	}
@@ -34,7 +34,7 @@ class SegnalaDatabaseTest {
 
 	@Test
 	void test2() throws RemoteException {
-		NotificaApplicazione notifica3=new NotificaApplicazione("egli", new Posizione("via ciao", 2, 2), "M8 Coda");
+		NotificaApplicazione notifica3=new NotificaApplicazione("nicolo", new Posizione("via milano", 2, 2), "M8 Coda");
 		gest.segnalaDatabase(notifica3);
 		assertEquals(GestoreDatabase.getInstance().getTabellaTraffico().get(1).getTipo(), notifica3.getTipo(), "ok dddd");
 

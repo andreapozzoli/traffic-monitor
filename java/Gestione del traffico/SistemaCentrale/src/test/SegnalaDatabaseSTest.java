@@ -19,8 +19,9 @@ class SegnalaDatabaseSTest {
 		dato=new DatoTraffico(new Posizione("via dante", 1, 1), "S10 Coda", 10);
 		gest=GestoreCentraline.getInstance();
 		gest.segnalaDatabaseS(dato);
-		dato2=new DatoTraffico(new Posizione("via ciao", 2, 2), "S10 Coda", 10);
+		dato2=new DatoTraffico(new Posizione("via milano", 2, 2), "S10 Coda", 10);
 		gest.segnalaDatabaseS(dato2);
+		
 		
 	}
 
@@ -32,8 +33,8 @@ class SegnalaDatabaseSTest {
 	
 	@Test
 	void test2() throws RemoteException, NotBoundException {
-		DatoTraffico dato3=new DatoTraffico(new Posizione("via ciao", 2, 2), "S15 Coda", 15);
-		GestoreCentraline.getInstance().segnalaDatabaseS(dato3);
+		DatoTraffico dato3=new DatoTraffico(new Posizione("via milano", 2, 2), "S15 Coda", 15);
+		gest.segnalaDatabaseS(dato3);
 		assertEquals(GestoreDatabase.getInstance().getTabellaTraffico().get(1).getTipo(), dato3.getTipo(), "Il tipo dei due dati deve essere uguale.");
 		
 	}
