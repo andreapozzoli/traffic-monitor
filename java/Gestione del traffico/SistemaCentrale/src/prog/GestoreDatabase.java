@@ -85,9 +85,11 @@ public class GestoreDatabase {
 			if (this.tabellaTraffico.get(i).getPosizione().equals(pos)||((oraAttuale==oraArr&&(minAttuale-minArr>2))||(oraAttuale>oraArr&&minAttuale>0)||(oraAttuale==0&&oraArr==11&&minAttuale>0))) {
 				try {
 					FunzionamentoSistemaCentrale.getMappa().rimuoviMarcatore(this.tabellaTraffico.get(i).getPosizione().getLatitudine(), this.tabellaTraffico.get(i).getPosizione().getLongitudine());
-					this.tabellaTraffico.remove(i);
 				}catch(Exception e) {
 					JOptionPane.showMessageDialog(null, "La mappa non e' disponibile.");
+				}
+				finally {
+					this.tabellaTraffico.remove(i);
 				}
 			}
 		}
