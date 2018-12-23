@@ -106,6 +106,7 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 	}
 
 	public void pulisciMappa() {
+		
 		map().removeAllMapMarkers();
 	}
 
@@ -167,7 +168,6 @@ public class MappaGrafica extends JFrame implements JMapViewerEventListener {
 		map().addJMVListener(this);
 
 		setLayout(new BorderLayout());
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panelTop = new JPanel();

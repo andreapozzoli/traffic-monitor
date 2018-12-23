@@ -136,6 +136,7 @@ public class CentralinaAuto extends Centralina{
 				this.posizione=sensore.rilevaPosizione();
 				this.velocita=rilevatore.rilevaVelocita();
 				this.calcolaRaggio();
+				
 				this.creaStatoVeicolo(this.velocita, this.posizione);					//viene creato il dato di traffico
 				this.inviaStatoVeicolo();					//e inviato
 			} catch (InterruptedException e) {
