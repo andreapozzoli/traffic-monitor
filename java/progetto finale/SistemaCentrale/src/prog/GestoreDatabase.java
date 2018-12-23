@@ -59,10 +59,10 @@ public class GestoreDatabase {
 		this.listaNotificheApplicazioni.remove(notifica);
 	}
 
-	public void rimuoviDatoTraffico (DatoTraffico dato) {
+	/*public void rimuoviDatoTraffico (DatoTraffico dato) {
 		//metodo per rimuovere una notifica del tipo DatoTraffico dalla lista
 		this.listaDatoTraffico.remove(dato);
-	}
+	}*/
 
 
 
@@ -80,6 +80,7 @@ public class GestoreDatabase {
 			// In ogni caso le centraline continuano a notificare e, in caso di eventi di traffico, generalmente non passa molto tempo tra una notifica e la successiva
 			// Per quanto riguarda le segnalazioni di coda da parte delle applicazioni, si suppone che in una situazione reale, laddove si formi una coda piu' persone continuino a notificarne la presenza
 			// Una coda, inoltre, potrebbe esaurirsi in breve tempo per cause di vari tipi, di conseguenza mantenere una segnalazione troppo a lungo potrebbe trasmettere informazioni fuorvianti
+
 
 			if ((oraAttuale==oraArr&&(minAttuale-minArr>2))||(oraAttuale>oraArr&&minAttuale>0)||(oraAttuale==0&&oraArr==11&&minAttuale>0)) {
 				try {

@@ -87,7 +87,7 @@ public class CentralinaStradale extends Centralina {	//e' la classe che contiene
 	}
 
 	public void creaDatoTraffico() {			//viene settato il dato di traffico da inviare al sistema centrale
-		if (this.velocita!=0) {					//se la velocita' media e' uguale a zero, si tiene la velocita' e il tipo di traffico precedenti
+		if (this.velocita>0) {					//se la velocita' media e' uguale a zero, si tiene la velocita' e il tipo di traffico precedenti
 			switch (this.tipoStrada){			//in base al tipo di strada, a seconda della velocita' si decide il tipo di evento  di traffico
 			case "urbana":
 				if (velocita<20)
@@ -193,7 +193,7 @@ public class CentralinaStradale extends Centralina {	//e' la classe che contiene
 				}					//e inviato
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-				this.run();						//se avviene un interruzione si fa ripartire il run
+				this.run();						//se avviene un'interruzione si fa ripartire il run
 			} catch (RemoteException e) {
 				e.printStackTrace();
 			}

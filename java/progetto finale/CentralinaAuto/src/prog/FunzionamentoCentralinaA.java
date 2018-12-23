@@ -23,7 +23,7 @@ public class FunzionamentoCentralinaA {
 	
 	public static void main(String[] args) throws BiffException, IOException {
 		Random random = new Random();
-		int minVel =0;
+		int minVel =1;
 		int maxVel=90;
 		int intornoVel = ((maxVel-minVel) + 1);
 		int velocita= random.nextInt(intornoVel) + minVel;

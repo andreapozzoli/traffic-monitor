@@ -37,7 +37,7 @@ public class FunzionamentoCentralinaS {
 
 	public static void configurazioneGrafica(){
 		try {
-
+			
 			String percorsoCorrente = System.getProperty("user.dir"); // percorso corrente
 			Workbook wb= Workbook.getWorkbook(new File(percorsoCorrente + "/vie3.xls")); // nome del file con vie e relative posizioni
 			Sheet sheet = wb.getSheet(0); // primo foglio del foglio di calcolo
