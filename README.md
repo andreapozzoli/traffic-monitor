@@ -26,9 +26,9 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 ## Consegne
 
 * Consegna 1) Requisiti: Fattibilità + DataDictionary + Goal Diagram
-	* Fattibilità (1 pagina) [*Contenuto nel documento di progetto*]
-	* Progetto i* con OpenOme [*Descritto e riportato anche nel documento di progetto*, [file di progetto](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.zip), [immagine](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/diagramma_istar.png)]
-	* Documento di progetto, con: testo del progetto (da questo documento), fattibilità, sintesi goal e data dictionary (non c’è un formato fisso, è a vostra discrezione) [[link](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/requisiti/Analisi_dei_requisiti.pdf)]
+	* Fattibilità (1 pagina)
+	* Progetto i* con OpenOme
+	* Documento di progetto, con: testo del progetto (da questo documento), fattibilità, sintesi goal e data dictionary (non c’è un formato fisso, è a vostra discrezione)
 
 * Consegna 2) Design: UML
 	* Almeno 2 activity, 2 sequence e 2 state diagrams
@@ -37,9 +37,9 @@ Definire esplicitamente tutti i formati dei dati scambiati e le modalità di sca
 	* Documento PDF riassuntivo dei diagrammi fatti, commentati
 
 * Consegna 3) Implementazione: Java 
-	* Progetto Java completo e funzionante [*Sistema centrale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/SistemaCentrale) - [*Applicazione mobile*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Applicazione) - [*Centralina stradale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Centralina)
-	* Casi di test Junit [*Sistema centrale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/SistemaCentrale/src/test) - [*Applicazione mobile*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Applicazione/src/test) - [*Centralina stradale*](https://gitlab.com/sweng2018/group1/traffic-monitor/tree/master/java/Centralina/src/test)
-	* Documento PDF riassuntivo [*Documentazione*](https://gitlab.com/sweng2018/group1/traffic-monitor/blob/master/java/Documentazione.pdf)
+	* Progetto Java completo e funzionante
+	* Casi di test Junit
+	* Documento PDF riassuntivo
 
 * Consegna 4) Completo
-	* Progetto e documento completo e funzionante (*tutti i file*)
+	* <mark>Progetto e documento completo e funzionante (*tutti i file*)</mark>
