@@ -62,7 +62,7 @@ public class FunzionamentoCentralinaS {
 
 			/* modello per lo spinner per selezionare l'intervallo di aggiornamento iniziale
 			 * (minimo: 10, valore mostrato 
-			 * inizialmente: 10, massimo: 360 000, step: 1) */
+			 * inizialmente: 10, massimo: 90, step: 1) */
 
 			final SpinnerNumberModel sceltaIntervallo = new SpinnerNumberModel(10, 10, 90, 1); 
 			final JSpinner spinner = new JSpinner(sceltaIntervallo); // spinner
