@@ -37,7 +37,7 @@ public class RilevatoreVelocitaS extends RilevatoreVelocita{
 
 	public void resetSommaVelocita(int velocita) {
 
-		this.velocita=velocita; //indica la velocità dell'intervallo precedente
+		this.velocita=velocita; //indica la velocita' dell'intervallo precedente
 		this.sommaVelocita = 0;
 	}
 

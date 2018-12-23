@@ -42,7 +42,7 @@ public class FunzionamentoCentralinaA {
 		double lat2=Double.valueOf(cella.getContents());
 		cella=sheet.getCell(2,posizione); // nella terza colonna vi e' la longitudine
 		double lon2=Double.valueOf(cella.getContents());
-		CentralinaAuto auto=new CentralinaAuto(new Posizione(via, lat2, lon2), velocita);
+		CentralinaAuto auto=new CentralinaAuto(new Posizione(via.toLowerCase(), lat2, lon2), velocita);
 		Thread t1=new Thread(auto);
 		t1.start();
 		mostraGUI();

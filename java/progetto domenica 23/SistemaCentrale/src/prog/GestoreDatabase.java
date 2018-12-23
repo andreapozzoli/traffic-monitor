@@ -102,7 +102,7 @@ public class GestoreDatabase {
 
 		if (!(datoGenerico.getTipo().endsWith("Traffico nella norma"))){
 			// Non ci sono notifiche se il traffico e' del tipo "Traffico nella norma"
-			// le applicazioni da notificare sono quelle nel raggio di 500 m dalla segnalazione
+			// le applicazioni da notificare sono quelle nel raggio di 5000 m dalla segnalazione
 			GestoreApplicazioni.getInstance().calcolaApplicazioniDaNotificare(mittente,pos, tipo);
 		}
 	}
