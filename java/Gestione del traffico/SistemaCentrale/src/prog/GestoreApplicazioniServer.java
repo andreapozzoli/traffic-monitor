@@ -22,6 +22,7 @@ public class GestoreApplicazioniServer implements Runnable{
 							+ "\nIl sistema e' gia' in uso.",
 							"Errore di connessione",
 							JOptionPane.ERROR_MESSAGE);
+			System.exit(1);
 
 		}
 
